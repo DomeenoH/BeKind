@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不要跟我说“在吗”</title>
+    <!-- Import Lato font to matchglobals.css usage -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Typed.js Initialization
+            new Typed("#strike", {
+                strings: [
+                    "hello",
+                    "你好",
+                    "hola",
+                    "bonjour",
+                    "ciao",
+                    "こんにちは",
+                    "안녕",
+                    "cześć",
+                    "привет",
+                    "你好",
+                    "hello",
+                ],
+                typeSpeed: 80,
+                backSpeed: 50,
+                smartBackspace: false,
+                loop: true,
+                showCursor: false,
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- app/page.tsx structure wrapped in layout logic if any, but simplified for MPA -->
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <div id="plsstop">
+                    <h1 class="name">不要说<span id="strike">hello</span></h1>
+                </div>
+                <span class="subtitle">不要在聊天时问："在吗？"</span>
+                <h2 class="lead">
+                    想象一下别人接通你的电话时，你问 ："在吗？"<br />
+                    然后等待对方回应…🤦
+                </h2>
+            </div>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 不要这样做</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:15 下午</span><br />
+                        <span class="slackmessage">在？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:19 下午</span><br />
+                        <span class="slackmessage">…？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:20 下午</span><br />
+                        <span class="slackmessage">那个事在什么时候来的？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:20 下午</span><br />
+                        <span class="slackmessage">哦，在 3 点 30 分。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            请注意，这个场景中西打本可以提前几分钟得到答案，也不必让多米诺等待，而多米诺本来可以立刻开始思考这个问题。
+                        </p>
+                        <p>
+                            人们这样做通常是出于礼貌，避免像面对面或者打电话时候那样唐突地直接提出请求。但现在已经是2025年了，聊天方式也和以前完全不同。对于绝大多数人来说，打字比说话慢得多。所以尽管你的初衷是好的，
+                            <strong>而实际上你只是在让对方等待</strong>
+                            你说出自己问题，这是非常没有效率的（某种意义上有些烦人）。
+                        </p>
+                        <p>类似的场景有：</p>
+                        <ul>
+                            <li>"你好，在吗？"</li>
+                            <li>"在，有事直接问。"</li>
+                            <li>"你有时间吗？"</li>
+                            <li>"有"</li>
+                            <li>"忙吗？"</li>
+                            <li>等等</li>
+                        </ul>
+                        <p>
+                            <strong style="font-weight: bold;">请直接问问题！</strong> 😫
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 试着这样做</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:15 下午</span><br />
+                        <span class="slackmessage">您好，我想问一下那件事在什么时候来的？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:15 下午</span><br />
+                        <span class="slackmessage">您好，在 3 点 30 分。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:15 下午</span><br />
+                        <span class="slackmessage">回见！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:16 下午</span><br />
+                        <span class="slackmessage">👌 没问题</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            如果你觉得很直接地说 "嗨"
+                            并问一个问题有些唐突，可以适当地在你的消息前面加上一些寒暄。
+                        </p>
+                        <p>例如：</p>
+                        <ul>
+                            <li>"嗨老铁，你咋样了？还有你知道那个事儿什么时候截止吗？"</li>
+                            <li>"还可以，咱们可以抽空聊聊。: )"</li>
+                            <li>"行，如果你不忙，能帮忙更新一下 NFR 吗？"</li>
+                            <li>等等</li>
+                        </ul>
+                        <p>
+                            这也许看起来很繁琐，但在你得到开头的寒暄的回复之前问你关心的问题，也能够做到
+                            <strong>延时沟通</strong>
+                            。如果对方不在，而你在他们回来之前就离开了，他们仍然可以回答你的问题，而不只是盯着"在吗？"感到不知所措。
+                        </p>
+                        <p>当你做到了这些，大家都会开心！🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情（一定程度上👀），所以请不要对送你来看这个网站的人
+                <a href="https://www.youtube.com/watch?v=xzpndHtdl9A">生气</a>。
+            </p>
+            <p>
+                也就是说，如果你看到某个人的状态 / 简介里包含这个网站的地址，那么你如果仅仅对他说："在吗" 或者
+                "你好"，就请做好被无视的心理准备。
+            </p>
+            <p>
+                本站点魔改自 <a href="https://nohello.net/zh-cn/">nohello.net</a> ，基于
+                <a href="https://web.archive.org/web/20131127020115/http://www.nohello.com/">nohello.com</a>
+                制作。头像取自多米诺和他对象。 原项目于 <a href="https://github.com/nohello-net/site">GitHub</a>开源。
+            </p>
+        </footer>
+    </div>
+
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
