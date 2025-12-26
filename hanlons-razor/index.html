@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪒</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>🪒</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>汉隆剃刀 | Hanlon's Razor</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">汉隆剃刀</h1>
+                <span class="subtitle">Hanlon's Razor</span>
+                <h2 class="lead">
+                    能解释为愚蠢或忙碌的，<br>
+                    就不要解释为恶意。
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 阴谋论思维</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">9:30 上午</span><br />
+                        <span class="slackmessage">今天在电梯里跟多米诺打招呼，他居然没理我！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">9:35 上午</span><br />
+                        <span class="slackmessage">他肯定是对我有意见，是不是因为上次开会我反驳了他？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:00 上午</span><br />
+                        <span class="slackmessage">他是不是在背后说我坏话？想给我穿小鞋？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">11:00 上午</span><br />
+                        <span class="slackmessage">我要不要先下手为强，在老板面前给他上点眼药？</span>
+                    </div>
+                    <div class="slack" style="background: #fffbe6; border-left: 4px solid #ffd700;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            💡</div>
+                        <span class="slackname">&nbsp;&nbsp;真相</span>
+                        <span class="slacktime">&nbsp;&nbsp;其实是...</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            我们的大脑天生有一种<strong>"负面偏见"</strong>：当事情出错时，我们倾向于假设最坏的情况。这是进化留给我们的生存本能——在原始社会，假设别人可能要伤害你是明智的。
+                        </p>
+                        <p>
+                            但在现代社会，这种思维模式会让我们：
+                        </p>
+                        <ul>
+                            <li>😰 <strong>焦虑：</strong>无端揣测别人的意图</li>
+                            <li>😤 <strong>愤怒：</strong>对莫须有的"恶意"生气</li>
+                            <li>🔥 <strong>冲突：</strong>基于误解做出过激反应</li>
+                        </ul>
+                        <p>
+                            最后往往发现：对方根本没想那么多，只是单纯的<strong>疏忽、忙碌、或者犯傻</strong>。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 假设善意</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">9:30 上午</span><br />
+                        <span class="slackmessage">今天在电梯里跟多米诺打招呼，他没理我。有点奇怪。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">9:31 上午</span><br />
+                        <span class="slackmessage">不过他可能没看到我？或者在想事情？算了，不纠结了。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:35 上午</span><br />
+                        <span class="slackmessage">@多米诺 早啊！刚才电梯里是你吗？我还以为我认错人了 😂</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">9:36 上午</span><br />
+                        <span class="slackmessage">哈哈是我！抱歉没看到你，我今天忘带眼镜了，眼前一片模糊 😅</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            <strong>"假设善意"(Assume Good Intent)</strong> 是汉隆剃刀的核心原则：
+                        </p>
+                        <p>
+                            当别人的行为让你不舒服时，先假设他们<strong>不是故意的</strong>。大多数情况下，你会发现真相是：
+                        </p>
+                        <ul>
+                            <li>😴 他们太忙/太累了</li>
+                            <li>🤔 他们没注意到</li>
+                            <li>🙈 他们单纯地犯傻了</li>
+                            <li>📱 他们在玩手机没听到</li>
+                        </ul>
+                        <p>
+                            这样做的好处：
+                        </p>
+                        <ul>
+                            <li>💆 <strong>内心平静：</strong>不再被假想的敌意折磨</li>
+                            <li>🤝 <strong>关系改善：</strong>避免因误解产生冲突</li>
+                            <li>🎯 <strong>专注：</strong>把精力放在真正重要的事情上</li>
+                        </ul>
+                        <p>
+                            <strong>当然，如果同样的事情反复发生，那就需要认真谈谈了。但第一次？先假设善意。</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明对方可能并没有恶意，只是<strong>太忙、太累、或者单纯的犯傻了</strong>。
+            </p>
+            <p>概念提出者：Robert J. Hanlon</p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

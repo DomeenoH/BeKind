@@ -21,27 +21,27 @@
 ### 1. 高效沟通协议 (Communication Protocols)
 *优化信号传输，减少噪音与误解。*
 
-*   **[No Hello (别只说你好)](/pages/no-hello/)**：异步沟通的黄金法则，直接发送你的问题。
-*   **[Bottom Line Up Front (BLUF 原则)](/pages/bluf/)**：像军队简报一样，先说结论，再谈细节。
-*   **[Smart Questions (提问的智慧)](/pages/smart-questions/)**：学会提问，是对他人时间最大的尊重，也是对自己最大的负责。
-*   **[XY Problem (XY 问题)](/pages/xy-problem/)**：不要问你认为的解决方案，直接问你遇到的根本问题。
-*   **[Three Strikes (三振出局)](/pages/three-strikes/)**：三次文字交锋未能解决，请立即切换为语音或电话。
+*   **[No Hello (别只说你好)](/no-hello/)**：异步沟通的黄金法则，直接发送你的问题。
+*   **[Bottom Line Up Front (BLUF 原则)](/bluf/)**：像军队简报一样，先说结论，再谈细节。
+*   **[Smart Questions (提问的智慧)](/smart-questions/)**：学会提问，是对他人时间最大的尊重，也是对自己最大的负责。
+*   **[XY Problem (XY 问题)](/xy-problem/)**：不要问你认为的解决方案，直接问你遇到的根本问题。
+*   **[Three Strikes (三振出局)](/three-strikes/)**：三次文字交锋未能解决，请立即切换为语音或电话。
 
 ### 2. 认知思维剃刀 (Cognitive Razors)
 *剔除复杂假设，直抵问题本质。*
 
-*   **[Hanlon's Razor (汉隆剃刀)](/pages/hanlons-razor/)**：能解释为愚蠢的，就不要解释为恶意。这是保持心理健康的第一法则。
-*   **[Sturgeon's Law (斯特金定律)](/pages/sturgeons-law/)**：90% 的东西都是垃圾。学会筛选，保护你的注意力。
-*   **[Dunning-Kruger Effect (邓宁-克鲁格效应)](/pages/dunning-kruger/)**：越无知越自信。保持谦逊，因为我们可能都是那个“愚昧之山”上的攀登者。
-*   **[Occam's Razor (奥卡姆剃刀)](/pages/occams-razor/)**：如无必要，勿增实体。最简单的解释往往是正确的。
+*   **[Hanlon's Razor (汉隆剃刀)](/hanlons-razor/)**：能解释为愚蠢的，就不要解释为恶意。这是保持心理健康的第一法则。
+*   **[Sturgeon's Law (斯特金定律)](/sturgeons-law/)**：90% 的东西都是垃圾。学会筛选，保护你的注意力。
+*   **[Dunning-Kruger Effect (邓宁-克鲁格效应)](/dunning-kruger/)**：越无知越自信。保持谦逊，因为我们可能都是那个“愚昧之山”上的攀登者。
+*   **[Occam's Razor (奥卡姆剃刀)](/occams-razor/)**：如无必要，勿增实体。最简单的解释往往是正确的。
 
 ### 3. 系统与人性 (System & Humanity)
 *理解系统运作规律，洞察人性弱点。*
 
-*   **[Bike Shedding (自行车棚效应)](/pages/bike-shedding/)**：警惕团队在鸡毛蒜皮的小事上浪费过多时间。
-*   **[Echo Chamber (回声室效应)](/pages/echo-chamber/)**：警惕算法为你构建的舒适牢笼，主动寻求异见。
-*   **[Online Disinhibition (在线解除抑制)](/pages/online-disinhibition/)**：隔着屏幕，我们容易变成魔鬼。请时刻记住：屏幕对面是活生生的人。
-*   **[Assume Public (假设公开原则)](/pages/assume-public/)**：在这个时代，没有绝对的秘密。
+*   **[Bike Shedding (自行车棚效应)](/bike-shedding/)**：警惕团队在鸡毛蒜皮的小事上浪费过多时间。
+*   **[Echo Chamber (回声室效应)](/echo-chamber/)**：警惕算法为你构建的舒适牢笼，主动寻求异见。
+*   **[Online Disinhibition (在线解除抑制)](/online-disinhibition/)**：隔着屏幕，我们容易变成魔鬼。请时刻记住：屏幕对面是活生生的人。
+*   **[Assume Public (假设公开原则)](/assume-public/)**：在这个时代，没有绝对的秘密。
 
 ## 🎨 设计哲学 (Design Philosophy)
 

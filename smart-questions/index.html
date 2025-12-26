@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>提问的智慧 | Smart Questions</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div class="container">
+        <div class="hero">
+            <h1 class="name">提问的智慧</h1>
+            <span class="subtitle">How To Ask Questions The Smart Way</span>
+            <div class="share-button-wrapper">
+                <button class="share-button" onclick="copyShareText(this)">
+                    <span class="icon">📋</span>
+                    <span class="text">一键分享给朋友</span>
+                </button>
+            </div>
+        </div>
+        <script>
+            function copyShareText(btn) {
+                const title = document.querySelector('h1.name').textContent;
+                const url = window.location.href;
+                const text = `这个或许对你有帮助 → ${title}：${url}`;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.classList.add('copied');
+                    btn.querySelector('.icon').textContent = '✓';
+                    btn.querySelector('.text').textContent = '已复制到剪贴板';
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        btn.querySelector('.icon').textContent = '📋';
+                        btn.querySelector('.text').textContent = '一键分享给朋友';
+                    }, 2000);
+                });
+            }
+        </script>
+    </div>
+
+    <div class="container nonos">
+        <div class="sections sectionleft">
+            <h2 class="section-title">❌ 愚蠢的提问</h2>
+            <div class="list-card example one">
+                <div class="slack">
+                    <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                    <span class="slackname">西打</span>
+                    <span class="slacktime">10:00</span><br />
+                    <span class="slackmessage">我的电脑好卡！谁能帮帮我？急急急！</span>
+                </div>
+                <div class="slack">
+                    <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                    <span class="slackname">多米诺</span>
+                    <span class="slacktime">10:05</span><br />
+                    <span class="slackmessage">... (未读忽略)</span>
+                </div>
+            </div>
+        </div>
+        <div class="sections sectionright">
+            <div class="list-card">
+                <div>
+                    <h3 style="margin-top:0">提问之前</h3>
+                    <p>当你向他人求助时，请确保你已经尽了自己的努力：</p>
+                    <ul style="list-style: none; padding-left: 10px;">
+                        <li>🔎 搜过 Google / 百度了吗？</li>
+                        <li>📖 读过说明书了吗？</li>
+                        <li>🧪 自己尝试过重启 / 复现了吗？</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container yepyep">
+        <div class="sections sectionleft">
+            <h2 class="section-title yepyep">✅ 聪明的提问</h2>
+            <div class="list-card example two">
+                <div class="slack">
+                    <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                    <span class="slackname">西打</span>
+                    <span class="slacktime">10:00</span><br />
+                    <span class="slackmessage">我的笔记本（Win10, 8G内存）最近打开 Chrome 时非常卡。尝试过重启和清理垃圾，但只要开超过 10
+                        个网页就卡死。请问是内存不够吗？需不需要加内存条？</span>
+                </div>
+                <div class="slack">
+                    <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                    <span class="slackname">多米诺</span>
+                    <span class="slacktime">10:05</span><br />
+                    <span class="slackmessage">8G 确实有点勉强，建议加到 16G 或者关掉不用的插件。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            这不是非常严重的事情，所以请不要对送你来看这个网站的人
+            <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+        </p>
+        <p>
+            如果你看到这个链接，说明你的提问方式可能会让解答者感到<strong>困惑</strong>，建议先读读这份指南，这能帮你更快得到答案。
+        </p>
+        <p>Based on <a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way">Eric S. Raymond's
+                Guide</a></p>
+        <p>
+            <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a
+                href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+        </p>
+    </footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

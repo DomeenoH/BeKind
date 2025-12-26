@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📌</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>📌</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLUF 原则 | Bottom Line Up Front</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">BLUF 原则</h1>
+                <span class="subtitle">Bottom Line Up Front</span>
+                <h2 class="lead">
+                    先说结论，再说细节。<br>
+                    别让人猜你的重点。
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 铺垫大师</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:00 上午</span><br />
+                        <span class="slackmessage">多米诺，今天上午我去了一趟市中心...</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:01 上午</span><br />
+                        <span class="slackmessage">本来想坐地铁的，但是那条线在维修</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:02 上午</span><br />
+                        <span class="slackmessage">所以我打了个车，但是路上堵了好久</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:03 上午</span><br />
+                        <span class="slackmessage">然后我到那边发现门关着</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:04 上午</span><br />
+                        <span class="slackmessage">问了保安才知道...</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">9:05 上午</span><br />
+                        <span class="slackmessage">兄弟，你到底想说什么？😅</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:06 上午</span><br />
+                        <span class="slackmessage">哦对，明天开会改到下午3点。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">时间是宝贵的</h3>
+                        <p>
+                            人们在阅读时，注意力是<strong>逐渐衰减</strong>的。如果重点藏在最后，很多人根本看不到那里。
+                        </p>
+                        <p>
+                            <strong>常见问题：</strong>
+                        </p>
+                        <ul>
+                            <li>📜 <strong>流水账叙事：</strong>按时间顺序讲完所有细节</li>
+                            <li>🎭 <strong>悬念铺垫：</strong>像写小说一样吊人胃口</li>
+                            <li>🤐 <strong>怕太直接：</strong>觉得先说结论不礼貌</li>
+                        </ul>
+                        <p>
+                            结果是：你说了5分钟，对方还不知道你在说啥。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ BLUF 原则</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:00 上午</span><br />
+                        <span class="slackmessage">明天开会改到下午3点。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">9:00 上午</span><br />
+                        <span class="slackmessage">原因：会议室被临时占用了。我今天去现场确认过了。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">9:01 上午</span><br />
+                        <span class="slackmessage">收到，已更新日程 👍</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">军事级沟通效率</h3>
+                        <p>
+                            <strong>BLUF</strong> (Bottom Line Up Front) 是军事和商业沟通中的黄金法则：
+                        </p>
+                        <blockquote
+                            style="border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);">
+                            <strong>先说结论 → 再说原因 → 最后补充细节</strong>
+                        </blockquote>
+                        <p><strong>消息结构模板：</strong></p>
+                        <ol>
+                            <li>📌 <strong>结论/请求：</strong>你要告诉对方的核心信息</li>
+                            <li>🔍 <strong>原因/背景：</strong>为什么会这样（简要）</li>
+                            <li>📎 <strong>细节/附件：</strong>需要的话再补充（可选）</li>
+                        </ol>
+                        <p><strong>好处：</strong></p>
+                        <ul>
+                            <li>⚡ 对方3秒内就知道重点</li>
+                            <li>📱 即使只看到第一行也能明白</li>
+                            <li>🗂️ 方便后续搜索和归档</li>
+                        </ul>
+                        <p>
+                            <strong>别写悬疑小说，写结论。</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明对方可能正在等你<strong>直接说重点</strong>。
+            </p>
+            <p>Source: U.S. Military Communication Protocol</p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

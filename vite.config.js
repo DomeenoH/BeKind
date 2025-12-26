@@ -7,11 +7,23 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 // 动态获取所有子页面入口
-const pagesDir = resolve(__dirname, 'pages')
-const pages = fs.readdirSync(pagesDir).reduce((acc, dir) => {
-    const fullPath = resolve(pagesDir, dir, 'index.html')
+// 动态获取所有子页面入口
+const pages = fs.readdirSync(__dirname).reduce((acc, dir) => {
+    // 排除 hidden files, node_modules, dist, etc.
+    if (dir.startsWith('.') || dir === 'node_modules' || dir === 'dist' || dir === 'public' || dir === 'src') {
+        return acc
+    }
+
+    // Check if it is a directory first
+    try {
+        const stats = fs.statSync(resolve(__dirname, dir));
+        if (!stats.isDirectory()) return acc;
+    } catch (e) {
+        return acc;
+    }
+
+    const fullPath = resolve(__dirname, dir, 'index.html')
     if (fs.existsSync(fullPath)) {
-        // 将连字符格式 (no-hello) 转换为驼峰或保持原样作为 key
         acc[dir] = fullPath
     }
     return acc

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自行车棚效应 | Bike Shedding</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">自行车棚效应</h1>
+                <span class="subtitle">Parkinson's Law of Triviality</span>
+                <h2 class="lead">
+                    人们花在琐事上的时间，<br>
+                    往往远超过重要的事情。
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 典型症状</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打（主持人）</span>
+                        <span class="slacktime">2:00 下午</span><br />
+                        <span class="slackmessage">好，第一项议程：明年战略规划，预算500万。大家有什么意见？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:01 下午</span><br />
+                        <span class="slackmessage">没意见，通过。</span>
+                    </div>
+                    <div class="slack" style="opacity: 0.7;">
+                        <span class="slackmessage">（5分钟后，会议进入下一项）</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打（主持人）</span>
+                        <span class="slacktime">2:06 下午</span><br />
+                        <span class="slackmessage">第二项：年会伴手礼的袋子选什么颜色？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:06 下午</span><br />
+                        <span class="slackmessage">红色喜庆！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="路人甲" src="http://q1.qlogo.cn/g?b=qq&nk=2033886359&s=100" />
+                        <span class="slackname">同事A</span>
+                        <span class="slacktime">2:07 下午</span><br />
+                        <span class="slackmessage">不行，红色太俗了，金色更大气！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="路人乙" src="http://q1.qlogo.cn/g?b=qq&nk=3272419793&s=100" />
+                        <span class="slackname">同事B</span>
+                        <span class="slacktime">2:08 下午</span><br />
+                        <span class="slackmessage">我觉得深蓝色比较高端...</span>
+                    </div>
+                    <div class="slack" style="opacity: 0.7;">
+                        <span class="slackmessage">（2小时后，仍在讨论袋子颜色...）</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            <strong>经典案例：</strong>委员会审批核电站计划时，大家因为不懂而迅速通过；但审批员工自行车棚时，却争论不休——因为每个人都"懂"自行车棚。
+                        </p>
+                        <p>
+                            这就是<strong>帕金森琐碎定律</strong>：人们倾向于在自己能理解的小事上投入不成比例的时间和精力，而对真正重要（但复杂）的事情一笔带过。
+                        </p>
+                        <p>
+                            <strong>原因分析：</strong>
+                        </p>
+                        <ul>
+                            <li>🧠 <strong>认知舒适区：</strong>小事容易理解，发言不会出错</li>
+                            <li>👀 <strong>刷存在感：</strong>大事上不敢说话，小事上可以表现</li>
+                            <li>⚖️ <strong>决策疲劳：</strong>大事太复杂，干脆放弃思考</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 如何避免</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打（主持人）</span>
+                        <span class="slacktime">2:00 下午</span><br />
+                        <span class="slackmessage">第一项议程：明年战略规划。这是核心议题，请各部门负责人在会前准备好意见。我们会花45分钟详细讨论。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打（主持人）</span>
+                        <span class="slacktime">2:45 下午</span><br />
+                        <span class="slackmessage">第二项：年会伴手礼。行政部已经初选了3个方案，请大家5分钟内投票选择。超时未投票视为弃权。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:48 下午</span><br />
+                        <span class="slackmessage">投A方案，会议结束！</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <p>
+                            <strong>应对策略：</strong>
+                        </p>
+                        <ul>
+                            <li>📋 <strong>设置时间限制：</strong>为每个议题分配固定时间，小事不超过5分钟</li>
+                            <li>🎯 <strong>区分议题权重：</strong>明确标注"重要/一般"，引导大家把精力放在对的地方</li>
+                            <li>📊 <strong>提供有限选项：</strong>不要问"选什么颜色"，而是问"A还是B"</li>
+                            <li>🚫 <strong>勇于打断：</strong>当讨论偏离主题时，及时拉回来</li>
+                        </ul>
+                        <p>
+                            <strong>记住：不要让自行车棚的颜色耽误了核电站的建设。⚡</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明大家可能正在为了<strong>袋子的颜色</strong>而耽误了<strong>核电站的建设</strong>。
+            </p>
+            <p>概念提出者：C. Northcote Parkinson</p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

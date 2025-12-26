@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💥</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>💥</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>它挂了 | It Didn't Work</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">它挂了</h1>
+                <span class="subtitle">It Didn't Work</span>
+                <h2 class="lead">“这东西坏了”<br>不是一个 Bug 报告</h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 不要这样做</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">16:00</span><br />
+                        <span class="slackmessage">打印机坏了。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">16:05</span><br />
+                        <span class="slackmessage">怎么坏了？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">16:06</span><br />
+                        <span class="slackmessage">就打不出来。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">16:07</span><br />
+                        <span class="slackmessage">有亮红灯吗？屏幕上有提示吗？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">16:10</span><br />
+                        <span class="slackmessage">没注意，反正就是没反应。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">医生治不好“我病了”</h3>
+                        <p>
+                            你可以告诉医生“我病了”，但如果只说这一句，医生也治不好你。<br>
+                            你需要说哪里疼、什么时候开始疼的、吃过什么东西。
+                        </p>
+                        <p>程序/设备也是一样。技术人员没有读心术，也没有透视眼。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 试着这样做</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">16:00</span><br />
+                        <span class="slackmessage">打印机打不出来。型号 HP 1020，按打印键后听到咔咔两声，然后红灯一直闪烁。纸盒里有纸。</span>
+                    </div>
+                    <div class="slack">
+                        <!-- Spacer to align with text -->
+                        <div style="width: 42px; height: 42px; flex-shrink: 0;"></div>
+                        <div class="chat-image-placeholder">
+                            [图片: 打印机红灯.jpg]
+                        </div>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">16:01</span><br />
+                        <span class="slackmessage">哦，这是卡纸了，把后盖打开抽出来就行。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0; margin-bottom: 1.5rem;">完美的 Bug 报告清单</h3>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li class="li-good" style="margin-bottom: 16px;">
+                                <strong>你做了什么？</strong><br>
+                                <span style="color: var(--muted-foreground); font-size: 0.875rem;">操作步骤</span>
+                            </li>
+                            <li class="li-good" style="margin-bottom: 16px;">
+                                <strong>发生了什么？</strong><br>
+                                <span style="color: var(--muted-foreground); font-size: 0.875rem;">实际现象</span>
+                            </li>
+                            <li class="li-good" style="margin-bottom: 16px;">
+                                <strong>你期望发生什么？</strong><br>
+                                <span style="color: var(--muted-foreground); font-size: 0.875rem;">预期结果</span>
+                            </li>
+                            <li class="li-good" style="margin-bottom: 0;">
+                                <strong>环境信息</strong><br>
+                                <span style="color: var(--muted-foreground); font-size: 0.875rem;">型号, 版本, 报错信息</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明你的 Bug 报告可能有点... <strong>“抽象”</strong>。
+            </p>
+            <p>Inspired by <a href="https://itdidnt.work">itdidnt.work</a></p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

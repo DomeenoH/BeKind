@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗑️</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>🗑️</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斯特金定律 | Sturgeon's Law</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">斯特金定律</h1>
+                <span class="subtitle">Sturgeon's Law</span>
+                <h2 class="lead">
+                    90% 的东西都是垃圾。<br>
+                    这不是悲观，这是现实。
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 信息焦虑</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:00 上午</span><br />
+                        <span class="slackmessage">这篇文章说咖啡对身体好，要多喝</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:30 上午</span><br />
+                        <span class="slackmessage">这篇文章说咖啡对心脏不好，要少喝</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">11:00 上午</span><br />
+                        <span class="slackmessage">这个评论说第一篇是对的，有100个赞</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">11:30 上午</span><br />
+                        <span class="slackmessage">那个评论说第二篇是对的，有200个赞</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">12:00 中午</span><br />
+                        <span class="slackmessage">我到底还能不能喝咖啡了？！😵</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">信息爆炸时代的陷阱</h3>
+                        <p>
+                            互联网让每个人都能发声，但这也意味着<strong>噪音远远超过信号</strong>。
+                        </p>
+                        <p>
+                            <strong>问题所在：</strong>
+                        </p>
+                        <ul>
+                            <li>📢 <strong>人人都能发言：</strong>专家和键盘侠享有同等曝光</li>
+                            <li>🎭 <strong>情绪驱动传播：</strong>极端观点比理性观点更容易传播</li>
+                            <li>💰 <strong>流量为王：</strong>为了点击量，标题党横行</li>
+                        </ul>
+                        <p>
+                            如果你认真对待每一条信息，你会被淹没在垃圾海洋里。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 学会筛选</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:00 上午</span><br />
+                        <span class="slackmessage">又看到一篇"震惊！XXX竟然..."的文章</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:01 上午</span><br />
+                        <span class="slackmessage">等等，先检查一下：来源是谁？有没有引用原始研究？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">10:02 上午</span><br />
+                        <span class="slackmessage">没有可信来源，直接划走。我的时间比这更值钱。</span>
+                    </div>
+                    <div class="slack" style="background: #e8f5e9; border-left: 4px solid #4caf50;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            ✨</div>
+                        <span class="slackname">&nbsp;&nbsp;心态</span>
+                        <span class="slacktime">&nbsp;&nbsp;平和</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;节省了30分钟，内心毫无波动 😌</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">斯特金定律</h3>
+                        <p>
+                            科幻作家西奥多·斯特金在1957年提出：
+                        </p>
+                        <blockquote
+                            style="border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;">
+                            "Ninety percent of everything is crud."<br>
+                            <strong>90% 的东西都是垃圾。</strong>
+                        </blockquote>
+                        <p><strong>如何应对：</strong></p>
+                        <ul>
+                            <li>🔍 <strong>质疑来源：</strong>谁说的？有什么资质？</li>
+                            <li>📊 <strong>查找原始数据：</strong>有没有引用可验证的研究？</li>
+                            <li>⏳ <strong>等待共识：</strong>一条信息被多个独立来源确认了吗？</li>
+                            <li>🗑️ <strong>敢于忽略：</strong>大部分内容不值得你的时间</li>
+                        </ul>
+                        <p><strong>记住：</strong></p>
+                        <p>
+                            互联网上的评论、建议、"专家观点"——大部分质量堪忧。你的注意力是有限的，<strong>别浪费在垃圾上</strong>。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明对方希望你<strong>不要把每条网上的评论都当回事</strong>。
+            </p>
+            <p>提出者：Theodore Sturgeon (1957)</p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

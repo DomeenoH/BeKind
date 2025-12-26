@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤡</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>🤡</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>邓宁-克鲁格效应 | Dunning-Kruger Effect</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">邓宁-克鲁格效应</h1>
+                <span class="subtitle">Dunning-Kruger Effect</span>
+                <h2 class="lead">
+                    越无知的人越自信，<br>
+                    越专业的人越谦虚。🤡
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 愚昧山峰</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="杠精" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">某网友</span>
+                        <span class="slacktime">技术群</span><br />
+                        <span class="slackmessage">这代码写得太垃圾了，让我来教你们什么叫真正的架构！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">技术群</span><br />
+                        <span class="slackmessage">请问你有多少年开发经验？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="杠精" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">某网友</span>
+                        <span class="slacktime">技术群</span><br />
+                        <span class="slackmessage">我上周刚学完一个网课，但我已经懂了，你们这些老程序员思维太陈旧了！</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="路人甲" src="http://q1.qlogo.cn/g?b=qq&nk=2033886359&s=100" />
+                        <span class="slackname">10年老程序员</span>
+                        <span class="slacktime">技术群</span><br />
+                        <span class="slackmessage">（沉默，懒得回应）</span>
+                    </div>
+                    <div class="slack" style="background: #fffbe6; border-left: 4px solid #ffd700;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            📊</div>
+                        <span class="slackname">&nbsp;&nbsp;真相</span>
+                        <span class="slacktime">&nbsp;&nbsp;研究表明</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;能力越差的人，越高估自己；能力越强的人，越低估自己。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">愚昧之巅与绝望之谷</h3>
+                        <p>
+                            心理学家邓宁和克鲁格发现一个讽刺的现象：
+                        </p>
+                        <ul>
+                            <li>🏔️ <strong>愚昧之巅：</strong>刚学了点皮毛的人，自信心爆棚</li>
+                            <li>📉 <strong>绝望之谷：</strong>学到一定程度后，发现自己啥也不懂</li>
+                            <li>📈 <strong>开悟之坡：</strong>慢慢积累，自信重建，但更加谦虚</li>
+                        </ul>
+                        <p>
+                            <strong>为什么网上杠精那么多？</strong>
+                        </p>
+                        <ul>
+                            <li>🎤 不懂的人最敢发言（因为不知道自己不懂）</li>
+                            <li>🤐 真正的专家往往保持沉默（因为知道问题的复杂性）</li>
+                            <li>📢 结果：最响亮的声音往往最不靠谱</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 保持谦逊</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">学习中</span><br />
+                        <span class="slackmessage">我觉得这个方案是对的，但我可能遗漏了什么...</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">讨论区</span><br />
+                        <span class="slackmessage">我的理解是这样，但我是新手，请大家指正～</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">10年老程序员</span>
+                        <span class="slacktime">讨论区</span><br />
+                        <span class="slackmessage">思路不错！补充一点：在生产环境中还需要考虑XXX...</span>
+                    </div>
+                    <div class="slack" style="background: #e8f5e9; border-left: 4px solid #4caf50;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            🌱</div>
+                        <span class="slackname">&nbsp;&nbsp;结果</span>
+                        <span class="slacktime">&nbsp;&nbsp;成长</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;谦虚的态度让西打获得了真正有价值的反馈</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">如何应对</h3>
+                        <p><strong>对自己：</strong></p>
+                        <ul>
+                            <li>🪞 <strong>警惕过度自信：</strong>越觉得自己懂，越要警惕</li>
+                            <li>📚 <strong>持续学习：</strong>真正的专家从不停止学习</li>
+                            <li>🙏 <strong>承认无知：</strong>"我不知道"是最有智慧的话之一</li>
+                        </ul>
+                        <p><strong>对他人：</strong></p>
+                        <ul>
+                            <li>🔇 <strong>少和杠精争论：</strong>他们不知道自己不知道</li>
+                            <li>👀 <strong>关注沉默的专家：</strong>最懂的人往往话最少</li>
+                            <li>📊 <strong>验证来源：</strong>别被自信的语气忽悠了</li>
+                        </ul>
+                        <blockquote
+                            style="border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;">
+                            "The more you know, the more you realize you don't know."<br>
+                            <strong>— 亚里士多德（据传）</strong>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明对方希望你<strong>在发表强烈观点之前，先确认自己真的懂</strong>。
+            </p>
+            <p>提出者：David Dunning & Justin Kruger (1999)</p>
+            <p>
+                本站点内容由 <a href="/">互联网沟通指北</a> 提供。
+            </p>
+        </footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

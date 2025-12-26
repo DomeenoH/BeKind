@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📞</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>📞</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三振出局 | Three Strikes and You Call</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">三振出局</h1>
+                <span class="subtitle">Three Strikes and You Call</span>
+                <h2 class="lead">
+                    来回超过三条消息还说不清？<br>
+                    直接打电话。📞
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 无限循环</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:00 下午</span><br />
+                        <span class="slackmessage">那个东西你处理一下？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:05 下午</span><br />
+                        <span class="slackmessage">哪个东西？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:10 下午</span><br />
+                        <span class="slackmessage">就上次那个</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:15 下午</span><br />
+                        <span class="slackmessage">上次哪个？我们上次讨论了好几个事</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:20 下午</span><br />
+                        <span class="slackmessage">就是周三开会说的那个啊</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:25 下午</span><br />
+                        <span class="slackmessage">周三开会说的哪个？合同还是报价单？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:30 下午</span><br />
+                        <span class="slackmessage">不是那个，是另一个</span>
+                    </div>
+                    <div class="slack" style="opacity: 0.7; text-align: center; padding: 20px;">
+                        <span class="slackmessage">（30分钟过去了，问题还没搞清楚...）</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">文字沟通的局限</h3>
+                        <p>
+                            文字聊天非常适合<strong>简单、明确的信息传递</strong>，但当问题变得复杂或模糊时，它会变成效率杀手。
+                        </p>
+                        <p>
+                            <strong>问题所在：</strong>
+                        </p>
+                        <ul>
+                            <li>⏰ <strong>延迟：</strong>每条消息都要等回复，耗时成倍增加</li>
+                            <li>🧩 <strong>碎片化：</strong>上下文不断丢失，需要反复确认</li>
+                            <li>🤯 <strong>误解积累：</strong>每次文字交换都可能引入新的歧义</li>
+                        </ul>
+                        <p>
+                            一个3分钟的电话能解决的问题，用文字可能要折腾30分钟。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 三振出局</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:00 下午</span><br />
+                        <span class="slackmessage">那个东西你处理一下？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">2:05 下午</span><br />
+                        <span class="slackmessage">哪个东西？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">2:10 下午</span><br />
+                        <span class="slackmessage">等等，我直接打给你说清楚，2分钟就行</span>
+                    </div>
+                    <div class="slack" style="background: #e8f5e9; border-left: 4px solid #4caf50;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            📞</div>
+                        <span class="slackname">&nbsp;&nbsp;语音通话</span>
+                        <span class="slacktime">&nbsp;&nbsp;2:11 - 2:14</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;通话时长 3分钟，问题已解决 ✅</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">三振出局法则</h3>
+                        <p>
+                            <strong>规则很简单：</strong>如果一个问题来回<strong>超过3条消息</strong>还说不清楚，就应该切换到实时沟通。
+                        </p>
+                        <p><strong>实时沟通的优势：</strong></p>
+                        <ul>
+                            <li>🎯 <strong>即时反馈：</strong>可以立刻澄清误解</li>
+                            <li>🗣️ <strong>语调信息：</strong>听到对方的语气，减少误读</li>
+                            <li>⚡ <strong>效率提升：</strong>复杂问题几分钟搞定</li>
+                        </ul>
+                        <p><strong>适用场景：</strong></p>
+                        <ul>
+                            <li>📋 共享上下文的事务讨论</li>
+                            <li>🤔 需要来回确认的模糊问题</li>
+                            <li>💥 紧急情况或冲突化解</li>
+                        </ul>
+                        <p>
+                            <strong>别让键盘成为效率的敌人。该打电话时就打电话。📱</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明来回打字已经说不清楚了，<strong>不如直接打个电话</strong>。
+            </p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

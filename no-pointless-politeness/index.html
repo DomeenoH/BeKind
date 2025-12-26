@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤫</text></svg>" /><text y=%22.9em%22 font-size=%2290%22>🤫</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拒绝过度客套 | No Pointless Politeness</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">拒绝过度客套</h1>
+                <span class="subtitle">Signal vs Noise</span>
+                <h2 class="lead">
+                    你的“谢谢大佬”，<br>
+                    可能正在把有用的信息<strong>挤出屏幕</strong>。
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 制造噪音</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">10:00</span><br />
+                        <span class="slackmessage">@所有人 明天团建的大巴车牌号是：京A·88888，早上 8 点准时出发。</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">10:01</span><br />
+                        <span class="slackmessage">收到</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="同事A的头像" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" />
+                        <span class="slackname">同事A</span>
+                        <span class="slacktime">10:01</span><br />
+                        <span class="slackmessage">收到</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="同事B的头像" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" />
+                        <span class="slackname">同事B</span>
+                        <span class="slacktime">10:02</span><br />
+                        <span class="slackmessage">OK</span>
+                    </div>
+                    <div class="slack">
+                        <span class="slackname">（...以及其他 48 个人的收到）</span>
+                        <span class="slacktime">...</span><br />
+                        <span class="slackmessage">...</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">10:05</span><br />
+                        <span class="slackmessage">（被顶上去的更正消息）对了，集合地点改到南门了！！别去北门！</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">信号与噪声</h3>
+                        <p>
+                            在一个 500 人的群里，当管理员发布了一条重要通知后，连续有 100 个人回复“收到”、“好的”、“Thanks”。
+                        </p>
+                        <p>
+                            此时，真正重要的<strong>补充通知</strong>（比如地点变更），已经被顶到了屏幕最上方。这意味着后面进来的 300 个人，根本看不到那条更正，只会去错误的地点。
+                        </p>
+                        <p>
+                            在面对面的晚宴上，鞠躬和寒暄是必要的<strong>润滑剂</strong>。但在高密度的信息流（群聊、Issue、论坛）中，每一行像素都是昂贵的 <strong
+                                style="color: #ef4444;">屏幕地产</strong>。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 优雅的反馈</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">10:00</span><br />
+                        <span class="slackmessage">@所有人 明天团建的大巴车牌号是：京A·88888，早上 8 点准时出发。</span>
+                    </div>
+                    <div class="slack">
+                        <div class="slackmessage"
+                            style="margin-top: 4px; padding: 2px 8px; background: rgba(0,0,0,0.03); border-radius: 12px; font-size: 0.8em; display: inline-block; color: #555;">
+                            👍 86 &nbsp; ❤️ 12
+                        </div>
+                    </div>
+                    <div class="slack">
+                        <span class="slackname">（群里保持了安静，直到...）</span>
+                        <br>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">10:05</span><br />
+                        <span class="slackmessage">❗️ 紧急更正：集合地点改到南门了！</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">静默的赞赏</h3>
+                        <p>
+                            高效的社区有着独特的<strong>“静默文化”</strong>：
+                        </p>
+                        <ul>
+                            <li><strong>点赞 / 表情回应</strong> 代表“收到”或“谢谢”。</li>
+                            <li><strong>引用回复</strong> 代表针对性讨论。</li>
+                        </ul>
+                        <p>
+                            不说话，往往就是最高的赞赏。它意味着沟通顺利结束，信道重新回归宁静，等待下一个有价值的信号（比如紧急变更）出现。
+                        </p>
+                        <p>
+                            把屏幕留给更有价值的信息，而不是你的队形。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明群里的“队形”已经<strong>严重影响了信息的传递</strong>。
+            </p>
+            <p>Inspired by <a href="https://github.com/torvalds">Linus Torvalds' Attitude</a> (Sort of...)</p>
+            <p>
+                <a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
