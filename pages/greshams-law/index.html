@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>格雷舍姆法则 | Gresham's Law Online</title>
+</head>
+
+<body>
+    <a href="/" class="nav-back">← 首页</a>
+
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">格雷舍姆法则</h1>
+                <span class="subtitle">Gresham's Law (网络版)</span>
+                <h2 class="lead">
+                    劣质内容驱逐优质内容。<br>
+                    标题党永远比深度文章更火。🔥
+                </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 流量至上</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="文章A" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">文章 A</span>
+                        <span class="slacktime">深度分析</span><br />
+                        <span class="slackmessage">《关于人工智能发展趋势的系统性分析与未来展望》</span>
+                    </div>
+                    <div class="slack" style="opacity: 0.5; text-align: center; padding: 15px;">
+                        <span class="slackmessage">阅读量：2,341 | 点赞：89</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="文章B" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">文章 B</span>
+                        <span class="slacktime">标题党</span><br />
+                        <span class="slackmessage">《震惊！AI要取代程序员了！百万人将失业！》</span>
+                    </div>
+                    <div class="slack" style="opacity: 0.5; text-align: center; padding: 15px;">
+                        <span class="slackmessage">阅读量：1,234,567 | 点赞：98,765</span>
+                    </div>
+                    <div class="slack" style="background: #ffebee; border-left: 4px solid #f44336;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            📉</div>
+                        <span class="slackname">&nbsp;&nbsp;结果</span>
+                        <span class="slacktime">&nbsp;&nbsp;悲剧</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;深度作者心灰意冷，转行写标题党了...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">劣币驱逐良币</h3>
+                        <p>
+                            经济学家格雷舍姆发现：当两种货币并存时，<strong>劣币会驱逐良币</strong>——人们会把好钱藏起来，把劣质货币花出去。
+                        </p>
+                        <p>
+                            <strong>在互联网上，同样的逻辑在运作：</strong>
+                        </p>
+                        <ul>
+                            <li>🎭 <strong>算法偏好：</strong>点击率高的内容获得更多曝光</li>
+                            <li>😱 <strong>情绪优先：</strong>愤怒、恐惧比理性更容易传播</li>
+                            <li>⏱️ <strong>注意力稀缺：</strong>标题党3秒抓住眼球，深度文章需要30分钟</li>
+                        </ul>
+                        <p>
+                            最终，创作者被迫向流量妥协，<strong>优质内容逐渐消失</strong>。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 主动寻找优质内容</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">行动</span><br />
+                        <span class="slackmessage">取消关注了一批标题党账号</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">行动</span><br />
+                        <span class="slackmessage">订阅了几个专业领域的newsletter</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打的内心独白</span>
+                        <span class="slacktime">行动</span><br />
+                        <span class="slackmessage">给写深度内容的创作者点赞、打赏、转发</span>
+                    </div>
+                    <div class="slack" style="background: #e8f5e9; border-left: 4px solid #4caf50;">
+                        <div
+                            style="width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            🌱</div>
+                        <span class="slackname">&nbsp;&nbsp;结果</span>
+                        <span class="slacktime">&nbsp;&nbsp;改变</span><br />
+                        <span class="slackmessage">&nbsp;&nbsp;信息质量提升，焦虑减少，思考深度增加</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">用行动投票</h3>
+                        <p>
+                            算法是根据你的行为来推荐内容的。<strong>你点击什么，就会看到更多什么。</strong>
+                        </p>
+                        <p><strong>你可以做的事：</strong></p>
+                        <ul>
+                            <li>🚫 <strong>不点击标题党：</strong>即使好奇也忍住</li>
+                            <li>⭐ <strong>主动寻找优质来源：</strong>订阅、收藏、书签</li>
+                            <li>💪 <strong>支持好内容：</strong>点赞、评论、付费</li>
+                            <li>📵 <strong>减少刷信息流：</strong>主动搜索取代被动接收</li>
+                        </ul>
+                        <p><strong>记住：</strong></p>
+                        <p>
+                            每一次点击都是一次投票。你的注意力决定了什么内容能活下来。<strong>别用你的点击喂养垃圾。</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明对方希望你能<strong>支持优质内容，远离标题党</strong>。
+            </p>
+            <p>原始概念：Thomas Gresham (16世纪经济学家)</p>
+            <p>
+                <a href="https://github.com/YOUR_USERNAME/dontbeadick" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

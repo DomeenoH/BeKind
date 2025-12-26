@@ -8,40 +8,59 @@
    but the source code seems to mostly enforce a specific look or use CSS variables. */
 
 :root {
-  --font-lato: "Lato", sans-serif;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Fonts */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-lato: var(--font-sans);
+  /* Overriding legacy font variable */
+
+  /* Base Colors - Zen-iOS Palette */
+  --ios-gray-base: #F2F2F7;
+  --ios-gray-cool: #F9F9FB;
+  --ios-blue: #007AFF;
+
+  /* Semantic Colors */
+  --background: var(--ios-gray-base);
+  --foreground: #1D1D1F;
+  /* Deep Dark */
+
+  /* Glass & Material */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.65);
+  --glass-blur: blur(50px);
+  --glass-border-inner: rgba(255, 255, 255, 0.6);
+  --glass-border-outer: rgba(229, 231, 235, 0.4);
+  /* gray-200/40 */
+
+  /* Shadows */
+  --shadow-float: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+  --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Radius */
+  --radius-lg: 40px;
+  --radius-md: 28px;
+  --radius-sm: 12px;
+
+  /* Legacy/Compatibility overrides to ensure smooth transition */
+  --card: #ffffff;
+  --card-foreground: #1D1D1F;
+  --popover: #ffffff;
+  --popover-foreground: #1D1D1F;
+  --primary: #1C1C1E;
+  /* Deep Dark for buttons */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2F2F7;
+  --secondary-foreground: #1D1D1F;
+  --muted: #F2F2F7;
+  --muted-foreground: #86868b;
+  /* Apple Style Gray */
+  --accent: rgba(255, 255, 255, 0.5);
+  --accent-foreground: #000000;
+  --destructive: #FF3B30;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.05);
+  --input: rgba(0, 0, 0, 0.05);
+  --ring: rgba(0, 0, 0, 0.1);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
@@ -225,29 +244,15 @@ footer a:hover {
 }
 
 body {
-  line-height: 1;
-  font-family:
-    var(--font-lato),
-    ubuntu,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  line-height: 1.5;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  color: #04143a;
-  background-color: #fefefe;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  font-size: 19px;
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: 16px;
+  /* Standardize base size */
+  margin: 0;
 }
 
 blockquote,
@@ -269,13 +274,17 @@ table {
 }
 
 p {
-  line-height: 31px;
-  font-size: 17px;
-  color: #15171a;
+  line-height: 1.625;
+  /* More breathing room */
+  font-size: 1.0625rem;
+  /* ~17px */
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
 }
 
 strong {
   font-weight: 600;
+  color: var(--foreground);
 }
 
 em {
@@ -290,13 +299,16 @@ footer {
 .container,
 footer {
   margin: 60px auto;
-  max-width: 1100px;
+  max-width: 1000px;
+  /* Slightly tighter for better reading */
   height: auto;
+  padding: 0 24px;
 }
 
 .hero {
   position: relative;
-  margin: 150px auto 200px auto;
+  margin: 80px auto 120px auto;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
@@ -307,30 +319,35 @@ footer {
 
 h1.name {
   display: inline-block;
-  font-size: 94px;
-  font-weight: 700;
-  text-decoration-color: #fff;
+  font-size: 3.5rem;
+  /* 56px */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
 }
 
 #strike {
-  text-decoration: line-through red !important;
-  -webkit-text-decoration: line-through red !important;
+  text-decoration: line-through var(--destructive) !important;
+  -webkit-text-decoration: line-through var(--destructive) !important;
   display: inline !important;
 }
 
 .subtitle {
   display: block;
-  font-size: 24px;
-  font-weight: 300;
-  color: #81899c;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
 .lead {
-  font-size: 44px;
-  font-weight: 300;
-  line-height: 55px;
-  margin-top: 60px;
+  font-size: 1.75rem;
+  /* ~28px */
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 3rem;
+  color: var(--foreground);
 }
 
 .sections {
@@ -340,49 +357,76 @@ h1.name {
 }
 
 .sectionleft {
-  width: 40%;
+  width: 45%;
+  /* Adjusted balance */
+  float: left;
 }
 
 .sectionright {
-  width: 59%;
+  width: 50%;
+  /* Adjusted balance */
+  float: right;
+  margin-top: 60px;
+  /* Vertical offset for dynamic layout */
+}
+
+/* Clearfix for floated sections */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .section-title {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
-.list-card.example {
-  background: #fff;
-  border-radius: 10px;
+/* Zen-iOS List Card */
+.list-card.example,
+.list-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
   box-shadow:
-    -20px 20px 60px #d9d9d9,
-    20px -20px 60px #fff;
-  padding: 25px 25px 10px 25px;
-  margin: 30px 80px;
-  /* adjusted */
-  -moz-box-shadow: 0px 0px 29px -4px rgba(0, 0, 0, 0.46);
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    var(--shadow-float);
+  background-clip: padding-box;
+  border-radius: var(--radius-md);
+
+  padding: 2rem;
+  margin: 0;
+  /* Managed by grid/layout now */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Reset legacy margins */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-[dir="ltr"] .list-card.example {
-  margin-left: 0;
-}
-
-[dir="rtl"] .list-card.example {
-  margin-right: 0;
+/* Specific override for right-side text cards to be simpler */
+.sectionright .list-card {
+  background: rgba(255, 255, 255, 0.4);
+  /* Slightly more transparent */
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 .list-card div {
   width: 100%;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  /* Fix inline-block weirdness */
 }
 
 .list-card .exp {
   font-weight: 600;
-  color: #4a90e2;
-
+  color: var(--ios-blue);
   width: 100px;
   margin-right: 15px;
   display: inline-block;
@@ -390,22 +434,23 @@ h1.name {
 }
 
 .list-card h3 {
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 600;
-  color: #5b6a9a;
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
 }
 
 .list-card div p {
-  color: #616061;
-  line-height: 24px;
-  font-size: 18px;
-  margin-bottom: 22px;
+  color: var(--foreground);
+  line-height: 1.625;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .list-card div p:first-of-type {
-  margin-top: 55px;
+  margin-top: 1rem;
 }
 
 .container ul {
@@ -641,11 +686,26 @@ h1.name {
 /* Navigation Back Link Override */
 .nav-back {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-weight: 700;
-  color: var(--text-color);
+  top: 24px;
+  left: 32px;
+  font-weight: 600;
+  color: var(--muted-foreground);
   z-index: 1000;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.nav-back:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--foreground);
+  transform: translateX(-4px);
 }
 
 /* Project-Specific Overrides & Helpers */
@@ -686,6 +746,56 @@ h1.name {
   margin: 0 auto;
 }
 
+/* --- Zen-iOS Utilities --- */
+
+/* Frosted Glass Container */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    /* Inner light stroke */
+    0 0 0 1px var(--glass-border-outer),
+    /* Outer defining stroke */
+    var(--shadow-float);
+  /* Floating depth */
+  background-clip: padding-box;
+  /* Ensures border transparency works */
+}
+
+/* Typography Standards */
+.text-header-xl {
+  font-weight: 800;
+  /* Extrabold */
+  letter-spacing: -0.025em;
+  /* Tracking tight */
+}
+
+.text-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* Tracking widest */
+  font-weight: 700;
+  /* Bold */
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+
+/* Interaction */
+.tactile-active:active {
+  transform: scale(0.96);
+  transition: transform 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Inset Depth (for inputs/slots) */
+.inset-depth {
+  background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-inset);
+  border-radius: var(--radius-md);
+}
+
 /* --- NEW HOMEPAGE OVERRIDES (Scoped) --- */
 
 .home-body,
@@ -694,20 +804,12 @@ h1.name {
 }
 
 .home-body {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --color-bg: oklch(0.98 0.005 240);
-  --color-fg: oklch(0.20 0.01 240);
-  --color-primary: oklch(0.25 0.02 250);
-  --color-muted: oklch(0.55 0.01 240);
-  --color-card-bg: #ffffff;
-  /* User requested WHITE */
-  --color-card-border: oklch(0.92 0.005 240);
-
   font-family: var(--font-sans) !important;
-  background-color: var(--color-bg) !important;
-  color: var(--color-fg) !important;
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
   min-height: 100vh;
   margin: 0;
+  /* Subtle background pattern/gradient if desired, but keeping it clean for now */
 }
 
 .home-body .home-hero {
@@ -717,89 +819,245 @@ h1.name {
 }
 
 .home-body h1.name {
-  font-size: 3.5rem;
-  letter-spacing: -0.05em;
+  font-family: "SF Pro Display", var(--font-sans);
+  font-size: 4rem;
+  font-weight: 800;
+  /* Extrabold */
+  letter-spacing: -0.04em;
   margin-bottom: 0.5rem;
-  color: var(--color-primary);
+  color: var(--foreground);
   display: block;
-  /* Override inline-block */
 }
 
 .home-body .subtitle {
-  font-size: 1.25rem;
-  color: var(--color-muted);
-  font-weight: 300;
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  font-weight: 400;
   letter-spacing: 0.02em;
   margin-bottom: 2rem;
 }
 
 .home-body .lead {
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 2.25rem;
+  font-weight: 400;
+  /* Thinner weight for elegance */
   margin-top: 3rem;
-  line-height: 1.4;
+  line-height: 1.3;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
 }
 
+/* Grid Layout */
 .home-body .home-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+  /* Increased spacing p-8 equivalent */
   margin-bottom: 6rem;
+  padding: 0 1rem;
 }
 
+/* Optimized Zen-iOS Card */
 .home-card {
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-card-border);
-  border-radius: 1rem;
+  /* Inherit Glass Traits explicitly or include .glass-panel in HTML */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    var(--shadow-float);
+  background-clip: padding-box;
+
+  border-radius: var(--radius-lg);
+  /* 40px - 50px */
   padding: 2.5rem 2rem;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
   display: flex !important;
-  /* Ensure flex is active */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* subtle shadow */
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  min-height: 220px;
+  min-height: 240px;
   width: 100%;
+
+  text-decoration: none;
+  /* Reset link underline */
+  color: inherit;
 }
 
+/* Hover State */
 .home-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
-  border-color: oklch(0.65 0.15 30);
-  /* Accent */
+  background: var(--glass-bg-hover);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 30px 60px -10px rgba(0, 0, 0, 0.12);
+  /* Deepened shadow */
 }
 
+/* Tactile Active State */
+.home-card:active {
+  transform: scale(0.98);
+  transition: transform 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Card Typography */
 .home-card h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  filter: grayscale(1);
-  transition: filter 0.3s ease;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: grayscale(1) opacity(0.8);
+  transition: all 0.4s ease;
 }
 
 .home-card:hover h2 {
-  filter: grayscale(0);
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.1);
 }
 
 .home-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-  color: var(--color-fg);
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .home-card .subtitle {
-  font-size: 0.875rem;
+  /* Applying .text-label specs here for the subtext */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--muted-foreground);
   margin-bottom: 0;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-/* Home Footer Override */
+/* Footer Override */
 .home-body footer {
-  background: none !important;
-  border-top: 1px solid var(--color-card-border);
-  padding: 4rem 0 !important;
-  margin: 0 auto !important;
+  border-top: 1px solid var(--glass-border-outer);
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  padding: 4rem 1rem !important;
+  margin-top: 0 !important;
+  /* Reset legacy float */
+  width: 100%;
+}
+
+/* Homepage Hover Explanation */
+.home-card .hover-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.9375rem;
+  /* 15px */
+  color: var(--muted-foreground);
+  margin-top: 0;
+  font-weight: 500;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+.home-card:hover .hover-text {
+  opacity: 1;
+  max-height: 60px;
+  /* ample space for 1-2 lines */
+  margin-top: 1rem;
+}
+
+/* Chat Image Placeholder */
+.chat-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  /* Stack icon and text for better centering */
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 140px;
+  /* Slightly taller to accommodate stack */
+  background-color: #eef0f7;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  /* Slightly smaller text */
+  font-weight: 500;
+  /* margin-left removed; using spacer div in HTML */
+  margin-bottom: 15px;
+  padding: 1rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.chat-image-placeholder::before {
+  content: "🖼️";
+  font-size: 2rem;
+  display: block;
+  /* Ensure it's treated as a flex child for column layout */
+}
+
+/* --- Share Button --- */
+.share-button-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    0 8px 24px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: var(--font-sans);
+}
+
+.share-button:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 12px 32px -8px rgba(0, 0, 0, 0.12);
+}
+
+.share-button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+
+.share-button.copied {
+  background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+  color: #fff;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(52, 199, 89, 0.3),
+    0 8px 24px -8px rgba(52, 199, 89, 0.3);
+}
+
+.share-button .icon {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.share-button:hover .icon {
+  transform: scale(1.1);
 }

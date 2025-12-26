@@ -51,7 +51,31 @@
                     想象一下别人接通你的电话时，你问 ："在吗？"<br />
                     然后等待对方回应…🤦
                 </h2>
+
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
+                </div>
             </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
         </div>
 
         <div class="container nonos">
@@ -169,22 +193,25 @@
 
         <footer>
             <p>
-                这不是非常严重的事情（一定程度上👀），所以请不要对送你来看这个网站的人
-                <a href="https://www.youtube.com/watch?v=xzpndHtdl9A">生气</a>。
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
             </p>
             <p>
-                也就是说，如果你看到某个人的状态 / 简介里包含这个网站的地址，那么你如果仅仅对他说："在吗" 或者
-                "你好"，就请做好被无视的心理准备。
+                如果你看到这个链接，说明他们很想帮你（或者这只是个自动回复），但你的“在吗”让他们不知从何答起。
             </p>
             <p>
                 本站点魔改自 <a href="https://nohello.net/zh-cn/">nohello.net</a> ，基于
                 <a href="https://web.archive.org/web/20131127020115/http://www.nohello.com/">nohello.com</a>
                 制作。头像取自多米诺和他对象。 原项目于 <a href="https://github.com/nohello-net/site">GitHub</a>开源。
             </p>
+            <p>
+                <a href="https://github.com/YOUR_USERNAME/dontbeadick" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
         </footer>
     </div>
 
 
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script type="module" src="/main.js"></script>
 </body>
 

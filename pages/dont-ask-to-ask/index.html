@@ -11,89 +11,163 @@
 <body>
     <a href="/" class="nav-back">← 首页</a>
 
-    <div class="container">
-        <div class="hero">
-            <h1 class="name">别问“能不能问”</h1>
-            <span class="subtitle">Don't Ask to Ask, Just Ask</span>
-            <h2 class="lead">直接抛出你的异常<br>别抛出你的 Ping</h2>
-        </div>
-    </div>
+    <div id="wholesite">
+        <div class="container">
+            <div class="hero">
+                <h1 class="name">拒绝谜语人</h1>
+                <span class="subtitle">Efficiency Hints</span>
+                <h2 class="lead">
+                    如果你不能在三句话内说清楚问题，<br>
+                    你可能还没有<strong>想清楚</strong>问题。
+                </h2>
 
-    <div class="container nonos">
-        <div class="sections sectionleft">
-            <h2 class="section-title">❌ 不要这样做</h2>
-            <div class="list-card example one">
-                <div class="slack">
-                    <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
-                    <span class="slackname">西打</span>
-                    <span class="slacktime">14:00</span><br />
-                    <span class="slackmessage">有人精通 Excel 吗？</span>
-                </div>
-                <div class="slack">
-                    <span class="slackname">...</span>
-                    <span class="slacktime">14:10</span><br />
-                    <span class="slackmessage">（全员沉默，没人敢接话）</span>
-                </div>
-                <div class="slack">
-                    <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
-                    <span class="slackname">西打</span>
-                    <span class="slacktime">14:15</span><br />
-                    <span class="slackmessage">有个小问题想请教一下...</span>
-                </div>
-                <div class="slack">
-                    <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
-                    <span class="slackname">多米诺</span>
-                    <span class="slacktime">14:16</span><br />
-                    <span class="slackmessage">👀 (心想：承认了就得帮你干活，我才不回)</span>
+                <div class="share-button-wrapper">
+                    <button class="share-button" onclick="copyShareText(this)">
+                        <span class="icon">📋</span>
+                        <span class="text">一键分享给朋友</span>
+                    </button>
                 </div>
             </div>
+            <script>
+                function copyShareText(btn) {
+                    const title = document.querySelector('h1.name').textContent;
+                    const url = window.location.href;
+                    const text = `这个或许对你有帮助 → ${title}：${url}`;
+                    navigator.clipboard.writeText(text).then(() => {
+                        btn.classList.add('copied');
+                        btn.querySelector('.icon').textContent = '✓';
+                        btn.querySelector('.text').textContent = '已复制到剪贴板';
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.querySelector('.icon').textContent = '📋';
+                            btn.querySelector('.text').textContent = '一键分享给朋友';
+                        }, 2000);
+                    });
+                }
+            </script>
         </div>
-        <div class="sections sectionright">
-            <div class="list-card">
-                <div>
-                    <h3 style="margin-top:0">为什么没人理你？</h3>
-                    <p>当你问“有没有人懂 X”时，你是在试图让潜在的回答者签署一份 <strong>空白支票</strong>。</p>
-                    <p>如果他们回答“是”，就不仅承认了自己懂，还隐含地承诺了要负责解决你的问题——无论这个问题有多么小白，或者多么难以回答。</p>
-                    <p>这给回答者带来了不必要的社交压力。</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container yepyep">
-        <div class="sections sectionleft">
-            <h2 class="section-title yepyep">✅ 试着这样做</h2>
-            <div class="list-card example two">
-                <div class="slack">
-                    <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
-                    <span class="slackname">西打</span>
-                    <span class="slacktime">14:00</span><br />
-                    <span class="slackmessage">我在用 Excel 的 VLOOKUP 匹配数据时一直报错 <code>#N/A</code>，这是截图 [Link]...
-                        这里只有两个表格对应不上，有人知道原因吗？</span>
+        <div class="container nonos">
+            <div class="sections sectionleft">
+                <h2 class="section-title">❌ 犯罪现场调查</h2>
+                <div class="list-card example one">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">14:00</span><br />
+                        <span class="slackmessage">投影仪坏了！救命！@多米诺</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">14:05</span><br />
+                        <span class="slackmessage">... 哪个会议室的？怎么坏了？不亮了还是没信号？线插好了吗？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">14:06</span><br />
+                        <span class="slackmessage">[一张模糊也看不清线插在哪里的照片.jpg]</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">14:07</span><br />
+                        <span class="slackmessage">😰 血压上来了... 我这就过去（又要爬三层楼）</span>
+                    </div>
                 </div>
-                <div class="slack">
-                    <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
-                    <span class="slackname">多米诺</span>
-                    <span class="slacktime">14:01</span><br />
-                    <span class="slackmessage">你的第二列数据格式不对，一个是文本一个是数字，统一一下就行。</span>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">把车钥匙扔给技师</h3>
+                        <p>
+                            这就好比你去修车店，把钥匙扔给技师说：<strong>“它坏了。”</strong> 然后转身就走。
+                        </p>
+                        <p>
+                            技师需要试驾、检查引擎、检查轮胎、排除电瓶问题... 你把自己也不懂的混乱，原封不动地抛给了别人。这是一种<strong>“负向工作的传递”</strong>。
+                        </p>
+                        <p>
+                            前者是 <strong style="color: #ef4444;">“谜语人”</strong>，后者是 <strong
+                                style="color: #22c55e;">“协作伙伴”</strong>。
+                        </p>
+                        <p>
+                            你需要提供的是 <strong style="background: rgba(255,255,0,0.2); padding: 0 4px;">“最小可复现单元” (Minimal
+                                Reproducible Example)</strong>。你把问题打包得越好，别人拆包（解决）的速度就越快。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="sections sectionright">
-            <div class="list-card">
-                <div>
-                    <h3 style="margin-top:0">直接问！</h3>
-                    <p>懂的人看到问题，如果会，顺手就回了。</p>
-                    <p>不懂的人，或者不想回的人，可以直接划走。</p>
-                    <p>这才是高效的异步沟通礼仪。</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <footer>
-        <p>Inspired by <a href="https://dontasktoask.com">dontasktoask.com</a></p>
-    </footer>
+        <div class="container yepyep">
+            <div class="sections sectionleft">
+                <h2 class="section-title yepyep">✅ 结构化思维</h2>
+                <div class="list-card example two">
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">14:00</span><br />
+                        <span class="slackmessage">多米诺，302 会议室的投影仪只有蓝屏，连不上我的 Mac。</span>
+                    </div>
+                    <div class="slack">
+                        <!-- Spacer to align with text (Avatar 42px) -->
+                        <div style="width: 42px; height: 42px; flex-shrink: 0;"></div>
+                        <!-- 模拟一张清晰的连线照片 -->
+                        <div class="chat-image-placeholder">
+                            [图片: HDMI接口.jpg]
+                        </div>
+                    </div>
+                    <div class="slack">
+                        <img alt="西打的头像" src="http://q1.qlogo.cn/g?b=qq&nk=2992332948&s=100" />
+                        <span class="slackname">西打</span>
+                        <span class="slacktime">14:00</span><br />
+                        <span class="slackmessage">我试过拔插 HDMI 线了，也换了同事的电脑试过，都不行。是不是线坏了？</span>
+                    </div>
+                    <div class="slack">
+                        <img alt="多米诺的头像" src="http://q1.qlogo.cn/g?b=qq&nk=287887313&s=100" />
+                        <span class="slackname">多米诺</span>
+                        <span class="slacktime">14:01</span><br />
+                        <span class="slackmessage">大概率是。柜子里有一根备用的 VGA 转接线，你先应付一下，我马上带根新线过去。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections sectionright">
+                <div class="list-card">
+                    <div>
+                        <h3 style="margin-top:0">提供线索，而非谜语</h3>
+                        <p>
+                            如果你对技师说：<strong>“当时速超过 80，踩刹车时，左前轮有异响。”</strong>
+                        </p>
+                        <p>
+                            技师只需要：<strong>检查左前轮刹车片</strong>。
+                        </p>
+                        <p>高质量的求助通常包含三个要素：</p>
+                        <ol>
+                            <li><strong>上下文 (Context)</strong>：地点？设备？你在干嘛？</li>
+                            <li><strong>现象 (Phenomenon)</strong>：具体的报错、蓝屏、异响。</li>
+                            <li><strong>尝试 (Attempt)</strong>：你已经试过什么方法了？（避免别人让你重启一遍）</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                这不是非常严重的事情，所以请不要对送你来看这个网站的人
+                <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+            </p>
+            <p>
+                如果你看到这个链接，说明他们很想帮你修好投影仪（或者其他东西），但是你的描述让他们<strong>无从下手</strong>。
+            </p>
+            <p>Inspired by <a href="https://dontasktoask.com">dontasktoask.com</a></p>
+            <p>
+                <a href="https://github.com/YOUR_USERNAME/dontbeadick" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © 2025
+            </p>
+        </footer>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script type="module" src="/main.js"></script>
 </body>
 
