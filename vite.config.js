@@ -1,23 +1,23 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import fs from 'fs'
+
+// 动态获取所有子页面入口
+const pagesDir = resolve(__dirname, 'pages')
+const pages = fs.readdirSync(pagesDir).reduce((acc, dir) => {
+    const fullPath = resolve(pagesDir, dir, 'index.html')
+    if (fs.existsSync(fullPath)) {
+        // 将连字符格式 (no-hello) 转换为驼峰或保持原样作为 key
+        acc[dir] = fullPath
+    }
+    return acc
+}, { main: resolve(__dirname, 'index.html') })
 
 export default defineConfig({
+    base: '/BeKind/', // GitHub Pages 仓库名路径
     build: {
         rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-                nohello: resolve(__dirname, 'pages/no-hello/index.html'),
-                xyproblem: resolve(__dirname, 'pages/xy-problem/index.html'),
-                dontasktoask: resolve(__dirname, 'pages/dont-ask-to-ask/index.html'),
-                itdidntwork: resolve(__dirname, 'pages/it-didnt-work/index.html'),
-                wheatonslaw: resolve(__dirname, 'pages/wheatons-law/index.html'),
-                smartquestions: resolve(__dirname, 'pages/smart-questions/index.html'),
-                cunninghamslaw: resolve(__dirname, 'pages/cunninghams-law/index.html'),
-                rubberduck: resolve(__dirname, 'pages/rubber-duck/index.html'),
-                bikeshedding: resolve(__dirname, 'pages/bike-shedding/index.html'),
-                yakshaving: resolve(__dirname, 'pages/yak-shaving/index.html'),
-                hanlonsrazor: resolve(__dirname, 'pages/hanlons-razor/index.html'),
-            },
+            input: pages,
         },
     },
 })
