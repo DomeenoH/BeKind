@@ -18,7 +18,7 @@ const pages = fs.readdirSync(pagesDir).reduce((acc, dir) => {
 }, { main: resolve(__dirname, 'index.html') })
 
 export default defineConfig({
-    base: '/BeKind/', // GitHub Pages 仓库名路径
+    base: '/', // 自定义域名使用根路径
     build: {
         rollupOptions: {
             input: pages,
