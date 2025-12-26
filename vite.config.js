@@ -1,6 +1,10 @@
-import { resolve } from 'path'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import fs from 'fs'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // 动态获取所有子页面入口
 const pagesDir = resolve(__dirname, 'pages')
