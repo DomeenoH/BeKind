@@ -688,8 +688,8 @@ h1.name {
   position: fixed;
   top: 24px;
   left: 50%;
-  margin-left: 520px;
-  /* Align to the right of the 1000px container */
+  margin-left: -500px;
+  /* Align to the left edge of the 1000px container */
 
   font-weight: 600;
   color: var(--muted-foreground);
@@ -702,14 +702,16 @@ h1.name {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 1200px) {
   .nav-back {
-    left: auto;
+    left: 20px;
     margin-left: 0;
-    right: 20px;
   }
 }
 
@@ -935,12 +937,16 @@ h1.name {
   }
 
   .nav-back {
-    position: static;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    right: auto;
     margin-left: 0;
+    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   /* Footer Fix for Mobile - Override the global 150px padding */
