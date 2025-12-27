@@ -685,9 +685,12 @@ h1.name {
 
 /* Navigation Back Link Override */
 .nav-back {
-  position: absolute;
+  position: fixed;
   top: 24px;
-  left: 32px;
+  left: 50%;
+  margin-left: 520px;
+  /* Align to the right of the 1000px container */
+
   font-weight: 600;
   color: var(--muted-foreground);
   z-index: 1000;
@@ -702,23 +705,23 @@ h1.name {
   background: transparent;
 }
 
+@media (max-width: 1200px) {
+  .nav-back {
+    left: auto;
+    margin-left: 0;
+    right: 20px;
+  }
+}
+
 .nav-back:hover {
   background: rgba(255, 255, 255, 0.5);
   color: var(--foreground);
-  transform: translateX(-4px);
+  transform: scale(1.05);
 }
 
 /* Project-Specific Overrides & Helpers */
 
-/* Navigation Back Link */
-.nav-back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-weight: 700;
-  color: var(--text-color);
-  z-index: 1000;
-}
+
 
 /* Ensure Card Grid works if parent is block */
 .card-grid {
@@ -728,15 +731,7 @@ h1.name {
 
 /* Project-Specific Overrides & Helpers */
 
-/* Navigation Back Link */
-.nav-back {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-weight: 700;
-  color: var(--text-color);
-  z-index: 1000;
-}
+
 
 /* Ensure Card Grid works if parent is block */
 .card-grid {
