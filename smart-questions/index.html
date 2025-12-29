@@ -15,30 +15,9 @@
         <div class="hero">
             <h1 class="name">提问的智慧</h1>
             <span class="subtitle">How To Ask Questions The Smart Way</span>
-            <div class="share-button-wrapper">
-                <button class="share-button" onclick="copyShareText(this)">
-                    <span class="icon">📋</span>
-                    <span class="text">一键分享给朋友</span>
-                </button>
-            </div>
+            <div class="share-button-wrapper"></div>
         </div>
-        <script>
-            function copyShareText(btn) {
-                const title = document.querySelector('h1.name').textContent;
-                const url = window.location.href;
-                const text = `这个或许对你有帮助 → ${title}：${url}`;
-                navigator.clipboard.writeText(text).then(() => {
-                    btn.classList.add('copied');
-                    btn.querySelector('.icon').textContent = '✓';
-                    btn.querySelector('.text').textContent = '已复制到剪贴板';
-                    setTimeout(() => {
-                        btn.classList.remove('copied');
-                        btn.querySelector('.icon').textContent = '📋';
-                        btn.querySelector('.text').textContent = '一键分享给朋友';
-                    }, 2000);
-                });
-            }
-        </script>
+        
     </div>
 
     <div class="container nonos">
