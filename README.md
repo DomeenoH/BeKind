@@ -81,4 +81,4 @@
 
 ## 📈 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=DomeenoH/BeKind&type=Date)](https://star-history.com/#DomeenoH/BeKind&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=DomeenoH/BeKind&type=timeline&logscale&legend=top-left)](https://www.star-history.com/#DomeenoH/BeKind&type=timeline&logscale&legend=top-left)
