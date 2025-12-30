@@ -78,3 +78,7 @@
 如果这个项目对你有帮助，欢迎 **Star** 或分享给那个让你抓狂的朋友（当然，请遵循 BeKind 原则，友善地分享 😉）。
 
 **Be Kind. Be Smart. Be Human.**
+
+## 📈 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=DomeenoH/BeKind&type=Date)](https://star-history.com/#DomeenoH/BeKind&Date)
