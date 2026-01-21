@@ -31,6 +31,8 @@
 *   **[Signal vs Noise (拒绝过度客套)](/no-pointless-politeness/)**：别让礼貌的废话淹没了真正的信息。
 *   **[Postel's Law (波斯特尔法则)](/postels-law/)**：严以律己，宽以待人。发消息时谨慎，收消息时宽容。
 *   **[Three Strikes (三振出局)](/three-strikes/)**：三次文字交锋未能解决，请立即切换为语音或电话。
+*   **[TL;DR (太长不看)](/tldr/)**：提供摘要，尊重读者时间。先说结论，再给细节。
+*   **[RTFM (读该死的手册)](/rtfm/)**：提问之前，请先查阅文档。
 
 ### 2. 认知思维剃刀 (Cognitive Razors)
 *剔除复杂假设，直抵问题本质。*
@@ -39,7 +41,9 @@
 *   **[Sturgeon's Law (斯特金定律)](/sturgeons-law/)**：90% 的东西都是垃圾。学会筛选，保护你的注意力。
 *   **[Rubber Duck (小黄鸭调试)](/rubber-duck/)**：向你的桌角（或鸭子）解释问题，答案往往就在嘴边。
 *   **[Cunningham's Law (坎宁安定律)](/cunninghams-law/)**：想得到正确答案？与其提问，不如先发一个错误的答案。
-*   **[It Didn't Work (它挂了)](/it-didnt-work/)**：“坏了”不是 Bug 报告，请提供复现步骤和环境细节。
+*   **[It Didn't Work (它挂了)](/it-didnt-work/)**："坏了"不是 Bug 报告，请提供复现步骤和环境细节。
+*   **[Occam's Razor (奥卡姆剃刀)](/occams-razor/)**：如无必要，勿增实体。最简单的解释往往是正确的。
+*   **[Hitchens's Razor (希钦斯剃刀)](/hitchens-razor/)**：无证据提出的主张，可以无证据驳回。
 
 ### 3. 系统与人性 (System & Humanity)
 *理解系统运作规律，洞察人性弱点。*
@@ -52,6 +56,8 @@
 *   **[Gresham's Law (格雷舍姆法则)](/greshams-law/)**：劣币驱逐良币。别喂养标题党，别为垃圾内容贡献流量。
 *   **[Wheaton's Law (惠顿定律)](/wheatons-law/)**：核心元规则——Don't be a dick (别当混蛋)。
 *   **[Dunning-Kruger Effect (邓宁-克鲁格效应)](/dunning-kruger/)**：越无知越自信。保持谦逊，因为我们可能都是那个“愚昧之山”上的攀登者。
+*   **[Poe's Law (波定律)](/poes-law/)**：没有表情符号，讽刺与真话难以区分。记得加个狗头保命。
+*   **[Brandolini's Law (布兰多里尼定律)](/brandolinis-law/)**：反驳胡说八道的能量是制造它的十倍。挑选你的战场。
 
 ## 🎨 设计哲学 (Design Philosophy)
 
