@@ -1,6 +1,7 @@
 ---
 import CharacterAvatar from './CharacterAvatar.astro';
 import type { ChatScene as ChatSceneType } from '../data/law-types';
+import { getChatLinePresentations } from '../lib/chat-scene';
 
 interface Props {
   scene: ChatSceneType;
@@ -8,40 +9,29 @@ interface Props {
 }
 
 const { scene, variant } = Astro.props;
-const displayLines = scene.lines.map((line, index) => ({
-  line,
-  isContinuation: Boolean(line.character && scene.lines[index - 1]?.character === line.character),
-  isSystem: !line.character && !line.avatarUrl,
-  isOutgoing: (line.character ?? (line.rawHtml ? scene.lines[index - 1]?.character : undefined)) === 'cider',
-  isBeforeSystem: Boolean(
-    line.character
-      && scene.lines[index + 1]
-      && !scene.lines[index + 1].character
-      && !scene.lines[index + 1].avatarUrl
-  ),
-}));
+const displayLines = getChatLinePresentations(scene.lines);
 ---
 
 <section class={`container comparison-section chat-bubble-scene ${variant === 'bad' ? 'nonos' : 'yepyep'}`} aria-label={variant === 'bad' ? '错误示例' : '改进示例'}>
   <div class="sections sectionleft">
     <h2 class="section-title" set:html={scene.titleHtml} />
     <div class={`list-card example ${variant === 'bad' ? 'one' : 'two'}`}>
-      {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, isBeforeSystem }) => (
+      {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, isBeforeSystem, hasAvatar, messageHtml, lineStyle }) => (
         line.rawHtml ? (
-          <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} style={line.style} set:html={line.rawHtml} />
+          <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} style={lineStyle} set:html={line.rawHtml} />
         ) : (
-          <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}${isBeforeSystem ? ' is-before-system' : ''}`} style={line.style}>
+          <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}${isBeforeSystem ? ' is-before-system' : ''}`} style={lineStyle}>
             {isContinuation ? (
               <span class="chat-avatar-spacer" aria-hidden="true"></span>
-            ) : line.character ? (
+            ) : hasAvatar && line.character ? (
               <CharacterAvatar character={line.character} size={42} />
-            ) : line.avatarUrl ? (
+            ) : hasAvatar && line.avatarUrl ? (
               <span class="external-avatar" aria-hidden="true"><img src={line.avatarUrl} alt="" width="42" height="42" loading="lazy" /></span>
-            ) : (
+            ) : hasAvatar ? (
               <span class="external-avatar avatar-initial" aria-hidden="true">
-                {line.name === '小黄鸭' ? '🦆' : line.name?.slice(0, 1)}
+                🦆
               </span>
-            )}
+            ) : null}
             <div class="slack-copy">
               {!isContinuation && (
                 <div class="slack-meta">
@@ -49,7 +39,7 @@ const displayLines = scene.lines.map((line, index) => ({
                   {line.time && <span class="slacktime">{line.time}</span>}
                 </div>
               )}
-              <span class="slackmessage" set:html={line.html} />
+              <span class="slackmessage" set:html={messageHtml} />
             </div>
           </div>
         )

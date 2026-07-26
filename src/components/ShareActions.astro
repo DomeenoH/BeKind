@@ -2,6 +2,7 @@
 import { Copy, Download, Image, X } from 'lucide-astro';
 import type { Law } from '../data/law-types';
 import { orderedLaws } from '../data/laws';
+import { getSharePosterContent } from '../lib/share-poster';
 
 interface Props {
   law: Law;
@@ -10,14 +11,7 @@ interface Props {
 const { law } = Astro.props;
 const shareUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin);
 const displayHost = shareUrl.hostname;
-const posterIndex = String(law.order).padStart(2, '0');
-const posterTitleClass = law.title.length >= 8 ? 'is-long' : '';
-const badLines = law.bad?.lines.map((line) => line.text.trim()).filter(Boolean) ?? [];
-const goodLines = law.good?.lines.map((line) => line.text.trim()).filter(Boolean) ?? [];
-const badLineSet = new Set(badLines);
-const goodLineSet = new Set(goodLines);
-const badExample = badLines.find((line) => !goodLineSet.has(line)) ?? badLines[0];
-const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines[0];
+const { indexLabel, titleClass, badExample, goodExample } = getSharePosterContent(law, orderedLaws.length);
 ---
 
 <div class="share-root" data-share-root data-title={law.title} data-share-url={shareUrl.href}>
@@ -33,7 +27,7 @@ const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines
     <span class="share-feedback" data-share-feedback aria-live="polite"></span>
   </div>
 
-  <div class="share-poster" data-share-poster aria-hidden="true">
+  <div class="share-poster" data-share-poster data-poster-width="600" data-poster-height="800" aria-hidden="true">
     <div class="poster-header">
       <div class="poster-brand">
         <span class="poster-mark" aria-hidden="true">{law.icon}</span>
@@ -42,22 +36,28 @@ const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines
           <span>互联网沟通指北</span>
         </div>
       </div>
-      <span class="poster-index">{posterIndex} / {orderedLaws.length}</span>
+      <span class="poster-index">{indexLabel}</span>
     </div>
 
     <div class="poster-main">
       <span class="poster-english">{law.englishTitle}</span>
-      <h2 class={posterTitleClass}>{law.title}</h2>
+      <h2 class={titleClass}>{law.title}</h2>
       <p class="poster-summary">{law.summary}</p>
 
       {badExample && goodExample && (
         <div class="poster-comparison">
           <div class="poster-example poster-example-bad">
-            <span aria-hidden="true">✕</span>
+            <div class="poster-example-label">
+              <span aria-hidden="true">✕</span>
+              <strong>错误示例</strong>
+            </div>
             <p>{badExample}</p>
           </div>
           <div class="poster-example poster-example-good">
-            <span aria-hidden="true">✓</span>
+            <div class="poster-example-label">
+              <span aria-hidden="true">✓</span>
+              <strong>改进示例</strong>
+            </div>
             <p>{goodExample}</p>
           </div>
         </div>
@@ -67,7 +67,7 @@ const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines
     <div class="poster-footer">
       <div>
         <strong>{displayHost}</strong>
-        <span>扫描二维码查看详情</span>
+        <span>查看完整示例与说明</span>
       </div>
       <canvas width="96" height="96" data-share-qr></canvas>
     </div>
@@ -162,6 +162,8 @@ const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines
       generateButton.innerHTML = '<span class="button-loader" aria-hidden="true"></span><span>生成中</span>';
 
       try {
+        const posterWidth = Number(poster.dataset.posterWidth ?? 600);
+        const posterHeight = Number(poster.dataset.posterHeight ?? 800);
         await QRCode.toCanvas(qr, posterUrl, {
           width: 96,
           margin: 1,
@@ -172,8 +174,10 @@ const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines
           useCORS: true,
           backgroundColor: '#ffffff',
           logging: false,
-          width: 600,
-          height: 760,
+          width: posterWidth,
+          height: posterHeight,
+          windowWidth: posterWidth,
+          windowHeight: posterHeight,
         });
         const imageUrl = canvas.toDataURL('image/png');
         preview.src = imageUrl;

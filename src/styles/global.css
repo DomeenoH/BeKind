@@ -1468,10 +1468,12 @@ h1.name,
 
 .slack-copy {
   min-width: 0;
-  flex: 1;
+  max-width: calc(100% - 48px);
+  flex: 0 1 auto;
 }
 
 .comparison-section .list-card.example .slack {
+  display: flex;
   gap: 10px;
   padding-bottom: 0;
 }
@@ -1518,11 +1520,18 @@ h1.name,
 }
 
 .comparison-section .slack.is-outgoing {
-  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .comparison-section .slack.is-outgoing .slack-copy {
+  order: 1;
   text-align: right;
+}
+
+.comparison-section .slack.is-outgoing > .character-avatar,
+.comparison-section .slack.is-outgoing > .external-avatar,
+.comparison-section .slack.is-outgoing > .chat-avatar-spacer {
+  order: 2;
 }
 
 .comparison-section .slack.is-outgoing .slack-meta {
@@ -1584,6 +1593,11 @@ h1.name,
   box-shadow: none !important;
   opacity: 1 !important;
   text-align: left !important;
+}
+
+.comparison-section .chat-line-system .slack-copy {
+  max-width: 100%;
+  flex: 1;
 }
 
 .comparison-section .chat-line-system .external-avatar {
@@ -1727,33 +1741,43 @@ h1.name,
   top: 0;
   left: -10000px;
   width: 600px;
-  height: 760px;
-  padding: 40px 44px 34px;
+  height: 800px;
+  padding: 34px 40px 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   color: #1d1d1f;
-  background: #f2f2f7;
+  background: #f4f4f7;
   text-align: left;
 }
 
 .poster-header {
   width: 100%;
+  min-height: 50px;
+  padding-bottom: 18px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
+  border-bottom: 1px solid rgba(29, 29, 31, 0.1);
 }
 
 .poster-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .poster-mark {
-  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
   line-height: 1;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 50%;
 }
 
 .poster-brand div {
@@ -1764,7 +1788,7 @@ h1.name,
 
 .poster-brand strong {
   color: #1d1d1f;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
 }
 
@@ -1776,27 +1800,26 @@ h1.name,
 }
 
 .poster-index {
-  padding-top: 4px;
   font-variant-numeric: tabular-nums;
 }
 
 .poster-main {
   width: 100%;
-  margin-top: 72px;
+  margin-top: 38px;
 }
 
 .poster-main h2 {
   max-width: 520px;
-  margin: 10px 0 20px;
+  margin: 8px 0 12px;
   color: #1d1d1f;
-  font-size: 62px;
-  line-height: 1.08;
+  font-size: 50px;
+  line-height: 1.1;
   font-weight: 800;
   word-break: break-word;
 }
 
 .poster-main h2.is-long {
-  font-size: 50px;
+  font-size: 42px;
 }
 
 .poster-english {
@@ -1808,69 +1831,85 @@ h1.name,
 }
 
 .poster-summary {
-  max-width: 500px;
+  max-width: 510px;
   margin: 0;
   color: #3a3a3c;
-  font-size: 25px;
-  line-height: 1.42;
+  font-size: 20px;
+  line-height: 1.45;
   font-weight: 600;
 }
 
 .poster-comparison {
   width: 100%;
-  min-height: 158px;
-  margin-top: 36px;
-  padding: 22px 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 24px;
-  border-top: 1px solid rgba(29, 29, 31, 0.12);
-  border-bottom: 1px solid rgba(29, 29, 31, 0.12);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .poster-example {
   min-width: 0;
-  display: grid;
-  grid-template-columns: 22px minmax(0, 1fr);
-  align-content: start;
-  gap: 10px;
+  min-height: 112px;
+  padding: 16px 20px 18px;
+  border: 1px solid rgba(29, 29, 31, 0.07);
+  border-left-width: 4px;
+  border-radius: 8px;
 }
 
-.poster-example + .poster-example {
-  padding-left: 24px;
-  border-left: 1px solid rgba(29, 29, 31, 0.12);
+.poster-example-bad {
+  background: #f6eceb;
+  border-left-color: #a4483e;
 }
 
-.poster-example > span {
-  font-size: 20px;
-  line-height: 1.35;
+.poster-example-good {
+  background: #eaf2ed;
+  border-left-color: #367b4f;
+}
+
+.poster-example-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.poster-example-label span {
+  font-size: 16px;
   font-weight: 800;
 }
 
-.poster-example-bad > span {
+.poster-example-label strong {
+  color: #616061;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.poster-example-bad .poster-example-label span {
   color: #a4483e;
 }
 
-.poster-example-good > span {
+.poster-example-good .poster-example-label span {
   color: #367b4f;
 }
 
 .poster-example p {
   margin: 0;
   overflow: hidden;
-  color: #3a3a3c;
-  font-size: 17px;
-  line-height: 1.5;
-  font-weight: 500;
+  color: #2c2c2e;
+  font-size: 19px;
+  line-height: 1.42;
+  font-weight: 600;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 3;
 }
 
 .poster-footer {
   width: 100%;
   margin-top: auto;
-  padding-top: 20px;
+  padding-top: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1886,7 +1925,7 @@ h1.name,
 
 .poster-footer span {
   color: #86868b;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .poster-footer strong {
@@ -1896,9 +1935,9 @@ h1.name,
 }
 
 .poster-footer canvas {
-  width: 96px;
-  height: 96px;
-  flex: 0 0 96px;
+  width: 92px;
+  height: 92px;
+  flex: 0 0 92px;
   display: block;
 }
 

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { characters, qqAvatarUrl } from './characters';
 import { orderedLaws } from './laws';
+import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
   it('keeps all 30 routes unique and ordered', () => {
@@ -60,5 +61,37 @@ describe('BeKind content registry', () => {
     ['把话一次说够', '这样聊很费劲', '现在就能改', '说开一点'].forEach((phrase) => {
       expect(content).not.toContain(phrase);
     });
+  });
+
+  it('keeps system rows avatar-free and Cider on the outgoing side', () => {
+    const law = orderedLaws.find((entry) => entry.slug === 'no-pointless-politeness');
+    const badLines = getChatLinePresentations(law?.bad?.lines ?? []);
+    const goodLines = getChatLinePresentations(law?.good?.lines ?? []);
+
+    const cider = badLines.find(({ line }) => line.character === 'cider');
+    const summary = badLines.find(({ line }) => line.name?.includes('其他 48 个人'));
+    const reaction = goodLines.find(({ line }) => line.text.includes('👍 86'));
+
+    expect(cider).toMatchObject({ side: 'right', hasAvatar: true });
+    expect(summary).toMatchObject({ isSystem: true, hasAvatar: false });
+    expect(reaction).toMatchObject({ isSystem: true, hasAvatar: false });
+  });
+
+  it('drops legacy row decoration from character messages', () => {
+    const law = orderedLaws.find((entry) => entry.slug === 'yak-shaving');
+    const lines = getChatLinePresentations(law?.bad?.lines ?? []);
+    const domino = lines.find(({ line }) => line.character === 'domino');
+
+    expect(domino?.lineStyle).toBeUndefined();
+    expect(domino?.messageHtml).toBe('你不是说今天2点来接我吗？人呢？');
+  });
+
+  it('names bot327 as 群友 in every visible scene', () => {
+    const botLines = orderedLaws
+      .flatMap((law) => [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])])
+      .filter((line) => line.character === 'bot327');
+
+    expect(botLines.length).toBeGreaterThan(0);
+    expect(botLines.every((line) => line.name === '群友')).toBe(true);
   });
 });

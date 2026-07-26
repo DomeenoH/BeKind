@@ -557,7 +557,7 @@ const laws: Law[] = [
         },
         {
           "character": "bot327",
-          "name": "群友 bot",
+          "name": "群友",
           "time": "10:33 上午",
           "text": "你们都out了，现在流行京味斋，环境好价格也实惠。",
           "html": "你们都out了，现在流行京味斋，环境好价格也实惠。"
@@ -717,7 +717,7 @@ const laws: Law[] = [
         },
         {
           "character": "bot327",
-          "name": "群友 bot",
+          "name": "群友",
           "time": "2:08 下午",
           "text": "我觉得深蓝色比较高端...",
           "html": "我觉得深蓝色比较高端..."
