@@ -1,90 +1,52 @@
-# BeKind | 互联网沟通指北
+# BeKind · 互联网沟通指北
 
-> **A Compass for Modern Internet Citizen**  
-> 一份现代互联网生存与沟通的元规则指南，致每一位试图在数字世界中保持理性的我们。
-> 
-> **👉 在线阅读：[bk.0x0.cat](http://bk.0x0.cat)**
+BeKind 收录 30 条互联网沟通法则、思维剃刀和网络行为原则。每篇内容都从一段具体群聊开始，由多米诺、西打、尾巴和其他 bot 把坏示范与可用说法演出来。
 
-![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey.svg)
-![Status](https://img.shields.io/badge/Status-Active-success)
+线上地址：[bk.0x0.cat](https://bk.0x0.cat)
 
-## 📖 宣言 (Manifesto)
+## 项目结构
 
-在信息爆炸与情绪碎片的洪流中，互联网似乎变得越来越喧嚣，也越来越充满敌意。我们常常在无效沟通中消耗精力，在无意冒犯中引发冲突。
+项目使用 Astro 生成纯静态页面，保留 `/no-hello/`、`/xy-problem/` 等原有 URL，并由 GitHub Pages 发布。
 
-**BeKind** 不仅仅是一个网站，它是一次关于“如何做个好网友”的系统性梳理。
+```text
+src/
+├── components/       # 法则卡片、群聊场景、头像与分享卡
+├── data/
+│   ├── characters.ts # 角色姓名、QQ 号与实时头像地址
+│   └── laws.ts       # 30 条法则的内容真源
+├── layouts/          # 站点公共布局与 SEO 元信息
+├── pages/            # 首页、详情动态路由与 404
+└── styles/           # 全站视觉系统
+```
 
-我们收集了 20+ 条历经时间检验的互联网定律（Laws）与哲学剃刀（Razors），结合极简主义的设计美学，为你呈现一份清晰、安静且富有物理质感的阅读体验。
+## 本地开发
 
-## 🧭 法则索引 (The Laws)
+```bash
+npm install
+npm run dev
+```
 
-我们将这些法则分为三个维度，帮助你建立立体的互联网认知模型：
+默认地址为 `http://localhost:4321`。
 
-### 1. 高效沟通协议 (Communication Protocols)
-*优化信号传输，减少噪音与误解。*
+## 验证
 
-*   **[No Hello (别只说你好)](/no-hello/)**：异步沟通的黄金法则，直接发送你的问题。
-*   **[Bottom Line Up Front (BLUF 原则)](/bluf/)**：像军队简报一样，先说结论，再谈细节。
-*   **[Smart Questions (提问的智慧)](/smart-questions/)**：学会提问，是对他人时间最大的尊重，也是对自己最大的负责。
-*   **[XY Problem (XY 问题)](/xy-problem/)**：不要问你认为的解决方案，直接问你遇到的根本问题。
-*   **[Don't Ask to Ask (拒绝谜语人)](/dont-ask-to-ask/)**：直接问问题，别问"我能不能问问题"。
-*   **[Signal vs Noise (拒绝过度客套)](/no-pointless-politeness/)**：别让礼貌的废话淹没了真正的信息。
-*   **[Postel's Law (波斯特尔法则)](/postels-law/)**：严以律己，宽以待人。发消息时谨慎，收消息时宽容。
-*   **[Three Strikes (三振出局)](/three-strikes/)**：三次文字交锋未能解决，请立即切换为语音或电话。
-*   **[TL;DR (太长不看)](/tldr/)**：提供摘要，尊重读者时间。先说结论，再给细节。
-*   **[RTFM (读该死的手册)](/rtfm/)**：提问之前，请先查阅文档。
+```bash
+npm test
+npm run build
+```
 
-### 2. 认知思维剃刀 (Cognitive Razors)
-*剔除复杂假设，直抵问题本质。*
+测试会检查路由数量、顺序、内容完整性、角色引用和尾巴的 QQ 身份。构建产物输出到 `dist/`。
 
-*   **[Hanlon's Razor (汉隆剃刀)](/hanlons-razor/)**：能解释为愚蠢的，就不要解释为恶意。这是保持心理健康的第一法则。
-*   **[Sturgeon's Law (斯特金定律)](/sturgeons-law/)**：90% 的东西都是垃圾。学会筛选，保护你的注意力。
-*   **[Rubber Duck (小黄鸭调试)](/rubber-duck/)**：向你的桌角（或鸭子）解释问题，答案往往就在嘴边。
-*   **[Cunningham's Law (坎宁安定律)](/cunninghams-law/)**：想得到正确答案？与其提问，不如先发一个错误的答案。
-*   **[It Didn't Work (它挂了)](/it-didnt-work/)**："坏了"不是 Bug 报告，请提供复现步骤和环境细节。
-*   **[Occam's Razor (奥卡姆剃刀)](/occams-razor/)**：如无必要，勿增实体。最简单的解释往往是正确的。
-*   **[Hitchens's Razor (希钦斯剃刀)](/hitchens-razor/)**：无证据提出的主张，可以无证据驳回。
+## 角色与头像
 
-### 3. 系统与人性 (System & Humanity)
-*理解系统运作规律，洞察人性弱点。*
+| 角色 | QQ | 身份 |
+| --- | --- | --- |
+| 多米诺 | `287887313` | 站点作者 |
+| 西打 | `2992332948` | 主要互动角色 |
+| 尾巴 | `2033886359` | coffee truck IP，furry 小狗 |
 
-*   **[Bike Shedding (自行车棚效应)](/bike-shedding/)**：警惕团队在鸡毛蒜皮的小事上浪费过多时间。
-*   **[Yak Shaving (剪牦牛毛)](/yak-shaving/)**：别为了煮面条而跑去修车，时刻记得你的初心。
-*   **[Echo Chamber (回声室效应)](/echo-chamber/)**：警惕算法为你构建的舒适牢笼，主动寻求异见。
-*   **[Online Disinhibition (在线解除抑制)](/online-disinhibition/)**：隔着屏幕，我们容易变成魔鬼。请时刻记住：屏幕对面是活生生的人。
-*   **[Assume Public (假设公开原则)](/assume-public/)**：在这个时代，没有绝对的秘密。
-*   **[Gresham's Law (格雷舍姆法则)](/greshams-law/)**：劣币驱逐良币。别喂养标题党，别为垃圾内容贡献流量。
-*   **[Wheaton's Law (惠顿定律)](/wheatons-law/)**：核心元规则——Don't be a dick (别当混蛋)。
-*   **[Dunning-Kruger Effect (邓宁-克鲁格效应)](/dunning-kruger/)**：越无知越自信。保持谦逊，因为我们可能都是那个“愚昧之山”上的攀登者。
-*   **[Poe's Law (波定律)](/poes-law/)**：没有表情符号，讽刺与真话难以区分。记得加个狗头保命。
-*   **[Brandolini's Law (布兰多里尼定律)](/brandolinis-law/)**：反驳胡说八道的能量是制造它的十倍。挑选你的战场。
+头像通过 `q1.qlogo.cn` 的 HTTPS 接口实时获取，不保存到仓库。角色更换 QQ 头像后，页面会继续拉取当前头像。
 
-## 🎨 设计哲学 (Design Philosophy)
+## 内容与授权
 
-本项目采用独特的设计语言：
-
-1.  **磨砂玻璃 (Frosted Glass)**：使用高斯模糊与半透明层级，模拟现实世界的物理景深。
-2.  **触觉反馈 (Tactile Response)**：按钮与卡片具有明确的按压与回弹动效，赋予数字内容实体感。
-3.  **呼吸感 (Breathing Space)**：精心调校的全部排版与间距，特别是对特殊引用块的 `&nbsp;&nbsp;` 微调，确保视觉的绝对舒适。
-4.  **一键分享 (One-Tap Share)**：在每篇文章顶部，我们集成了无干扰的分享按钮，助你优雅地传播善意。
-
-## 📄 授权 (License)
-
-本项目的内容与代码分别采用不同的开源协议，以适应其不同的属性：
-
-*   **内容 (Content)**：采用 **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** 国际许可协议。
-    *   你可以自由分享、修改本文档内容，但通过任何方式使用时必须注明原作者及出处。
-    *   部分内容编译自互联网公开资料（如 Wikipedia, nohello.net 等），版权归原作者所有。
-
-*   **代码 (Code)**：采用 **[MIT License](LICENSE)**（作为底层构建逻辑的授权）。
-    *   你可以自由使用本网站的代码结构、设计系统及组件库来构建你自己的项目。
-
----
-
-如果这个项目对你有帮助，欢迎 **Star** 或分享给那个让你抓狂的朋友（当然，请遵循 BeKind 原则，友善地分享 😉）。
-
-**Be Kind. Be Smart. Be Human.**
-
-## 📈 Star History
-
-[![Star History Chart](https://starchart.cc/DomeenoH/BeKind.svg?variant=adaptive)](https://starchart.cc/DomeenoH/BeKind)
+每篇法则都在页面底部标注来源或延伸阅读。编排与译文采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，代码采用 [MIT License](LICENSE)。

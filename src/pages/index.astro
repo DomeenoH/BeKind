@@ -1,0 +1,72 @@
+---
+import { Search } from 'lucide-astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LawCard from '../components/LawCard.astro';
+import { orderedLaws } from '../data/laws';
+---
+
+<BaseLayout
+  description="本项目旨在收录互联网时代的沟通礼仪与常见反模式，帮助大家成为更高效、更友善的网络公民。"
+  bodyClass="home-body"
+>
+  <div class="container">
+    <header class="home-hero">
+      <h1 class="name">互联网沟通指北</h1>
+      <span class="subtitle">收录互联网时代的沟通礼仪</span>
+      <h2 class="lead">别当混蛋。<br />做个好网友。</h2>
+
+      <label class="home-search">
+        <span class="sr-only">搜索法则</span>
+        <Search size={20} aria-hidden="true" />
+        <input type="search" placeholder="搜索法则" data-law-search />
+      </label>
+      <span class="sr-only" data-result-count aria-live="polite">30 条</span>
+    </header>
+
+    <div class="home-card-grid" id="laws">
+      {orderedLaws.map((law) => <LawCard law={law} />)}
+    </div>
+    <p class="empty-results" data-empty-results hidden>没有找到相关法则。</p>
+
+    <footer>
+      <p>
+        这不是非常严重的事情，所以请不要对送你来看这个网站的人
+        <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
+      </p>
+      <p>本项目旨在收录互联网时代的沟通礼仪与常见反模式，帮助大家成为更高效、更友善的网络公民。</p>
+      <p>
+        <a href="https://github.com/DomeenoH/BeKind" target="_blank" rel="noreferrer">GitHub</a> ·
+        编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · © 2025
+      </p>
+      <p>
+        <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span> ·
+        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+      </p>
+    </footer>
+  </div>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script is:inline>
+    const search = document.querySelector('[data-law-search]');
+    const cards = [...document.querySelectorAll('[data-law-card]')];
+    const resultCount = document.querySelector('[data-result-count]');
+    const empty = document.querySelector('[data-empty-results]');
+
+    function applyFilters() {
+      const query = search?.value.trim().toLocaleLowerCase('zh-CN') ?? '';
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search?.includes(query);
+        card.hidden = !matchesQuery;
+        if (matchesQuery) visibleCount += 1;
+      });
+
+      if (resultCount) resultCount.textContent = `${visibleCount} 条`;
+      if (empty) empty.hidden = visibleCount !== 0;
+    }
+
+    search?.addEventListener('input', applyFilters);
+  </script>
+</BaseLayout>

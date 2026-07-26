@@ -1,0 +1,27 @@
+---
+import { characters } from '../data/characters';
+import type { Law } from '../data/law-types';
+
+interface Props {
+  law: Law;
+}
+
+const { law } = Astro.props;
+const sceneSearch = [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])]
+  .map((line) => `${line.character ? characters[line.character].name : line.name ?? ''} ${line.text}`)
+  .join(' ');
+const searchText = `${law.title} ${law.englishTitle} ${law.summary} ${sceneSearch}`.toLocaleLowerCase('zh-CN');
+---
+
+<a
+  href={`/${law.slug}/`}
+  class="home-card"
+  data-law-card
+  data-search={searchText}
+  aria-label={`${law.title}：${law.summary}`}
+>
+  <h2 aria-hidden="true">{law.icon}</h2>
+  <h3>{law.title}</h3>
+  <p class="subtitle">{law.englishTitle}</p>
+  <p class="hover-text">{law.summary}</p>
+</a>

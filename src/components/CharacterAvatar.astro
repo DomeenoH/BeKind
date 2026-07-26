@@ -1,0 +1,40 @@
+---
+import { characters, qqAvatarUrl, type CharacterId } from '../data/characters';
+
+interface Props {
+  character: CharacterId;
+  size?: number;
+  eager?: boolean;
+}
+
+const { character, size = 48, eager = false } = Astro.props;
+const person = characters[character];
+---
+
+<span
+  class="character-avatar"
+  style={`--avatar-size: ${size}px`}
+  data-character={person.id}
+  title={`${person.name} · ${person.role}`}
+>
+  <img
+    src={qqAvatarUrl(person.qq)}
+    alt={`${person.name}的 QQ 头像`}
+    width={size}
+    height={size}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    referrerpolicy="no-referrer"
+  />
+  <span class="avatar-fallback" aria-hidden="true">{person.name.slice(0, 1)}</span>
+</span>
+
+<script>
+  document.querySelectorAll<HTMLImageElement>('.character-avatar img').forEach((image) => {
+    if (image.dataset.fallbackReady) return;
+    image.dataset.fallbackReady = 'true';
+    const showFallback = () => image.closest('.character-avatar')?.classList.add('is-fallback');
+    image.addEventListener('error', showFallback);
+    if (image.complete && image.naturalWidth === 0) showFallback();
+  });
+</script>

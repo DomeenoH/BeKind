@@ -1,0 +1,2056 @@
+/* Replacing entire CSS with original nohello.net styles */
+/* Removed Google Fonts CSS import since we're using Next.js font loading */
+/* @import "tailwindcss"; */
+/* @import "tw-animate-css"; */
+
+/* @custom-variant dark (&:is(.dark *)); */
+/* Note: Vanilla CSS doesn't support @custom-variant, handling dark mode via media query if needed, 
+   but the source code seems to mostly enforce a specific look or use CSS variables. */
+
+:root {
+  /* Fonts */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-lato: var(--font-sans);
+  /* Overriding legacy font variable */
+
+  /* Base Colors - Zen-iOS Palette */
+  --ios-gray-base: #F2F2F7;
+  --ios-gray-cool: #F9F9FB;
+  --ios-blue: #007AFF;
+
+  /* Semantic Colors */
+  --background: var(--ios-gray-base);
+  --foreground: #1D1D1F;
+  /* Deep Dark */
+
+  /* Glass & Material */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.65);
+  --glass-blur: blur(50px);
+  --glass-border-inner: rgba(255, 255, 255, 0.6);
+  --glass-border-outer: rgba(229, 231, 235, 0.4);
+  /* gray-200/40 */
+
+  /* Shadows */
+  --shadow-float: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+  --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Radius */
+  --radius-lg: 40px;
+  --radius-md: 28px;
+  --radius-sm: 12px;
+
+  /* Legacy/Compatibility overrides to ensure smooth transition */
+  --card: #ffffff;
+  --card-foreground: #1D1D1F;
+  --popover: #ffffff;
+  --popover-foreground: #1D1D1F;
+  --primary: #1C1C1E;
+  /* Deep Dark for buttons */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2F2F7;
+  --secondary-foreground: #1D1D1F;
+  --muted: #F2F2F7;
+  --muted-foreground: #86868b;
+  /* Apple Style Gray */
+  --accent: rgba(255, 255, 255, 0.5);
+  --accent-foreground: #000000;
+  --destructive: #FF3B30;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.05);
+  --input: rgba(0, 0, 0, 0.05);
+  --ring: rgba(0, 0, 0, 0.1);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* Reset & Base */
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  text-transform: none;
+  color: #4a90e2;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  max-width: none !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 150px 150px 80px 150px !important;
+  font-weight: 300;
+  font-size: 14px;
+  background: linear-gradient(#fff, #eee 45%);
+  float: left;
+}
+
+footer,
+footer p {
+  color: #616061;
+}
+
+footer a {
+  color: red;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  unicode-bidi: embed;
+  /* added for proper RTL support */
+}
+
+body {
+  line-height: 1.5;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: 16px;
+  /* Standardize base size */
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+p {
+  line-height: 1.625;
+  /* More breathing room */
+  font-size: 1.0625rem;
+  /* ~17px */
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+em {
+  font-style: italic;
+}
+
+div,
+footer {
+  box-sizing: border-box;
+}
+
+.container,
+footer {
+  margin: 60px auto;
+  max-width: 1000px;
+  /* Slightly tighter for better reading */
+  height: auto;
+  padding: 0 24px;
+}
+
+.hero {
+  position: relative;
+  margin: 80px auto 120px auto;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    margin: 60px auto;
+  }
+}
+
+h1.name {
+  display: inline-block;
+  font-size: 3.5rem;
+  /* 56px */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+#strike {
+  text-decoration: line-through var(--destructive) !important;
+  -webkit-text-decoration: line-through var(--destructive) !important;
+  display: inline !important;
+}
+
+.subtitle {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.lead {
+  font-size: 1.75rem;
+  /* ~28px */
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 3rem;
+  color: var(--foreground);
+}
+
+.sections {
+  display: inline-block;
+  vertical-align: top;
+  min-height: 50px;
+}
+
+.sectionleft {
+  width: 45%;
+  /* Adjusted balance */
+  float: left;
+}
+
+.sectionright {
+  width: 50%;
+  /* Adjusted balance */
+  float: right;
+  margin-top: 60px;
+  /* Vertical offset for dynamic layout */
+}
+
+/* Clearfix for floated sections */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+/* Zen-iOS List Card */
+.list-card.example,
+.list-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    var(--shadow-float);
+  background-clip: padding-box;
+  border-radius: var(--radius-md);
+
+  padding: 2rem;
+  margin: 0;
+  /* Managed by grid/layout now */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Reset legacy margins */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Specific override for right-side text cards to be simpler */
+.sectionright .list-card {
+  background: rgba(255, 255, 255, 0.4);
+  /* Slightly more transparent */
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.list-card div {
+  width: 100%;
+  display: block;
+  /* Fix inline-block weirdness */
+}
+
+.list-card .exp {
+  font-weight: 600;
+  color: var(--ios-blue);
+  width: 100px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.list-card h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.list-card div p {
+  color: var(--foreground);
+  line-height: 1.625;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.list-card div p:first-of-type {
+  margin-top: 1rem;
+}
+
+.container ul {
+  font-size: 18px;
+  list-style: none;
+  line-height: 24px;
+  margin-top: -20px;
+  margin-bottom: 16px;
+  color: #616061;
+  opacity: 0.7;
+  margin-left: 20px;
+}
+
+[dir="rtl"] .container ul {
+  margin-right: 20px;
+  margin-left: 0;
+}
+
+.nonos ul li:before,
+.li-bad:before {
+  content: "×";
+  color: red;
+  padding-right: 10px;
+  font-weight: bold;
+  opacity: 1 !important;
+}
+
+[dir="rtl"] .nonos ul li:before,
+[dir="rtl"] .yepyep ul li:before,
+[dir="rtl"] .li-bad:before,
+[dir="rtl"] .li-good:before {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.yepyep ul li:before,
+.li-good:before {
+  content: "✓";
+  color: green;
+  font-size: 14px;
+  padding-right: 10px;
+  font-weight: bold;
+  opacity: 1 !important;
+}
+
+/* slack messages */
+.slack {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+.slack img {
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.slack .slackname {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1c1d;
+  line-height: 1.2;
+}
+
+.slack .slacktime {
+  color: #616061;
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+.slack .slackmessage {
+  color: #1d1c1d;
+  font-size: 16px;
+  line-height: 1.6;
+  /* Improved readability */
+  margin-top: 2px;
+  display: block;
+}
+
+/* RTL Support for Slack */
+[dir="rtl"] .slack {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .slack .slacktime {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+
+/* Home Page Cards - Grid System */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  /* Reset width to fill grid cell */
+  height: auto;
+  min-height: 220px;
+  background-color: #eef0f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: top;
+  border-radius: 12px;
+  text-align: center;
+  padding: 40px 20px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+  /* Prepare for border transition */
+}
+
+.card-active,
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.5s;
+  background-color: #fff;
+  box-shadow: 0px 5px 50px -8px #ddd;
+  cursor: pointer;
+}
+
+.other-languages p,
+.other-languages ul,
+.other-languages li {
+  display: inline;
+}
+
+.other-languages li:after {
+  content: ",";
+}
+
+.other-languages li:last-child:before {
+  content: "& ";
+}
+
+.other-languages li:last-child:after {
+  content: ".";
+}
+
+/* media queries*/
+
+@media (max-width: 1024px) {
+
+  footer,
+  .container {
+    padding: 15px;
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  footer,
+  .container {
+    padding: 15px;
+    margin: 0px auto;
+  }
+
+  .card {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .card h2 {
+    font-size: 70px;
+  }
+
+  .card,
+  .sections {
+    width: 100%;
+    height: auto;
+    margin: 100px 0;
+    float: left;
+  }
+}
+
+@media (max-width: 425px) {
+  h1.name {
+    font-size: 40px;
+  }
+
+  .card,
+  .sections {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    float: left;
+  }
+
+  .lead {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  footer,
+  .container {
+    margin: 0px;
+    padding: 0 15px;
+  }
+
+  footer {
+    padding: 150px 15px 80px 15px !important;
+    margin-top: -30px !important;
+  }
+
+  .list-card.example {
+    margin: 30px 10px -20px 0;
+    padding: 25px 25px 10px 25px;
+    border-radius: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .yepyep .section-title {
+    margin-top: 80px;
+  }
+}
+
+/* Navigation Back Link Override */
+.nav-back {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  margin-left: -500px;
+  /* Align to the left edge of the 1000px container */
+
+  font-weight: 600;
+  color: var(--muted-foreground);
+  z-index: 1000;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 1200px) {
+  .nav-back {
+    left: 20px;
+    margin-left: 0;
+  }
+}
+
+.nav-back:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--foreground);
+  transform: scale(1.05);
+}
+
+/* Project-Specific Overrides & Helpers */
+
+
+
+/* Ensure Card Grid works if parent is block */
+.card-grid {
+  text-align: center;
+  /* Centers inline-block cards */
+}
+
+/* Project-Specific Overrides & Helpers */
+
+
+
+/* Ensure Card Grid works if parent is block */
+.card-grid {
+  text-align: center;
+  /* Centers inline-block cards */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Zen-iOS Utilities --- */
+
+/* Frosted Glass Container */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    /* Inner light stroke */
+    0 0 0 1px var(--glass-border-outer),
+    /* Outer defining stroke */
+    var(--shadow-float);
+  /* Floating depth */
+  background-clip: padding-box;
+  /* Ensures border transparency works */
+}
+
+/* Typography Standards */
+.text-header-xl {
+  font-weight: 800;
+  /* Extrabold */
+  letter-spacing: -0.025em;
+  /* Tracking tight */
+}
+
+.text-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* Tracking widest */
+  font-weight: 700;
+  /* Bold */
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+
+/* Interaction */
+.tactile-active:active {
+  transform: scale(0.96);
+  transition: transform 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Inset Depth (for inputs/slots) */
+.inset-depth {
+  background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-inset);
+  border-radius: var(--radius-md);
+}
+
+/* --- NEW HOMEPAGE OVERRIDES (Scoped) --- */
+
+/* Generated Navigation Styles */
+.generated-nav {
+  margin-top: 30px !important;
+  margin-bottom: 40px !important;
+  padding: 0 15px !important;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-float);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--foreground);
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item:not(.placeholder):hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.nav-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-item.next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nav-item.prev {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.nav-item.placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 640px) {
+
+  /* Navigation Layout - Force Row */
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-item {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .nav-label {
+    font-size: 0.7rem;
+  }
+
+  .nav-title {
+    font-size: 0.9rem;
+  }
+
+  /* Global Spacing Fixes */
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  h1.name {
+    font-size: 2rem !important;
+    line-height: 1.1;
+  }
+
+  .lead {
+    font-size: 1.1rem !important;
+    margin-top: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .list-card {
+    padding: 1.25rem !important;
+  }
+
+  .slack {
+    gap: 8px;
+    padding-bottom: 15px;
+  }
+
+  .slack img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slack .slackmessage {
+    font-size: 0.9rem;
+  }
+
+  .nav-back {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    right: auto;
+    margin-left: 0;
+    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Footer Fix for Mobile - Override the global 150px padding */
+  footer {
+    padding: 60px 20px 40px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+
+
+.home-body,
+.home-body * {
+  box-sizing: border-box;
+}
+
+.home-body {
+  font-family: var(--font-sans) !important;
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  min-height: 100vh;
+  margin: 0;
+  /* Subtle background pattern/gradient if desired, but keeping it clean for now */
+}
+
+.home-body .home-hero {
+  padding: 8rem 0 6rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.home-body h1.name {
+  font-family: "SF Pro Display", var(--font-sans);
+  font-size: 4rem;
+  font-weight: 800;
+  /* Extrabold */
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  display: block;
+}
+
+.home-body .subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+
+.home-body .lead {
+  font-size: 2.25rem;
+  font-weight: 400;
+  /* Thinner weight for elegance */
+  margin-top: 3rem;
+  line-height: 1.3;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+
+/* Grid Layout */
+.home-body .home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  /* Increased spacing p-8 equivalent */
+  margin-bottom: 6rem;
+  padding: 0 1rem;
+}
+
+/* Optimized Zen-iOS Card */
+.home-card {
+  /* Inherit Glass Traits explicitly or include .glass-panel in HTML */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    var(--shadow-float);
+  background-clip: padding-box;
+
+  border-radius: var(--radius-lg);
+  /* 40px - 50px */
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  width: 100%;
+
+  text-decoration: none;
+  /* Reset link underline */
+  color: inherit;
+}
+
+/* Hover State */
+.home-card:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 30px 60px -10px rgba(0, 0, 0, 0.12);
+  /* Deepened shadow */
+}
+
+/* Tactile Active State */
+.home-card:active {
+  transform: scale(0.98);
+  transition: transform 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Card Typography */
+.home-card h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: grayscale(1) opacity(0.8);
+  transition: all 0.4s ease;
+}
+
+.home-card:hover h2 {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.1);
+}
+
+.home-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.home-card .subtitle {
+  /* Applying .text-label specs here for the subtext */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--muted-foreground);
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+/* Footer Override */
+.home-body footer {
+  border-top: 1px solid var(--glass-border-outer);
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  padding: 4rem 1rem !important;
+  margin-top: 0 !important;
+  /* Reset legacy float */
+  width: 100%;
+}
+
+/* Homepage Hover Explanation */
+.home-card .hover-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.9375rem;
+  /* 15px */
+  color: var(--muted-foreground);
+  margin-top: 0;
+  font-weight: 500;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+.home-card:hover .hover-text {
+  opacity: 1;
+  max-height: 60px;
+  /* ample space for 1-2 lines */
+  margin-top: 1rem;
+}
+
+/* Chat Image Placeholder */
+.chat-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  /* Stack icon and text for better centering */
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 140px;
+  /* Slightly taller to accommodate stack */
+  background-color: #eef0f7;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  /* Slightly smaller text */
+  font-weight: 500;
+  /* margin-left removed; using spacer div in HTML */
+  margin-bottom: 15px;
+  padding: 1rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.chat-image-placeholder::before {
+  content: "🖼️";
+  font-size: 2rem;
+  display: block;
+  /* Ensure it's treated as a flex child for column layout */
+}
+
+/* --- Share Button --- */
+.share-button-wrapper {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--glass-border-inner),
+    0 0 0 1px var(--glass-border-outer),
+    0 8px 24px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: var(--font-sans);
+}
+
+.share-button:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 12px 32px -8px rgba(0, 0, 0, 0.12);
+}
+
+.share-button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+
+.share-button.copied {
+  background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+  color: #fff;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(52, 199, 89, 0.3),
+    0 8px 24px -8px rgba(52, 199, 89, 0.3);
+}
+
+.share-button .icon {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.share-button:hover .icon {
+  transform: scale(1.1);
+}
+
+/* --- Share Modal --- */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.share-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.share-modal-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 20px;
+  max-width: 90%;
+  max-height: 90vh;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.share-modal-overlay.active .share-modal-content {
+  transform: scale(1);
+}
+
+.share-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.1);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.share-modal-close:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.share-modal-hint {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Astro compatibility and small corrections. The visual source remains HEAD:style.css. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+button,
+input {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0, 122, 255, 0.3);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h1.name,
+.section-title,
+.home-body h1.name,
+.home-body .lead,
+.home-card h3,
+.subtitle {
+  letter-spacing: 0;
+}
+
+.home-search {
+  width: min(360px, 100%);
+  height: 46px;
+  margin: 2rem auto 0;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted-foreground);
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 23px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+}
+
+.home-search:focus-within {
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.12);
+}
+
+.home-search input {
+  width: 100%;
+  min-width: 0;
+  color: var(--foreground);
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.home-search input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.empty-results {
+  width: 100%;
+  padding: 5rem 1rem;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.comparison-section {
+  scroll-margin-top: 32px;
+}
+
+.comparison-section .list-card {
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 18px;
+}
+
+.comparison-section .list-card.example {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: rgba(29, 29, 31, 0.1);
+  border-left-width: 3px;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 8px 24px -26px rgba(29, 29, 31, 0.26);
+}
+
+.comparison-section.nonos .list-card.example {
+  background: rgba(255, 253, 252, 0.76);
+  border-color: rgba(29, 29, 31, 0.09);
+  border-left-color: rgba(164, 72, 62, 0.52);
+}
+
+.comparison-section.yepyep .list-card.example {
+  background: rgba(252, 254, 252, 0.76);
+  border-color: rgba(29, 29, 31, 0.09);
+  border-left-color: rgba(54, 123, 79, 0.52);
+}
+
+.comparison-section .explanation-card {
+  background: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 24px -22px rgba(29, 29, 31, 0.26);
+}
+
+.comparison-section.nonos .explanation-card {
+  background: rgba(255, 252, 251, 0.4);
+  border-color: rgba(164, 72, 62, 0.1);
+}
+
+.comparison-section.yepyep .explanation-card {
+  background: rgba(250, 253, 251, 0.4);
+  border-color: rgba(54, 123, 79, 0.1);
+}
+
+.comparison-section .explanation-card h3 {
+  margin-bottom: 1rem;
+}
+
+.comparison-section .explanation-card p,
+.comparison-section .explanation-card li {
+  color: #3a3a3c;
+}
+
+.comparison-section .list-card > :last-child,
+.comparison-section .explanation-card div > :last-child {
+  margin-bottom: 0;
+}
+
+.slack-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.comparison-section .list-card.example .slack {
+  gap: 10px;
+  padding-bottom: 0;
+}
+
+.comparison-section .list-card.example .slack + .slack {
+  margin-top: 20px;
+}
+
+.comparison-section .list-card.example .slack.is-continuation {
+  margin-top: 8px;
+}
+
+.chat-avatar-spacer {
+  width: 38px;
+  height: 1px;
+  flex: 0 0 38px;
+}
+
+.slack-meta {
+  min-height: 18px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.comparison-section .slackname {
+  color: #2c2c2e;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.comparison-section .slacktime {
+  margin-left: 0;
+  color: #86868b;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.comparison-section .slackmessage {
+  margin-top: 1px;
+  line-height: 1.55;
+}
+
+.comparison-section .slack.is-outgoing {
+  flex-direction: row-reverse;
+}
+
+.comparison-section .slack.is-outgoing .slack-copy {
+  text-align: right;
+}
+
+.comparison-section .slack.is-outgoing .slack-meta {
+  justify-content: flex-end;
+}
+
+.comparison-section.chat-bubble-scene .slackmessage {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 6px;
+  padding: 9px 12px;
+  background: rgba(29, 29, 31, 0.045);
+  border-radius: 12px 12px 12px 4px;
+}
+
+.comparison-section.chat-bubble-scene .slack.is-outgoing .slackmessage {
+  text-align: left;
+  border-radius: 12px 12px 4px 12px;
+}
+
+.comparison-section.chat-bubble-scene.nonos .slackmessage {
+  background: rgba(164, 72, 62, 0.07);
+}
+
+.comparison-section.chat-bubble-scene.nonos .slack.is-outgoing .slackmessage {
+  background: rgba(164, 72, 62, 0.1);
+}
+
+.comparison-section.chat-bubble-scene.yepyep .slackmessage {
+  background: rgba(54, 123, 79, 0.065);
+}
+
+.comparison-section.chat-bubble-scene.yepyep .slack.is-outgoing .slackmessage {
+  background: rgba(54, 123, 79, 0.1);
+}
+
+.comparison-section.chat-bubble-scene.nonos .slack.is-before-system .slackmessage {
+  color: #7b3831;
+  background: rgba(164, 72, 62, 0.13);
+  font-weight: 600;
+}
+
+.comparison-section.chat-bubble-scene.yepyep .slack.is-before-system .slackmessage {
+  color: #235d38;
+  background: rgba(54, 123, 79, 0.13);
+  font-weight: 600;
+}
+
+.comparison-section .chat-line-system {
+  margin-top: 18px !important;
+  padding: 16px 0 0 !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(29, 29, 31, 0.1) !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  text-align: left !important;
+}
+
+.comparison-section .chat-line-system .external-avatar {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+  background: rgba(29, 29, 31, 0.055);
+  font-size: 17px;
+}
+
+.comparison-section .chat-line-system .slackname {
+  font-size: 14px;
+}
+
+.comparison-section .chat-line-system .slackmessage {
+  color: #616061;
+  font-size: 15px;
+}
+
+.comparison-section.chat-bubble-scene .chat-line-system .slackmessage {
+  display: block;
+  margin-top: 2px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  font-weight: 400;
+}
+
+.character-avatar,
+.external-avatar {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 50%;
+  background: #e5e5ea;
+  box-shadow: 0 0 0 1px rgba(29, 29, 31, 0.09);
+  color: #616061;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.character-avatar img,
+.external-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  display: none;
+}
+
+.character-avatar.is-fallback img {
+  display: none;
+}
+
+.character-avatar.is-fallback .avatar-fallback {
+  display: grid;
+  position: absolute;
+  inset: 0;
+  place-items: center;
+}
+
+.chat-line-raw:empty {
+  display: none;
+}
+
+.statement-hero-container {
+  min-height: auto;
+}
+
+.statement-impact {
+  margin: 4rem 0;
+}
+
+.statement-content {
+  max-width: 800px;
+}
+
+.statement-card {
+  text-align: left;
+}
+
+.not-found-page {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+.not-found-page .hero {
+  margin: 0;
+}
+
+.not-found-page .share-button {
+  margin-top: 2rem;
+}
+
+.list-card ol {
+  margin: 0 0 1.5rem 1.5rem;
+  color: #616061;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.share-root {
+  margin-top: 2.5rem;
+}
+
+.share-actions {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.share-feedback {
+  min-width: 1px;
+  color: #237a45;
+  font-size: 0.875rem;
+}
+
+.share-button {
+  text-decoration: none;
+}
+
+.share-button.is-success {
+  color: #237a45;
+}
+
+.share-poster {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  width: 600px;
+  height: 760px;
+  padding: 40px 44px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #1d1d1f;
+  background: #f2f2f7;
+  text-align: left;
+}
+
+.poster-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.poster-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.poster-mark {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.poster-brand div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.poster-brand strong {
+  color: #1d1d1f;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.poster-brand span,
+.poster-index {
+  color: #86868b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.poster-index {
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.poster-main {
+  width: 100%;
+  margin-top: 72px;
+}
+
+.poster-main h2 {
+  max-width: 520px;
+  margin: 10px 0 20px;
+  color: #1d1d1f;
+  font-size: 62px;
+  line-height: 1.08;
+  font-weight: 800;
+  word-break: break-word;
+}
+
+.poster-main h2.is-long {
+  font-size: 50px;
+}
+
+.poster-english {
+  display: block;
+  color: #86868b;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.poster-summary {
+  max-width: 500px;
+  margin: 0;
+  color: #3a3a3c;
+  font-size: 25px;
+  line-height: 1.42;
+  font-weight: 600;
+}
+
+.poster-comparison {
+  width: 100%;
+  min-height: 158px;
+  margin-top: 36px;
+  padding: 22px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  border-top: 1px solid rgba(29, 29, 31, 0.12);
+  border-bottom: 1px solid rgba(29, 29, 31, 0.12);
+}
+
+.poster-example {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-content: start;
+  gap: 10px;
+}
+
+.poster-example + .poster-example {
+  padding-left: 24px;
+  border-left: 1px solid rgba(29, 29, 31, 0.12);
+}
+
+.poster-example > span {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.poster-example-bad > span {
+  color: #a4483e;
+}
+
+.poster-example-good > span {
+  color: #367b4f;
+}
+
+.poster-example p {
+  margin: 0;
+  overflow: hidden;
+  color: #3a3a3c;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.poster-footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid rgba(29, 29, 31, 0.12);
+}
+
+.poster-footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.poster-footer span {
+  color: #86868b;
+  font-size: 13px;
+}
+
+.poster-footer strong {
+  color: #1d1d1f;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.poster-footer canvas {
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  display: block;
+}
+
+.share-dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 20px;
+  overflow: auto;
+  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+}
+
+.share-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(8px);
+}
+
+.share-dialog-head,
+.share-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.share-dialog-head p,
+.share-dialog-head h2 {
+  margin: 0;
+}
+
+.share-dialog-head p {
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+
+.share-dialog-head h2 {
+  font-size: 20px;
+}
+
+.share-dialog > img {
+  width: 100%;
+  height: auto;
+  margin: 18px 0;
+  display: block;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  color: var(--foreground);
+  background: rgba(0, 0, 0, 0.06);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.button-loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .comparison-section .sections {
+    width: 100%;
+    height: auto;
+    margin: 28px 0 0;
+    float: none;
+    display: block;
+  }
+
+  .comparison-section .sectionright {
+    margin-top: 18px;
+  }
+
+  .comparison-section .list-card {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-body .home-hero {
+    padding: 5.5rem 0 3.5rem;
+  }
+
+  .home-body h1.name {
+    font-size: 2.5rem;
+  }
+
+  .home-body .lead {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .home-body .home-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0;
+  }
+
+  .home-card {
+    min-height: 220px;
+    padding: 2rem 1.5rem;
+  }
+
+  .home-card .hover-text {
+    opacity: 1;
+    max-height: 64px;
+    margin-top: 0.8rem;
+  }
+
+  .slack .character-avatar,
+  .slack .external-avatar {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .chat-avatar-spacer {
+    width: 32px;
+    flex-basis: 32px;
+  }
+
+  .share-actions {
+    gap: 8px;
+  }
+
+  .share-button {
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

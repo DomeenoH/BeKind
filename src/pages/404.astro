@@ -1,0 +1,16 @@
+---
+import { Home } from 'lucide-astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 · BeKind" description="页面不存在。" canonicalPath="/404/">
+  <a href="/" class="nav-back">← 首页</a>
+  <section class="container not-found-page">
+    <div class="hero">
+      <h1 class="name">404</h1>
+      <span class="subtitle">页面不存在</span>
+      <h2 class="lead">这里什么都没有。</h2>
+      <a class="share-button" href="/"><Home size={18} aria-hidden="true" />返回首页</a>
+    </div>
+  </section>
+</BaseLayout>

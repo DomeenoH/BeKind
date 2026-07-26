@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatScene from '../components/ChatScene.astro';
+import ShareActions from '../components/ShareActions.astro';
+import { orderedLaws } from '../data/laws';
+import type { Law } from '../data/law-types';
+
+export function getStaticPaths() {
+  return orderedLaws.map((law) => ({ params: { slug: law.slug }, props: { law } }));
+}
+
+interface Props {
+  law: Law;
+}
+
+const { law } = Astro.props;
+const index = orderedLaws.findIndex((item) => item.slug === law.slug);
+const previous = orderedLaws[index - 1];
+const next = orderedLaws[index + 1];
+---
+
+<BaseLayout title={`${law.title} · BeKind`} description={law.summary} canonicalPath={`/${law.slug}/`}>
+  <a href="/" class="nav-back">← 首页</a>
+
+  <div id="wholesite">
+    <div class={`container ${law.layout === 'statement' ? 'statement-hero-container' : ''}`}>
+      <header class="hero">
+        <h1 class="name" set:html={law.hero.titleHtml} />
+        <span class="subtitle" set:html={law.hero.subtitleHtml} />
+        {law.layout === 'statement' ? (
+          <div class="statement-impact" set:html={law.hero.leadHtml} />
+        ) : law.hero.leadHtml && (
+          <h2 class="lead" set:html={law.hero.leadHtml} />
+        )}
+        <ShareActions law={law} />
+      </header>
+    </div>
+
+    {law.layout === 'comparison' && law.bad && law.good ? (
+      <>
+        <ChatScene scene={law.bad} variant="bad" />
+        <ChatScene scene={law.good} variant="good" />
+      </>
+    ) : (
+      <section class="container statement-content">
+        <div class="list-card statement-card" set:html={law.specialHtml ?? ''} />
+      </section>
+    )}
+
+    <nav class="generated-nav container" aria-label="前后法则">
+      <div class="nav-links">
+        {previous ? (
+          <a href={`/${previous.slug}/`} class="nav-item prev">
+            <span class="nav-label">← 上一篇</span>
+            <span class="nav-title">{previous.title}</span>
+          </a>
+        ) : <span class="nav-item placeholder"></span>}
+        {next ? (
+          <a href={`/${next.slug}/`} class="nav-item next">
+            <span class="nav-label">下一篇 →</span>
+            <span class="nav-title">{next.title}</span>
+          </a>
+        ) : (
+          <a href="/#laws" class="nav-item next">
+            <span class="nav-label">读完了</span>
+            <span class="nav-title">返回首页</span>
+          </a>
+        )}
+      </div>
+    </nav>
+
+    <footer set:html={law.footerHtml} />
+  </div>
+
+  {law.slug === 'no-hello' && (
+    <script is:inline>
+      const strike = document.querySelector('#strike');
+      const words = ['hello', '你好', 'hola', 'bonjour', 'ciao', 'こんにちは', '안녕', 'cześć', 'привет', '你好', 'hello'];
+
+      if (strike && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let wordIndex = 0;
+        let characterIndex = 0;
+        let deleting = false;
+
+        const type = () => {
+          const word = words[wordIndex];
+
+          if (deleting) {
+            characterIndex -= 1;
+            strike.textContent = word.slice(0, characterIndex);
+            if (characterIndex === 0) {
+              deleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+              window.setTimeout(type, 120);
+              return;
+            }
+            window.setTimeout(type, 50);
+            return;
+          }
+
+          characterIndex += 1;
+          strike.textContent = word.slice(0, characterIndex);
+          if (characterIndex === word.length) {
+            deleting = true;
+            window.setTimeout(type, 700);
+            return;
+          }
+          window.setTimeout(type, 80);
+        };
+
+        strike.textContent = '';
+        type();
+      }
+    </script>
+  )}
+</BaseLayout>

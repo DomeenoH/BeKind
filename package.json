@@ -1,18 +1,21 @@
 {
-  "name": "dontbeadick",
+  "name": "bekind",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^7.2.4"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run"
   },
   "dependencies": {
+    "astro": "^5.18.2",
     "html2canvas": "^1.4.1",
+    "lucide-astro": "^0.556.0",
     "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.10"
   }
 }

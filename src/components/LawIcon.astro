@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+  strokeWidth?: number;
+}
+
+const { name, size = 24 } = Astro.props;
+const emojiMap = {
+  'arrow-left-right': '💬',
+  'audio-lines': '🫧',
+  'badge-help': '💡',
+  'book-open': '📖',
+  bot: '🦆',
+  bug: '💥',
+  'chart-no-axes-column-increasing': '🤡',
+  'circle-help': '🙋',
+  filter: '🗑️',
+  'flame-kindling': '💩',
+  'list-start': '📌',
+  'message-circle': '👋',
+  'message-square-dashed': '🤫',
+  'message-square-reply': '🦕',
+  'messages-square': '🎣',
+  milestone: '🐂',
+  'paint-bucket': '🚲',
+  'phone-call': '📞',
+  route: '📐',
+  scale: '⚔️',
+  'scan-eye': '🔓',
+  scissors: '🪒',
+  'scissors-line-dashed': '🪒',
+  search: '🌏',
+  'shield-check': '🦄',
+  siren: '🚨',
+  text: '📝',
+  theater: '🎭',
+  'trending-down': '📉',
+  'venetian-mask': '🎭',
+} as const;
+const emoji = emojiMap[name as keyof typeof emojiMap] ?? '💬';
+---
+
+<span class="law-emoji" style={`font-size: ${size}px`} aria-hidden="true">{emoji}</span>

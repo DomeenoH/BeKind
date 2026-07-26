@@ -1,0 +1,191 @@
+---
+import { Copy, Download, Image, X } from 'lucide-astro';
+import type { Law } from '../data/law-types';
+import { orderedLaws } from '../data/laws';
+
+interface Props {
+  law: Law;
+}
+
+const { law } = Astro.props;
+const shareUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin);
+const displayHost = shareUrl.hostname;
+const posterIndex = String(law.order).padStart(2, '0');
+const posterTitleClass = law.title.length >= 8 ? 'is-long' : '';
+const badLines = law.bad?.lines.map((line) => line.text.trim()).filter(Boolean) ?? [];
+const goodLines = law.good?.lines.map((line) => line.text.trim()).filter(Boolean) ?? [];
+const badLineSet = new Set(badLines);
+const goodLineSet = new Set(goodLines);
+const badExample = badLines.find((line) => !goodLineSet.has(line)) ?? badLines[0];
+const goodExample = goodLines.find((line) => !badLineSet.has(line)) ?? goodLines[0];
+---
+
+<div class="share-root" data-share-root data-title={law.title} data-share-url={shareUrl.href}>
+  <div class="share-actions" aria-label="分享">
+    <button class="share-button primary" type="button" data-copy-link>
+      <Copy size={18} aria-hidden="true" />
+      <span>复制链接</span>
+    </button>
+    <button class="share-button secondary" type="button" data-generate-poster>
+      <Image size={18} aria-hidden="true" />
+      <span>生成卡片</span>
+    </button>
+    <span class="share-feedback" data-share-feedback aria-live="polite"></span>
+  </div>
+
+  <div class="share-poster" data-share-poster aria-hidden="true">
+    <div class="poster-header">
+      <div class="poster-brand">
+        <span class="poster-mark" aria-hidden="true">{law.icon}</span>
+        <div>
+          <strong>BeKind</strong>
+          <span>互联网沟通指北</span>
+        </div>
+      </div>
+      <span class="poster-index">{posterIndex} / {orderedLaws.length}</span>
+    </div>
+
+    <div class="poster-main">
+      <span class="poster-english">{law.englishTitle}</span>
+      <h2 class={posterTitleClass}>{law.title}</h2>
+      <p class="poster-summary">{law.summary}</p>
+
+      {badExample && goodExample && (
+        <div class="poster-comparison">
+          <div class="poster-example poster-example-bad">
+            <span aria-hidden="true">✕</span>
+            <p>{badExample}</p>
+          </div>
+          <div class="poster-example poster-example-good">
+            <span aria-hidden="true">✓</span>
+            <p>{goodExample}</p>
+          </div>
+        </div>
+      )}
+    </div>
+
+    <div class="poster-footer">
+      <div>
+        <strong>{displayHost}</strong>
+        <span>扫描二维码查看详情</span>
+      </div>
+      <canvas width="96" height="96" data-share-qr></canvas>
+    </div>
+  </div>
+
+  <dialog class="share-dialog" data-share-dialog>
+    <div class="share-dialog-head">
+      <div>
+        <p>分享卡片</p>
+        <h2>{law.title}</h2>
+      </div>
+      <button class="icon-button" type="button" data-close-dialog aria-label="关闭分享卡片" title="关闭">
+        <X size={21} />
+      </button>
+    </div>
+    <img data-poster-preview alt={`${law.title}分享卡片`} />
+    <div class="share-dialog-actions">
+      <a class="share-button primary" data-download-poster download={`BeKind-${law.slug}.png`}>
+        <Download size={18} aria-hidden="true" />
+        <span>下载图片</span>
+      </a>
+      <button class="share-button secondary" type="button" data-copy-again>
+        <Copy size={18} aria-hidden="true" />
+        <span>复制链接</span>
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  import html2canvas from 'html2canvas';
+  import QRCode from 'qrcode';
+
+  function fallbackCopy(text: string) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-share-root]').forEach((root) => {
+    if (root.dataset.ready) return;
+    root.dataset.ready = 'true';
+
+    const title = root.dataset.title ?? document.title;
+    const feedback = root.querySelector<HTMLElement>('[data-share-feedback]');
+    const copyButton = root.querySelector<HTMLButtonElement>('[data-copy-link]');
+    const copyAgain = root.querySelector<HTMLButtonElement>('[data-copy-again]');
+    const generateButton = root.querySelector<HTMLButtonElement>('[data-generate-poster]');
+    const poster = root.querySelector<HTMLElement>('[data-share-poster]');
+    const qr = root.querySelector<HTMLCanvasElement>('[data-share-qr]');
+    const dialog = root.querySelector<HTMLDialogElement>('[data-share-dialog]');
+    const preview = root.querySelector<HTMLImageElement>('[data-poster-preview]');
+    const download = root.querySelector<HTMLAnchorElement>('[data-download-poster]');
+    const close = root.querySelector<HTMLButtonElement>('[data-close-dialog]');
+    const shareText = `这个或许对你有帮助 → ${title}：${window.location.href}`;
+    const posterUrl = root.dataset.shareUrl ?? window.location.href;
+
+    const copy = async () => {
+      try {
+        await navigator.clipboard.writeText(shareText);
+      } catch {
+        fallbackCopy(shareText);
+      }
+      if (feedback) feedback.textContent = '已复制';
+      const label = copyButton?.querySelector('span');
+      const original = label?.textContent;
+      if (label) label.textContent = '已复制';
+      copyButton?.classList.add('is-success');
+      window.setTimeout(() => {
+        if (feedback) feedback.textContent = '';
+        if (label && original) label.textContent = original;
+        copyButton?.classList.remove('is-success');
+      }, 1800);
+    };
+
+    copyButton?.addEventListener('click', copy);
+    copyAgain?.addEventListener('click', copy);
+    close?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    generateButton?.addEventListener('click', async () => {
+      if (!poster || !qr || !dialog || !preview || !download || !generateButton) return;
+      const original = generateButton.innerHTML;
+      generateButton.disabled = true;
+      generateButton.innerHTML = '<span class="button-loader" aria-hidden="true"></span><span>生成中</span>';
+
+      try {
+        await QRCode.toCanvas(qr, posterUrl, {
+          width: 96,
+          margin: 1,
+          color: { dark: '#1d1d1f', light: '#ffffff' },
+        });
+        const canvas = await html2canvas(poster, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          logging: false,
+          width: 600,
+          height: 760,
+        });
+        const imageUrl = canvas.toDataURL('image/png');
+        preview.src = imageUrl;
+        download.href = imageUrl;
+        dialog.showModal();
+      } catch (error) {
+        console.error('Share poster failed', error);
+        if (feedback) feedback.textContent = '生成失败，请稍后再试';
+      } finally {
+        generateButton.disabled = false;
+        generateButton.innerHTML = original;
+      }
+    });
+  });
+</script>
