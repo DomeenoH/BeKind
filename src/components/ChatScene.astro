@@ -1,4 +1,5 @@
 ---
+import { CircleCheck, CircleX } from 'lucide-astro';
 import CharacterAvatar from './CharacterAvatar.astro';
 import type { ChatScene as ChatSceneType } from '../data/law-types';
 import { getChatLinePresentations } from '../lib/chat-scene';
@@ -10,45 +11,54 @@ interface Props {
 
 const { scene, variant } = Astro.props;
 const displayLines = getChatLinePresentations(scene.lines);
+const isBad = variant === 'bad';
+
+// 标题里的 ❌ / ✅ 换成线性图标，数据层保持原样。
+const titleText = scene.titleHtml.replace(/^\s*(?:❌|✅)\uFE0F?\s*/u, '');
+const hasNote = Boolean(scene.explanationHtml.trim());
 ---
 
-<section class={`container comparison-section chat-bubble-scene ${variant === 'bad' ? 'nonos' : 'yepyep'}`} aria-label={variant === 'bad' ? '错误示例' : '改进示例'}>
-  <div class="sections sectionleft">
-    <h2 class="section-title" set:html={scene.titleHtml} />
-    <div class={`list-card example ${variant === 'bad' ? 'one' : 'two'}`}>
-      {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, isBeforeSystem, hasAvatar, messageHtml, lineStyle }) => (
-        line.rawHtml ? (
-          <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} style={lineStyle} set:html={line.rawHtml} />
-        ) : (
-          <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}${isBeforeSystem ? ' is-before-system' : ''}`} style={lineStyle}>
-            {isContinuation ? (
-              <span class="chat-avatar-spacer" aria-hidden="true"></span>
-            ) : hasAvatar && line.character ? (
-              <CharacterAvatar character={line.character} size={42} />
-            ) : hasAvatar && line.avatarUrl ? (
-              <span class="external-avatar" aria-hidden="true"><img src={line.avatarUrl} alt="" width="42" height="42" loading="lazy" /></span>
-            ) : hasAvatar ? (
-              <span class="external-avatar avatar-initial" aria-hidden="true">
-                🦆
-              </span>
-            ) : null}
-            <div class="slack-copy">
-              {!isContinuation && (
-                <div class="slack-meta">
-                  <span class="slackname">{line.name}</span>
-                  {line.time && <span class="slacktime">{line.time}</span>}
-                </div>
-              )}
-              <span class="slackmessage" set:html={messageHtml} />
+<section class={`scene scene--${variant}`} aria-labelledby={`scene-${variant}-title`}>
+  <div class="shell">
+    <div class="scene-head">
+      <span class="scene-icon" aria-hidden="true">
+        {isBad ? <CircleX size={17} stroke-width={2} /> : <CircleCheck size={17} stroke-width={2} />}
+      </span>
+      <h2 class="scene-title" id={`scene-${variant}-title`} set:html={titleText} />
+      <span class="scene-rule" aria-hidden="true"></span>
+    </div>
+
+    <div class={`scene-body${hasNote ? '' : ' is-single'}`}>
+      <div class="chat-card">
+        {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, isBeforeSystem, hasAvatar, messageHtml, lineStyle }) => (
+          line.rawHtml ? (
+            <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} style={lineStyle} set:html={line.rawHtml} />
+          ) : (
+            <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}${isBeforeSystem ? ' is-before-system' : ''}`} style={lineStyle}>
+              {isContinuation ? (
+                <span class="chat-avatar-spacer" aria-hidden="true"></span>
+              ) : hasAvatar && line.character ? (
+                <CharacterAvatar character={line.character} size={32} />
+              ) : hasAvatar && line.avatarUrl ? (
+                <span class="external-avatar" aria-hidden="true"><img src={line.avatarUrl} alt="" width="36" height="36" loading="lazy" /></span>
+              ) : hasAvatar ? (
+                <span class="external-avatar avatar-initial" aria-hidden="true">群</span>
+              ) : null}
+              <div class="slack-copy">
+                {!isContinuation && (
+                  <div class="slack-meta">
+                    <span class="slackname">{line.name}</span>
+                    {line.time && <span class="slacktime">{line.time}</span>}
+                  </div>
+                )}
+                <span class="slackmessage" set:html={messageHtml} />
+              </div>
             </div>
-          </div>
-        )
-      ))}
+          )
+        ))}
+      </div>
+
+      {hasNote && <aside class="scene-note" set:html={scene.explanationHtml} />}
     </div>
   </div>
-  {scene.explanationHtml && (
-    <div class="sections sectionright">
-      <div class="list-card explanation-card" set:html={scene.explanationHtml} />
-    </div>
-  )}
 </section>

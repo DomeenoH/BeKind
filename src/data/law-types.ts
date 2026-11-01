@@ -53,18 +53,18 @@ export const categories: Category[] = [
     id: 'communication',
     eyebrow: '01',
     title: '把话说清楚',
-    description: '提问、汇报、求助和异步沟通，少让别人猜你脑子里缺了哪一块。',
+    description: '提问、汇报、求助、异步沟通：把缺的那块补齐，别让人猜。',
   },
   {
     id: 'thinking',
     eyebrow: '02',
     title: '别急着下结论',
-    description: '处理证据、假设和认知偏差。自信的语气不能替你完成论证。',
+    description: '证据、假设、认知偏差。语气再自信，也不能替你完成论证。',
   },
   {
     id: 'systems',
     eyebrow: '03',
     title: '看见系统和人',
-    description: '群聊、平台和团队都会放大坏习惯。知道机制，才不会被它牵着走。',
+    description: '群聊、平台、团队都会放大坏习惯。看见机制，才不至于被推着走。',
   },
 ];

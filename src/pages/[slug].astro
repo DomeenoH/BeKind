@@ -1,8 +1,11 @@
 ---
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Home } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChatScene from '../components/ChatScene.astro';
 import ShareActions from '../components/ShareActions.astro';
 import { orderedLaws } from '../data/laws';
+import { categories } from '../data/law-types';
+import { site } from '../data/site';
 import type { Law } from '../data/law-types';
 
 export function getStaticPaths() {
@@ -17,60 +20,152 @@ const { law } = Astro.props;
 const index = orderedLaws.findIndex((item) => item.slug === law.slug);
 const previous = orderedLaws[index - 1];
 const next = orderedLaws[index + 1];
+const category = categories.find((item) => item.id === law.category);
+const canonicalUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin).href;
+
+// 副标题若只是英文名的另一种写法（惠顿定律那种），就不再重复显示一次。
+const subtitleText = law.hero.subtitleHtml.replace(/<[^>]+>/g, '').trim();
+const showSubtitle =
+  Boolean(subtitleText) && subtitleText.toLowerCase() !== law.englishTitle.toLowerCase();
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: law.title,
+    alternativeHeadline: law.englishTitle,
+    description: law.summary,
+    inLanguage: 'zh-CN',
+    url: canonicalUrl,
+    mainEntityOfPage: canonicalUrl,
+    author: { '@type': 'Person', name: '多米诺' },
+    publisher: { '@type': 'Organization', name: site.name },
+    isPartOf: {
+      '@type': 'WebSite',
+      name: site.name,
+      url: new URL('/', Astro.site ?? Astro.url.origin).href,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: site.title,
+        item: new URL('/', Astro.site ?? Astro.url.origin).href,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category?.title ?? '主题',
+        item: new URL(`/#${law.category}`, Astro.site ?? Astro.url.origin).href,
+      },
+      { '@type': 'ListItem', position: 3, name: law.title, item: canonicalUrl },
+    ],
+  },
+];
 ---
 
-<BaseLayout title={`${law.title} · BeKind`} description={law.summary} canonicalPath={`/${law.slug}/`}>
-  <a href="/" class="nav-back">← 首页</a>
+<BaseLayout
+  title={`${law.title} · ${site.name}`}
+  description={law.summary}
+  canonicalPath={`/${law.slug}/`}
+  ogType="article"
+  footer="minimal"
+  jsonLd={jsonLd}
+>
+  <div class="read-progress" aria-hidden="true"><span data-read-progress></span></div>
 
-  <div id="wholesite">
-    <div class={`container ${law.layout === 'statement' ? 'statement-hero-container' : ''}`}>
-      <header class="hero">
-        <h1 class="name" set:html={law.hero.titleHtml} />
-        <span class="subtitle" set:html={law.hero.subtitleHtml} />
-        {law.layout === 'statement' ? (
-          <div class="statement-impact" set:html={law.hero.leadHtml} />
-        ) : law.hero.leadHtml && (
-          <h2 class="lead" set:html={law.hero.leadHtml} />
-        )}
-        <ShareActions law={law} />
-      </header>
-    </div>
-
-    {law.layout === 'comparison' && law.bad && law.good ? (
-      <>
-        <ChatScene scene={law.bad} variant="bad" />
-        <ChatScene scene={law.good} variant="good" />
-      </>
-    ) : (
-      <section class="container statement-content">
-        <div class="list-card statement-card" set:html={law.specialHtml ?? ''} />
-      </section>
-    )}
-
-    <nav class="generated-nav container" aria-label="前后法则">
-      <div class="nav-links">
-        {previous ? (
-          <a href={`/${previous.slug}/`} class="nav-item prev">
-            <span class="nav-label">← 上一篇</span>
-            <span class="nav-title">{previous.title}</span>
-          </a>
-        ) : <span class="nav-item placeholder"></span>}
-        {next ? (
-          <a href={`/${next.slug}/`} class="nav-item next">
-            <span class="nav-label">下一篇 →</span>
-            <span class="nav-title">{next.title}</span>
-          </a>
-        ) : (
-          <a href="/#laws" class="nav-item next">
-            <span class="nav-label">读完了</span>
-            <span class="nav-title">返回首页</span>
-          </a>
-        )}
-      </div>
+  <div class="shell">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/"><Home size={13} stroke-width={1.75} aria-hidden="true" />首页</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href={`/#${law.category}`}>{category?.title ?? '全部法则'}</a>
     </nav>
 
-    <footer set:html={law.footerHtml} />
+    <header class="law-hero">
+      <div class="law-hero-grid">
+        <div>
+          <p class="eyebrow">{law.englishTitle}</p>
+          <h1 class="law-title" set:html={law.hero.titleHtml} />
+          {showSubtitle && <span class="law-sub" set:html={law.hero.subtitleHtml} />}
+
+          {law.layout === 'statement' ? (
+            <div class="statement-impact" set:html={law.hero.leadHtml} />
+          ) : (
+            law.hero.leadHtml && <div class="law-lead" set:html={law.hero.leadHtml} />
+          )}
+        </div>
+
+        <div class="hero-aside">
+          <span class="hero-index">{String(law.order).padStart(2, '0')} / {orderedLaws.length}</span>
+        </div>
+      </div>
+
+      <ShareActions law={law} />
+    </header>
   </div>
+
+  {law.layout === 'comparison' && law.bad && law.good ? (
+    <div class="scenes">
+      <ChatScene scene={law.bad} variant="bad" />
+      <ChatScene scene={law.good} variant="good" />
+    </div>
+  ) : (
+    <section class="statement">
+      <div class="shell">
+        <div class="statement-card" set:html={law.specialHtml ?? ''} />
+      </div>
+    </section>
+  )}
+
+  <div class="shell">
+    <nav class="pager" aria-label="上下条">
+      {previous ? (
+        <a class="pager-item prev" href={`/${previous.slug}/`}>
+          <span class="pager-label"><ChevronLeft size={13} stroke-width={2} aria-hidden="true" />上一条</span>
+          <span class="pager-title">{previous.title}</span>
+        </a>
+      ) : (
+        <a class="pager-item prev" href="/#laws">
+          <span class="pager-label"><ArrowLeft size={13} stroke-width={2} aria-hidden="true" />回到目录</span>
+          <span class="pager-title">全部法则</span>
+        </a>
+      )}
+
+      {next ? (
+        <a class="pager-item next" href={`/${next.slug}/`}>
+          <span class="pager-label">下一条<ChevronRight size={13} stroke-width={2} aria-hidden="true" /></span>
+          <span class="pager-title">{next.title}</span>
+        </a>
+      ) : (
+        <a class="pager-item next" href="/#laws">
+          <span class="pager-label">读完了<ArrowRight size={13} stroke-width={2} aria-hidden="true" /></span>
+          <span class="pager-title">回到目录</span>
+        </a>
+      )}
+    </nav>
+
+    <footer class="law-footer" set:html={law.footerHtml} />
+  </div>
+
+  <script is:inline>
+    const progress = document.querySelector('[data-read-progress]');
+
+    function updateProgress() {
+      if (!progress) return;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const ratio = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
+      progress.style.width = (ratio * 100).toFixed(2) + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  </script>
 
   {law.slug === 'no-hello' && (
     <script is:inline>

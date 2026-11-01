@@ -1,0 +1,26 @@
+---
+import LawCard from './LawCard.astro';
+import type { Category, Law } from '../data/law-types';
+
+interface Props {
+  category: Category;
+  laws: Law[];
+}
+
+const { category, laws } = Astro.props;
+---
+
+<section class="law-section" id={category.id} data-law-section aria-labelledby={`${category.id}-title`}>
+  <div class="section-head">
+    <h2 class="section-title" id={`${category.id}-title`}>
+      <span class="section-index" aria-hidden="true">{category.eyebrow}</span>
+      {category.title}
+    </h2>
+    <span class="section-count" data-section-count>{laws.length} 条</span>
+    <p class="section-desc">{category.description}</p>
+  </div>
+
+  <div class="card-grid">
+    {laws.map((law) => <LawCard law={law} />)}
+  </div>
+</section>

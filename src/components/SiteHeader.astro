@@ -1,0 +1,41 @@
+---
+import { Shuffle } from 'lucide-astro';
+import { orderedLaws } from '../data/laws';
+import { categories } from '../data/law-types';
+
+const slugs = orderedLaws.map((law) => law.slug);
+---
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/">
+      <strong>BeKind</strong>
+      <span>互联网沟通指北</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主题">
+      {categories.map((category) => (
+        <a href={`/#${category.id}`}>{category.title}</a>
+      ))}
+    </nav>
+
+    <button class="random-button" type="button" data-random-law data-slugs={JSON.stringify(slugs)}>
+      <Shuffle size={14} stroke-width={1.75} aria-hidden="true" />
+      <span>随机一条</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-random-law]');
+
+  button?.addEventListener('click', () => {
+    const slugs: string[] = JSON.parse(button.dataset.slugs ?? '[]');
+    if (!slugs.length) return;
+
+    const current = window.location.pathname.replace(/\//g, '');
+    const pool = slugs.filter((slug) => slug !== current);
+    const target = pool[Math.floor(Math.random() * pool.length)] ?? slugs[0];
+    window.location.href = `/${target}/`;
+  });
+</script>

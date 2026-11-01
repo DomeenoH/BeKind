@@ -1,0 +1,61 @@
+/**
+ * 法则 slug → 图标名。
+ * 这里只存名字，具体组件在 `components/LawGlyph.astro` 里映射，
+ * 这样数据层测试不需要解析 .astro 文件。
+ */
+export const lawIconNames: Record<string, string> = {
+  'no-hello': 'Hand',
+  'xy-problem': 'Route',
+  'dont-ask-to-ask': 'MessageCircleQuestion',
+  'it-didnt-work': 'Bug',
+  'wheatons-law': 'HeartHandshake',
+  'smart-questions': 'Lightbulb',
+  'no-pointless-politeness': 'Users',
+  'cunninghams-law': 'PencilLine',
+  'rubber-duck': 'Bird',
+  'bike-shedding': 'Bike',
+  'yak-shaving': 'Scissors',
+  'hanlons-razor': 'Scale',
+  'postels-law': 'ShieldCheck',
+  'three-strikes': 'Repeat',
+  bluf: 'AlignLeft',
+  'sturgeons-law': 'Quote',
+  'greshams-law': 'TrendingDown',
+  'assume-public': 'Eye',
+  'echo-chamber': 'Megaphone',
+  'online-disinhibition': 'VenetianMask',
+  'dunning-kruger': 'Brain',
+  tldr: 'FileText',
+  rtfm: 'BookOpen',
+  'occams-razor': 'Minimize2',
+  'hitchens-razor': 'Eraser',
+  'poes-law': 'Drama',
+  'brandolinis-law': 'Mountain',
+  stfw: 'Search',
+  'denver-coder-9': 'Ghost',
+  'no-urgent': 'Siren',
+  'principle-of-charity': 'HandHeart',
+  'grice-maxims': 'MessageSquareText',
+  'context-collapse': 'Layers',
+  'medium-is-the-message': 'AudioLines',
+  'no-is-a-complete-sentence': 'Ban',
+  'reply-all': 'ReplyAll',
+  'one-message': 'Rows3',
+  'lurk-moar': 'Fish',
+  'chestertons-fence': 'Fence',
+  'fundamental-attribution-error': 'ScanFace',
+  'confirmation-bias': 'Filter',
+  'survivorship-bias': 'Crosshair',
+  'sunk-cost': 'Anchor',
+  'correlation-is-not-causation': 'ChartScatter',
+  'steelmanning': 'Shield',
+  'bystander-effect': 'EyeOff',
+  'streisand-effect': 'Download',
+  'eternal-september': 'CalendarClock',
+  'goodharts-law': 'Gauge',
+  'dont-feed-the-trolls': 'Flame',
+};
+
+export function getLawIconName(slug: string): string {
+  return lawIconNames[slug] ?? 'Hand';
+}

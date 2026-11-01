@@ -1,5 +1,7 @@
 ---
 import { Copy, Download, Image, X } from 'lucide-astro';
+import LawGlyph from './LawGlyph.astro';
+import { getLawIconName } from '../data/law-icons';
 import type { Law } from '../data/law-types';
 import { orderedLaws } from '../data/laws';
 import { getSharePosterContent } from '../lib/share-poster';
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const { law } = Astro.props;
+const iconName = getLawIconName(law.slug);
 const shareUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin);
 const displayHost = shareUrl.hostname;
 const { indexLabel, titleClass, badExample, goodExample } = getSharePosterContent(law, orderedLaws.length);
@@ -17,11 +20,11 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
 <div class="share-root" data-share-root data-title={law.title} data-share-url={shareUrl.href}>
   <div class="share-actions" aria-label="分享">
     <button class="share-button primary" type="button" data-copy-link>
-      <Copy size={18} aria-hidden="true" />
+      <Copy size={16} stroke-width={1.75} aria-hidden="true" />
       <span>复制链接</span>
     </button>
     <button class="share-button secondary" type="button" data-generate-poster>
-      <Image size={18} aria-hidden="true" />
+      <Image size={16} stroke-width={1.75} aria-hidden="true" />
       <span>生成卡片</span>
     </button>
     <span class="share-feedback" data-share-feedback aria-live="polite"></span>
@@ -30,7 +33,9 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
   <div class="share-poster" data-share-poster data-poster-width="600" data-poster-height="800" aria-hidden="true">
     <div class="poster-header">
       <div class="poster-brand">
-        <span class="poster-mark" aria-hidden="true">{law.icon}</span>
+        <span class="poster-mark" aria-hidden="true">
+          <LawGlyph name={iconName} size={18} />
+        </span>
         <div>
           <strong>BeKind</strong>
           <span>互联网沟通指北</span>
@@ -48,7 +53,7 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
         <div class="poster-comparison">
           <div class="poster-example poster-example-bad">
             <div class="poster-example-label">
-              <span aria-hidden="true">✕</span>
+              <span aria-hidden="true">×</span>
               <strong>错误示例</strong>
             </div>
             <p>{badExample}</p>
@@ -80,17 +85,17 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
         <h2>{law.title}</h2>
       </div>
       <button class="icon-button" type="button" data-close-dialog aria-label="关闭分享卡片" title="关闭">
-        <X size={21} />
+        <X size={18} aria-hidden="true" />
       </button>
     </div>
-    <img data-poster-preview alt={`${law.title}分享卡片`} />
+    <img data-poster-preview alt={`${law.title}的分享卡片`} />
     <div class="share-dialog-actions">
       <a class="share-button primary" data-download-poster download={`BeKind-${law.slug}.png`}>
-        <Download size={18} aria-hidden="true" />
+        <Download size={16} stroke-width={1.75} aria-hidden="true" />
         <span>下载图片</span>
       </a>
       <button class="share-button secondary" type="button" data-copy-again>
-        <Copy size={18} aria-hidden="true" />
+        <Copy size={16} stroke-width={1.75} aria-hidden="true" />
         <span>复制链接</span>
       </button>
     </div>
@@ -98,9 +103,6 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
 </div>
 
 <script>
-  import html2canvas from 'html2canvas';
-  import QRCode from 'qrcode';
-
   function fallbackCopy(text: string) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -127,7 +129,7 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
     const preview = root.querySelector<HTMLImageElement>('[data-poster-preview]');
     const download = root.querySelector<HTMLAnchorElement>('[data-download-poster]');
     const close = root.querySelector<HTMLButtonElement>('[data-close-dialog]');
-    const shareText = `这个或许对你有帮助 → ${title}：${window.location.href}`;
+    const shareText = `不用回我，看完就行 → ${title}：${window.location.href}`;
     const posterUrl = root.dataset.shareUrl ?? window.location.href;
 
     const copy = async () => {
@@ -162,17 +164,23 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
       generateButton.innerHTML = '<span class="button-loader" aria-hidden="true"></span><span>生成中</span>';
 
       try {
+        // 分享卡是低频操作，按需加载两个较重的依赖，首屏不背这个包。
+        const [{ default: html2canvas }, { default: QRCode }] = await Promise.all([
+          import('html2canvas'),
+          import('qrcode'),
+        ]);
+
         const posterWidth = Number(poster.dataset.posterWidth ?? 600);
         const posterHeight = Number(poster.dataset.posterHeight ?? 800);
         await QRCode.toCanvas(qr, posterUrl, {
           width: 96,
           margin: 1,
-          color: { dark: '#1d1d1f', light: '#ffffff' },
+          color: { dark: '#17171b', light: '#ffffff' },
         });
         const canvas = await html2canvas(poster, {
           scale: 2,
           useCORS: true,
-          backgroundColor: '#ffffff',
+          backgroundColor: '#f5f4f0',
           logging: false,
           width: posterWidth,
           height: posterHeight,

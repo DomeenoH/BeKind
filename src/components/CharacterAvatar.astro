@@ -3,11 +3,12 @@ import { characters, qqAvatarUrl, type CharacterId } from '../data/characters';
 
 interface Props {
   character: CharacterId;
+  /** 设计定值是 32px（群聊行与角色卡都用它）；只有确有层级需要时才传别的值。 */
   size?: number;
   eager?: boolean;
 }
 
-const { character, size = 48, eager = false } = Astro.props;
+const { character, size = 32, eager = false } = Astro.props;
 const person = characters[character];
 ---
 

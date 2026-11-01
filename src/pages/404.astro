@@ -1,16 +1,27 @@
 ---
-import { Home } from 'lucide-astro';
+import { ArrowRight, Home } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = `页面不存在 · ${site.name}`;
 ---
 
-<BaseLayout title="404 · BeKind" description="页面不存在。" canonicalPath="/404/">
-  <a href="/" class="nav-back">← 首页</a>
-  <section class="container not-found-page">
-    <div class="hero">
-      <h1 class="name">404</h1>
-      <span class="subtitle">页面不存在</span>
-      <h2 class="lead">这里什么都没有。</h2>
-      <a class="share-button" href="/"><Home size={18} aria-hidden="true" />返回首页</a>
+<BaseLayout title={title} description="这个页面不存在，回到首页继续翻法则。" canonicalPath="/404/">
+  <section class="shell not-found">
+    <p class="not-found-code">404 · 页面不存在</p>
+    <h1>这里没有法则。</h1>
+    <p>
+      地址可能拼错了，也可能这条已经合并到别处。真正想找的那条，大概率还在目录里。
+    </p>
+    <div class="not-found-actions">
+      <a class="share-button primary" href="/">
+        <Home size={16} stroke-width={1.75} aria-hidden="true" />
+        <span>回到首页</span>
+      </a>
+      <a class="share-button" href="/#laws">
+        <span>浏览全部法则</span>
+        <ArrowRight size={16} stroke-width={1.75} aria-hidden="true" />
+      </a>
     </div>
   </section>
 </BaseLayout>

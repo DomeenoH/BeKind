@@ -1,20 +1,34 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
 
 interface Props {
   title?: string;
   description: string;
   canonicalPath?: string;
   bodyClass?: string;
+  ogType?: 'website' | 'article';
+  footer?: 'full' | 'minimal' | 'none';
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
-  title = 'BeKind · 互联网沟通指北',
+  title = `${site.title} · ${site.name}`,
   description,
   canonicalPath = Astro.url.pathname,
   bodyClass,
+  ogType = 'website',
+  footer = 'full',
+  jsonLd,
 } = Astro.props;
+
 const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const ogImage = new URL('/og.png', Astro.site ?? Astro.url.origin);
+const structuredData = jsonLd
+  ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd])
+  : [];
 ---
 
 <!doctype html>
@@ -23,20 +37,42 @@ const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f4f5f2" />
+    <meta name="theme-color" content="#f5f4f0" />
+    <meta name="author" content="多米诺" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="BeKind" />
+    <link rel="preconnect" href="https://q1.qlogo.cn" crossorigin />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="zh_CN" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.name} · ${site.title}`} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <title>{title}</title>
+
+    {structuredData.map((data) => (
+      <script type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
   </head>
   <body class={bodyClass}>
-    <main>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <SiteHeader />
+    <main id="main">
       <slot />
     </main>
+    {footer !== 'none' && (
+      <SiteFooter variant={footer === 'minimal' ? 'minimal' : 'full'} showStats={footer === 'full'} />
+    )}
   </body>
 </html>

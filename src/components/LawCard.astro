@@ -1,5 +1,8 @@
 ---
 import { characters } from '../data/characters';
+import LawGlyph from './LawGlyph.astro';
+import { getLawIconName } from '../data/law-icons';
+import { categories } from '../data/law-types';
 import type { Law } from '../data/law-types';
 
 interface Props {
@@ -7,21 +10,38 @@ interface Props {
 }
 
 const { law } = Astro.props;
+const iconName = getLawIconName(law.slug);
+const category = categories.find((item) => item.id === law.category);
+
 const sceneSearch = [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])]
   .map((line) => `${line.character ? characters[line.character].name : line.name ?? ''} ${line.text}`)
   .join(' ');
-const searchText = `${law.title} ${law.englishTitle} ${law.summary} ${sceneSearch}`.toLocaleLowerCase('zh-CN');
+
+// 只把 hero 导语并进索引（短、且常含读者会搜的关键词）。
+// 解释段整段进索引会让首页体积翻三倍，不划算。
+const stripHtml = (html?: string) =>
+  (html ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const proseSearch = stripHtml(law.hero.leadHtml);
+
+const searchText =
+  `${law.title} ${law.englishTitle} ${law.summary} ${category?.title ?? ''} ${category?.description ?? ''} ${sceneSearch} ${proseSearch}`
+    .toLocaleLowerCase('zh-CN');
 ---
 
 <a
   href={`/${law.slug}/`}
-  class="home-card"
+  class="law-card"
   data-law-card
   data-search={searchText}
   aria-label={`${law.title}：${law.summary}`}
 >
-  <h2 aria-hidden="true">{law.icon}</h2>
-  <h3>{law.title}</h3>
-  <p class="subtitle">{law.englishTitle}</p>
-  <p class="hover-text">{law.summary}</p>
+  <div class="card-top">
+    <span class="card-icon" aria-hidden="true">
+      <LawGlyph name={iconName} size={19} />
+    </span>
+    <span class="card-index" aria-hidden="true">{String(law.order).padStart(2, '0')}</span>
+  </div>
+  <h3 class="card-title">{law.title}</h3>
+  <p class="card-en">{law.englishTitle}</p>
+  <p class="card-summary">{law.summary}</p>
 </a>

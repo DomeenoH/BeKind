@@ -19,7 +19,8 @@ describe('share poster content', () => {
       const content = getSharePosterContent(law, orderedLaws.length);
       expect(content.badExample, law.slug).toBeTruthy();
       expect(content.goodExample, law.slug).toBeTruthy();
-      expect(content.indexLabel).toMatch(/^\d{2} \/ 30$/);
+      expect(content.indexLabel).toMatch(/^\d{2} \/ \d{2}$/);
+      expect(content.indexLabel.endsWith(`/ ${orderedLaws.length}`)).toBe(true);
     });
   });
 });

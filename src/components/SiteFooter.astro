@@ -1,0 +1,87 @@
+---
+import { categories } from '../data/law-types';
+import { orderedLaws } from '../data/laws';
+import { site } from '../data/site';
+
+interface Props {
+  /** 详情页用紧凑版：只留品牌与必要链接，来源与授权在页面正文里 */
+  variant?: 'full' | 'minimal';
+  showStats?: boolean;
+}
+
+const { variant = 'full', showStats = false } = Astro.props;
+---
+
+<footer class={`site-footer${variant === 'minimal' ? ' is-minimal' : ''}`}>
+  <div class="shell">
+    {variant === 'minimal' ? (
+      <div class="footer-minimal">
+        <span class="footer-minimal-brand"><strong>BeKind</strong> · {site.title}</span>
+        <nav aria-label="站点链接">
+          <a href="/">首页</a>
+          <a href="/#laws">全部法则</a>
+          <a href={site.repo} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={site.license} target="_blank" rel="noreferrer">CC BY 4.0</a>
+        </nav>
+      </div>
+    ) : (
+      <>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <strong>BeKind · {site.title}</strong>
+            <p>{site.footerLine}</p>
+          </div>
+
+          <nav class="footer-col" aria-label="主题导航">
+            <h2>主题</h2>
+            <ul>
+              {categories.map((category) => (
+                <li><a href={`/#${category.id}`}>{category.title}</a></li>
+              ))}
+            </ul>
+          </nav>
+
+          <div class="footer-col">
+            <h2>项目</h2>
+            <ul>
+              <li><a href={site.repo} target="_blank" rel="noreferrer">GitHub 仓库</a></li>
+              <li><a href={site.license} target="_blank" rel="noreferrer">CC BY 4.0 授权</a></li>
+              <li><a href="/sitemap.xml">站点地图</a></li>
+              <li><a href="/#about">这是什么</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© {site.year} BeKind · 编排与译文采用 CC BY 4.0，代码采用 MIT</span>
+          {showStats && (
+            <span class="footer-stats" data-visit-stats hidden>
+              <span id="busuanzi_container_site_pv">总访问 <span id="busuanzi_value_site_pv"></span></span>
+              <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv"></span></span>
+            </span>
+          )}
+          <span>{orderedLaws.length} 条法则</span>
+        </div>
+      </>
+    )}
+  </div>
+</footer>
+
+{showStats && (
+  <>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script is:inline>
+      // 统计服务不可用或被拦截时整块隐藏，避免页脚出现「总访问   」这样的空值。
+      window.setTimeout(function () {
+        var pv = document.getElementById('busuanzi_value_site_pv');
+        var wrap = document.querySelector('[data-visit-stats]');
+        if (!wrap) return;
+        if (pv && pv.textContent && pv.textContent.trim()) {
+          wrap.hidden = false;
+        } else {
+          wrap.remove();
+        }
+      }, 2200);
+    </script>
+  </>
+)}

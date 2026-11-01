@@ -1,72 +1,218 @@
 ---
-import { Search } from 'lucide-astro';
+import { Search, X } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import LawCard from '../components/LawCard.astro';
+import CategorySection from '../components/CategorySection.astro';
+import CharacterAvatar from '../components/CharacterAvatar.astro';
 import { orderedLaws } from '../data/laws';
+import { categories } from '../data/law-types';
+import type { CharacterId } from '../data/characters';
+import { cast, howToUse, site } from '../data/site';
+
+const grouped = categories.map((category) => ({
+  category,
+  laws: orderedLaws.filter((law) => law.category === category.id),
+}));
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.name,
+    alternateName: site.title,
+    url: new URL('/', Astro.site ?? Astro.url.origin).href,
+    description: site.description,
+    inLanguage: 'zh-CN',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '互联网沟通法则',
+    numberOfItems: orderedLaws.length,
+    itemListElement: orderedLaws.map((law, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: law.title,
+      url: new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin).href,
+    })),
+  },
+];
 ---
 
-<BaseLayout
-  description="本项目旨在收录互联网时代的沟通礼仪与常见反模式，帮助大家成为更高效、更友善的网络公民。"
-  bodyClass="home-body"
->
-  <div class="container">
-    <header class="home-hero">
-      <h1 class="name">互联网沟通指北</h1>
-      <span class="subtitle">收录互联网时代的沟通礼仪</span>
-      <h2 class="lead">别当混蛋。<br />做个好网友。</h2>
+<BaseLayout description={site.description} jsonLd={jsonLd} bodyClass="home-body">
+  <div class="shell">
+    <section class="home-intro">
+      <div class="home-intro-grid">
+        <div>
+          <p class="eyebrow">{site.eyebrow}</p>
+          <h1 class="display">{site.title}</h1>
+          <p class="home-lead">{site.tagline}</p>
+          <p class="home-desc">{site.intro}</p>
 
-      <label class="home-search">
-        <span class="sr-only">搜索法则</span>
-        <Search size={20} aria-hidden="true" />
-        <input type="search" placeholder="搜索法则" data-law-search />
-      </label>
-      <span class="sr-only" data-result-count aria-live="polite">30 条</span>
-    </header>
+          <div class="search" data-search-box role="search">
+            <label class="sr-only" for="law-search">搜索法则</label>
+            <Search size={18} stroke-width={1.75} aria-hidden="true" />
+            <input
+              id="law-search"
+              type="search"
+              placeholder={site.searchPlaceholder}
+              autocomplete="off"
+              spellcheck="false"
+              data-law-search
+            />
+            <kbd class="search-hint" aria-hidden="true">/</kbd>
+            <button class="search-clear" type="button" data-search-clear aria-label="清空搜索">
+              <X size={14} stroke-width={2} aria-hidden="true" />
+            </button>
+          </div>
 
-    <div class="home-card-grid" id="laws">
-      {orderedLaws.map((law) => <LawCard law={law} />)}
+          <div class="search-status">
+            <span class="search-status-hint" data-search-hint>按 <kbd>/</kbd> 聚焦搜索，Esc 清空</span>
+            <span data-result-count></span>
+            <button class="search-reset" type="button" data-search-reset hidden>清除筛选</button>
+            <span class="sr-only" data-result-live aria-live="polite"></span>
+          </div>
+        </div>
+
+        <aside class="contents" aria-label="目录">
+          <p class="contents-label">目录</p>
+          <div class="contents-list">
+            {grouped.map(({ category, laws }) => (
+              <a href={`#${category.id}`}>
+                <span class="contents-num" aria-hidden="true">{category.eyebrow}</span>
+                <span class="contents-name">{category.title}</span>
+                <span class="contents-count">{laws.length}</span>
+              </a>
+            ))}
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="laws" id="laws">
+      {grouped.map(({ category, laws }) => <CategorySection category={category} laws={laws} />)}
     </div>
-    <p class="empty-results" data-empty-results hidden>没有找到相关法则。</p>
 
-    <footer>
-      <p>
-        这不是非常严重的事情，所以请不要对送你来看这个网站的人
-        <a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。
-      </p>
-      <p>本项目旨在收录互联网时代的沟通礼仪与常见反模式，帮助大家成为更高效、更友善的网络公民。</p>
-      <p>
-        <a href="https://github.com/DomeenoH/BeKind" target="_blank" rel="noreferrer">GitHub</a> ·
-        编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · © 2025
-      </p>
-      <p>
-        <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span> ·
-        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
-      </p>
-    </footer>
+    <section class="search-empty" data-empty-results hidden aria-live="polite">
+      <h2>{site.searchEmptyTitle}</h2>
+      <p>{site.searchEmptyHint}</p>
+    </section>
   </div>
 
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <section class="about" id="about">
+    <div class="shell">
+      <div class="about-grid">
+        <div>
+          <h2 class="about-title">这是什么</h2>
+          <p class="about-text">
+            一份讲怎么在网上好好说话的手册。{orderedLaws.length} 条法则，一半来自 nohello.net、xyproblem.info
+            这类老帖，一半来自我们把自己天聊死之后的复盘。
+          </p>
+          <p class="about-text">
+            多数配一段 QQ 群聊：先演示怎么把一件小事拖成事故，再给一个能照着念的说法。没有大道理，不搞心态，也不要求你变得热情开朗。
+          </p>
+          <p class="about-note">
+            场景由多米诺、西打、尾巴和群友出演。头像是他们的 QQ 头像，实时拉取，不存本地。
+          </p>
+        </div>
+
+        <ul class="cast-list">
+          {cast.map((person) => (
+            <li class="cast-item">
+              <CharacterAvatar character={person.id as CharacterId} size={32} />
+              <div class="cast-copy">
+                <p class="cast-name">{person.name}</p>
+                <p class="cast-role">{person.role}</p>
+                <p class="cast-line">{person.line}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="steps">
+        {howToUse.map((step) => (
+          <div class="step">
+            <p class="step-num">{step.step}</p>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <script is:inline>
-    const search = document.querySelector('[data-law-search]');
+    const input = document.querySelector('[data-law-search]');
+    const box = document.querySelector('[data-search-box]');
     const cards = [...document.querySelectorAll('[data-law-card]')];
-    const resultCount = document.querySelector('[data-result-count]');
-    const empty = document.querySelector('[data-empty-results]');
+    const sections = [...document.querySelectorAll('[data-law-section]')];
+    const countEl = document.querySelector('[data-result-count]');
+    const liveEl = document.querySelector('[data-result-live]');
+    const hintEl = document.querySelector('[data-search-hint]');
+    const resetEl = document.querySelector('[data-search-reset]');
+    const clearEl = document.querySelector('[data-search-clear]');
+    const emptyEl = document.querySelector('[data-empty-results]');
+    const statusEl = document.querySelector('.search-status');
 
     function applyFilters() {
-      const query = search?.value.trim().toLocaleLowerCase('zh-CN') ?? '';
-      let visibleCount = 0;
+      const raw = input.value;
+      const query = raw.trim().toLocaleLowerCase('zh-CN');
+      let visible = 0;
 
       cards.forEach((card) => {
-        const matchesQuery = !query || card.dataset.search?.includes(query);
-        card.hidden = !matchesQuery;
-        if (matchesQuery) visibleCount += 1;
+        const match = !query || (card.dataset.search || '').includes(query);
+        card.hidden = !match;
+        if (match) visible += 1;
       });
 
-      if (resultCount) resultCount.textContent = `${visibleCount} 条`;
-      if (empty) empty.hidden = visibleCount !== 0;
+      sections.forEach((section) => {
+        const own = [...section.querySelectorAll('[data-law-card]')];
+        const shown = own.filter((card) => !card.hidden).length;
+        section.hidden = shown === 0;
+        const counter = section.querySelector('[data-section-count]');
+        if (counter) counter.textContent = query ? shown + ' 条' : own.length + ' 条';
+      });
+
+      if (query) {
+        countEl.textContent = '找到 ' + visible + ' 条';
+        if (liveEl) liveEl.textContent = '找到 ' + visible + ' 条法则';
+        resetEl.hidden = false;
+        emptyEl.hidden = visible !== 0;
+      } else {
+        countEl.textContent = '';
+        if (liveEl) liveEl.textContent = '';
+        resetEl.hidden = true;
+        emptyEl.hidden = true;
+      }
+
+      if (hintEl) hintEl.hidden = Boolean(query);
+      if (statusEl) statusEl.classList.toggle('is-active', Boolean(query));
+      box.classList.toggle('has-value', raw.length > 0);
     }
 
-    search?.addEventListener('input', applyFilters);
+    function clearSearch() {
+      input.value = '';
+      applyFilters();
+      input.focus();
+    }
+
+    input.addEventListener('input', applyFilters);
+    clearEl.addEventListener('click', clearSearch);
+    resetEl.addEventListener('click', clearSearch);
+
+    document.addEventListener('keydown', (event) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || '');
+      if (event.key === '/' && !typing) {
+        event.preventDefault();
+        input.focus();
+        return;
+      }
+      if (event.key === 'Escape' && document.activeElement === input) {
+        clearSearch();
+        input.blur();
+      }
+    });
+
+    applyFilters();
   </script>
 </BaseLayout>

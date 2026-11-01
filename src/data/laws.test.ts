@@ -4,15 +4,15 @@ import { orderedLaws } from './laws';
 import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
-  it('keeps all 30 routes unique and ordered', () => {
-    expect(orderedLaws).toHaveLength(30);
-    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(30);
-    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 30 }, (_, index) => index + 1));
+  it('keeps all 50 routes unique and ordered', () => {
+    expect(orderedLaws).toHaveLength(50);
+    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(50);
+    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
   });
 
   it('preserves the original comparison structure', () => {
     const comparisonLaws = orderedLaws.filter((law) => law.layout === 'comparison');
-    expect(comparisonLaws).toHaveLength(29);
+    expect(comparisonLaws).toHaveLength(49);
 
     comparisonLaws.forEach((law) => {
       expect(law.hero.titleHtml.length).toBeGreaterThan(0);
