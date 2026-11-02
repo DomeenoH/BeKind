@@ -22,8 +22,13 @@ export function getSharePosterContent(law: Law, total: number) {
   const badLineSet = new Set(badLines);
   const goodLineSet = new Set(goodLines);
 
+  const indexCurrent = String(law.order).padStart(2, '0');
+  const indexTotal = String(total).padStart(2, '0');
+
   return {
-    indexLabel: `${String(law.order).padStart(2, '0')} / ${total}`,
+    indexLabel: `${indexCurrent} / ${indexTotal}`,
+    indexCurrent,
+    indexTotal,
     titleClass: law.title.length >= 8 ? 'is-long' : '',
     badExample: clampText(badLines.find((line) => !goodLineSet.has(line)) ?? badLines[0]),
     goodExample: clampText(goodLines.find((line) => !badLineSet.has(line)) ?? goodLines[0]),

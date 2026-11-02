@@ -1562,14 +1562,14 @@ strong {
   }
 }
 
-/* 分享卡（离屏渲染，尺寸固定） */
+/* 分享卡（离屏渲染，尺寸固定 600×800） */
 .share-poster {
   position: fixed;
   top: 0;
   left: -10000px;
   width: 600px;
   height: 800px;
-  padding: 36px 40px 32px;
+  padding: 38px 44px 34px;
   display: flex;
   flex-direction: column;
   color: var(--ink);
@@ -1577,6 +1577,7 @@ strong {
   text-align: left;
 }
 
+/* 刊头 */
 .poster-header {
   display: flex;
   align-items: center;
@@ -1589,176 +1590,242 @@ strong {
 .poster-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
 .poster-mark {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   color: var(--ink);
   background: var(--surface);
   border: 1px solid var(--line-soft);
-  border-radius: var(--radius-sm);
+  border-radius: 9px;
 }
 
 .poster-brand div {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
 }
 
 .poster-brand strong {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
-.poster-brand span,
-.poster-index {
-  font-size: 12px;
+.poster-brand span {
+  font-size: 11px;
   font-weight: 600;
+  line-height: 1.2;
   color: var(--ink-3);
 }
 
 .poster-index {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
 }
 
+.poster-index strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* 主体：上下留白对称，不靠绝对定位 */
 .poster-main {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  margin-top: 32px;
+}
+
+.poster-english {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 
 .poster-main h2 {
-  max-width: 520px;
-  margin: 10px 0 14px;
-  font-size: 50px;
-  line-height: 1.14;
+  max-width: 512px;
+  margin: 12px 0 0;
+  font-size: 58px;
+  line-height: 1.06;
   font-weight: 700;
   letter-spacing: -0.02em;
   word-break: break-word;
 }
 
 .poster-main h2.is-long {
-  font-size: 42px;
-}
-
-.poster-english {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font-size: 46px;
 }
 
 .poster-summary {
-  max-width: 500px;
-  margin: 0;
-  font-size: 19px;
+  max-width: 512px;
+  margin: 16px 0 0;
+  font-size: 20px;
   line-height: 1.55;
   font-weight: 500;
   color: var(--ink-2);
 }
 
+/* 对错对照：白卡 + 左侧语义色边 */
 .poster-comparison {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 32px;
+  gap: 16px;
+  margin-top: 36px;
 }
 
 .poster-example {
-  min-height: 104px;
-  padding: 14px 18px 16px;
+  padding: 16px 18px 18px;
+  background: var(--surface);
   border: 1px solid var(--line-soft);
-  border-left-width: 3px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .poster-example-bad {
-  background: var(--bad-soft);
-  border-left-color: var(--bad);
+  border-left: 3px solid var(--bad);
 }
 
 .poster-example-good {
+  border-left: 3px solid var(--good);
+}
+
+.poster-example-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.poster-badge {
+  display: grid;
+  place-items: center;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.poster-example-bad .poster-badge {
+  background: var(--bad-soft);
+}
+
+.poster-example-good .poster-badge {
   background: var(--good-soft);
-  border-left-color: var(--good);
+}
+
+/* 叉与勾用 CSS 画：不依赖字体或图标，截图里不会走样 */
+.poster-example-bad .poster-mark-x {
+  position: relative;
+  display: block;
+  width: 9px;
+  height: 9px;
+}
+
+.poster-example-bad .poster-mark-x::before,
+.poster-example-bad .poster-mark-x::after {
+  content: "";
+  position: absolute;
+  top: 3.7px;
+  left: 0;
+  width: 9px;
+  height: 1.6px;
+  background: var(--bad);
+  border-radius: 1px;
+}
+
+.poster-example-bad .poster-mark-x::before {
+  transform: rotate(45deg);
+}
+
+.poster-example-bad .poster-mark-x::after {
+  transform: rotate(-45deg);
+}
+
+.poster-example-good .poster-mark-check {
+  display: block;
+  width: 6px;
+  height: 10px;
+  margin-top: -2.5px;
+  border-right: 1.7px solid var(--good);
+  border-bottom: 1.7px solid var(--good);
+  transform: rotate(42deg);
 }
 
 .poster-example-label {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 8px;
   font-size: 12px;
-  line-height: 1;
-}
-
-.poster-example-label span {
-  font-size: 14px;
   font-weight: 700;
-}
-
-.poster-example-label strong {
-  font-size: 12px;
-  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
   color: var(--ink-2);
 }
 
-.poster-example-bad .poster-example-label span {
-  color: var(--bad);
-}
-
-.poster-example-good .poster-example-label span {
-  color: var(--good);
+.poster-example-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
 .poster-example p {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
   font-weight: 500;
   color: var(--ink);
 }
 
+/* 页脚 */
 .poster-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  width: 100%;
-  margin-top: auto;
-  padding-top: 18px;
+  gap: 20px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
 }
 
-.poster-footer div {
+.poster-footer-copy {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  min-width: 0;
 }
 
-.poster-footer span {
-  font-size: 13px;
+.poster-footer-copy strong {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.poster-footer-copy span {
+  font-size: 12px;
+  line-height: 1.45;
   color: var(--ink-3);
 }
 
-.poster-footer strong {
-  font-size: 16px;
-  font-weight: 700;
+.poster-qr {
+  flex: 0 0 auto;
+  padding: 7px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
 }
 
-.poster-footer canvas {
-  flex: 0 0 92px;
-  width: 92px;
-  height: 92px;
+.poster-qr canvas {
+  display: block;
+  width: 88px;
+  height: 88px;
 }
 
 /* 分享弹窗 */

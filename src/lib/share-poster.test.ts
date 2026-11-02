@@ -23,4 +23,12 @@ describe('share poster content', () => {
       expect(content.indexLabel.endsWith(`/ ${orderedLaws.length}`)).toBe(true);
     });
   });
+
+  it('splits the index into two non-empty parts for the poster layout', () => {
+    orderedLaws.forEach((law) => {
+      const { indexCurrent, indexTotal } = getSharePosterContent(law, orderedLaws.length);
+      expect(indexCurrent, law.slug).toMatch(/^\d{2}$/);
+      expect(indexTotal).toBe(String(orderedLaws.length).padStart(2, '0'));
+    });
+  });
 });
