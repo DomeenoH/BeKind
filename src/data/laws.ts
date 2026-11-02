@@ -512,13 +512,13 @@ const laws: Law[] = [
           "name": "",
           "text": "（一个小时过去了...）",
           "html": "（一个小时过去了...）",
-          "style": "opacity: 0.5; text-align: center; padding: 20px;"
+          "tone": "meta"
         },
         {
           "name": "",
           "text": "（没有人回复）",
           "html": "（没有人回复）",
-          "style": "opacity: 0.5; text-align: center; padding: 20px;"
+          "tone": "meta"
         }
       ],
       "explanationHtml": "<div>\n                        <p>\n                            这是一个完全合理的问题，但问题在于：<strong>它太开放了</strong>。\n                        </p>\n                        <p>\n                            人们在面对开放性问题时，往往会产生\"决策疲劳\"——需要在脑海中筛选太多选项，最后干脆放弃回答。而且，回答一个主观问题需要承担被反驳的风险，很多人不愿意冒这个险。\n                        </p>\n                        <p>\n                            结果就是：你的问题石沉大海，无人问津。😔\n                        </p>\n                    </div>"
@@ -682,7 +682,7 @@ const laws: Law[] = [
           "name": "",
           "text": "（5分钟后，会议进入下一项）",
           "html": "（5分钟后，会议进入下一项）",
-          "style": "opacity: 0.7;"
+          "tone": "meta"
         },
         {
           "character": "cider",
@@ -716,7 +716,7 @@ const laws: Law[] = [
           "name": "",
           "text": "（2小时后，仍在讨论袋子颜色...）",
           "html": "（2小时后，仍在讨论袋子颜色...）",
-          "style": "opacity: 0.7;"
+          "tone": "meta"
         }
       ],
       "explanationHtml": "<div>\n                        <p>\n                            <strong>经典案例：</strong>委员会审批核电站计划时，大家因为不懂而迅速通过；但审批员工自行车棚时，却争论不休——因为每个人都\"懂\"自行车棚。\n                        </p>\n                        <p>\n                            这就是<strong>帕金森琐碎定律</strong>：人们倾向于在自己能理解的小事上投入不成比例的时间和精力，而对真正重要（但复杂）的事情一笔带过。\n                        </p>\n                        <ul>\n                            <li>🧠 <strong>认知舒适区：</strong>小事容易理解，发言不会出错</li>\n                            <li>👀 <strong>刷存在感：</strong>大事上不敢说话，小事上可以表现</li>\n                            <li>⚖️ <strong>决策疲劳：</strong>大事太复杂，干脆放弃思考</li>\n                        </ul>\n                    </div>"
@@ -806,15 +806,14 @@ const laws: Law[] = [
           "name": "多米诺",
           "time": "2:35 下午",
           "text": "你不是说今天2点来接我吗？人呢？",
-          "html": "&nbsp;&nbsp;你不是说今天2点来接我吗？人呢？",
-          "style": "background: #ffebee; border-left: 4px solid #f44336;"
+          "html": "你不是说今天2点来接我吗？人呢？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:35 下午",
           "text": "完了... 我到底要干嘛来着？对了，煮面。面呢？葱呢？钥匙呢？！",
-          "html": "&nbsp;&nbsp;完了... 我到底要干嘛来着？对了，煮面。面呢？葱呢？钥匙呢？！"
+          "html": "完了... 我到底要干嘛来着？对了，煮面。面呢？葱呢？钥匙呢？！"
         }
       ],
       "explanationHtml": "<div>\n                        <p>\n                            <strong>\"剪牦牛毛\"</strong>的名字来源于这样一个场景：你想做A，但做A之前要先做B，做B之前要先做C...\n                            最后你发现自己在山上给一只牦牛剪毛——而你已经完全忘了最初想做什么。\n                        </p>\n                        <p>\n                            这是一种<strong>递归式任务陷阱</strong>：每一步看起来都是\"合理\"的前置任务，但无数\"合理\"的前置任务叠加起来，就变成了一条无限延伸的兔子洞。\n                        </p>\n                        <p>\n                            <strong>为什么会发生？</strong>\n                        </p>\n                        <ul>\n                            <li>🧠 <strong>注意力转移：</strong>新事物总比手头的任务更有趣</li>\n                            <li>🎯 <strong>目标模糊：</strong>没有明确的终点，容易迷失</li>\n                            <li>⏱️ <strong>低估时间：</strong>\"看两眼\"往往变成\"看两小时\"</li>\n                        </ul>\n                    </div>"
@@ -896,8 +895,8 @@ const laws: Law[] = [
           "name": "真相",
           "time": "其实是...",
           "text": "多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。",
-          "html": "&nbsp;&nbsp;多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。",
-          "style": "background: #fffbe6; border-left: 4px solid #ffd700;"
+          "html": "多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。",
+          "tone": "aside"
         }
       ],
       "explanationHtml": "<div>\n                        <p>\n                            我们的大脑天生有一种<strong>\"负面偏见\"</strong>：当事情出错时，我们倾向于假设最坏的情况。这是进化留给我们的生存本能——在原始社会，假设别人可能要伤害你是明智的。\n                        </p>\n                        <p>\n                            但在现代社会，这种思维模式会让我们：\n                        </p>\n                        <ul>\n                            <li>😰 <strong>焦虑：</strong>无端揣测别人的意图</li>\n                            <li>😤 <strong>愤怒：</strong>对莫须有的\"恶意\"生气</li>\n                            <li>🔥 <strong>冲突：</strong>基于误解做出过激反应</li>\n                        </ul>\n                        <p>\n                            最后往往发现：对方根本没想那么多，只是单纯的<strong>疏忽、忙碌、或者犯傻</strong>。\n                        </p>\n                    </div>"
@@ -993,8 +992,8 @@ const laws: Law[] = [
           "name": "真相",
           "time": "其实是...",
           "text": "多米诺只是在开会，随手回了个\"哦\"表示\"收到了一会儿看\"。",
-          "html": "&nbsp;&nbsp;多米诺只是在开会，随手回了个\"哦\"表示\"收到了一会儿看\"。",
-          "style": "background: #fffbe6; border-left: 4px solid #ffd700;"
+          "html": "多米诺只是在开会，随手回了个\"哦\"表示\"收到了一会儿看\"。",
+          "tone": "aside"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">文字天生缺失情绪</h3>\n                        <p>\n                            面对面交流时，我们有<strong>70%以上的信息</strong>来自非语言渠道：语调、表情、肢体语言。但在文字聊天中，这些全部消失了。\n                        </p>\n                        <p>\n                            同一句话，不同的人会读出完全不同的情绪：\n                        </p>\n                        <ul>\n                            <li>😐 \"好的\" → 你觉得是冷漠，对方可能只是在忙</li>\n                            <li>😤 \"行吧\" → 你觉得是敷衍，对方可能真的觉得\"行\"</li>\n                            <li>🤔 \"...\" → 你觉得是无语，对方可能只是在思考</li>\n                            <li>😬 \"😊\" → 你觉得是嘲讽，对方可能真的在笑</li>\n                        </ul>\n                    </div>"
@@ -1097,7 +1096,7 @@ const laws: Law[] = [
           "name": "",
           "text": "（30分钟过去了，问题还没搞清楚...）",
           "html": "（30分钟过去了，问题还没搞清楚...）",
-          "style": "opacity: 0.7; text-align: center; padding: 20px;"
+          "tone": "meta"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">文字沟通的局限</h3>\n                        <p>\n                            文字聊天非常适合<strong>简单、明确的信息传递</strong>，但当问题变得复杂或模糊时，它会变成效率杀手。\n                        </p>\n                        <p>\n                            <strong>问题所在：</strong>\n                        </p>\n                        <ul>\n                            <li>⏰ <strong>延迟：</strong>每条消息都要等回复，耗时成倍增加</li>\n                            <li>🧩 <strong>碎片化：</strong>上下文不断丢失，需要反复确认</li>\n                            <li>🤯 <strong>误解积累：</strong>每次文字交换都可能引入新的歧义</li>\n                        </ul>\n                        <p>\n                            一个3分钟的电话能解决的问题，用文字可能要折腾30分钟。\n                        </p>\n                    </div>"
@@ -1129,9 +1128,9 @@ const laws: Law[] = [
         {
           "name": "语音通话",
           "time": "2:11 - 2:14",
-          "text": "通话时长 3分钟，问题已解决 ✅",
-          "html": "&nbsp;&nbsp;通话时长 3分钟，问题已解决 ✅",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "text": "通话时长 3分钟，问题已解决",
+          "html": "通话时长 3分钟，问题已解决",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">三振出局法则</h3>\n                        <p>\n                            <strong>规则很简单：</strong>如果一个问题来回<strong>超过3条消息</strong>还说不清楚，就应该切换到实时沟通。\n                        </p>\n                        <p><strong>实时沟通的优势：</strong></p>\n                        <ul>\n                            <li>🎯 <strong>即时反馈：</strong>可以立刻澄清误解</li>\n                            <li>🗣️ <strong>语调信息：</strong>听到对方的语气，减少误读</li>\n                            <li>⚡ <strong>效率提升：</strong>复杂问题几分钟搞定</li>\n                        </ul>\n                        <p>\n                            <strong>别让键盘成为效率的敌人。该打电话时就打电话。📱</strong>\n                        </p>\n                    </div>"
@@ -1316,9 +1315,9 @@ const laws: Law[] = [
         {
           "name": "心态",
           "time": "平和",
-          "text": "节省了30分钟，内心毫无波动 😌",
-          "html": "&nbsp;&nbsp;节省了30分钟，内心毫无波动 😌",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "text": "节省了30分钟，内心毫无波动",
+          "html": "节省了30分钟，内心毫无波动",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">斯特金定律</h3>\n                        <p>\n                            科幻作家西奥多·斯特金在1957年提出：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"Ninety percent of everything is crud.\"<br>\n                            <strong>90% 的东西都是垃圾。</strong>\n                        </blockquote>\n                        <p><strong>如何应对：</strong></p>\n                        <ul>\n                            <li>🔍 <strong>质疑来源：</strong>谁说的？有什么资质？</li>\n                            <li>📊 <strong>查找原始数据：</strong>有没有引用可验证的研究？</li>\n                            <li>⏳ <strong>等待共识：</strong>一条信息被多个独立来源确认了吗？</li>\n                            <li>🗑️ <strong>敢于忽略：</strong>大部分内容不值得你的时间</li>\n                        </ul>\n                    </div>"
@@ -1352,7 +1351,7 @@ const laws: Law[] = [
           "name": "",
           "text": "阅读量：2,341 | 点赞：89",
           "html": "阅读量：2,341 | 点赞：89",
-          "style": "opacity: 0.5; text-align: center; padding: 15px;"
+          "tone": "meta"
         },
         {
           "character": "domino",
@@ -1365,14 +1364,14 @@ const laws: Law[] = [
           "name": "",
           "text": "阅读量：1,234,567 | 点赞：98,765",
           "html": "阅读量：1,234,567 | 点赞：98,765",
-          "style": "opacity: 0.5; text-align: center; padding: 15px;"
+          "tone": "meta"
         },
         {
           "name": "结果",
           "time": "悲剧",
           "text": "深度作者心灰意冷，转行写标题党了...",
-          "html": "&nbsp;&nbsp;深度作者心灰意冷，转行写标题党了...",
-          "style": "background: #ffebee; border-left: 4px solid #f44336;"
+          "html": "深度作者心灰意冷，转行写标题党了...",
+          "tone": "bad"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">劣币驱逐良币</h3>\n                        <p>\n                            经济学家格雷舍姆发现：当两种货币并存时，<strong>劣币会驱逐良币</strong>——人们会把好钱藏起来，把劣质货币花出去。\n                        </p>\n                        <p>\n                            <strong>在互联网上，同样的逻辑在运作：</strong>\n                        </p>\n                        <ul>\n                            <li>🎭 <strong>算法偏好：</strong>点击率高的内容获得更多曝光</li>\n                            <li>😱 <strong>情绪优先：</strong>愤怒、恐惧比理性更容易传播</li>\n                            <li>⏱️ <strong>注意力稀缺：</strong>标题党3秒抓住眼球，深度文章需要30分钟</li>\n                        </ul>\n                        <p>\n                            最终，创作者被迫向流量妥协，<strong>优质内容逐渐消失</strong>。\n                        </p>\n                    </div>"
@@ -1405,8 +1404,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "改变",
           "text": "信息质量提升，焦虑减少，思考深度增加",
-          "html": "&nbsp;&nbsp;信息质量提升，焦虑减少，思考深度增加",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "html": "信息质量提升，焦虑减少，思考深度增加",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">用行动投票</h3>\n                        <p>\n                            算法是根据你的行为来推荐内容的。<strong>你点击什么，就会看到更多什么。</strong>\n                        </p>\n                        <p><strong>你可以做的事：</strong></p>\n                        <ul>\n                            <li>🚫 <strong>不点击标题党：</strong>即使好奇也忍住</li>\n                            <li>⭐ <strong>主动寻找优质来源：</strong>订阅、收藏、书签</li>\n                            <li>💪 <strong>支持好内容：</strong>点赞、评论、付费</li>\n                            <li>📵 <strong>减少刷信息流：</strong>主动搜索取代被动接收</li>\n                        </ul>\n                        <p>每一次点击都是一次投票。</p>\n                    </div>"
@@ -1447,22 +1446,21 @@ const laws: Law[] = [
           "name": "",
           "text": "（三个月后...）",
           "html": "（三个月后...）",
-          "style": "opacity: 0.7; text-align: center; padding: 15px;"
+          "tone": "meta"
         },
         {
           "character": "tail",
           "name": "尾巴",
           "time": "正式邮件",
           "text": "西打，请到我办公室来一趟。有人举报你在内部沟通中使用不当言论...",
-          "html": "&nbsp;&nbsp;西打，请到我办公室来一趟。有人举报你在内部沟通中使用不当言论...",
-          "style": "background: #ffebee; border-left: 4px solid #f44336;"
+          "html": "西打，请到我办公室来一趟。有人举报你在内部沟通中使用不当言论..."
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "崩溃",
           "text": "完了... 那条消息被截图了...",
-          "html": "&nbsp;&nbsp;完了... 那条消息被截图了..."
+          "html": "完了... 那条消息被截图了..."
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">互联网没有橡皮擦</h3>\n                        <p>\n                            很多人以为：\n                        </p>\n                        <ul>\n                            <li>💬 \"私聊没关系，只有我们俩看得到\"</li>\n                            <li>🗑️ \"删掉就好了，谁会记得\"</li>\n                            <li>🎭 \"匿名账号，查不到是我\"</li>\n                            <li>🔒 \"仅好友可见，安全的\"</li>\n                        </ul>\n                        <p>\n                            <strong>现实是：</strong>\n                        </p>\n                        <ul>\n                            <li>📸 私聊可以被截图</li>\n                            <li>💾 删除的内容可能早被人保存</li>\n                            <li>🔍 匿名账号可能被关联分析</li>\n                            <li>👥 好友可能会转发</li>\n                        </ul>\n                        <p>\n                            <strong>互联网有记忆，而且记忆力惊人。</strong>\n                        </p>\n                    </div>"
@@ -1495,8 +1493,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "安全",
           "text": "避免了一场潜在的职业危机",
-          "html": "&nbsp;&nbsp;避免了一场潜在的职业危机",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "html": "避免了一场潜在的职业危机",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">发送前的终极检验</h3>\n                        <p>\n                            在点击发送之前，问自己：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"如果这条消息被贴到公司公告栏 / 发到我妈的微信群 / 上了热搜...<br>\n                            <strong>我会后悔吗？</strong>\"\n                        </blockquote>\n                        <ul>\n                            <li>😤 <strong>情绪激动时：</strong>写完存草稿，第二天再决定</li>\n                            <li>🗣️ <strong>敏感话题：</strong>线下说，别留痕迹</li>\n                            <li>🔐 <strong>私密信息：</strong>根本不应该通过网络传输</li>\n                        </ul>\n                        \n                    </div>"
@@ -1585,8 +1583,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "成长",
           "text": "世界观更加立体，讨论问题时更加理性",
-          "html": "&nbsp;&nbsp;世界观更加立体，讨论问题时更加理性",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "html": "世界观更加立体，讨论问题时更加理性",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">突破信息茧房</h3>\n                        <p>\n                            <strong>警惕信号：</strong>\n                        </p>\n                        <ul>\n                            <li>🚩 你很久没看到反对观点了</li>\n                            <li>🚩 你觉得\"所有人\"都这么想</li>\n                            <li>🚩 持不同观点的人在你眼里都是\"蠢货\"</li>\n                        </ul>\n                        <ul>\n                            <li>🔍 <strong>主动搜索反面观点：</strong>别等算法喂给你</li>\n                            <li>👥 <strong>接触不同圈子的人：</strong>线下比线上更容易</li>\n                            <li>📰 <strong>关注多元信息源：</strong>不同立场的媒体都看看</li>\n                        </ul>\n                        \n                    </div>"
@@ -1627,7 +1625,7 @@ const laws: Law[] = [
           "name": "",
           "text": "（线下偶遇...）",
           "html": "（线下偶遇...）",
-          "style": "opacity: 0.7; text-align: center; padding: 15px;"
+          "tone": "meta"
         },
         {
           "character": "domino",
@@ -1681,8 +1679,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "文明",
           "text": "讨论继续，双方都学到了新东西",
-          "html": "&nbsp;&nbsp;讨论继续，双方都学到了新东西",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "html": "讨论继续，双方都学到了新东西",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">发送前的自检</h3>\n                        <p>\n                            在点击发送之前，问自己：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"如果这个人就站在我面前，<br>\n                            <strong>我会当面这么说吗？</strong>\"\n                        </blockquote>\n                        <ul>\n                            <li>👤 <strong>想象对方是真人：</strong>有家人、有感受、有故事</li>\n                            <li>⏰ <strong>等待冷却：</strong>生气时写完先存着，10分钟后再发</li>\n                            <li>📖 <strong>对事不对人：</strong>批评观点可以，攻击人格不行</li>\n                        </ul>\n                        \n                    </div>"
@@ -1737,8 +1735,8 @@ const laws: Law[] = [
           "name": "真相",
           "time": "研究表明",
           "text": "能力越差的人，越高估自己；能力越强的人，越低估自己。",
-          "html": "&nbsp;&nbsp;能力越差的人，越高估自己；能力越强的人，越低估自己。",
-          "style": "background: #fffbe6; border-left: 4px solid #ffd700;"
+          "html": "能力越差的人，越高估自己；能力越强的人，越低估自己。",
+          "tone": "aside"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">愚昧之巅与绝望之谷</h3>\n                        <p>\n                            心理学家邓宁和克鲁格发现一个讽刺的现象：\n                        </p>\n                        <ul>\n                            <li>🏔️ <strong>愚昧之巅：</strong>刚学了点皮毛的人，自信心爆棚</li>\n                            <li>📉 <strong>绝望之谷：</strong>学到一定程度后，发现自己啥也不懂</li>\n                            <li>📈 <strong>开悟之坡：</strong>慢慢积累，自信重建，但更加谦虚</li>\n                        </ul>\n                        <p>\n                            <strong>为什么网上杠精那么多？</strong>\n                        </p>\n                        <ul>\n                            <li>🎤 不懂的人最敢发言（因为不知道自己不懂）</li>\n                            <li>🤐 真正的专家往往保持沉默（因为知道问题的复杂性）</li>\n                            <li>📢 结果：最响亮的声音往往最不靠谱</li>\n                        </ul>\n                    </div>"
@@ -1771,8 +1769,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "成长",
           "text": "谦虚的态度让西打获得了真正有价值的反馈",
-          "html": "&nbsp;&nbsp;谦虚的态度让西打获得了真正有价值的反馈",
-          "style": "background: #e8f5e9; border-left: 4px solid #4caf50;"
+          "html": "谦虚的态度让西打获得了真正有价值的反馈",
+          "tone": "good"
         }
       ],
       "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">如何应对</h3>\n                        <p><strong>对自己：</strong></p>\n                        <ul>\n                            <li>🪞 <strong>警惕过度自信：</strong>越觉得自己懂，越要警惕</li>\n                            <li>🙏 <strong>承认无知：</strong>\"我不知道\"是最有智慧的话之一</li>\n                        </ul>\n                        <p><strong>对他人：</strong></p>\n                        <ul>\n                            <li>🔇 <strong>少和杠精争论：</strong>他们不知道自己不知道</li>\n                            <li>👀 <strong>关注沉默的专家：</strong>最懂的人往往话最少</li>\n                            <li>📊 <strong>验证来源：</strong>别被自信的语气忽悠了</li>\n                        </ul>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"The more you know, the more you realize you don't know.\"<br>\n                            <strong>— 亚里士多德（据传）</strong>\n                        </blockquote>\n                    </div>"
@@ -1827,8 +1825,8 @@ const laws: Law[] = [
           "name": "结果",
           "time": "没人看完",
           "text": "重要信息被埋没在文字海洋里，无人响应。",
-          "html": "&nbsp;&nbsp;重要信息被埋没在文字海洋里，无人响应。",
-          "style": "background: #fff0f0; border-left: 4px solid #ff6b6b;"
+          "html": "重要信息被埋没在文字海洋里，无人响应。",
+          "tone": "bad"
         }
       ],
       "explanationHtml": "<div>\n                        <ul>\n                            <li>😴 <strong>读者疲劳：</strong>大多数人根本不会读完</li>\n                            <li>🎯 <strong>重点丢失：</strong>关键信息被淹没</li>\n                            <li>🔕 <strong>无人响应：</strong>最终被忽略</li>\n                        </ul>\n                        <p><strong>TL;DR</strong> 原本是读者的抱怨，现在已成为写作者的责任。</p>\n                    </div>"
@@ -1910,8 +1908,8 @@ const laws: Law[] = [
           "name": "多米诺",
           "time": "11:00 上午",
           "text": "RTFM! 文档里写得清清楚楚！",
-          "html": "&nbsp;&nbsp;RTFM! 文档里写得清清楚楚！",
-          "style": "background: #fff0f0; border-left: 4px solid #ff6b6b;"
+          "html": "RTFM! 文档里写得清清楚楚！",
+          "tone": "bad"
         }
       ],
       "explanationHtml": "<div>\n                        <p><strong>RTFM</strong> = \"Read The F***ing Manual\"，读那该死的手册。</p>\n                        <ul>\n                            <li>📚 <strong>文档存在的意义：</strong>作者花时间写文档，就是为了回答常见问题</li>\n                            <li>⏰ <strong>尊重他人时间：</strong>别人不是你的私人助教</li>\n                            <li>🔄 <strong>重复问题：</strong>这些问题已被问过无数次</li>\n                        </ul>\n                    </div>"
@@ -1986,8 +1984,8 @@ const laws: Law[] = [
           "name": "多米诺",
           "time": "下午 3:15",
           "text": "兄弟，你SSL证书过期了。",
-          "html": "&nbsp;&nbsp;兄弟，你SSL证书过期了。",
-          "style": "background: #fffbe6; border-left: 4px solid #ffd700;"
+          "html": "兄弟，你SSL证书过期了。",
+          "tone": "aside"
         }
       ],
       "explanationHtml": "<div>\n                        <p><strong>奥卡姆剃刀</strong>是最古老、最强大的思维工具之一：</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            如无必要，勿增实体。\n                        </blockquote>\n                        <ul>\n                            <li>🔮 不要假设阴谋论，先检查简单错误</li>\n                            <li>🧩 不要引入不必要的变量</li>\n                            <li>🎯 从最可能的原因开始排查</li>\n                        </ul>\n                    </div>"
@@ -2062,8 +2060,8 @@ const laws: Law[] = [
           "name": "问题",
           "time": "举证责任倒置",
           "text": "提出主张的人有责任提供证据，而不是要求别人证明其不存在。",
-          "html": "&nbsp;&nbsp;提出主张的人有责任提供证据，而不是要求别人证明其不存在。",
-          "style": "background: #fff0f0; border-left: 4px solid #ff6b6b;"
+          "html": "提出主张的人有责任提供证据，而不是要求别人证明其不存在。",
+          "tone": "bad"
         }
       ],
       "explanationHtml": "<div>\n                        <p><strong>希钦斯剃刀</strong>由克里斯托弗·希钦斯提出：</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            无证据提出的主张，可以无证据驳回。\n                        </blockquote>\n                        <ul>\n                            <li>⚖️ <strong>举证责任：</strong>谁主张，谁举证</li>\n                            <li>🛡️ <strong>保护自己：</strong>你没有义务反驳空洞的指控</li>\n                            <li>🧹 <strong>清除噪音：</strong>无证据的言论不值得认真对待</li>\n                        </ul>\n                    </div>"
@@ -2138,8 +2136,8 @@ const laws: Law[] = [
           "name": "波定律",
           "time": "生效了",
           "text": "没有表情或 /s 标记，讽刺和极端观点完全无法区分。",
-          "html": "&nbsp;&nbsp;没有表情或 /s 标记，讽刺和极端观点完全无法区分。",
-          "style": "background: #fffbe6; border-left: 4px solid #ffd700;"
+          "html": "没有表情或 /s 标记，讽刺和极端观点完全无法区分。",
+          "tone": "aside"
         }
       ],
       "explanationHtml": "<div>\n                        <p><strong>波定律</strong>由 Nathan Poe 于 2005 年提出：</p>\n                        <p>在文字交流中，<strong>讽刺与真话难以区分</strong>。</p>\n                        <ul>\n                            <li>🎭 没有语气、表情，读者无法判断意图</li>\n                            <li>🌐 互联网上真的有各种极端观点</li>\n                            <li>🤷 你以为的玩笑，别人可能当真</li>\n                        </ul>\n                    </div>"
@@ -2206,8 +2204,8 @@ const laws: Law[] = [
         {
           "name": "结果",
           "text": "谣言10万+，辟谣文阅读量：203",
-          "html": "&nbsp;&nbsp;谣言10万+，辟谣文阅读量：203",
-          "style": "background: #fff0f0; border-left: 4px solid #ff6b6b;"
+          "html": "谣言10万+，辟谣文阅读量：203",
+          "tone": "bad"
         }
       ],
       "explanationHtml": "<div>\n                        <p><strong>布兰多里尼定律</strong>（又称\"胡说八道不对称原则\"）：</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            反驳胡说八道所需的能量，是制造它的十倍。\n                        </blockquote>\n                        <ul>\n                            <li>💩 制造谣言：5秒</li>\n                            <li>📚 反驳谣言：5小时</li>\n                            <li>📢 谣言传播：10万+</li>\n                            <li>🔇 辟谣传播：203</li>\n                        </ul>\n                    </div>"

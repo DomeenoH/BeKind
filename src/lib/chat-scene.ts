@@ -19,8 +19,10 @@ export function getChatLinePresentations(lines: ChatLine[]) {
       isSystem,
       isOutgoing,
       hasAvatar: isCharacterLikeLine(line) && !isContinuation,
-      messageHtml: line.character ? stripLegacyIndent(line.html) : line.html,
-      lineStyle: isSystem || line.rawHtml ? line.style : undefined,
+      messageHtml: stripLegacyIndent(line.html),
+      toneClass: line.tone ? `is-tone-${line.tone}` : undefined,
+      // 没有名字也没有时间的系统行不该占一行 meta（时间流逝、读数这类）
+      hasMeta: Boolean(line.name || line.time),
     };
   });
 }

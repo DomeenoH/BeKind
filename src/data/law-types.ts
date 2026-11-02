@@ -9,6 +9,9 @@ export interface Category {
   description: string;
 }
 
+// 系统行的语义色。样式在 CSS 里，数据只声明「这行是结果 / 旁白 / 时间」。
+export type ChatLineTone = 'good' | 'bad' | 'aside' | 'meta';
+
 export interface ChatLine {
   character?: CharacterId;
   avatarUrl?: string;
@@ -17,7 +20,7 @@ export interface ChatLine {
   html: string;
   rawHtml?: string;
   time?: string;
-  style?: string;
+  tone?: ChatLineTone;
 }
 
 export interface ChatScene {

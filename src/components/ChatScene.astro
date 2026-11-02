@@ -30,11 +30,11 @@ const hasNote = Boolean(scene.explanationHtml.trim());
 
     <div class={`scene-body${hasNote ? '' : ' is-single'}`}>
       <div class="chat-card">
-        {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, hasAvatar, messageHtml, lineStyle }) => (
+        {displayLines.map(({ line, isContinuation, isSystem, isOutgoing, hasAvatar, messageHtml, toneClass, hasMeta }) => (
           line.rawHtml ? (
-            <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} style={lineStyle} set:html={line.rawHtml} />
+            <div class={`slack chat-line-raw${isOutgoing ? ' is-outgoing' : ''}`} set:html={line.rawHtml} />
           ) : (
-            <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}`} style={lineStyle}>
+            <div class={`slack${isContinuation ? ' is-continuation' : ''}${isSystem ? ' chat-line-system' : ''}${isOutgoing ? ' is-outgoing' : ''}${toneClass ? ` ${toneClass}` : ''}`}>
               {isContinuation ? (
                 <span class="chat-avatar-spacer" aria-hidden="true"></span>
               ) : hasAvatar && line.character ? (
@@ -45,9 +45,9 @@ const hasNote = Boolean(scene.explanationHtml.trim());
                 <span class="external-avatar avatar-initial" aria-hidden="true">群</span>
               ) : null}
               <div class="slack-copy">
-                {!isContinuation && (
+                {!isContinuation && hasMeta && (
                   <div class="slack-meta">
-                    <span class="slackname">{line.name}</span>
+                    {line.name && <span class="slackname">{line.name}</span>}
                     {line.time && <span class="slacktime">{line.time}</span>}
                   </div>
                 )}

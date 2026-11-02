@@ -1219,6 +1219,80 @@ strong {
   color: var(--ink-2);
 }
 
+/* 结果 / 旁白：嵌在记录里的语义块，不再用内联样式涂整行 */
+.slack.chat-line-system.is-tone-good,
+.slack.chat-line-system.is-tone-bad,
+.slack.chat-line-system.is-tone-aside {
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-top: 0;
+  border-left: 3px solid var(--line);
+  border-radius: 10px;
+}
+
+.slack.chat-line-system.is-tone-good {
+  background: var(--good-soft);
+  border-left-color: var(--good);
+}
+
+.slack.chat-line-system.is-tone-bad {
+  background: var(--bad-soft);
+  border-left-color: var(--bad);
+}
+
+.slack.chat-line-system.is-tone-aside {
+  background: var(--paper-2);
+  border-left-color: var(--line);
+}
+
+.slack.chat-line-system.is-tone-good .slack-meta,
+.slack.chat-line-system.is-tone-bad .slack-meta,
+.slack.chat-line-system.is-tone-aside .slack-meta {
+  margin-bottom: 4px;
+}
+
+.slack.chat-line-system.is-tone-good .slackname {
+  color: var(--good);
+}
+
+.slack.chat-line-system.is-tone-bad .slackname {
+  color: var(--bad);
+}
+
+.slack.chat-line-system.is-tone-aside .slackname {
+  color: var(--ink);
+}
+
+.slack.chat-line-system.is-tone-good .slackmessage,
+.slack.chat-line-system.is-tone-bad .slackmessage,
+.slack.chat-line-system.is-tone-aside .slackmessage {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+/* 时间流逝 / 读数：居中弱化，不用 opacity 去拉低对比度 */
+.slack.chat-line-system.is-tone-meta {
+  display: block;
+  margin: 22px 0 0;
+  padding: 0;
+  border-top: 0;
+  text-align: center;
+}
+
+.slack.chat-line-system.is-tone-meta .slack-copy {
+  text-align: center;
+}
+
+.slack.chat-line-system.is-tone-meta .slackmessage {
+  display: block;
+  width: auto;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+}
+
 .chat-line-raw {
   display: block;
   margin-top: 14px;

@@ -82,8 +82,20 @@ describe('BeKind content registry', () => {
     const lines = getChatLinePresentations(law?.bad?.lines ?? []);
     const domino = lines.find(({ line }) => line.character === 'domino');
 
-    expect(domino?.lineStyle).toBeUndefined();
+    expect(domino?.toneClass).toBeUndefined();
     expect(domino?.messageHtml).toBe('你不是说今天2点来接我吗？人呢？');
+  });
+
+  it('keeps tones semantic: no inline styles, no tone on character bubbles', () => {
+    const allLines = orderedLaws.flatMap((law) => [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])]);
+
+    allLines.forEach((line) => {
+      expect(Object.keys(line), line.text).not.toContain('style');
+      if (!line.tone) return;
+      expect(line.character, line.text).toBeUndefined();
+      expect(line.rawHtml, line.text).toBeUndefined();
+      expect(line.html.startsWith('&nbsp;'), line.text).toBe(false);
+    });
   });
 
   it('names bot327 as 群友 in every visible scene', () => {
