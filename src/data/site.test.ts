@@ -35,6 +35,13 @@ describe('site chrome', () => {
     expect(copy).not.toMatch(/\p{Extended_Pictographic}/u);
   });
 
+  it('keeps cast in sync with the character registry', () => {
+    expect(cast.map((person) => person.id).sort()).toEqual(Object.keys(characters).sort());
+    cast.forEach((person) => {
+      expect(characters[person.id as keyof typeof characters].name, person.id).toBe(person.name);
+    });
+  });
+
   it('casts only registered characters', () => {
     cast.forEach((person) => {
       expect(characters[person.id as keyof typeof characters], person.id).toBeTruthy();

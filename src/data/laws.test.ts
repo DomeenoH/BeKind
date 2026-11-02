@@ -4,15 +4,15 @@ import { orderedLaws } from './laws';
 import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
-  it('keeps all 50 routes unique and ordered', () => {
-    expect(orderedLaws).toHaveLength(50);
-    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(50);
-    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+  it('keeps all 66 routes unique and ordered', () => {
+    expect(orderedLaws).toHaveLength(66);
+    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(66);
+    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 66 }, (_, index) => index + 1));
   });
 
   it('preserves the original comparison structure', () => {
     const comparisonLaws = orderedLaws.filter((law) => law.layout === 'comparison');
-    expect(comparisonLaws).toHaveLength(49);
+    expect(comparisonLaws).toHaveLength(65);
 
     comparisonLaws.forEach((law) => {
       expect(law.hero.titleHtml.length).toBeGreaterThan(0);
@@ -72,7 +72,7 @@ describe('BeKind content registry', () => {
     const summary = badLines.find(({ line }) => line.name?.includes('其他 48 个人'));
     const reaction = goodLines.find(({ line }) => line.text.includes('👍 86'));
 
-    expect(cider).toMatchObject({ side: 'right', hasAvatar: true });
+    expect(cider).toMatchObject({ isOutgoing: true, hasAvatar: true });
     expect(summary).toMatchObject({ isSystem: true, hasAvatar: false });
     expect(reaction).toMatchObject({ isSystem: true, hasAvatar: false });
   });

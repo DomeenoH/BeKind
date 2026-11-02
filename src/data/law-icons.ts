@@ -54,6 +54,22 @@ export const lawIconNames: Record<string, string> = {
   'eternal-september': 'CalendarClock',
   'goodharts-law': 'Gauge',
   'dont-feed-the-trolls': 'Flame',
+  'no-jargon': 'Languages',
+  'correct-in-private': 'Lock',
+  'observation-not-judgment': 'ListChecks',
+  'ring-theory': 'CircleDashed',
+  'straight-talk-is-not-rudeness': 'MessageSquareWarning',
+  'answer-then-explain': 'ListOrdered',
+  'passive-aggressive-texting': 'Ellipsis',
+  'hindsight-bias': 'History',
+  'false-consensus': 'Vote',
+  'respect-bandwidth': 'Timer',
+  'meaningful-title': 'Heading1',
+  'make-it-easy-to-reply': 'ClipboardCopy',
+  'follow-up-after-solved': 'BadgeCheck',
+  'ask-in-public': 'MessagesSquare',
+  'dont-cry-bug': 'BugOff',
+  'dont-play-helpless': 'BookX',
 };
 
 export function getLawIconName(slug: string): string {

@@ -1,6 +1,6 @@
 import type { CharacterId } from './characters';
 
-export type CategoryId = 'communication' | 'thinking' | 'systems';
+type CategoryId = 'communication' | 'thinking' | 'systems';
 
 export interface Category {
   id: CategoryId;
@@ -26,7 +26,7 @@ export interface ChatScene {
   explanationHtml: string;
 }
 
-export interface LawHero {
+interface LawHero {
   titleHtml: string;
   subtitleHtml: string;
   leadHtml: string;
@@ -37,7 +37,6 @@ export interface Law {
   order: number;
   layout: 'comparison' | 'statement';
   category: CategoryId;
-  icon: string;
   title: string;
   englishTitle: string;
   summary: string;

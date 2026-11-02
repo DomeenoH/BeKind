@@ -15,8 +15,7 @@ const person = characters[character];
 <span
   class="character-avatar"
   style={`--avatar-size: ${size}px`}
-  data-character={person.id}
-  title={`${person.name} · ${person.role}`}
+  title={person.name}
 >
   <img
     src={qqAvatarUrl(person.qq)}

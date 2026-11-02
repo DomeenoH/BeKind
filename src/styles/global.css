@@ -24,25 +24,16 @@
 
   /* 语义色：只用来标记对错，不做装饰 */
   --accent: #b3412c;
-  --accent-ink: #8d3220;
   --bad: #b3412c;
   --bad-soft: #faf0ec;
-  --bad-line: rgba(179, 65, 44, 0.22);
   --good: #2c6a4d;
   --good-soft: #eef4ef;
-  --good-line: rgba(44, 106, 77, 0.22);
 
   /* 兼容内容里的内联样式变量 */
   --foreground: var(--ink);
-  --background: var(--paper);
   --primary: var(--ink);
-  --primary-foreground: #ffffff;
-  --secondary: var(--paper);
-  --muted: var(--paper);
   --muted-foreground: var(--ink-3);
   --destructive: var(--bad);
-  --border: var(--line);
-  --card: var(--surface);
 
   /* 排版 */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
@@ -189,12 +180,6 @@ strong {
 
 .skip-link:focus-visible {
   top: 12px;
-}
-
-.rule {
-  height: 1px;
-  background: var(--line-soft);
-  border: 0;
 }
 
 /* 4. 站点页头
@@ -1002,16 +987,6 @@ strong {
   display: inline !important;
 }
 
-.law-en {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
 .law-sub {
   display: block;
   margin-top: 10px;
@@ -1409,10 +1384,6 @@ strong {
 
 .statement-impact h2 {
   font-weight: 700;
-}
-
-.statement-content {
-  padding-bottom: 8px;
 }
 
 .statement-card {
