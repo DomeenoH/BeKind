@@ -3126,6 +3126,7 @@ const laws: Law[] = [
     "englishTitle": "Fundamental Attribution Error",
     "summary": "他迟到是人品，我迟到是堵车。",
     "layout": "comparison",
+    "visual": "attribution-grid",
     "hero": {
       "titleHtml": "基本归因错误",
       "subtitleHtml": "Fundamental Attribution Error",

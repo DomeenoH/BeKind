@@ -46,7 +46,8 @@ export type VisualId =
   | 'survivorship-funnel'
   | 'false-consensus-dots'
   | 'sunk-cost-bars'
-  | 'bystander-curve';
+  | 'bystander-curve'
+  | 'attribution-grid';
 
 export interface Law {
   slug: string;

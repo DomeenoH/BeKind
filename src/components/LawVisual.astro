@@ -9,6 +9,7 @@ import SurvivorshipFunnel from './visuals/SurvivorshipFunnel.astro';
 import FalseConsensusDots from './visuals/FalseConsensusDots.astro';
 import SunkCostBars from './visuals/SunkCostBars.astro';
 import BystanderCurve from './visuals/BystanderCurve.astro';
+import AttributionGrid from './visuals/AttributionGrid.astro';
 
 interface Props {
   name: VisualId;
@@ -26,6 +27,7 @@ const registry = {
   'false-consensus-dots': FalseConsensusDots,
   'sunk-cost-bars': SunkCostBars,
   'bystander-curve': BystanderCurve,
+  'attribution-grid': AttributionGrid,
 };
 
 const Visual = registry[name];

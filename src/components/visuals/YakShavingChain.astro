@@ -1,12 +1,12 @@
 ---
 const nodes = [
-  { x: 56, label: '煮面' },
-  { x: 174, label: '没葱了' },
-  { x: 292, label: '出门买葱' },
-  { x: 410, label: '找车钥匙' },
-  { x: 528, label: '翻抽屉' },
-  { x: 646, label: '高中相册' },
-].map((node, index) => ({ ...node, y: 78 + index * 34, w: 84, h: 32 }));
+  { x: 12, label: '煮面' },
+  { x: 90, label: '没葱了' },
+  { x: 168, label: '出门买葱' },
+  { x: 246, label: '找车钥匙' },
+  { x: 324, label: '翻抽屉' },
+  { x: 402, label: '高中相册' },
+].map((node, index) => ({ ...node, y: 52 + index * 32, w: 66, h: 26 }));
 
 const links = nodes.slice(0, -1).map((node, index) => {
   const next = nodes[index + 1];
@@ -15,40 +15,40 @@ const links = nodes.slice(0, -1).map((node, index) => {
   const x2 = next.x - 2;
   const y2 = next.y + next.h / 2;
   return {
-    curve: `M${x1} ${y1} C${x1 + 22} ${y1} ${x2 - 22} ${y2} ${x2} ${y2}`,
-    tip: `M${x2 - 7} ${y2 - 4} L${x2} ${y2} L${x2 - 7} ${y2 + 4}`,
+    curve: `M${x1} ${y1} C${x1 + 10} ${y1} ${x2 - 10} ${y2} ${x2} ${y2}`,
+    tip: `M${x2 - 6} ${y2 - 3.5} L${x2} ${y2} L${x2 - 6} ${y2 + 3.5}`,
   };
 });
 ---
 
 <figure class="law-figure">
   <div class="law-figure-scroll">
-  <svg
-    viewBox="0 0 760 330"
-    role="img"
-    aria-label="一条任务链：想吃面，发现没葱，出门买葱要先找车钥匙，找钥匙翻抽屉，翻到高中相册，一路离最初的目标越来越远。"
-  >
-    <line x1="56" y1="58" x2="730" y2="58" class="viz-ref" />
-    <text x="56" y="42" class="viz-note">最初的目标 · 吃碗面</text>
+    <svg
+      viewBox="0 0 500 272"
+      role="img"
+      aria-label="一条任务链：想吃面，发现没葱，出门买葱要先找车钥匙，找钥匙翻抽屉，翻到高中相册，一路离最初的目标越来越远。"
+    >
+      <line x1="12" y1="34" x2="488" y2="34" class="viz-ref" />
+      <text x="12" y="22" class="viz-note">最初的目标 · 吃碗面</text>
 
-    {links.map((link) => (
-      <>
-        <path d={link.curve} class="viz-link" />
-        <path d={link.tip} class="viz-tip" />
-      </>
-    ))}
+      {links.map((link) => (
+        <>
+          <path d={link.curve} class="viz-link" />
+          <path d={link.tip} class="viz-tip" />
+        </>
+      ))}
 
-    {nodes.map((node) => (
-      <g>
-        <rect x={node.x} y={node.y} width={node.w} height={node.h} rx="8" class="viz-node" />
-        <text x={node.x + node.w / 2} y={node.y + 21} class="viz-node-label" text-anchor="middle">
-          {node.label}
-        </text>
-      </g>
-    ))}
+      {nodes.map((node) => (
+        <g>
+          <rect x={node.x} y={node.y} width={node.w} height={node.h} rx="7" class="viz-node" />
+          <text x={node.x + node.w / 2} y={node.y + 18} class="viz-node-label" text-anchor="middle">
+            {node.label}
+          </text>
+        </g>
+      ))}
 
-    <text x="730" y="304" class="viz-note" text-anchor="end">已经忘了为什么要找钥匙</text>
-  </svg>
+      <text x="488" y="258" class="viz-note" text-anchor="end">已经忘了为什么要找钥匙</text>
+    </svg>
   </div>
   <figcaption>
     每一步都合理，加起来就不合理了。剪牦牛毛不是做错事，是没人回头看一眼最初那条线。

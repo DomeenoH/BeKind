@@ -1,40 +1,40 @@
 ---
 const points = [
-  { x: 100, y: 87, label: '1 人' },
-  { x: 185, y: 128, label: '2 人' },
-  { x: 265, y: 155, label: '3 人' },
-  { x: 345, y: 172, label: '5 人' },
-  { x: 420, y: 184, label: '10 人' },
-  { x: 480, y: 190, label: '20 人' },
+  { x: 62, y: 76, label: '1 人' },
+  { x: 124, y: 105, label: '2 人' },
+  { x: 186, y: 125, label: '3 人' },
+  { x: 248, y: 137, label: '5 人' },
+  { x: 320, y: 146, label: '10 人' },
+  { x: 392, y: 150, label: '20 人' },
 ];
 ---
 
 <figure class="law-figure">
   <div class="law-figure-scroll">
     <svg
-      viewBox="0 0 760 280"
+      viewBox="0 0 500 220"
       role="img"
       aria-label="曲线图：只有一个人在场时，有人出手的概率约百分之八十五；在场人数越多，出手概率越低，二十人时降到百分之二十八。"
     >
-      <line x1="70" y1="240" x2="495" y2="240" class="viz-axis-line" />
-      <line x1="70" y1="62" x2="70" y2="240" class="viz-axis-line" />
+      <line x1="36" y1="186" x2="440" y2="186" class="viz-axis-line" />
+      <line x1="36" y1="48" x2="36" y2="186" class="viz-axis-line" />
 
-      <text x="70" y="50" class="viz-note">有人出手的概率</text>
+      <text x="36" y="38" class="viz-note">有人出手的概率</text>
 
       <path
         class="viz-curve"
-        d="M100 87 C138 100 156 118 185 128 C222 141 240 148 265 155 C295 164 320 168 345 172 C380 178 412 182 435 184 C455 187 468 189 480 190"
+        d="M62 76 C92 88 106 98 124 105 C152 116 166 121 186 125 C210 130 226 134 248 137 C272 141 296 144 320 146 C344 148 372 149 392 150"
       />
 
       {points.map((point) => (
-        <circle cx={point.x} cy={point.y} r="7" class="viz-halo" />
+        <circle cx={point.x} cy={point.y} r="6.5" class="viz-halo" />
       ))}
       {points.map((point, index) => (
         <g>
-          <circle cx={point.x} cy={point.y} r="4" class="viz-dot" />
+          <circle cx={point.x} cy={point.y} r="3.6" class="viz-dot" />
           <text
             x={point.x}
-            y="262"
+            y="208"
             class="viz-note"
             text-anchor={index === points.length - 1 ? 'end' : 'middle'}
           >
@@ -43,8 +43,8 @@ const points = [
         </g>
       ))}
 
-      <text x="100" y="68" class="viz-label viz-label--bad" text-anchor="middle">85%</text>
-      <text x="495" y="172" class="viz-label" text-anchor="end">28%</text>
+      <text x="62" y="62" class="viz-label viz-label--bad" text-anchor="middle">85%</text>
+      <text x="402" y="134" class="viz-label">28%</text>
     </svg>
   </div>
   <figcaption>

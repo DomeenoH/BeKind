@@ -105,6 +105,7 @@ describe('BeKind content registry', () => {
       'bike-shedding',
       'yak-shaving',
       'dunning-kruger',
+      'fundamental-attribution-error',
       'survivorship-bias',
       'sunk-cost',
       'correlation-is-not-causation',
