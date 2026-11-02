@@ -29,10 +29,15 @@ export interface ChatScene {
   explanationHtml: string;
 }
 
+// 少数条目的主标题区可以「演」一遍法则本身（no-hello 把 hello 划掉那种）。
+// 和 visual 一样：数据只声明用哪段，实现放在 components/HeroEffect.astro。
+export type HeroEffectId = 'greeting-strike' | 'reply-all-echo';
+
 interface LawHero {
   titleHtml: string;
   subtitleHtml: string;
   leadHtml: string;
+  effect?: HeroEffectId;
 }
 
 // 有些条目的内容本身就是一张图，硬写成三段式反而难懂。

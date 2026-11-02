@@ -98,6 +98,19 @@ describe('BeKind content registry', () => {
     });
   });
 
+  it('keeps hero effects on the entries that actually implement them', () => {
+    const withEffect = orderedLaws.filter((law) => law.hero.effect);
+
+    expect(withEffect.map((law) => `${law.slug}:${law.hero.effect}`)).toEqual([
+      'no-hello:greeting-strike',
+      'reply-all:reply-all-echo',
+    ]);
+
+    // no-hello 的划掉效果依赖标题里那个 #strike
+    const noHello = orderedLaws.find((law) => law.slug === 'no-hello');
+    expect(noHello?.hero.titleHtml).toContain('id="strike"');
+  });
+
   it('only attaches figures to entries that actually render them', () => {
     const withVisual = orderedLaws.filter((law) => law.visual);
 

@@ -12,7 +12,8 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "不要说<span id=\"strike\">hello</span>",
       "subtitleHtml": "不要在聊天时问：「在吗？」",
-      "leadHtml": "想象一下别人接通你的电话时，你问<span class=\"nowrap\">「在吗？」</span>，然后等着对方回应…🤦"
+      "leadHtml": "想象一下别人接通你的电话时，你问<span class=\"nowrap\">「在吗？」</span>，然后等着对方回应…🤦",
+      "effect": "greeting-strike",
     },
     "bad": {
       "titleHtml": "❌ 不要这样做",
@@ -2819,7 +2820,8 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "别回复全部",
       "subtitleHtml": "Reply All",
-      "leadHtml": "一封抄送了三十人的邮件，<br>\n                    不需要三十一句「收到」。"
+      "leadHtml": "一封抄送了三十人的邮件，<br>\n                    不需要三十一句「收到」。",
+      "effect": "reply-all-echo",
     },
     "bad": {
       "titleHtml": "❌ 全员收到",

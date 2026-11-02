@@ -1,0 +1,72 @@
+---
+import type { HeroEffectId } from '../data/law-types';
+
+interface Props {
+  name: HeroEffectId;
+}
+
+const { name } = Astro.props;
+---
+
+{name === 'reply-all-echo' && (
+  <div class="hero-echo" data-hero-echo aria-hidden="true">
+    {Array.from({ length: 15 }, (_, index) => (
+      <span class="hero-echo-pill" style={`--i:${index}`}>收到</span>
+    ))}
+  </div>
+)}
+
+{name === 'greeting-strike' && (
+  <script is:inline>
+    const strike = document.querySelector('#strike');
+    const words = ['hello', '你好', 'hola', 'bonjour', 'ciao', 'こんにちは', '안녕', 'cześć', 'привет', '你好', 'hello'];
+
+    if (strike && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let wordIndex = 0;
+      let characterIndex = 0;
+      let deleting = false;
+
+      const type = () => {
+        const word = words[wordIndex];
+
+        if (deleting) {
+          characterIndex -= 1;
+          strike.textContent = word.slice(0, characterIndex);
+          if (characterIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            window.setTimeout(type, 120);
+            return;
+          }
+          window.setTimeout(type, 50);
+          return;
+        }
+
+        characterIndex += 1;
+        strike.textContent = word.slice(0, characterIndex);
+        if (characterIndex === word.length) {
+          deleting = true;
+          window.setTimeout(type, 700);
+          return;
+        }
+        window.setTimeout(type, 80);
+      };
+
+      strike.textContent = '';
+      type();
+    }
+  </script>
+)}
+
+{name === 'reply-all-echo' && (
+  <script is:inline>
+    const echo = document.querySelector('[data-hero-echo]');
+
+    if (echo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const pills = [...echo.querySelectorAll('.hero-echo-pill')];
+
+      // 一条条「收到」挤进来，然后只留一句
+      window.setTimeout(() => echo.classList.add('is-settled'), pills.length * 90 + 900);
+    }
+  </script>
+)}

@@ -1002,6 +1002,83 @@ strong {
   color: var(--ink-3);
 }
 
+/* 主标题区的「演出」：少数条目让标题演一遍法则本身
+   ========================================================================== */
+
+.hero-echo {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  height: 30px;
+  margin-top: 18px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 82%, transparent 100%);
+}
+
+.hero-echo-pill {
+  flex: 0 0 auto;
+  height: 26px;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  line-height: 24px;
+  color: var(--ink-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--surface);
+  /* 默认可见：没 JS 时就是一堵「收到」墙，不会留个空条 */
+  opacity: 1;
+  animation: echo-in 0.32s var(--ease) both;
+  animation-delay: calc(var(--i) * 90ms);
+  transition: opacity 0.45s var(--ease), color 0.45s var(--ease),
+    background-color 0.45s var(--ease), border-color 0.45s var(--ease),
+    transform 0.45s var(--ease);
+}
+
+/* 刷完屏之后只留一句，其余退场。
+   这里必须 animation: none —— 入场动画用了 forwards，会把 opacity 锁死在 1，
+   动画的优先级高于普通声明，不撤掉就轮不到下面的 opacity 生效。 */
+.hero-echo.is-settled .hero-echo-pill {
+  animation: none;
+  opacity: 0.18;
+}
+
+.hero-echo.is-settled .hero-echo-pill:first-child {
+  animation: none;
+  opacity: 1;
+  color: var(--surface);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+@keyframes echo-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-echo-pill {
+    animation: none;
+    opacity: 0.25;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-echo-pill:first-child {
+    opacity: 1;
+    color: var(--surface);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+}
+
 .law-lead {
   max-width: 40em;
   margin-top: 22px;

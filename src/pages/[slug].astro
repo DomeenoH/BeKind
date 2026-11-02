@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Home } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChatScene from '../components/ChatScene.astro';
+import HeroEffect from '../components/HeroEffect.astro';
 import LawVisual from '../components/LawVisual.astro';
 import ShareActions from '../components/ShareActions.astro';
 import { orderedLaws } from '../data/laws';
@@ -98,6 +99,8 @@ const jsonLd = [
           ) : (
             law.hero.leadHtml && <div class="law-lead" set:html={law.hero.leadHtml} />
           )}
+
+          {law.hero.effect && <HeroEffect name={law.hero.effect} />}
         </div>
 
         <div class="hero-aside">
@@ -169,45 +172,5 @@ const jsonLd = [
     updateProgress();
   </script>
 
-  {law.slug === 'no-hello' && (
-    <script is:inline>
-      const strike = document.querySelector('#strike');
-      const words = ['hello', '你好', 'hola', 'bonjour', 'ciao', 'こんにちは', '안녕', 'cześć', 'привет', '你好', 'hello'];
 
-      if (strike && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        let wordIndex = 0;
-        let characterIndex = 0;
-        let deleting = false;
-
-        const type = () => {
-          const word = words[wordIndex];
-
-          if (deleting) {
-            characterIndex -= 1;
-            strike.textContent = word.slice(0, characterIndex);
-            if (characterIndex === 0) {
-              deleting = false;
-              wordIndex = (wordIndex + 1) % words.length;
-              window.setTimeout(type, 120);
-              return;
-            }
-            window.setTimeout(type, 50);
-            return;
-          }
-
-          characterIndex += 1;
-          strike.textContent = word.slice(0, characterIndex);
-          if (characterIndex === word.length) {
-            deleting = true;
-            window.setTimeout(type, 700);
-            return;
-          }
-          window.setTimeout(type, 80);
-        };
-
-        strike.textContent = '';
-        type();
-      }
-    </script>
-  )}
 </BaseLayout>

@@ -61,6 +61,20 @@ npm run build    # 产物在 dist/
 - 颜色一律走 `.viz-*` 类，不写行内 `fill`；SVG 文字用 `fill` 而不是 `color`。
 - 图内标题用 `text-anchor` 把标签分到不同象限，别靠肉眼对位置——第一版「开悟之坡」就压在曲线上。
 
+## 主标题动效
+
+少数条目可以让主标题区演一遍法则本身。目前两条：
+
+| 条目 | 效果 |
+| --- | --- |
+| no-hello | 标题里的 `hello` 被红笔划掉，再打进下一个语的问候 |
+| reply-all | 一封抄送三十人的邮件，「收到」一条条挤进来，最后只留一句 |
+
+- 加一条：`data/law-types.ts` 的 `HeroEffectId` 登记 → `components/HeroEffect.astro` 加分支（标注 + 脚本）→ `laws.ts` 的 `hero.effect` 写 id。测试会锁这份清单。
+- **入场动画别用 `forwards`**：它会把 `opacity` 锁死在终值，动画优先级高于普通声明，后续想靠加类改透明度会失效。用 `both` + `from` 起始帧。
+- 元素默认状态要写成「没有 JS 也成立」的样子（`reply-all` 的默认是 15 颗全亮，没 JS 就是一堵墙），别默认 `opacity: 0`——那会在禁用脚本时留一条空白。
+- `prefers-reduced-motion` 下直接给静止的终态，不做依次入场。
+
 ## 视觉约定
 
 - 「编辑部手册」：暖纸底 `#f5f4f0`、墨字 `#17171b`，只用两种语义色——错 `#b3412c`、对 `#2c6a4d`。
