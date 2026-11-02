@@ -1,0 +1,42 @@
+---
+const cols = 10;
+const rows = 4;
+const dots = Array.from({ length: cols * rows }, (_, index) => ({
+  cx: 56 + (index % cols) * 28,
+  cy: 70 + Math.floor(index / cols) * 42,
+  filled: index < 3,
+}));
+---
+
+<figure class="law-figure">
+  <div class="law-figure-scroll">
+    <svg
+      viewBox="0 0 760 260"
+      role="img"
+      aria-label="四十个点代表群里四十个人，只有三个被圈出来称为「大家」。你感觉的同意率是百分之百，实际是百分之七点五。"
+    >
+      <text x="85" y="44" class="viz-note" text-anchor="middle">「大家」</text>
+      <rect x="42" y="56" width="86" height="28" rx="9" class="viz-marker" />
+
+      {dots.map((dot) => (
+        <circle
+          cx={dot.cx}
+          cy={dot.cy}
+          r="5"
+          class={dot.filled ? 'viz-dot' : 'viz-dot viz-dot--empty'}
+        />
+      ))}
+
+      <text x="56" y="238" class="viz-note">群里 40 个人</text>
+
+      <text x="410" y="92" class="viz-note">你以为的同意率</text>
+      <text x="408" y="146" class="viz-stat viz-stat--bad">100%</text>
+
+      <text x="410" y="196" class="viz-note">实际的同意率</text>
+      <text x="408" y="250" class="viz-stat">7.5%</text>
+    </svg>
+  </div>
+  <figcaption>
+    「大家都这么觉得」里的大家，通常就是你、你旁边的两个人，加上一个刚好回了「+1」的。剩下那三十七个没吭声，就被算成了同意。
+  </figcaption>
+</figure>

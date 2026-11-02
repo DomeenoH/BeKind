@@ -3348,6 +3348,7 @@ const laws: Law[] = [
     "englishTitle": "Sunk Cost Fallacy",
     "summary": "已经投入这么多，不代表要接着投入。",
     "layout": "comparison",
+    "visual": "sunk-cost-bars",
     "hero": {
       "titleHtml": "沉没成本",
       "subtitleHtml": "Sunk Cost Fallacy",
@@ -3577,6 +3578,7 @@ const laws: Law[] = [
     "englishTitle": "Bystander Effect",
     "summary": "群里没人回，不是没人看见。",
     "layout": "comparison",
+    "visual": "bystander-curve",
     "hero": {
       "titleHtml": "旁观者效应",
       "subtitleHtml": "Bystander Effect",
@@ -4565,6 +4567,7 @@ const laws: Law[] = [
     "englishTitle": "False Consensus Effect",
     "summary": "「大家」通常只是「我和我旁边的两个人」。",
     "layout": "comparison",
+    "visual": "false-consensus-dots",
     "hero": {
       "titleHtml": "大家都这么觉得",
       "subtitleHtml": "False Consensus Effect",

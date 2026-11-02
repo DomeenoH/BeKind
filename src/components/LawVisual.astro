@@ -6,6 +6,9 @@ import YakShavingChain from './visuals/YakShavingChain.astro';
 import CorrelationPanels from './visuals/CorrelationPanels.astro';
 import GoodhartDivergence from './visuals/GoodhartDivergence.astro';
 import SurvivorshipFunnel from './visuals/SurvivorshipFunnel.astro';
+import FalseConsensusDots from './visuals/FalseConsensusDots.astro';
+import SunkCostBars from './visuals/SunkCostBars.astro';
+import BystanderCurve from './visuals/BystanderCurve.astro';
 
 interface Props {
   name: VisualId;
@@ -20,6 +23,9 @@ const registry = {
   'correlation-panels': CorrelationPanels,
   'goodhart-divergence': GoodhartDivergence,
   'survivorship-funnel': SurvivorshipFunnel,
+  'false-consensus-dots': FalseConsensusDots,
+  'sunk-cost-bars': SunkCostBars,
+  'bystander-curve': BystanderCurve,
 };
 
 const Visual = registry[name];

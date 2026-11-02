@@ -37,7 +37,16 @@ interface LawHero {
 
 // 有些条目的内容本身就是一张图，硬写成三段式反而难懂。
 // 这里只登记「用哪张图」，图形本体在 components/visuals/ 里单独画。
-export type VisualId = 'dunning-kruger-curve' | 'bikeshed-bars' | 'yak-shaving-chain';
+export type VisualId =
+  | 'dunning-kruger-curve'
+  | 'bikeshed-bars'
+  | 'yak-shaving-chain'
+  | 'correlation-panels'
+  | 'goodhart-divergence'
+  | 'survivorship-funnel'
+  | 'false-consensus-dots'
+  | 'sunk-cost-bars'
+  | 'bystander-curve';
 
 export interface Law {
   slug: string;

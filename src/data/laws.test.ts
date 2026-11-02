@@ -106,8 +106,11 @@ describe('BeKind content registry', () => {
       'yak-shaving',
       'dunning-kruger',
       'survivorship-bias',
+      'sunk-cost',
       'correlation-is-not-causation',
+      'bystander-effect',
       'goodharts-law',
+      'false-consensus',
     ]);
 
     withVisual.forEach((law) => {

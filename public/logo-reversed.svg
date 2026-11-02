@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none">
+  <title>BeKind 互联网沟通指北</title>
+  <!-- 反白版：暗色背景用 -->
+  <rect width="240" height="64" fill="#17171b"/>
+  <g>
+    <path d="M12 32C12 20 18 12 32 12C40 12 44 16 44 24" stroke="#2c6a4d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M52 32C52 44 46 52 32 52C24 52 20 48 20 40" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="68" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">BeKind</text>
+</svg>
