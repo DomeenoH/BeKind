@@ -19,6 +19,8 @@ src/
 │   ├── CategorySection.astro
 │   ├── LawGlyph.astro      # slug → lucide 图标的唯一映射处
 │   ├── ChatScene.astro     # 坏示范 / 好示范场景
+│   ├── LawVisual.astro     # 示意图分发（VisualId → components/visuals/*）
+│   ├── visuals/            # 每条一张手绘图，见下方「示意图」
 │   ├── CharacterAvatar.astro
 │   └── ShareActions.astro  # 复制链接 + 生成分享卡
 ├── data/
@@ -48,6 +50,16 @@ npm run build    # 产物在 dist/
 - 每条法则需要 `title`、`englishTitle`、`summary`、`category`，以及 `bad` / `good` 两段场景（`layout: "statement"` 的例外，用 `specialHtml`）。
 - 新增法则后要同步补三处：`order` 连续、`data/law-icons.ts` 里的图标名、`components/LawGlyph.astro` 里对应的 lucide 图标。
 - 测试会拦住：路由数量与顺序、分类是否重复、图标映射是否存在、站点文案里是否混入 emoji。
+
+## 示意图
+
+内容本身就是一张图的条目（邓宁-克鲁格、车棚效应、沉没成本等），不再套「坏示范 / 好示范 / 三条清单」，而是在两段场景之间插一张手绘图。
+
+- 想给某条加图：在 `data/law-types.ts` 的 `VisualId` 里登记名字，在 `components/visuals/` 新建组件，在 `LawVisual.astro` 的注册表里挂上，最后在 `laws.ts` 里写 `visual: '<id>'`。测试会校验这个清单。
+- 画布统一 **500×N**。这个宽度是被窄屏倒推出来的：文字随 SVG 等比缩放，画布越宽，手机上字号越小。500 在 320px 屏上还能读到 9px 左右，760 就只剩 5px。
+- 不要给图加 `min-width` 或 `overflow-x`。卡片 `max-width: 600px` 居中，SVG 宽度 100%，窄屏直接等比缩，不出滚动条。
+- 颜色一律走 `.viz-*` 类，不写行内 `fill`；SVG 文字用 `fill` 而不是 `color`。
+- 图内标题用 `text-anchor` 把标签分到不同象限，别靠肉眼对位置——第一版「开悟之坡」就压在曲线上。
 
 ## 视觉约定
 
