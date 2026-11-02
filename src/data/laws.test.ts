@@ -103,7 +103,10 @@ describe('BeKind content registry', () => {
 
     expect(withEffect.map((law) => `${law.slug}:${law.hero.effect}`)).toEqual([
       'no-hello:greeting-strike',
+      'three-strikes:three-strikes-count',
       'reply-all:reply-all-echo',
+      'one-message:one-message-split',
+      'no-jargon:jargon-swap',
     ]);
 
     // no-hello 的划掉效果依赖标题里那个 #strike

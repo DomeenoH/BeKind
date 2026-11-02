@@ -1041,7 +1041,8 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "三振出局",
       "subtitleHtml": "Three Strikes and You Call",
-      "leadHtml": "来回超过三条消息还说不清？<br>\n                    直接打电话。📞"
+      "leadHtml": "来回超过三条消息还说不清？<br>\n                    直接打电话。📞",
+      "effect": "three-strikes-count",
     },
     "bad": {
       "titleHtml": "❌ 无限循环",
@@ -2890,7 +2891,8 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "一条说完",
       "subtitleHtml": "One Message, Please",
-      "leadHtml": "聊天框不是弹幕。<br>\n                    一句话能说完的，别发七条。"
+      "leadHtml": "聊天框不是弹幕。<br>\n                    一句话能说完的，别发七条。",
+      "effect": "one-message-split",
     },
     "bad": {
       "titleHtml": "❌ 连载式发言",
@@ -3972,7 +3974,8 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "说人话",
       "subtitleHtml": "No Jargon",
-      "leadHtml": "你省下的几个字，<br>\n                    是对方花半小时查的资料。"
+      "leadHtml": "你省下的几个字，<br>\n                    是对方花半小时查的资料。",
+      "effect": "jargon-swap",
     },
     "bad": {
       "titleHtml": "❌ 用黑话划地盘",

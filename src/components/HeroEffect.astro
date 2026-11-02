@@ -16,6 +16,35 @@ const { name } = Astro.props;
   </div>
 )}
 
+{name === 'one-message-split' && (
+  <div class="hero-stage hero-split" aria-hidden="true">
+    <div class="hero-split-fragments">
+      {['那个', '就是', '想问下', '下周', '方便吗'].map((fragment, index) => (
+        <span class="hero-split-fragment" style={`--i:${index}`}>{fragment}</span>
+      ))}
+    </div>
+    <span class="hero-split-merged">下周三方便对一下方案吗</span>
+  </div>
+)}
+
+{name === 'three-strikes-count' && (
+  <div class="hero-stage hero-strikes" aria-hidden="true">
+    {['1', '2', '3'].map((count, index) => (
+      <span class="hero-strikes-dot" style={`--i:${index}`}>{count}</span>
+    ))}
+    <span class="hero-strikes-call">别再打字了</span>
+  </div>
+)}
+
+{name === 'jargon-swap' && (
+  <div class="hero-stage hero-swap" aria-hidden="true">
+    <span class="hero-swap-line hero-swap-line--jargon">
+      先<em>对齐</em>一下<em>颗粒度</em>，做个<em>闭环</em>
+    </span>
+    <span class="hero-swap-line hero-swap-line--plain">先一起看细节，把这事收尾</span>
+  </div>
+)}
+
 {name === 'greeting-strike' && (
   <script is:inline>
     const strike = document.querySelector('#strike');

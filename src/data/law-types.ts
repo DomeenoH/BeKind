@@ -31,7 +31,12 @@ export interface ChatScene {
 
 // 少数条目的主标题区可以「演」一遍法则本身（no-hello 把 hello 划掉那种）。
 // 和 visual 一样：数据只声明用哪段，实现放在 components/HeroEffect.astro。
-export type HeroEffectId = 'greeting-strike' | 'reply-all-echo';
+export type HeroEffectId =
+  | 'greeting-strike'
+  | 'reply-all-echo'
+  | 'one-message-split'
+  | 'three-strikes-count'
+  | 'jargon-swap';
 
 interface LawHero {
   titleHtml: string;

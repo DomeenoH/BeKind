@@ -1079,6 +1079,250 @@ strong {
   }
 }
 
+
+/* 共用底座：主标题区再挂一条「演出」时的行高与间距 */
+.hero-stage {
+  margin-top: 18px;
+}
+
+/* one-message：五条碎句排开，最后并成一句 ------------------------------- */
+.hero-split {
+  display: grid;
+  gap: 8px;
+}
+
+.hero-split-fragments {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.hero-split-fragment {
+  flex: 0 0 auto;
+  height: 26px;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  line-height: 24px;
+  color: var(--ink-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--surface);
+  opacity: 1;
+  animation: split-fragment 2.6s var(--ease) both;
+  animation-delay: calc(var(--i) * 110ms);
+}
+
+.hero-split-merged {
+  justify-self: start;
+  height: 28px;
+  padding: 0 14px;
+  font-size: 0.8125rem;
+  line-height: 26px;
+  color: var(--surface);
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0;
+  animation: split-merged 2.6s var(--ease) both;
+}
+
+@keyframes split-fragment {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  12% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.14;
+    transform: translateY(0);
+  }
+}
+
+@keyframes split-merged {
+  0%,
+  74% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  88%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* three-strikes：三个来回亮完就换电话 --------------------------------- */
+.hero-strikes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+}
+
+.hero-strikes-dot {
+  width: 26px;
+  height: 26px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: var(--ink-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--surface);
+  animation: strikes-dot 2.6s var(--ease) both;
+  animation-delay: calc(var(--i) * 560ms);
+}
+
+.hero-strikes-call {
+  height: 26px;
+  padding: 0 12px;
+  font-size: 0.75rem;
+  line-height: 24px;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  opacity: 0;
+  animation: strikes-call 2.6s var(--ease) both;
+}
+
+@keyframes strikes-dot {
+  0% {
+    opacity: 0;
+    color: var(--ink-3);
+    background: var(--surface);
+    border-color: var(--line-soft);
+  }
+
+  10%,
+  80% {
+    opacity: 1;
+    color: var(--surface);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  92%,
+  100% {
+    opacity: 0.35;
+    color: var(--surface);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+}
+
+@keyframes strikes-call {
+  0%,
+  78% {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+
+  90%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* no-jargon：术语那行退场，人话那行补上 -------------------------------- */
+.hero-swap {
+  display: grid;
+  height: 28px;
+  align-items: center;
+}
+
+.hero-swap-line {
+  grid-area: 1 / 1;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.hero-swap-line--jargon {
+  color: var(--ink-3);
+  animation: swap-out 2.8s var(--ease) both;
+}
+
+.hero-swap-line--jargon em {
+  font-style: normal;
+  color: var(--bad);
+  border-bottom: 1px dotted var(--bad);
+}
+
+.hero-swap-line--plain {
+  color: var(--ink);
+  opacity: 0;
+  animation: swap-in 2.8s var(--ease) both;
+}
+
+@keyframes swap-out {
+  0%,
+  58% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  74%,
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes swap-in {
+  0%,
+  62% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-split-fragment {
+    animation: none;
+    opacity: 0.18;
+  }
+
+  .hero-split-merged,
+  .hero-strikes-call,
+  .hero-swap-line--plain {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-strikes-dot {
+    animation: none;
+    opacity: 1;
+    color: var(--surface);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .hero-swap-line--jargon {
+    animation: none;
+    display: none;
+  }
+}
+
 .law-lead {
   max-width: 40em;
   margin-top: 22px;
