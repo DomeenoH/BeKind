@@ -1,10 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" fill="none">
   <title>BeKind 互联网沟通指北</title>
-  <!-- 图形部分：两条曲线交叉 -->
-  <g>
-    <path d="M12 32C12 20 18 12 32 12C40 12 44 16 44 24" stroke="#2c6a4d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-    <path d="M52 32C52 44 46 52 32 52C24 52 20 48 20 40" stroke="#17171b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-  </g>
-  <!-- 文字：BeKind -->
-  <text x="68" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#17171b" letter-spacing="-0.02em">BeKind</text>
+
+  <!-- 图形部分 (左侧, 64×64) - 与 icon.svg 同构 -->
+  <path d="M12 19 Q 12 11 20 11 L 34 11 Q 42 11 42 19 L 42 26 Q 42 34 34 34 L 22 34 L 12 44 L 12 19 Z"
+        stroke="#17171b"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <rect x="28" y="26" width="28" height="22" rx="8" fill="#2c6a4d"/>
+  <path d="M42 46 L 50 56 L 52 45 Z" fill="#2c6a4d"/>
+
+  <!-- 文字部分 "BeKind" -->
+  <text x="76" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" fill="#17171b" letter-spacing="-0.02em">BeKind</text>
 </svg>

@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <title>BeKind 互联网沟通指北</title>
-  <!-- 纯图形双色版：正方形 icon -->
-  <path d="M12 32C12 20 18 12 32 12C40 12 44 16 44 24" stroke="#2c6a4d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-  <path d="M52 32C52 44 46 52 32 52C24 52 20 48 20 40" stroke="#17171b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <!-- 两个对话气泡：墨色线框（坏示范）+ 绿色实心（好示范） -->
+  <!-- 后方气泡：墨色线框，左上 -->
+  <path d="M12 19 Q 12 11 20 11 L 34 11 Q 42 11 42 19 L 42 26 Q 42 34 34 34 L 22 34 L 12 44 L 12 19 Z"
+        stroke="#17171b"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- 前方气泡：绿色实心，右下，压住后方气泡一角 -->
+  <rect x="28" y="26" width="28" height="22" rx="8" fill="#2c6a4d"/>
+  <path d="M42 46 L 50 56 L 52 45 Z" fill="#2c6a4d"/>
 </svg>
