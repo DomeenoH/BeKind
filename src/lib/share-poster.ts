@@ -9,6 +9,13 @@ const sceneText = (lines: ChatLine[] = []) => lines
   .filter((line) => line.text.trim() && !isNarration(line))
   .map((line) => line.text.trim());
 
+// 卡片由 html2canvas 截图，它不支持 -webkit-line-clamp：
+// 用 CSS 裁会裁出"每行只剩上半截"，所以在这里按字数截断。
+const clampText = (text: string | undefined, limit = 84) => {
+  if (!text) return text;
+  return text.length <= limit ? text : `${text.slice(0, limit - 1)}…`;
+};
+
 export function getSharePosterContent(law: Law, total: number) {
   const badLines = sceneText(law.bad?.lines);
   const goodLines = sceneText(law.good?.lines);
@@ -18,7 +25,7 @@ export function getSharePosterContent(law: Law, total: number) {
   return {
     indexLabel: `${String(law.order).padStart(2, '0')} / ${total}`,
     titleClass: law.title.length >= 8 ? 'is-long' : '',
-    badExample: badLines.find((line) => !goodLineSet.has(line)) ?? badLines[0],
-    goodExample: goodLines.find((line) => !badLineSet.has(line)) ?? goodLines[0],
+    badExample: clampText(badLines.find((line) => !goodLineSet.has(line)) ?? badLines[0]),
+    goodExample: clampText(goodLines.find((line) => !badLineSet.has(line)) ?? goodLines[0]),
   };
 }

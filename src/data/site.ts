@@ -22,25 +22,26 @@ export const cast = [
     id: 'domino',
     name: '多米诺',
     role: '站点作者',
-    line: '写规则的人，也是被问「在吗」时最想装死的人。',
+    line: '老倒霉蛋。什么破事都能让他赶上，于是有了这个站。',
   },
   {
     id: 'cider',
     name: '西打',
-    role: '主要互动角色',
-    line: '坏示范的常驻演员。你憋着没发的那句，他一句不落全发了。',
+    role: '多米诺的 partner',
+    line: '有时是发起人，有时是那个被问「在吗」的人。',
   },
   {
     id: 'tail',
     name: '尾巴',
-    role: '咖啡车店长',
-    line: '咖啡车店长，一只 furry 小狗，负责在群里说人话。',
+    role: '尾巴咖啡的吉祥物',
+    line: '在咖啡车接客，也在这个站里当裁判。',
+    href: 'https://cafe.weibazhen.com',
   },
   {
     id: 'bot327',
     name: '群友',
-    role: 'bot',
-    line: 'bot。代表沉默的大多数，偶尔补一句最扎心的。',
+    role: '群演',
+    line: '偶尔上线，当个群演。',
   },
 ] as const;
 

@@ -1628,7 +1628,11 @@ strong {
 }
 
 .poster-main {
-  margin-top: 40px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .poster-main h2 {
@@ -1717,15 +1721,11 @@ strong {
 }
 
 .poster-example p {
-  display: -webkit-box;
-  overflow: hidden;
   margin: 0;
   font-size: 18px;
   line-height: 1.5;
   font-weight: 500;
   color: var(--ink);
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 
 .poster-footer {
@@ -2114,7 +2114,10 @@ strong {
     font-size: 0.9375rem;
   }
 
-  .chat-card,
+  .chat-card {
+    padding: 14px 14px 16px;
+  }
+
   .scene-note {
     padding: 14px 0 0 16px;
   }
@@ -2207,5 +2210,416 @@ strong {
 
   .scene-body {
     grid-template-columns: 1fr;
+  }
+}
+
+/* 索引卡上的一句"现场原话" */
+.card-quote {
+  margin: auto 0 0;
+  padding-top: 10px;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card-quote span {
+  color: var(--ink-3);
+}
+
+.card-summary + .card-quote {
+  margin-top: auto;
+}
+
+/* 首页首屏：去掉右栏目录，正文收窄 */
+.home-intro-inner {
+  max-width: 760px;
+}
+
+/* 卡片重排：标题 → 摘要 → 页脚元信息 */
+.law-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 18px 18px 13px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.card-summary {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.card-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.card-index {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.card-dot {
+  font-size: 0.6875rem;
+  color: var(--line);
+}
+
+.card-en {
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--ink-3);
+}
+
+.card-icon {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+  border: 0;
+  border-radius: 6px;
+}
+
+.card-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.law-card:hover .card-icon {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.cast-role-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(179, 65, 44, 0.35);
+}
+
+.cast-role-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* 首页首屏：去掉右栏目录，正文收窄 */
+.home-intro-inner {
+  max-width: 760px;
+}
+
+/* 卡片重排：标题 → 摘要 → 页脚元信息 */
+.law-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 18px 18px 13px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.card-summary {
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.card-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.card-index {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.card-dot {
+  font-size: 0.6875rem;
+  color: var(--line);
+}
+
+.card-en {
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--ink-3);
+}
+
+.card-icon {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  color: var(--ink-2);
+  background: var(--paper-2);
+  border: 0;
+  border-radius: 6px;
+}
+
+.card-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.law-card:hover .card-icon {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.cast-role-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(179, 65, 44, 0.35);
+}
+
+.cast-role-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* 单列时不必强行等高，卡片贴着内容收口 */
+@media (max-width: 640px) {
+  .law-card {
+    min-height: 0;
+  }
+}
+
+/* 单列时不必强行等高，卡片贴着内容收口 */
+@media (max-width: 640px) {
+  .law-card {
+    min-height: 0;
+  }
+}
+
+/* 图标：从页脚小标记改成压住右上角的"印记"，被卡片边缘裁掉一角 */
+.law-card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.law-card .card-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 0;
+  opacity: 0.92;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.law-card .card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.law-card:hover .card-icon {
+  opacity: 1;
+  transform: translate(-3px, 3px);
+}
+
+.card-foot {
+  padding-right: 0;
+}
+
+@media (max-width: 640px) {
+  .law-card {
+    padding-top: 18px;
+  }
+
+  .law-card .card-icon {
+    top: -7px;
+    right: -7px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .law-card .card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 被裁掉 8px 后，字形要往可见区域中心回推 4px 才不显得偏右下 */
+.law-card .card-icon svg {
+  transform: translate(-4px, -4px);
+}
+
+@media (max-width: 640px) {
+  .law-card .card-icon svg {
+    transform: translate(-3px, -3px);
+  }
+}
+
+/* 图标：从"被裁掉的黑色角块"改成完整的纸面印章 */
+.law-card {
+  overflow: visible;
+  padding-top: 18px;
+}
+
+.law-card .card-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  opacity: 1;
+  transform: rotate(-3deg);
+  transition:
+    transform 0.2s var(--ease),
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.law-card .card-icon svg {
+  width: 19px;
+  height: 19px;
+  transform: none;
+}
+
+.law-card:hover .card-icon {
+  transform: rotate(0deg);
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.card-title {
+  padding-right: 42px;
+}
+
+@media (max-width: 640px) {
+  .law-card .card-icon {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .law-card .card-icon svg {
+    width: 17px;
+    height: 17px;
+    transform: none;
+  }
+
+  .card-title {
+    padding-right: 38px;
+  }
+}
+
+/* 边框再实一点，让印章有清楚的轮廓但仍是纸色 */
+.law-card .card-icon {
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.law-card:hover .card-icon {
+  border-color: var(--ink);
+}
+
+/* 按 ui-ux-pro-max：图标尺寸走 token，避免各处出现 19/20/17 这类散值 */
+:root {
+  --icon-badge: 34px;
+  --icon-glyph: 19px;
+}
+
+.law-card .card-icon {
+  width: var(--icon-badge);
+  height: var(--icon-badge);
+}
+
+.law-card .card-icon svg {
+  width: var(--icon-glyph);
+  height: var(--icon-glyph);
+}
+
+/* 元信息 11px → 12px，符合最小可读字号；对比度 4.96:1 已达 AA */
+.card-index,
+.card-dot {
+  font-size: 0.75rem;
+}
+
+.card-en {
+  font-size: 0.6875rem;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --icon-badge: 30px;
+    --icon-glyph: 17px;
   }
 }

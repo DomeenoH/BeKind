@@ -34,13 +34,16 @@ const searchText =
   data-law-card
   data-search={searchText}
 >
-  <div class="card-top">
-    <span class="card-icon" aria-hidden="true">
-      <LawGlyph name={iconName} size={19} />
-    </span>
-    <span class="card-index" aria-hidden="true">{String(law.order).padStart(2, '0')}</span>
-  </div>
   <h3 class="card-title">{law.title}</h3>
-  <p class="card-en">{law.englishTitle}</p>
   <p class="card-summary">{law.summary}</p>
+  <div class="card-foot">
+    <span class="card-meta">
+      <span class="card-index" aria-hidden="true">{String(law.order).padStart(2, '0')}</span>
+      <span class="card-dot" aria-hidden="true">·</span>
+      <span class="card-en">{law.englishTitle}</span>
+    </span>
+    <span class="card-icon" aria-hidden="true">
+      <LawGlyph name={iconName} size={14} />
+    </span>
+  </div>
 </a>

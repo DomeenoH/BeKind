@@ -193,7 +193,12 @@ const { indexLabel, titleClass, badExample, goodExample } = getSharePosterConten
         dialog.showModal();
       } catch (error) {
         console.error('Share poster failed', error);
-        if (feedback) feedback.textContent = '生成失败，请稍后再试';
+        const staleModule = error instanceof TypeError && /dynamically imported module/i.test(error.message);
+        if (feedback) {
+          feedback.textContent = staleModule
+            ? '页面脚本已更新，刷新一下再试'
+            : '生成失败，请稍后再试';
+        }
       } finally {
         generateButton.disabled = false;
         generateButton.innerHTML = original;

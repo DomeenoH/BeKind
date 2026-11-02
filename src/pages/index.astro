@@ -41,7 +41,7 @@ const jsonLd = [
 <BaseLayout description={site.description} jsonLd={jsonLd} bodyClass="home-body">
   <div class="shell">
     <section class="home-intro">
-      <div class="home-intro-grid">
+      <div class="home-intro-inner">
         <div>
           <p class="eyebrow">{site.eyebrow}</p>
           <h1 class="display">{site.title}</h1>
@@ -73,18 +73,6 @@ const jsonLd = [
           </div>
         </div>
 
-        <aside class="contents" aria-label="目录">
-          <p class="contents-label">目录</p>
-          <div class="contents-list">
-            {grouped.map(({ category, laws }) => (
-              <a href={`#${category.id}`}>
-                <span class="contents-num" aria-hidden="true">{category.eyebrow}</span>
-                <span class="contents-name">{category.title}</span>
-                <span class="contents-count">{laws.length}</span>
-              </a>
-            ))}
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -121,7 +109,13 @@ const jsonLd = [
               <CharacterAvatar character={person.id as CharacterId} size={32} />
               <div class="cast-copy">
                 <p class="cast-name">{person.name}</p>
-                <p class="cast-role">{person.role}</p>
+                {'href' in person ? (
+                  <a class="cast-role cast-role-link" href={person.href} target="_blank" rel="noreferrer">
+                    {person.role} ↗
+                  </a>
+                ) : (
+                  <p class="cast-role">{person.role}</p>
+                )}
                 <p class="cast-line">{person.line}</p>
               </div>
             </li>
