@@ -35,6 +35,10 @@ interface LawHero {
   leadHtml: string;
 }
 
+// 有些条目的内容本身就是一张图，硬写成三段式反而难懂。
+// 这里只登记「用哪张图」，图形本体在 components/visuals/ 里单独画。
+export type VisualId = 'dunning-kruger-curve' | 'bikeshed-bars' | 'yak-shaving-chain';
+
 export interface Law {
   slug: string;
   order: number;
@@ -44,6 +48,7 @@ export interface Law {
   englishTitle: string;
   summary: string;
   hero: LawHero;
+  visual?: VisualId;
   bad?: ChatScene;
   good?: ChatScene;
   specialHtml?: string;

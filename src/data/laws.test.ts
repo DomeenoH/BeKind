@@ -98,6 +98,24 @@ describe('BeKind content registry', () => {
     });
   });
 
+  it('only attaches figures to entries that actually render them', () => {
+    const withVisual = orderedLaws.filter((law) => law.visual);
+
+    expect(withVisual.map((law) => law.slug)).toEqual([
+      'bike-shedding',
+      'yak-shaving',
+      'dunning-kruger',
+      'survivorship-bias',
+      'correlation-is-not-causation',
+      'goodharts-law',
+    ]);
+
+    withVisual.forEach((law) => {
+      expect(law.layout, law.slug).toBe('comparison');
+      expect(Boolean(law.bad && law.good), law.slug).toBe(true);
+    });
+  });
+
   it('names bot327 as 群友 in every visible scene', () => {
     const botLines = orderedLaws
       .flatMap((law) => [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])])

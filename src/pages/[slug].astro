@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Home } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChatScene from '../components/ChatScene.astro';
+import LawVisual from '../components/LawVisual.astro';
 import ShareActions from '../components/ShareActions.astro';
 import { orderedLaws } from '../data/laws';
 import { categories } from '../data/law-types';
@@ -111,6 +112,7 @@ const jsonLd = [
   {law.layout === 'comparison' && law.bad && law.good ? (
     <div class="scenes">
       <ChatScene scene={law.bad} variant="bad" />
+      {law.visual && <LawVisual name={law.visual} />}
       <ChatScene scene={law.good} variant="good" />
     </div>
   ) : (

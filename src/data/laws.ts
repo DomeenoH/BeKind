@@ -656,6 +656,7 @@ const laws: Law[] = [
     "englishTitle": "Bike Shedding",
     "summary": "别为了鸡毛蒜皮的小事浪费团队的宝贵时间。",
     "layout": "comparison",
+    "visual": "bikeshed-bars",
     "hero": {
       "titleHtml": "自行车棚效应",
       "subtitleHtml": "Parkinson's Law of Triviality",
@@ -758,6 +759,7 @@ const laws: Law[] = [
     "englishTitle": "Yak Shaving",
     "summary": "别为了煮面条而跑去修车，时刻记得你的初心。",
     "layout": "comparison",
+    "visual": "yak-shaving-chain",
     "hero": {
       "titleHtml": "剪牦牛毛",
       "subtitleHtml": "Yak Shaving",
@@ -1695,6 +1697,7 @@ const laws: Law[] = [
     "englishTitle": "Dunning-Kruger",
     "summary": "越无知越自信，越专业越谦虚。别和杠精争论。",
     "layout": "comparison",
+    "visual": "dunning-kruger-curve",
     "hero": {
       "titleHtml": "邓宁-克鲁格效应",
       "subtitleHtml": "Dunning-Kruger Effect",
@@ -1739,7 +1742,7 @@ const laws: Law[] = [
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">愚昧之巅与绝望之谷</h3>\n                        <p>\n                            心理学家邓宁和克鲁格发现一个讽刺的现象：\n                        </p>\n                        <ul>\n                            <li>🏔️ <strong>愚昧之巅：</strong>刚学了点皮毛的人，自信心爆棚</li>\n                            <li>📉 <strong>绝望之谷：</strong>学到一定程度后，发现自己啥也不懂</li>\n                            <li>📈 <strong>开悟之坡：</strong>慢慢积累，自信重建，但更加谦虚</li>\n                        </ul>\n                        <p>\n                            <strong>为什么网上杠精那么多？</strong>\n                        </p>\n                        <ul>\n                            <li>🎤 不懂的人最敢发言（因为不知道自己不懂）</li>\n                            <li>🤐 真正的专家往往保持沉默（因为知道问题的复杂性）</li>\n                            <li>📢 结果：最响亮的声音往往最不靠谱</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">为什么网上杠精那么多</h3>\n                        <p>邓宁和克鲁格发现：能力越差的人越容易高估自己，能力越强的人越容易低估自己。</p>\n                        <p>所以最响的声音常常最不靠谱——不懂的人不知道自己不懂，懂的人知道这件事有多复杂。</p>\n                    </div>"
     },
     "good": {
       "titleHtml": "✅ 保持谦逊",
@@ -1912,7 +1915,7 @@ const laws: Law[] = [
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>RTFM</strong> = \"Read The F***ing Manual\"，读那该死的手册。</p>\n                        <ul>\n                            <li>📚 <strong>文档存在的意义：</strong>作者花时间写文档，就是为了回答常见问题</li>\n                            <li>⏰ <strong>尊重他人时间：</strong>别人不是你的私人助教</li>\n                            <li>🔄 <strong>重复问题：</strong>这些问题已被问过无数次</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n                        <p><strong>RTFM</strong> = \"Read The F***ing Manual\"，读那该死的手册。</p>\n                        <p>手册里没写的，就轮到 <a href=\"/stfw/\">STFW</a> 了：先去搜。</p>\n                        <ul>\n                            <li>📚 <strong>文档存在的意义：</strong>作者花时间写文档，就是为了回答常见问题</li>\n                            <li>⏰ <strong>尊重他人时间：</strong>别人不是你的私人助教</li>\n                            <li>🔄 <strong>重复问题：</strong>这些问题已被问过无数次</li>\n                        </ul>\n                    </div>"
     },
     "good": {
       "titleHtml": "✅ 先读后问",
@@ -2242,7 +2245,7 @@ const laws: Law[] = [
     "layout": "comparison",
     "hero": {
       "titleHtml": "善用搜索",
-      "subtitleHtml": "Search The Fucking Web",
+      "subtitleHtml": "Search The F***ing Web",
       "leadHtml": "遇事不决，先问谷歌。<br>\n                    必应也是你的好朋友。"
     },
     "bad": {
@@ -2270,7 +2273,7 @@ const laws: Law[] = [
           "html": "这种问题谷歌搜一下第一条就是答案。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">搜索引擎比人更耐心</h3>\n                        <p>\n                            互联网上 90% 的基础问题都已经有了现成的答案。当你问一个直接能搜到的问题时，你在浪费两个人的时间：你的（等待回复）和对方的（打字回复）。\n                        </p>\n                        <p>\n                            <strong>STFW</strong> 是 <strong>RTFM</strong> (Read The Fucking Manual) 的年轻亲戚。这不仅是礼貌，更是效率。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">搜索引擎比人更耐心</h3>\n                        <p>\n                            互联网上 90% 的基础问题都已经有了现成的答案。当你问一个直接能搜到的问题时，你在浪费两个人的时间：你的（等待回复）和对方的（打字回复）。\n                        </p>\n                        <p>\n                            <strong>STFW</strong> 是 <a href=\"/rtfm/\"><strong>RTFM</strong></a>（Read The F***ing Manual）的年轻亲戚：一个查网页，一个翻手册，都是让你先自己动手。这不仅是礼貌，更是效率。\n                        </p>\n                    </div>"
     },
     "good": {
       "titleHtml": "✅ 站在巨人的肩膀上",
@@ -3282,6 +3285,7 @@ const laws: Law[] = [
     "englishTitle": "Survivorship Bias",
     "summary": "你只看见活下来的那些。",
     "layout": "comparison",
+    "visual": "survivorship-funnel",
     "hero": {
       "titleHtml": "幸存者偏差",
       "subtitleHtml": "Survivorship Bias",
@@ -3420,6 +3424,7 @@ const laws: Law[] = [
     "englishTitle": "Correlation ≠ Causation",
     "summary": "两件事一起发生，不代表一件导致另一件。",
     "layout": "comparison",
+    "visual": "correlation-panels",
     "hero": {
       "titleHtml": "相关不是因果",
       "subtitleHtml": "Correlation ≠ Causation",
@@ -3800,6 +3805,7 @@ const laws: Law[] = [
     "englishTitle": "Goodhart's Law",
     "summary": "指标变成目标，就不再是好指标。",
     "layout": "comparison",
+    "visual": "goodhart-divergence",
     "hero": {
       "titleHtml": "古德哈特定律",
       "subtitleHtml": "Goodhart's Law",

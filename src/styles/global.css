@@ -1546,7 +1546,9 @@ strong {
   margin-bottom: 0;
 }
 
-.law-footer a {
+.law-footer a,
+.scene-note a,
+.statement-card a {
   color: var(--ink);
   text-decoration: underline;
   text-decoration-color: rgba(23, 23, 27, 0.22);
@@ -1554,9 +1556,215 @@ strong {
   transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
 }
 
-.law-footer a:hover {
+.law-footer a:hover,
+.scene-note a:hover,
+.statement-card a:hover {
   color: var(--accent);
   text-decoration-color: currentColor;
+}
+
+/* 16.5 示意图（按条目手绘，不是通用组件）
+   ========================================================================== */
+
+.visual {
+  padding: 40px 0 8px;
+}
+
+.visual + .scene {
+  padding-top: 40px;
+}
+
+.law-figure {
+  margin: 0;
+  padding: 22px 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.law-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.law-figure figcaption {
+  margin-top: 14px;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-3);
+}
+
+.law-figure svg text {
+  font-family: var(--font-sans);
+}
+
+/* 文字层级 */
+.viz-axis {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: var(--ink-3);
+}
+
+.viz-label {
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.viz-label--bad {
+  fill: var(--bad);
+}
+
+.viz-label--good {
+  fill: var(--good);
+}
+
+.viz-note {
+  font-size: 11.5px;
+  fill: var(--ink-3);
+}
+
+.viz-value {
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+.viz-value--invert {
+  fill: var(--surface);
+}
+
+.viz-node-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+.viz-question {
+  font-size: 18px;
+  font-weight: 700;
+  fill: var(--ink-3);
+}
+
+/* 线 */
+.viz-curve {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.viz-ref {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+  opacity: 0.55;
+}
+
+.viz-axis-line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.viz-line {
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.viz-line--bad {
+  stroke: var(--bad);
+}
+
+.viz-line--good {
+  stroke: var(--good);
+}
+
+.viz-link {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.4;
+}
+
+.viz-tip {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 点与块 */
+.viz-dot {
+  fill: var(--ink);
+}
+
+.viz-dot--bad {
+  fill: var(--bad);
+}
+
+.viz-dot--good {
+  fill: var(--good);
+}
+
+.viz-halo {
+  fill: var(--surface);
+}
+
+.viz-track {
+  fill: var(--paper-2);
+}
+
+.viz-bar {
+  fill: var(--ink);
+}
+
+.viz-bar--long {
+  fill: var(--bad);
+}
+
+.viz-node {
+  fill: var(--paper);
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.viz-funnel {
+  fill: var(--paper-2);
+}
+
+.viz-funnel--seen {
+  fill: var(--ink);
+}
+
+.viz-funnel-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  fill: var(--ink-2);
+}
+
+.viz-funnel-label--invert {
+  fill: var(--surface);
+}
+
+@media (max-width: 600px) {
+  .law-figure {
+    padding: 16px 14px 14px;
+  }
+
+  .law-figure-scroll {
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .law-figure-scroll svg {
+    min-width: 520px;
+  }
 }
 
 /* 17. 分享

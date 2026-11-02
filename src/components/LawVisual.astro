@@ -1,0 +1,34 @@
+---
+import type { VisualId } from '../data/law-types';
+import DunningKrugerCurve from './visuals/DunningKrugerCurve.astro';
+import BikeShedBars from './visuals/BikeShedBars.astro';
+import YakShavingChain from './visuals/YakShavingChain.astro';
+import CorrelationPanels from './visuals/CorrelationPanels.astro';
+import GoodhartDivergence from './visuals/GoodhartDivergence.astro';
+import SurvivorshipFunnel from './visuals/SurvivorshipFunnel.astro';
+
+interface Props {
+  name: VisualId;
+}
+
+const { name } = Astro.props;
+
+const registry = {
+  'dunning-kruger-curve': DunningKrugerCurve,
+  'bikeshed-bars': BikeShedBars,
+  'yak-shaving-chain': YakShavingChain,
+  'correlation-panels': CorrelationPanels,
+  'goodhart-divergence': GoodhartDivergence,
+  'survivorship-funnel': SurvivorshipFunnel,
+};
+
+const Visual = registry[name];
+---
+
+{Visual && (
+  <section class="visual" id="visual">
+    <div class="shell">
+      <Visual />
+    </div>
+  </section>
+)}

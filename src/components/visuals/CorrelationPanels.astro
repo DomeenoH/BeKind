@@ -1,0 +1,59 @@
+---
+const arrow = (x1: number, y1: number, x2: number, y2: number) => {
+  const length = Math.hypot(x2 - x1, y2 - y1);
+  const ux = (x2 - x1) / length;
+  const uy = (y2 - y1) / length;
+  return {
+    shaft: `M${x1} ${y1} L${x2} ${y2}`,
+    tip: `M${x2 - 9 * ux + 4.2 * uy} ${y2 - 9 * uy - 4.2 * ux} L${x2} ${y2} L${x2 - 9 * ux - 4.2 * uy} ${y2 - 9 * uy + 4.2 * ux}`,
+  };
+};
+
+const panels = [
+  { x: 8, title: 'X 导致 Y', arrows: [arrow(72, 111, 106, 111)] },
+  { x: 192, title: 'Y 导致 X', arrows: [arrow(300, 111, 266, 111)] },
+  {
+    x: 376,
+    title: 'Z 同时导致两者',
+    arrows: [arrow(452, 78, 426, 92), arrow(472, 78, 498, 92)],
+  },
+  { x: 560, title: '纯属巧合', arrows: [] },
+];
+---
+
+<figure class="law-figure">
+  <div class="law-figure-scroll">
+  <svg
+    viewBox="0 0 760 150"
+    role="img"
+    aria-label="同一组上升数据的四种解释：X 导致 Y、Y 导致 X、Z 同时导致两者、或者纯属巧合。"
+  >
+    {panels.map((panel) => (
+      <g>
+        <text x={panel.x + 86} y="26" class="viz-label" text-anchor="middle">{panel.title}</text>
+
+        {panel.arrows.map((link) => (
+          <>
+            <path d={link.shaft} class="viz-link" />
+            <path d={link.tip} class="viz-tip" />
+          </>
+        ))}
+
+        <rect x={panel.x + 16} y="96" width="46" height="30" rx="7" class="viz-node" />
+        <text x={panel.x + 39} y="116" class="viz-node-label" text-anchor="middle">X</text>
+
+        <rect x={panel.x + 110} y="96" width="46" height="30" rx="7" class="viz-node" />
+        <text x={panel.x + 133} y="116" class="viz-node-label" text-anchor="middle">Y</text>
+      </g>
+    ))}
+
+    <rect x="439" y="48" width="46" height="30" rx="7" class="viz-node" />
+    <text x="462" y="68" class="viz-node-label" text-anchor="middle">Z</text>
+
+    <text x="646" y="118" class="viz-question" text-anchor="middle">?</text>
+  </svg>
+  </div>
+  <figcaption>
+    数据只能告诉你两条线一起动，告诉不了你谁推的谁。想往前一步，得去找那个没画在图上的 Z。
+  </figcaption>
+</figure>
