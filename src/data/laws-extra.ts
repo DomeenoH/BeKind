@@ -149,4 +149,40 @@ export const extraLaws: Law[] = [
     },
     footerHtml: '<p>这不是非常严重的事情，所以请不要对送你来看这个网站的人<a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。</p><p>如果你看到这个链接，说明有人正在用「我只是想确认一下」消耗你。</p><p><a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © {{YEAR}}</p>',
   },
+  {
+    slug: 'dont-doxx',
+    order: 71,
+    category: 'communication',
+    title: '别拿别人的隐私当武器',
+    englishTitle: "Don't Doxx",
+    summary: '把别人的真实身份、电话、住址甩到群里，不是「正义」，是违法。',
+    layout: 'comparison',
+    hero: {
+      titleHtml: '别拿别人的隐私当武器',
+      subtitleHtml: "Don't Doxx",
+      leadHtml: '你以为在「挂人」，<br>\n                    其实在踩法律的线。',
+    },
+    bad: {
+      titleHtml: '❌ 把隐私甩进群里',
+      lines: [
+        { character: 'cider', name: '西打', time: '21:02', text: '这人刚才在评论区骂我，我把他微信、公司、住址全扒出来了，大家帮我转发一下！', html: '这人刚才在评论区骂我，我把他微信、公司、住址全扒出来了，大家帮我转发一下！' },
+        { character: 'bot327', name: '群友', time: '21:03', text: '卧槽真的假的', html: '卧槽真的假的' },
+        { character: 'cider', name: '西打', time: '21:04', text: '截图都在这，连身份证我都找到了。', html: '截图都在这，连身份证我都找到了。' },
+        { character: 'domino', name: '多米诺', time: '21:05', text: '等等，先别发。把别人的真实姓名、电话、住址、聊天记录甩出来，不是「正义」，是《个人信息保护法》第十条说的「非法公开他人个人信息」。', html: '等等，先别发。把别人的真实姓名、电话、住址、聊天记录甩出来，不是「正义」，是《个人信息保护法》第十条说的「非法公开他人个人信息」。' },
+      ],
+      explanationHtml: '<div>\n<p>在中文网络里，这叫「开盒」或「挂人」：把一个人的真实身份和私密信息从私域挖出来，再甩到公开渠道。</p>\n<p>它踩的是硬线——《个人信息保护法》第十条：任何组织、个人不得非法收集、使用、加工、传输他人个人信息，不得非法买卖、提供或者公开他人个人信息。情节严重的，还可能触及《刑法》第二百五十三条之一（侵犯公民个人信息罪）。</p>\n</div>',
+    },
+    good: {
+      titleHtml: '✅ 走通道，别扩散',
+      lines: [
+        { character: 'cider', name: '西打', time: '21:02', text: '这个人一直在私信骚扰我……', html: '这个人一直在私信骚扰我……' },
+        { character: 'domino', name: '多米诺', time: '21:03', text: '先拉黑 + 平台举报，截图留好当证据。', html: '先拉黑 + 平台举报，截图留好当证据。' },
+        { character: 'cider', name: '西打', time: '21:04', text: '那如果他还来现实中找我？', html: '那如果他还来现实中找我？' },
+        { character: 'domino', name: '多米诺', time: '21:05', text: '涉及现实人身威胁就报警。别自己把他的信息散出去——你一转发，可能也成了共同侵权。', html: '涉及现实人身威胁就报警。别自己把他的信息散出去——你一转发，可能也成了共同侵权。' },
+        { character: 'cider', name: '西打', time: '21:06', text: '懂了，我去走举报通道。', html: '懂了，我去走举报通道。' },
+      ],
+      explanationHtml: '<div>\n<p>平台内的事，走平台的举报、拉黑、留证；涉及现实威胁，报警。</p>\n<p>把对方「公开处刑」不会让你更占理，只会让更多人无辜卷入，也把你放到被告席。你守住的，是「不扩散」而不是「以暴制暴」。</p>\n</div>',
+    },
+    footerHtml: '<p>这条不是法律意见，只是提醒你别踩线；具体情形以官方条文和执业律师意见为准。</p><p>如果你看到这个链接，说明对方希望你先停一下，别把别人的隐私甩到群里。</p><p>法条来源：<a href="https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE3Yjg2MzYxODE2YjA0MjE2NGMwZTEwODc%3D" target="_blank">《中华人民共和国个人信息保护法》（国家法律法规数据库）</a></p><p><a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © {{YEAR}}</p>',
+  },
 ];

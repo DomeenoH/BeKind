@@ -41,6 +41,10 @@ export const relatedLaws: Record<string, string[]> = {
 
   'brandolinis-law': ['sealioning', 'hitchens-razor', 'dont-feed-the-trolls'],
   'hitchens-razor': ['sealioning', 'brandolinis-law'],
-  'dont-feed-the-trolls': ['sealioning', 'brandolinis-law'],
+  'dont-feed-the-trolls': ['sealioning', 'brandolinis-law', 'dont-doxx'],
   sealioning: ['brandolinis-law', 'hitchens-razor', 'dont-feed-the-trolls'],
+
+  'dont-doxx': ['dont-feed-the-trolls', 'correct-in-private', 'assume-public'],
+  'correct-in-private': ['dont-doxx', 'ring-theory'],
+  'assume-public': ['dont-doxx', 'correct-in-private'],
 };

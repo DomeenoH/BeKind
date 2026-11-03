@@ -74,4 +74,8 @@ export const lawReferences: Record<string, LawReference[]> = {
     { label: 'David Malki, The Terrible Sea Lion (Wondermark #1062, 2014)', url: 'https://wondermark.com/c/1062/' },
     { label: 'Merriam-Webster, What is Sealioning?', url: 'https://www.merriam-webster.com/wordplay/sealioning-internet-trolling' },
   ],
+  'dont-doxx': [
+    { label: '《中华人民共和国个人信息保护法》第十条（国家法律法规数据库）', url: 'https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE3Yjg2MzYxODE2YjA0MjE2NGMwZTEwODc%3D' },
+    { label: '《中华人民共和国刑法》第二百五十三条之一 侵犯公民个人信息罪（最高人民检察院）', url: 'https://www.spp.gov.cn/spp/zdgz/202103/t20210315_510893.shtml' },
+  ],
 };

@@ -3,18 +3,19 @@ import { characters, qqAvatarUrl } from './characters';
 import { orderedLaws } from './laws';
 import { relatedLaws } from './related';
 import { lawReferences } from './references';
+import { getLawIconName, lawIconNames } from './law-icons';
 import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
-  it('keeps all 70 routes unique and ordered', () => {
-    expect(orderedLaws).toHaveLength(70);
-    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(70);
-    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 70 }, (_, index) => index + 1));
+  it('keeps all 71 routes unique and ordered', () => {
+    expect(orderedLaws).toHaveLength(71);
+    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(71);
+    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 71 }, (_, index) => index + 1));
   });
 
   it('preserves the original comparison structure', () => {
     const comparisonLaws = orderedLaws.filter((law) => law.layout === 'comparison');
-    expect(comparisonLaws).toHaveLength(69);
+    expect(comparisonLaws).toHaveLength(70);
 
     comparisonLaws.forEach((law) => {
       expect(law.hero.titleHtml.length).toBeGreaterThan(0);
@@ -145,6 +146,15 @@ describe('BeKind content registry', () => {
 
     expect(botLines.length).toBeGreaterThan(0);
     expect(botLines.every((line) => line.name === '群友')).toBe(true);
+  });
+
+  it('resolves a real icon for every law slug', () => {
+    orderedLaws.forEach((law) => {
+      const icon = getLawIconName(law.slug);
+      expect(typeof icon).toBe('string');
+      expect(icon.length, law.slug).toBeGreaterThan(0);
+      expect(lawIconNames[law.slug], law.slug).toBeDefined();
+    });
   });
 
   it('only points related entries at existing laws', () => {

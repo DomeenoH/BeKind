@@ -74,8 +74,13 @@ export const lawIconNames: Record<string, string> = {
   'curse-of-knowledge': 'Glasses',
   'left-on-read': 'MailOpen',
   sealioning: 'CircleHelp',
+  'dont-doxx': 'ShieldAlert',
 };
 
 export function getLawIconName(slug: string): string {
-  return lawIconNames[slug] ?? 'Hand';
+  const name = lawIconNames[slug];
+  if (!name) {
+    throw new Error(`Missing icon mapping for law slug: ${slug}`);
+  }
+  return name;
 }
