@@ -628,10 +628,16 @@
 - 构建产物检查：无 `{{YEAR}}` 残留、无 `© 2025`；新页面相关/参考区块正常；首页计数 35/17/18。
 - 上线：commit `772320e`，Pages run `41602247961` success；线上 `bk.0x0.cat` 回读通过。
 
-**遗留**
-- 19 个条目、125 处 emoji 列表符号尚未批量替换为文本/图标（涉及内容语气，建议逐条判断，不做全局替换）。
-- B4「公开挂人/开盒」涉及法律与平台政策，未纳入首批。
-- `getLawIconName()` 仍静默回退 `Hand`，可改为抛错。
+**遗留（已全部完成，2026-11-03 收尾轮）**
+- emoji 列表符号：报告原称「19 条 125 处」，实点全量扫描为 **134 处**（分布在 19 个条目）。因站点 CSS 已用 `.scene-note ul li::before` 4px 圆点作列表标记，emoji 属冗余重复标记，移除视觉无损。改用**手工字符扫描**移除（不用正则，规避 Python raw-string `\u` 不解码导致 `<strong>` 的 `<` 被误删的坑），并以 before/after 的 `<` `>` `<li` 计数断言零标签改动。结果：134 处全清、解析零损坏。
+- B4「公开挂人/开盒」已落地为新增条目 `dont-doxx`（order 71，category communication）：标题「别拿别人的隐私当武器 / Don't Doxx」，comparison 布局，bad 讲「把隐私甩进群里（开盒/挂人）」、good 讲「走通道，别扩散（拉黑+举报 / 现实威胁报警）」；footer 引官方条文——《个人信息保护法》第十条（flk.npc.gov.cn，200）与《刑法》第二百五十三条之一（spp.gov.cn，200；原 gov.cn/fl 链接 404 已替换）。同步把 bad 里一条无名 `{ name: '群友' }` 补成 `{ character:'bot327', name:'群友' }` 以匹配全站测试；新增 `related.ts` 回链（dont-feed-the-trolls / correct-in-private / assume-public）与 `references.ts` 来源。
+- `getLawIconName()` 已改为**缺失即抛错**（不再静默回退 `Hand`）；`law-icons.ts` 新增 `'dont-doxx':'ShieldAlert'`、`LawGlyph.astro` 同步 import `ShieldAlert`。`laws.test.ts` 新增图标覆盖测试（遍历 `orderedLaws`，断言每个 slug 都解析到非空字符串且 `lawIconNames[slug]` 已定义）。
+
+**收尾轮验证**
+- `npm test`：35 passed（新增图标覆盖 1 条）。
+- `npm run build`：73 pages（71 条 + 首页 + 404）。
+- 上线：commit `7d02f56`，Pages run `41622551794` success。
+- 线上回读 `bk.0x0.cat`：`/dont-doxx/` 标题/开盒/个人信息保护法/第十条/相关/参考/© 2026 全部 OK；首页 71 条。
 
 ---
 
