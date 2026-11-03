@@ -21,6 +21,6 @@ const { category, laws } = Astro.props;
   </div>
 
   <div class="card-grid">
-    {laws.map((law) => <LawCard law={law} />)}
+    {laws.map((law, index) => <LawCard law={law} position={index + 1} />)}
   </div>
 </section>

@@ -1,6 +1,6 @@
 # BeKind · 互联网沟通指北
 
-66 条互联网沟通法则、思维剃刀和网络行为原则。多数法则配一段群聊：多米诺、西打、尾巴和群友把坏示范与可用说法演一遍，右侧跟一段解释。
+70 条互联网沟通法则、思维剃刀和网络行为原则。多数法则配一段群聊：多米诺、西打、尾巴和群友把坏示范与可用说法演一遍，右侧跟一段解释。
 
 线上地址：[bk.0x0.cat](https://bk.0x0.cat)
 
@@ -24,7 +24,10 @@ src/
 │   ├── CharacterAvatar.astro
 │   └── ShareActions.astro  # 复制链接 + 生成分享卡
 ├── data/
-│   ├── laws.ts             # 66 条法则的唯一内容源
+│   ├── laws.ts             # 66 条基础法则的唯一内容源
+│   ├── laws-extra.ts       # 2026-11 增补的 4 条（order 67–70）
+│   ├── related.ts          # slug → 相关条目（详情页底部渲染）
+│   ├── references.ts       # slug → 一手来源（与页脚「延伸阅读」分开）
 │   ├── law-types.ts        # 类型与三个主题的定义
 │   ├── law-icons.ts        # slug → 图标名（纯数据，可测）
 │   ├── site.ts             # 站点级文案：主张、简介、角色、三步用法
@@ -46,10 +49,11 @@ npm run build    # 产物在 dist/
 
 ## 改动内容时的规则
 
-- **法则正文只改 `src/data/laws.ts`**，别在组件里拼文案。
+- **法则正文只改 `src/data/laws.ts`**（2026-11 之后的增补放 `laws-extra.ts`），别在组件里拼文案。
 - 每条法则需要 `title`、`englishTitle`、`summary`、`category`，以及 `bad` / `good` 两段场景（`layout: "statement"` 的例外，用 `specialHtml`）。
-- 新增法则后要同步补三处：`order` 连续、`data/law-icons.ts` 里的图标名、`components/LawGlyph.astro` 里对应的 lucide 图标。
-- 测试会拦住：路由数量与顺序、分类是否重复、图标映射是否存在、站点文案里是否混入 emoji。
+- 新增法则后要同步补五处：`order` 连续、`data/law-icons.ts` 里的图标名、`components/LawGlyph.astro` 里对应的 lucide 图标、`data/related.ts` 的相关条目、`laws.test.ts` 的条目数。
+- 首页卡片显示的是**分类内序号**，详情页显示的是全站序号（`06 / 70`）；两者不要混。
+- 测试会拦住：路由数量与顺序、分类是否重复、图标映射是否存在、相关条目是否指向存在的 slug、参考链接是否为 https、站点文案里是否混入 emoji。
 
 ## 示意图
 

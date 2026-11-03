@@ -1891,6 +1891,80 @@ strong {
   text-decoration-color: currentColor;
 }
 
+/* 16.2 相关条目与参考
+   ========================================================================== */
+
+.related {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.related-label,
+.references-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.related-list {
+  margin-top: 6px;
+}
+
+.related-list a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 18px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.related-list a:hover {
+  color: var(--accent);
+}
+
+.related-en {
+  flex: none;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.references {
+  margin-top: 32px;
+}
+
+.references ul {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.references li {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.references a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 23, 27, 0.22);
+  text-underline-offset: 3px;
+}
+
+.references a:hover {
+  color: var(--accent);
+}
+
 /* 16.5 示意图（按条目手绘，不是通用组件）
    ========================================================================== */
 

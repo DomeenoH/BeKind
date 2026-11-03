@@ -70,6 +70,10 @@ export const lawIconNames: Record<string, string> = {
   'ask-in-public': 'MessagesSquare',
   'dont-cry-bug': 'BugOff',
   'dont-play-helpless': 'BookX',
+  'media-richness': 'Radio',
+  'curse-of-knowledge': 'Glasses',
+  'left-on-read': 'MailOpen',
+  sealioning: 'CircleHelp',
 };
 
 export function getLawIconName(slug: string): string {

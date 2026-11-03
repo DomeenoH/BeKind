@@ -1,18 +1,20 @@
 import { describe, expect, it } from 'vitest';
 import { characters, qqAvatarUrl } from './characters';
 import { orderedLaws } from './laws';
+import { relatedLaws } from './related';
+import { lawReferences } from './references';
 import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
-  it('keeps all 66 routes unique and ordered', () => {
-    expect(orderedLaws).toHaveLength(66);
-    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(66);
-    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 66 }, (_, index) => index + 1));
+  it('keeps all 70 routes unique and ordered', () => {
+    expect(orderedLaws).toHaveLength(70);
+    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(70);
+    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 70 }, (_, index) => index + 1));
   });
 
   it('preserves the original comparison structure', () => {
     const comparisonLaws = orderedLaws.filter((law) => law.layout === 'comparison');
-    expect(comparisonLaws).toHaveLength(65);
+    expect(comparisonLaws).toHaveLength(69);
 
     comparisonLaws.forEach((law) => {
       expect(law.hero.titleHtml.length).toBeGreaterThan(0);
@@ -69,7 +71,7 @@ describe('BeKind content registry', () => {
     const goodLines = getChatLinePresentations(law?.good?.lines ?? []);
 
     const cider = badLines.find(({ line }) => line.character === 'cider');
-    const summary = badLines.find(({ line }) => line.name?.includes('其他 48 个人'));
+    const summary = badLines.find(({ line }) => line.name?.includes('其他 98 个人'));
     const reaction = goodLines.find(({ line }) => line.text.includes('👍 86'));
 
     expect(cider).toMatchObject({ isOutgoing: true, hasAvatar: true });
@@ -143,5 +145,28 @@ describe('BeKind content registry', () => {
 
     expect(botLines.length).toBeGreaterThan(0);
     expect(botLines.every((line) => line.name === '群友')).toBe(true);
+  });
+
+  it('only points related entries at existing laws', () => {
+    const slugs = new Set(orderedLaws.map((law) => law.slug));
+
+    Object.entries(relatedLaws).forEach(([slug, targets]) => {
+      expect(slugs.has(slug), slug).toBe(true);
+      expect(targets.length, slug).toBeGreaterThan(0);
+      targets.forEach((target) => {
+        expect(slugs.has(target), `${slug} → ${target}`).toBe(true);
+        expect(target, `${slug} → ${target}`).not.toBe(slug);
+      });
+    });
+  });
+
+  it('keeps every reference label and https url', () => {
+    Object.entries(lawReferences).forEach(([slug, references]) => {
+      expect(references.length, slug).toBeGreaterThan(0);
+      references.forEach((reference) => {
+        expect(reference.label.length, slug).toBeGreaterThan(4);
+        expect(reference.url.startsWith('https://'), `${slug} · ${reference.url}`).toBe(true);
+      });
+    });
   });
 });

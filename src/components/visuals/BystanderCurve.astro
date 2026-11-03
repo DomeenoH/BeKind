@@ -1,11 +1,8 @@
 ---
 const points = [
-  { x: 62, y: 76, label: '1 人' },
-  { x: 124, y: 105, label: '2 人' },
-  { x: 186, y: 125, label: '3 人' },
-  { x: 248, y: 137, label: '5 人' },
-  { x: 320, y: 146, label: '10 人' },
-  { x: 392, y: 150, label: '20 人' },
+  { x: 74, y: 76, label: '独自', value: '85%' },
+  { x: 186, y: 118, label: '另有 1 人', value: '62%' },
+  { x: 298, y: 156, label: '另有 4 人', value: '31%' },
 ];
 ---
 
@@ -14,7 +11,7 @@ const points = [
     <svg
       viewBox="0 0 500 220"
       role="img"
-      aria-label="曲线图：只有一个人在场时，有人出手的概率约百分之八十五；在场人数越多，出手概率越低，二十人时降到百分之二十八。"
+      aria-label="折线图：Darley 与 Latané 1968 年的癫痫发作实验。被试独自在场时，85% 的人出手求助；以为另有一人在场时是 62%；以为另有四人在场时降到 31%。"
     >
       <line x1="36" y1="186" x2="440" y2="186" class="viz-axis-line" />
       <line x1="36" y1="48" x2="36" y2="186" class="viz-axis-line" />
@@ -23,7 +20,7 @@ const points = [
 
       <path
         class="viz-curve"
-        d="M62 76 C92 88 106 98 124 105 C152 116 166 121 186 125 C210 130 226 134 248 137 C272 141 296 144 320 146 C344 148 372 149 392 150"
+        d="M74 76 C112 88 148 104 186 118 C224 132 260 146 298 156"
       />
 
       {points.map((point) => (
@@ -36,18 +33,25 @@ const points = [
             x={point.x}
             y="208"
             class="viz-note"
-            text-anchor={index === points.length - 1 ? 'end' : 'middle'}
+            text-anchor={index === 0 ? 'start' : index === points.length - 1 ? 'end' : 'middle'}
           >
             {point.label}
+          </text>
+          <text
+            x={point.x}
+            y={point.y - 16}
+            class="viz-label"
+            text-anchor="middle"
+          >
+            {point.value}
           </text>
         </g>
       ))}
 
-      <text x="62" y="62" class="viz-label viz-label--bad" text-anchor="middle">85%</text>
-      <text x="402" y="134" class="viz-label">28%</text>
+      <text x="440" y="60" class="viz-axis" text-anchor="end">Darley &amp; Latané 1968</text>
     </svg>
   </div>
   <figcaption>
-    在场的人越多，每个人都觉得「总会有人管的」，于是没有一个人管。群里没人回也一样——不是没人看见，是每个人都以为别人会先开口。
+    独自一人时，85% 的人会去求助；以为还有别人在场，比例就往下掉。群里没人回也一样——不是没人看见，是每个人都以为别人会先开口。
   </figcaption>
 </figure>

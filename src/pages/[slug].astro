@@ -6,6 +6,8 @@ import HeroEffect from '../components/HeroEffect.astro';
 import LawVisual from '../components/LawVisual.astro';
 import ShareActions from '../components/ShareActions.astro';
 import { orderedLaws } from '../data/laws';
+import { relatedLaws } from '../data/related';
+import { lawReferences } from '../data/references';
 import { categories } from '../data/law-types';
 import { site } from '../data/site';
 import type { Law } from '../data/law-types';
@@ -24,6 +26,12 @@ const previous = orderedLaws[index - 1];
 const next = orderedLaws[index + 1];
 const category = categories.find((item) => item.id === law.category);
 const canonicalUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin).href;
+
+const related = (relatedLaws[law.slug] ?? [])
+  .map((slug) => orderedLaws.find((item) => item.slug === slug))
+  .filter((item): item is Law => Boolean(item));
+const references = lawReferences[law.slug] ?? [];
+const footerHtml = law.footerHtml.replaceAll('{{YEAR}}', String(site.year));
 
 // 副标题若只是英文名的另一种写法（惠顿定律那种），就不再重复显示一次。
 const subtitleText = law.hero.subtitleHtml.replace(/<[^>]+>/g, '').trim();
@@ -153,7 +161,36 @@ const jsonLd = [
       )}
     </nav>
 
-    <footer class="law-footer" set:html={law.footerHtml} />
+    {related.length > 0 && (
+      <nav class="related" aria-label="相关条目">
+        <p class="related-label">相关</p>
+        <ul class="related-list">
+          {related.map((item) => (
+            <li>
+              <a href={`/${item.slug}/`}>
+                <span>{item.title}</span>
+                <span class="related-en">{item.englishTitle}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    {references.length > 0 && (
+      <section class="references" aria-label="参考来源">
+        <p class="references-label">参考</p>
+        <ul>
+          {references.map((reference) => (
+            <li>
+              <a href={reference.url} target="_blank" rel="noreferrer">{reference.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <footer class="law-footer" set:html={footerHtml} />
   </div>
 
   <script is:inline>
