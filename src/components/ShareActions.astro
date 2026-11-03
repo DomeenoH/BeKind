@@ -1,10 +1,7 @@
 ---
-import { Copy, Download, Image, X } from 'lucide-astro';
-import LawGlyph from './LawGlyph.astro';
-import { getLawIconName } from '../data/law-icons';
+import { CircleAlert, Copy, Download, ExternalLink, Image, Maximize2, Share2, X } from 'lucide-astro';
 import type { Law } from '../data/law-types';
 import { orderedLaws } from '../data/laws';
-import { site } from '../data/site';
 import { getSharePosterContent } from '../lib/share-poster';
 
 interface Props {
@@ -12,16 +9,15 @@ interface Props {
 }
 
 const { law } = Astro.props;
-const iconName = getLawIconName(law.slug);
 const shareUrl = new URL(`/${law.slug}/`, Astro.site ?? Astro.url.origin);
-const displayHost = shareUrl.hostname;
-const { indexCurrent, indexTotal, titleClass, badExample, goodExample } = getSharePosterContent(
-  law,
-  orderedLaws.length,
-);
+const content = getSharePosterContent(law, orderedLaws.length, {
+  url: shareUrl.href,
+  host: shareUrl.hostname,
+});
+const uid = law.slug;
 ---
 
-<div class="share-root" data-share-root data-title={law.title} data-share-url={shareUrl.href}>
+<div class="share-root" data-share-root data-poster={JSON.stringify(content)}>
   <div class="share-actions" aria-label="分享">
     <button class="share-button primary" type="button" data-copy-link>
       <Copy size={16} stroke-width={1.75} aria-hidden="true" />
@@ -34,193 +30,579 @@ const { indexCurrent, indexTotal, titleClass, badExample, goodExample } = getSha
     <span class="share-feedback" data-share-feedback aria-live="polite"></span>
   </div>
 
-  <div class="share-poster" data-share-poster data-poster-width="600" data-poster-height="800" aria-hidden="true">
-    <div class="poster-header">
-      <div class="poster-brand">
-        <span class="poster-mark" aria-hidden="true">
-          <LawGlyph name={iconName} size={17} />
-        </span>
+  <dialog
+    class="share-dialog"
+    data-share-dialog
+    aria-labelledby={`share-title-${uid}`}
+    aria-describedby={`share-status-${uid}`}
+  >
+    <header class="share-dialog-head">
+      <div class="share-dialog-heading">
+        <p class="share-dialog-eyebrow">分享卡片</p>
+        <h2 id={`share-title-${uid}`} tabindex="-1" data-dialog-title>{law.title}</h2>
+      </div>
+      <div class="share-dialog-tools">
+        <button
+          class="icon-button share-zoom"
+          type="button"
+          data-share-zoom
+          aria-label="在新标签打开大图"
+          title="看大图"
+          hidden
+        >
+          <Maximize2 size={16} stroke-width={1.75} aria-hidden="true" />
+        </button>
+        <button class="icon-button" type="button" data-close-dialog aria-label="关闭分享卡片" title="关闭">
+          <X size={18} stroke-width={1.75} aria-hidden="true" />
+        </button>
+      </div>
+    </header>
+
+    <fieldset class="share-ratio" data-share-ratio>
+      <legend class="sr-only">卡片版式</legend>
+      <label class="share-ratio-option">
+        <input
+          type="radio"
+          name={`poster-ratio-${uid}`}
+          value="portrait"
+          checked
+          aria-describedby={`share-ratio-portrait-${uid}`}
+        />
+        <span>竖版 3:4</span>
+      </label>
+      <label class="share-ratio-option">
+        <input
+          type="radio"
+          name={`poster-ratio-${uid}`}
+          value="square"
+          aria-describedby={`share-ratio-square-${uid}`}
+        />
+        <span>方版 1:1</span>
+      </label>
+      <span class="sr-only" id={`share-ratio-portrait-${uid}`}>带摘要，适合发小红书</span>
+      <span class="sr-only" id={`share-ratio-square-${uid}`}>只有两句例子，适合发群聊</span>
+    </fieldset>
+
+    <div
+      class="share-stage"
+      data-share-stage
+      data-format="portrait"
+      data-state="idle"
+      aria-busy="false"
+    >
+      <div class="share-card-frame" data-share-frame>
+        <img data-poster-preview alt="" hidden />
+        <div class="share-skeleton" data-share-skeleton aria-hidden="true">
+          <span class="share-progress"></span>
+        </div>
+      </div>
+
+      <div class="share-error" data-share-error hidden>
+        <CircleAlert size={24} stroke-width={1.75} aria-hidden="true" />
         <div>
-          <strong>BeKind</strong>
-          <span>互联网沟通指北</span>
+          <strong data-error-title></strong>
+          <p data-error-hint></p>
         </div>
       </div>
-      <p class="poster-index">
-        <strong>{indexCurrent}</strong>
-        <span>/ {indexTotal}</span>
-      </p>
     </div>
 
-    <div class="poster-main">
-      <div class="poster-hero">
-        <span class="poster-english">{law.englishTitle}</span>
-        <h2 class={titleClass}>{law.title}</h2>
-        <p class="poster-summary">{law.summary}</p>
-      </div>
+    <p class="sr-only" id={`share-status-${uid}`} role="status" aria-live="polite" data-share-status></p>
+    <p class="sr-only" role="alert" data-share-alert></p>
 
-      {badExample && goodExample && (
-        <div class="poster-comparison">
-          <article class="poster-example poster-example-bad">
-            <div class="poster-example-head">
-              <span class="poster-badge" aria-hidden="true">
-                <span class="poster-mark-x"></span>
-              </span>
-              <span class="poster-example-label">错误示例</span>
-              <span class="poster-example-rule" aria-hidden="true"></span>
-            </div>
-            <p>{badExample}</p>
-          </article>
-
-          <article class="poster-example poster-example-good">
-            <div class="poster-example-head">
-              <span class="poster-badge" aria-hidden="true">
-                <span class="poster-mark-check"></span>
-              </span>
-              <span class="poster-example-label">改进示例</span>
-              <span class="poster-example-rule" aria-hidden="true"></span>
-            </div>
-            <p>{goodExample}</p>
-          </article>
-        </div>
-      )}
-    </div>
-
-    <div class="poster-footer">
-      <div class="poster-footer-copy">
-        <strong>{displayHost}</strong>
-        <span>{site.footerLine}</span>
-      </div>
-      <span class="poster-qr">
-        <canvas width="88" height="88" data-share-qr></canvas>
-      </span>
-    </div>
-  </div>
-
-  <dialog class="share-dialog" data-share-dialog>
-    <div class="share-dialog-head">
-      <div>
-        <p>分享卡片</p>
-        <h2>{law.title}</h2>
-      </div>
-      <button class="icon-button" type="button" data-close-dialog aria-label="关闭分享卡片" title="关闭">
-        <X size={18} aria-hidden="true" />
-      </button>
-    </div>
-    <img data-poster-preview alt={`${law.title}的分享卡片`} />
     <div class="share-dialog-actions">
-      <a class="share-button primary" data-download-poster download={`BeKind-${law.slug}.png`}>
-        <Download size={16} stroke-width={1.75} aria-hidden="true" />
-        <span>下载图片</span>
-      </a>
-      <button class="share-button secondary" type="button" data-copy-again>
-        <Copy size={16} stroke-width={1.75} aria-hidden="true" />
-        <span>复制链接</span>
+      <button class="share-button primary" type="button" data-share-primary data-action="download">
+        <span class="share-icon" data-icon="download"><Download size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="share"><Share2 size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="open"><ExternalLink size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="copy"><Copy size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="busy"><span class="button-loader" aria-hidden="true"></span></span>
+        <span data-primary-label>保存图片</span>
+      </button>
+      <button class="share-button secondary" type="button" data-share-secondary data-action="image">
+        <span class="share-icon" data-icon="image"><Image size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="copy"><Copy size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span class="share-icon" data-icon="close"><X size={16} stroke-width={1.75} aria-hidden="true" /></span>
+        <span data-secondary-label>复制图片</span>
       </button>
     </div>
+
+    <p class="share-hint" data-share-hint hidden></p>
   </dialog>
 </div>
 
 <script>
-  function fallbackCopy(text: string) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
-  }
+  import type { PosterFormat } from '../lib/poster-layout';
+  import type { PosterContent } from '../lib/share-poster';
 
-  document.querySelectorAll<HTMLElement>('[data-share-root]').forEach((root) => {
+  type ErrorKind = 'stale' | 'offline' | 'render';
+  type State = 'idle' | 'loading' | 'ready' | 'error';
+  type Entry = { blob: Blob; url: string };
+
+  const RATIO_KEY = 'bekind.poster.ratio';
+  const FORMAT_LABEL: Record<PosterFormat, string> = { portrait: '竖版', square: '方版' };
+  const RATIO_VALUE: Record<PosterFormat, number> = { portrait: 3 / 4, square: 1 };
+
+  const readRatio = (): PosterFormat => {
+    try {
+      return window.localStorage.getItem(RATIO_KEY) === 'square' ? 'square' : 'portrait';
+    } catch {
+      return 'portrait';
+    }
+  };
+
+  const supportsCopyImage = () => {
+    if (typeof ClipboardItem === 'undefined' || !navigator.clipboard?.write) return false;
+    const supports = (ClipboardItem as unknown as { supports?: (type: string) => boolean }).supports;
+    return typeof supports === 'function' ? supports('image/png') : true;
+  };
+
+  const canShareFiles = () => {
+    if (typeof navigator.share !== 'function' || typeof navigator.canShare !== 'function') return false;
+    try {
+      return navigator.canShare({
+        files: [new File([new Blob()], 'card.png', { type: 'image/png' })],
+      });
+    } catch {
+      return false;
+    }
+  };
+
+  const isWeChat = () => /MicroMessenger/i.test(navigator.userAgent);
+  const isIOS = () =>
+    /iP(hone|od|ad)/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  function initShare(root: HTMLElement) {
     if (root.dataset.ready) return;
     root.dataset.ready = 'true';
 
-    const title = root.dataset.title ?? document.title;
-    const feedback = root.querySelector<HTMLElement>('[data-share-feedback]');
-    const copyButton = root.querySelector<HTMLButtonElement>('[data-copy-link]');
-    const copyAgain = root.querySelector<HTMLButtonElement>('[data-copy-again]');
-    const generateButton = root.querySelector<HTMLButtonElement>('[data-generate-poster]');
-    const poster = root.querySelector<HTMLElement>('[data-share-poster]');
-    const qr = root.querySelector<HTMLCanvasElement>('[data-share-qr]');
+    const content = JSON.parse(root.dataset.poster ?? '{}') as PosterContent;
     const dialog = root.querySelector<HTMLDialogElement>('[data-share-dialog]');
+    const generateButton = root.querySelector<HTMLButtonElement>('[data-generate-poster]');
+    const copyButton = root.querySelector<HTMLButtonElement>('[data-copy-link]');
+    const feedback = root.querySelector<HTMLElement>('[data-share-feedback]');
+    const stage = root.querySelector<HTMLElement>('[data-share-stage]');
+    const frame = root.querySelector<HTMLElement>('[data-share-frame]');
     const preview = root.querySelector<HTMLImageElement>('[data-poster-preview]');
-    const download = root.querySelector<HTMLAnchorElement>('[data-download-poster]');
-    const close = root.querySelector<HTMLButtonElement>('[data-close-dialog]');
-    const shareText = `不用回我，看完就行 → ${title}：${window.location.href}`;
-    const posterUrl = root.dataset.shareUrl ?? window.location.href;
+    const skeleton = root.querySelector<HTMLElement>('[data-share-skeleton]');
+    const errorBox = root.querySelector<HTMLElement>('[data-share-error]');
+    const errorTitle = root.querySelector<HTMLElement>('[data-error-title]');
+    const errorHint = root.querySelector<HTMLElement>('[data-error-hint]');
+    const status = root.querySelector<HTMLElement>('[data-share-status]');
+    const alert = root.querySelector<HTMLElement>('[data-share-alert]');
+    const primary = root.querySelector<HTMLButtonElement>('[data-share-primary]');
+    const primaryLabel = root.querySelector<HTMLElement>('[data-primary-label]');
+    const secondary = root.querySelector<HTMLButtonElement>('[data-share-secondary]');
+    const secondaryLabel = root.querySelector<HTMLElement>('[data-secondary-label]');
+    const hint = root.querySelector<HTMLElement>('[data-share-hint]');
+    const zoom = root.querySelector<HTMLButtonElement>('[data-share-zoom]');
+    const closeButton = root.querySelector<HTMLButtonElement>('[data-close-dialog]');
+    const title = root.querySelector<HTMLElement>('[data-dialog-title]');
+    const ratioInputs = Array.from(
+      root.querySelectorAll<HTMLInputElement>('input[name^="poster-ratio"]'),
+    );
 
-    const copy = async () => {
+    if (
+      !dialog || !generateButton || !copyButton || !feedback || !stage || !frame || !preview ||
+      !skeleton || !errorBox || !errorTitle || !errorHint || !status || !alert || !primary || !primaryLabel ||
+      !secondary || !secondaryLabel || !hint || !zoom || !closeButton || !title
+    ) {
+      return;
+    }
+
+    const cache = new Map<PosterFormat, Entry>();
+    let format: PosterFormat = readRatio();
+    let state: State = 'idle';
+    let renderToken = 0;
+    let errorKind: ErrorKind = 'render';
+    let scrollY = 0;
+    let skeletonTimer = 0;
+    let slowTimer = 0;
+    let startedAt = 0;
+
+    const shareText = `不用回我，看完就行 → ${content.title}：${content.url}`;
+    const wechat = isWeChat();
+    const copyImageOk = supportsCopyImage();
+    const shareOk = canShareFiles();
+
+    const filename = () => {
+      const clean = content.title
+        .replace(/[\\/:*?"<>|]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 12);
+      return `BeKind-${content.indexCurrent}-${clean || content.slug}-${
+        format === 'portrait' ? '3x4' : '1x1'
+      }.png`;
+    };
+
+    const alt = () =>
+      `第 ${content.order} 条法则《${content.title}》的分享卡片，${FORMAT_LABEL[format]}${
+        format === 'portrait' ? '，带摘要' : ''
+      }`;
+
+    const urlFor = (entry: Entry) => {
+      if (!entry.url) entry.url = URL.createObjectURL(entry.blob);
+      return entry.url;
+    };
+
+    const sizeFrame = () => {
+      if (!dialog.open) return;
+      const width = stage.clientWidth - 20;
+      const height = stage.clientHeight - 20;
+      if (width <= 0 || height <= 0) return;
+      const ratio = RATIO_VALUE[format];
+      let frameWidth = width;
+      let frameHeight = frameWidth / ratio;
+      if (frameHeight > height) {
+        frameHeight = height;
+        frameWidth = frameHeight * ratio;
+      }
+      frame.style.width = `${Math.max(1, Math.floor(frameWidth))}px`;
+      frame.style.height = `${Math.max(1, Math.floor(frameHeight))}px`;
+    };
+
+    const setState = (next: State) => {
+      state = next;
+      stage.dataset.state = next;
+      stage.setAttribute('aria-busy', next === 'loading' ? 'true' : 'false');
+      frame.hidden = next === 'error';
+      skeleton.hidden = next !== 'loading';
+      preview.hidden = next !== 'ready';
+      errorBox.hidden = next !== 'error';
+      zoom.hidden = next !== 'ready';
+      if (next === 'loading') {
+        primary.disabled = true;
+        primary.dataset.action = 'busy';
+        primaryLabel.textContent = '生成中';
+        // 图还没出来时，「复制图片」没有可复制的对象，先退回复制链接。
+        if (!wechat) {
+          secondary.hidden = false;
+          secondary.dataset.action = 'copy';
+          secondaryLabel.textContent = '复制链接';
+        } else {
+          secondary.hidden = true;
+        }
+      } else {
+        primary.disabled = false;
+      }
+    };
+
+    const flash = (button: HTMLButtonElement, labelEl: HTMLElement, text: string) => {
+      const original = labelEl.textContent ?? '';
+      labelEl.textContent = text;
+      window.setTimeout(() => {
+        if (labelEl.textContent === text) labelEl.textContent = original;
+      }, 2000);
+      button.classList.add('is-success');
+      window.setTimeout(() => button.classList.remove('is-success'), 2000);
+    };
+
+    const fallbackCopy = (text: string) => {
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    };
+
+    const copyLink = async (button?: HTMLButtonElement, labelEl?: HTMLElement | null) => {
       try {
         await navigator.clipboard.writeText(shareText);
       } catch {
         fallbackCopy(shareText);
       }
-      if (feedback) feedback.textContent = '已复制';
-      const label = copyButton?.querySelector('span');
-      const original = label?.textContent;
-      if (label) label.textContent = '已复制';
-      copyButton?.classList.add('is-success');
-      window.setTimeout(() => {
-        if (feedback) feedback.textContent = '';
-        if (label && original) label.textContent = original;
-        copyButton?.classList.remove('is-success');
-      }, 1800);
+      if (button && labelEl) flash(button, labelEl, '已复制');
+      else {
+        feedback.textContent = '已复制';
+        window.setTimeout(() => {
+          if (feedback.textContent === '已复制') feedback.textContent = '';
+        }, 1800);
+      }
     };
 
-    copyButton?.addEventListener('click', copy);
-    copyAgain?.addEventListener('click', copy);
-    close?.addEventListener('click', () => dialog?.close());
-    dialog?.addEventListener('click', (event) => {
+    const download = () => {
+      const entry = cache.get(format);
+      if (!entry) return;
+      const anchor = document.createElement('a');
+      anchor.href = urlFor(entry);
+      anchor.download = filename();
+      anchor.rel = 'noopener';
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      flash(primary, primaryLabel, '已开始下载');
+      status.textContent = '已开始下载';
+    };
+
+    const share = () => {
+      const entry = cache.get(format);
+      if (!entry) return;
+      const file = new File([entry.blob], filename(), { type: 'image/png' });
+      try {
+        navigator
+          .share({ files: [file], title: content.title, text: shareText })
+          .catch((error: unknown) => {
+            if (error instanceof DOMException && error.name === 'AbortError') return;
+            download();
+            status.textContent = '分享没打开，改成下载了';
+          });
+      } catch {
+        download();
+        status.textContent = '分享没打开，改成下载了';
+      }
+    };
+
+    const copyImage = async () => {
+      const entry = cache.get(format);
+      if (!entry) return;
+      try {
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': entry.blob })]);
+        flash(secondary, secondaryLabel, '已复制图片');
+        status.textContent = '图片已复制，可以直接粘贴';
+      } catch {
+        status.textContent = '图片没复制，用保存图片吧';
+        hint.hidden = false;
+        hint.textContent = '图片没复制，用保存图片吧';
+        window.setTimeout(() => {
+          if (hint.textContent === '图片没复制，用保存图片吧') hint.hidden = true;
+        }, 4000);
+      }
+    };
+
+    const configureActions = () => {
+      secondary.hidden = false;
+      hint.hidden = true;
+      if (wechat) {
+        primary.dataset.action = 'copy';
+        primaryLabel.textContent = '复制链接';
+        secondary.hidden = true;
+        hint.hidden = false;
+        hint.textContent = '长按图片可以保存到相册';
+        return;
+      }
+      if (shareOk) {
+        primary.dataset.action = 'share';
+        primaryLabel.textContent = '分享';
+      } else {
+        primary.dataset.action = 'download';
+        primaryLabel.textContent = '保存图片';
+      }
+      if (copyImageOk) {
+        secondary.dataset.action = 'image';
+        secondaryLabel.textContent = '复制图片';
+      } else {
+        secondary.dataset.action = 'copy';
+        secondaryLabel.textContent = '复制链接';
+      }
+      if (isIOS() && !shareOk) {
+        hint.hidden = false;
+        hint.textContent = '长按图片，选存储图像';
+      }
+    };
+
+    const showError = (kind: ErrorKind) => {
+      errorKind = kind;
+      setState('error');
+      const copy: Record<ErrorKind, [string, string]> = {
+        stale: ['页面更新过了', '刷新一下就能重新生成'],
+        offline: ['现在没网，卡片生成不了', '连上网络再试'],
+        render: ['图片没生成出来', '再试一次，还是不行就刷新页面'],
+      };
+      errorTitle.textContent = copy[kind][0];
+      errorHint.textContent = copy[kind][1];
+      errorBox.dataset.tone = kind === 'stale' ? 'action' : 'muted';
+      primary.dataset.action = kind === 'stale' ? 'reload' : 'retry';
+      primaryLabel.textContent = kind === 'stale' ? '刷新页面' : '重试';
+      secondary.dataset.action = 'close';
+      secondaryLabel.textContent = '关闭';
+      status.textContent = '';
+      alert.textContent = `${copy[kind][0]}。${copy[kind][1]}`;
+      if (!dialog.open) {
+        feedback.textContent = copy[kind][0];
+        feedback.classList.add('is-error');
+        window.setTimeout(() => {
+          feedback.textContent = '';
+          feedback.classList.remove('is-error');
+        }, 4000);
+      }
+    };
+
+    const applyEntry = (entry: Entry) => {
+      const target = format;
+      preview.alt = alt();
+      preview.onload = () => {
+        if (format !== target) return;
+        setState('ready');
+        configureActions();
+        sizeFrame();
+      };
+      preview.src = urlFor(entry);
+    };
+
+    const render = async (target: PosterFormat) => {
+      const token = ++renderToken;
+      const hadPreview = state === 'ready' && Boolean(preview.src);
+      startedAt = performance.now();
+      alert.textContent = '';
+      if (!hadPreview) setState('loading');
+      window.clearTimeout(skeletonTimer);
+      window.clearTimeout(slowTimer);
+      skeletonTimer = window.setTimeout(() => {
+        if (token === renderToken && state === 'loading') skeleton.classList.add('is-visible');
+      }, 200);
+      slowTimer = window.setTimeout(() => {
+        if (token === renderToken && state === 'loading') status.textContent = '正在生成图片';
+      }, 300);
+
+      try {
+        const { renderPosterBlob } = await import('../lib/poster-render');
+        const blob = await renderPosterBlob(content, target);
+        if (token !== renderToken) return;
+        const previous = cache.get(target);
+        if (previous?.url) URL.revokeObjectURL(previous.url);
+        const entry: Entry = { blob, url: URL.createObjectURL(blob) };
+        cache.set(target, entry);
+        if (format === target) {
+          applyEntry(entry);
+          if (performance.now() - startedAt > 600) status.textContent = '卡片已生成';
+        }
+      } catch (error) {
+        if (token !== renderToken) return;
+        console.error('Share poster failed', error);
+        const stale =
+          error instanceof TypeError &&
+          /dynamically imported module|Importing a module script failed/i.test(error.message);
+        showError(stale ? 'stale' : navigator.onLine ? 'render' : 'offline');
+      } finally {
+        if (token === renderToken) {
+          window.clearTimeout(skeletonTimer);
+          window.clearTimeout(slowTimer);
+          skeleton.classList.remove('is-visible');
+        }
+      }
+    };
+
+    const ensure = (target: PosterFormat) => {
+      const cached = cache.get(target);
+      if (cached) {
+        applyEntry(cached);
+        return;
+      }
+      void render(target);
+    };
+
+    const open = () => {
+      if (!dialog.open) {
+        scrollY = window.scrollY;
+        dialog.showModal();
+        document.documentElement.classList.add('share-open');
+        requestAnimationFrame(sizeFrame);
+      }
+      title.focus();
+    };
+
+    generateButton.addEventListener('click', () => {
+      open();
+      if (state === 'error') void render(format);
+      else ensure(format);
+    });
+
+    // 桌面端 hover/focus 时先把渲染器拉下来；真正点击时通常已经在缓存里。
+    const warmup = () => {
+      void import('../lib/poster-render');
+    };
+    generateButton.addEventListener('pointerenter', warmup, { once: true });
+    generateButton.addEventListener('focus', warmup, { once: true });
+
+    copyButton.addEventListener('click', () => void copyLink());
+
+    ratioInputs.forEach((input) => {
+      input.addEventListener('change', () => {
+        if (!input.checked) return;
+        format = input.value === 'square' ? 'square' : 'portrait';
+        try {
+          window.localStorage.setItem(RATIO_KEY, format);
+        } catch {
+          /* 隐私模式写不进去只影响记忆，不影响出图 */
+        }
+        stage.dataset.format = format;
+        preview.alt = alt();
+        sizeFrame();
+        ensure(format);
+      });
+    });
+
+    primary.addEventListener('click', () => {
+      if (state === 'error') {
+        if (primary.dataset.action === 'reload') {
+          window.location.reload();
+          return;
+        }
+        void render(format);
+        return;
+      }
+      if (state !== 'ready') return;
+      const action = primary.dataset.action;
+      if (action === 'copy') void copyLink(primary, primaryLabel);
+      else if (action === 'share') share();
+      else download();
+    });
+
+    secondary.addEventListener('click', () => {
+      if (state === 'error' || secondary.dataset.action === 'close') {
+        dialog.close();
+        return;
+      }
+      if (secondary.dataset.action === 'image') void copyImage();
+      else void copyLink(secondary, secondaryLabel);
+    });
+
+    zoom.addEventListener('click', () => {
+      const entry = cache.get(format);
+      if (entry) window.open(urlFor(entry), '_blank', 'noopener');
+    });
+
+    closeButton.addEventListener('click', () => dialog.close());
+
+    dialog.addEventListener('click', (event) => {
       if (event.target === dialog) dialog.close();
     });
 
-    generateButton?.addEventListener('click', async () => {
-      if (!poster || !qr || !dialog || !preview || !download || !generateButton) return;
-      const original = generateButton.innerHTML;
-      generateButton.disabled = true;
-      generateButton.innerHTML = '<span class="button-loader" aria-hidden="true"></span><span>生成中</span>';
-
-      try {
-        // 分享卡是低频操作，按需加载两个较重的依赖，首屏不背这个包。
-        const [{ default: html2canvas }, { default: QRCode }] = await Promise.all([
-          import('html2canvas'),
-          import('qrcode'),
-        ]);
-
-        const posterWidth = Number(poster.dataset.posterWidth ?? 600);
-        const posterHeight = Number(poster.dataset.posterHeight ?? 800);
-        await QRCode.toCanvas(qr, posterUrl, {
-          width: 88,
-          margin: 1,
-          color: { dark: '#17171b', light: '#ffffff' },
-        });
-        const canvas = await html2canvas(poster, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: '#f5f4f0',
-          logging: false,
-          width: posterWidth,
-          height: posterHeight,
-          windowWidth: posterWidth,
-          windowHeight: posterHeight,
-        });
-        const imageUrl = canvas.toDataURL('image/png');
-        preview.src = imageUrl;
-        download.href = imageUrl;
-        dialog.showModal();
-      } catch (error) {
-        console.error('Share poster failed', error);
-        const staleModule = error instanceof TypeError && /dynamically imported module/i.test(error.message);
-        if (feedback) {
-          feedback.textContent = staleModule
-            ? '页面脚本已更新，刷新一下再试'
-            : '生成失败，请稍后再试';
-        }
-      } finally {
-        generateButton.disabled = false;
-        generateButton.innerHTML = original;
-      }
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('share-open');
+      // 原生 dialog 关闭时会把焦点还给触发元素并顺手滚动，等它做完再复位。
+      window.setTimeout(() => {
+        generateButton.focus({ preventScroll: true });
+        const behavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollY);
+        document.documentElement.style.scrollBehavior = behavior;
+      }, 0);
     });
-  });
+
+    window.addEventListener('resize', () => {
+      if (dialog.open) sizeFrame();
+    });
+
+    window.addEventListener('pagehide', () => {
+      cache.forEach((entry) => {
+        if (entry.url) {
+          URL.revokeObjectURL(entry.url);
+          entry.url = '';
+        }
+      });
+    });
+
+    // 首次打开前把持久化比例同步到控件，避免弹窗里闪一下默认值。
+    const storedInput = ratioInputs.find((input) => input.value === format);
+    if (storedInput) storedInput.checked = true;
+    stage.dataset.format = format;
+    setState('idle');
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-share-root]').forEach(initShare);
 </script>

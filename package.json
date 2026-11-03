@@ -1,7 +1,7 @@
 {
   "name": "bekind",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "astro": "^5.18.2",
-    "html2canvas": "^1.4.1",
     "lucide-astro": "^0.556.0",
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.6",
     "vitest": "^4.1.10"
   }
 }
