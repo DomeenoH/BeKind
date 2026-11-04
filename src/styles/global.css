@@ -49,7 +49,19 @@
   --shadow-card: 0 1px 2px rgba(23, 23, 27, 0.04), 0 12px 32px -26px rgba(23, 23, 27, 0.4);
   --shadow-lift: 0 2px 4px rgba(23, 23, 27, 0.05), 0 20px 44px -30px rgba(23, 23, 27, 0.45);
 
-  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* 动效：曲线分三档，够用且不散。
+     进场/退场用强 ease-out（开头快，立刻响应），
+     屏幕上位移用 ease-in-out，抽屉/底部弹层用 iOS 那条曲线。 */
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* 时长：按钮回弹要快，浮层可以慢一点，阅读区不动 */
+  --dur-press: 120ms;
+  --dur-fast: 160ms;
+  --dur-base: 220ms;
+  --dur-slow: 320ms;
 }
 
 /* 2. 基础
@@ -77,7 +89,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* 用 clip 而不是 hidden：hidden 会把 body 变成滚动容器，
+     页面级的滚动驱动效果（页头投影）会认错滚动源。 */
+  overflow-x: clip;
 }
 
 img,
@@ -124,10 +138,17 @@ strong {
   color: var(--ink);
 }
 
+/* 不写 border-radius：焦点环跟着元素自己的圆角走，圆形按钮才不会被切成方块 */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 4px;
+}
+
+/* 触屏上点哪都留一块灰色高亮，和纸面底色打架 */
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -193,6 +214,46 @@ strong {
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--line-soft);
+}
+
+/* 滚动后给页头垫一层影子，让「浮在正文之上」这件事说得清。
+   影子和底色分离：只在伪元素上改 opacity，滚动时不重绘文字。 */
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: 0 14px 30px -26px rgba(23, 23, 27, 0.6);
+  opacity: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header::after {
+      animation: header-lift linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 120px;
+    }
+  }
+}
+
+@keyframes header-lift {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background: var(--paper);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: var(--line);
+  }
 }
 
 .site-header-inner {
@@ -286,7 +347,8 @@ strong {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 999px;
-  transition: border-color 0.18s var(--ease), background 0.18s var(--ease);
+  transition: border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease), transform var(--dur-press) var(--ease-out);
 }
 
 .random-button:hover {
@@ -294,7 +356,7 @@ strong {
 }
 
 .random-button:active {
-  transform: translateY(1px);
+  transform: scale(0.97);
 }
 
 /* 5. 首页 · 卷首
@@ -303,13 +365,6 @@ strong {
 .home-intro {
   padding: 72px 0 56px;
   border-bottom: 1px solid var(--line);
-}
-
-.home-intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
-  gap: 64px;
-  align-items: start;
 }
 
 .eyebrow {
@@ -337,6 +392,7 @@ strong {
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .home-lead {
@@ -355,55 +411,7 @@ strong {
   color: var(--ink-2);
 }
 
-/* 目录（分类跳转） */
-.contents {
-  padding-top: 14px;
-  border-top: 1px solid var(--ink);
-}
-
-.contents-label {
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
-.contents-list {
-  margin-top: 6px;
-}
-
-.contents-list a {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line-soft);
-  transition: color 0.18s var(--ease);
-}
-
-.contents-list a:last-child {
-  border-bottom: 0;
-}
-
-.contents-num,
-.contents-count {
-  font-size: 0.6875rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-3);
-}
-
-.contents-name {
-  flex: 1;
-  min-width: 0;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.contents-list a:hover .contents-name {
-  color: var(--accent);
-}
+/* 目录（分类跳转）已从首页移除，相关样式随之删除 */
 
 /* 6. 搜索
    ========================================================================== */
@@ -473,11 +481,17 @@ strong {
   border-radius: 50%;
   color: var(--ink-2);
   background: var(--paper);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease),
+    transform var(--dur-press) var(--ease-out);
 }
 
 .search-clear:hover {
   color: var(--ink);
   background: var(--paper-2);
+}
+
+.search-clear:active {
+  transform: scale(0.9);
 }
 
 .search.has-value .search-clear {
@@ -572,6 +586,7 @@ strong {
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
+  text-wrap: balance;
 }
 
 .section-index {
@@ -605,81 +620,84 @@ strong {
   gap: 14px;
 }
 
+/* 图标尺寸走 token，卡片和印章共用一套 */
+:root {
+  --icon-badge: 34px;
+  --icon-glyph: 19px;
+}
+
 .law-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  min-height: 150px;
+  padding: 18px 18px 13px;
   background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
-  transition: transform 0.24s var(--ease), border-color 0.24s var(--ease),
-    box-shadow 0.24s var(--ease);
+  transition: transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
 }
 
-.law-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--line);
-  box-shadow: var(--shadow-lift);
+/* 抬升只给真鼠标：触屏点一下会残留 hover，卡片一直悬着 */
+@media (hover: hover) and (pointer: fine) {
+  .law-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--line);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .law-card:hover .card-icon {
+    transform: rotate(0deg);
+    background: var(--surface);
+    border-color: var(--ink);
+  }
+
+  .law-card:hover .card-title {
+    color: var(--ink);
+  }
 }
 
 .law-card:active {
-  transform: translateY(-1px);
+  transform: translateY(0) scale(0.995);
+  transition-duration: 90ms;
 }
 
-.card-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 22px;
-}
-
-.card-icon {
+/* 印章：压在右上角的纸片，静止时歪 3°，鼠标来了才摆正 */
+.law-card .card-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: var(--icon-badge);
+  height: var(--icon-badge);
   color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-sm);
-  transition: background 0.24s var(--ease), border-color 0.24s var(--ease);
-}
-
-.law-card:hover .card-icon {
   background: var(--paper-2);
-  border-color: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transform: rotate(-3deg);
+  transition: transform var(--dur-base) var(--ease),
+    background var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
 }
 
-.card-index {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
+.law-card .card-icon svg {
+  width: var(--icon-glyph);
+  height: var(--icon-glyph);
 }
 
 .card-title {
-  font-size: 1.0625rem;
+  padding-right: 42px;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.45;
   color: var(--ink);
-}
-
-.card-en {
-  margin-top: 6px;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-wrap: balance;
+  transition: color var(--dur-fast) var(--ease);
 }
 
 .card-summary {
-  margin-top: 14px;
+  margin-top: 8px;
   font-size: 0.875rem;
   line-height: 1.7;
   color: var(--ink-2);
@@ -689,10 +707,80 @@ strong {
   overflow: hidden;
 }
 
+/* 页脚：编号 · 英文名，贴在卡片底边 */
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.card-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* 元信息 11px → 12px：达到最小可读字号，对比度 4.96:1 已过 AA */
+.card-index,
+.card-dot {
+  font-size: 0.75rem;
+}
+
+.card-index {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.card-dot {
+  color: var(--line);
+}
+
+.card-en {
+  overflow: hidden;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--ink-3);
+}
+
+/* 单列时不必强行等高，卡片贴着内容收口 */
+@media (max-width: 640px) {
+  :root {
+    --icon-badge: 30px;
+    --icon-glyph: 17px;
+  }
+
+  .law-card {
+    min-height: 0;
+    padding: 16px 16px 13px;
+  }
+
+  .law-card .card-icon {
+    top: 12px;
+    right: 12px;
+  }
+
+  .card-title {
+    padding-right: 38px;
+  }
+}
+
 /* 搜索结果为空 */
 .search-empty {
   padding: 64px 0 72px;
   border-top: 1px solid var(--line-soft);
+  /* 从 hidden 切到显示时播一次，不靠 JS */
+  animation: fade-up var(--dur-base) var(--ease-out) both;
 }
 
 .search-empty h2 {
@@ -935,12 +1023,16 @@ strong {
   pointer-events: none;
 }
 
+/* 滚动进度只改 scaleX：改 width 每帧都要重排，滚动条会顶掉主线程 */
 .read-progress span {
   display: block;
-  width: 0;
+  width: 100%;
   height: 100%;
   background: var(--accent);
-  transition: width 0.1s linear;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
 .breadcrumb {
@@ -986,6 +1078,7 @@ strong {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .law-title #strike {
@@ -1815,12 +1908,18 @@ strong {
   background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
-  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: border-color var(--dur-fast) var(--ease), transform var(--dur-press) var(--ease-out);
 }
 
-.pager-item:hover {
-  border-color: var(--line);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .pager-item:hover {
+    border-color: var(--line);
+    transform: translateY(-2px);
+  }
+}
+
+.pager-item:active {
+  transform: translateY(0) scale(0.99);
 }
 
 .pager-item.next {
@@ -1836,6 +1935,21 @@ strong {
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--ink-3);
+}
+
+/* 鼠标停在翻页卡上时，箭头往它要去的方向推 2px —— 只指路，不抢戏 */
+.pager-label svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pager-item:hover .pager-label svg {
+    transform: translateX(-2px);
+  }
+
+  .pager-item.next:hover .pager-label svg {
+    transform: translateX(2px);
+  }
 }
 
 .pager-title {
@@ -2329,15 +2443,31 @@ strong {
   border: 0;
   border-radius: var(--radius-lg);
   box-shadow: 0 30px 80px rgba(23, 23, 27, 0.24);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
 }
 
 .share-dialog[open] {
   display: flex;
 }
 
+/* 弹窗不是凭空出现的：从下方 10px 处轻微放大淡入，遮罩同时压暗 */
+@starting-style {
+  .share-dialog[open] {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+
 .share-dialog::backdrop {
-  background: rgba(23, 23, 27, 0.42);
+  background-color: rgba(23, 23, 27, 0.42);
   backdrop-filter: blur(6px);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+@starting-style {
+  .share-dialog[open]::backdrop {
+    background-color: rgba(23, 23, 27, 0);
+  }
 }
 
 .share-dialog-head {
@@ -2391,12 +2521,17 @@ strong {
   color: var(--ink-2);
   background: var(--paper);
   border-radius: 50%;
-  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease),
+    transform var(--dur-press) var(--ease-out);
 }
 
 .icon-button:hover {
   color: var(--ink);
   background: var(--paper-2);
+}
+
+.icon-button:active {
+  transform: scale(0.94);
 }
 
 .share-zoom {
@@ -2453,13 +2588,17 @@ strong {
   border: 1px solid transparent;
   border-radius: 7px;
   cursor: pointer;
-  transition: color 0.18s var(--ease), background 0.18s var(--ease),
-    border-color 0.18s var(--ease);
+  transition: color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease), transform var(--dur-press) var(--ease-out);
 }
 
 .share-ratio-option:hover span {
   color: var(--ink-2);
   border-color: var(--line);
+}
+
+.share-ratio-option:active span {
+  transform: scale(0.98);
 }
 
 .share-ratio-option input:checked + span {
@@ -2501,6 +2640,8 @@ strong {
   height: 100%;
   object-fit: contain;
   border-radius: 0;
+  /* 骨架条换成图片时不要硬切 */
+  animation: fade-in var(--dur-base) var(--ease-out) both;
 }
 
 .share-skeleton {
@@ -2522,11 +2663,12 @@ strong {
 .share-progress {
   position: absolute;
   top: 0;
-  left: -30%;
+  left: 0;
   width: 30%;
   height: 1px;
   background: var(--ink-3);
   opacity: 0;
+  transform: translateX(-100%);
 }
 
 .share-skeleton.is-visible .share-progress {
@@ -2536,10 +2678,10 @@ strong {
 
 @keyframes share-progress {
   from {
-    left: -30%;
+    transform: translateX(-100%);
   }
   to {
-    left: 100%;
+    transform: translateX(333%);
   }
 }
 
@@ -2633,6 +2775,16 @@ html.share-open body {
     margin: auto 0 0;
     padding-bottom: env(safe-area-inset-bottom);
     border-radius: 18px 18px 0 0;
+    /* 手机上是从底部抽上来的纸，用抽屉曲线，比淡入更像「它本来就在下面」 */
+    transition: opacity var(--dur-slow) var(--ease-drawer),
+      transform var(--dur-slow) var(--ease-drawer);
+  }
+
+  @starting-style {
+    .share-dialog[open] {
+      opacity: 0;
+      transform: translateY(100%);
+    }
   }
 
   .share-dialog-head {
@@ -2757,7 +2909,56 @@ html.share-open body {
   margin-top: 28px;
 }
 
-/* 20. 响应式
+/* 20. 动效系统
+   ========================================================================== */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 故意不给索引卡加滚动揭示：这是一页功能性的目录，卡片一进视口就该是它。
+   滚动驱动的入场只在「稀有、第一次」的场景才值得，而且一旦时间轴没更新，
+   代价是整页看不见 —— 收益和风险不成比例。 */
+
+/* 跨页导航：整页短交叉淡入。两页的页头长得一样，淡入时它看着就是没动。
+   只在支持的浏览器生效，不支持的浏览器就是普通跳转。 */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 200ms;
+  animation-timing-function: var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* 21. 响应式
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -2767,36 +2968,6 @@ html.share-open body {
 
   .home-intro {
     padding: 56px 0 40px;
-  }
-
-  .home-intro-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .contents {
-    max-width: none;
-    padding-top: 12px;
-  }
-
-  .contents-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .contents-list a {
-    padding: 12px 20px;
-    border-bottom: 0;
-    border-left: 1px solid var(--line-soft);
-  }
-
-  .contents-list a:first-child {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .contents-list a:last-child {
-    padding-right: 0;
   }
 
   .about-grid {
@@ -2879,25 +3050,6 @@ html.share-open body {
     padding: 40px 0 32px;
   }
 
-  .home-intro-grid {
-    gap: 26px;
-  }
-
-  .contents-list {
-    display: block;
-  }
-
-  .contents-list a {
-    padding: 11px 0;
-    border-bottom: 1px solid var(--line-soft);
-    border-left: 0;
-  }
-
-  .contents-list a:last-child {
-    border-bottom: 0;
-    padding-right: 0;
-  }
-
   .search-status:not(.is-active) {
     display: none;
   }
@@ -2938,19 +3090,6 @@ html.share-open body {
   .card-grid {
     grid-template-columns: 1fr;
     gap: 10px;
-  }
-
-  .law-card {
-    padding: 16px 16px 14px;
-  }
-
-  .card-top {
-    margin-bottom: 12px;
-  }
-
-  .card-icon {
-    width: 34px;
-    height: 34px;
   }
 
   .about {
@@ -3064,413 +3203,21 @@ html.share-open body {
   }
 }
 
-/* 索引卡上的一句"现场原话" */
-.card-quote {
-  margin: auto 0 0;
-  padding-top: 10px;
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: var(--ink-2);
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
+/* 22. 零散
+   ========================================================================== */
 
-.card-quote span {
-  color: var(--ink-3);
-}
-
-.card-summary + .card-quote {
-  margin-top: auto;
-}
-
-/* 首页首屏：去掉右栏目录，正文收窄 */
+/* 首页首屏正文收窄到 760px，行长保持在舒适阅读区间 */
 .home-intro-inner {
   max-width: 760px;
-}
-
-/* 卡片重排：标题 → 摘要 → 页脚元信息 */
-.law-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 150px;
-  padding: 18px 18px 13px;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.45;
-  letter-spacing: 0;
-}
-
-.card-summary {
-  margin: 8px 0 0;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--ink-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid var(--line-soft);
-}
-
-.card-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  min-width: 0;
-}
-
-.card-index {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-}
-
-.card-dot {
-  font-size: 0.6875rem;
-  color: var(--line);
-}
-
-.card-en {
-  margin: 0;
-  overflow: hidden;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--ink-3);
-}
-
-.card-icon {
-  flex: 0 0 26px;
-  width: 26px;
-  height: 26px;
-  color: var(--ink-2);
-  background: var(--paper-2);
-  border: 0;
-  border-radius: 6px;
-}
-
-.card-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-.law-card:hover .card-icon {
-  color: var(--ink);
-  background: var(--paper);
 }
 
 .cast-role-link {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid rgba(179, 65, 44, 0.35);
+  transition: border-color var(--dur-fast) var(--ease);
 }
 
 .cast-role-link:hover {
   border-bottom-color: var(--accent);
-}
-
-/* 首页首屏：去掉右栏目录，正文收窄 */
-.home-intro-inner {
-  max-width: 760px;
-}
-
-/* 卡片重排：标题 → 摘要 → 页脚元信息 */
-.law-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 150px;
-  padding: 18px 18px 13px;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.45;
-  letter-spacing: 0;
-}
-
-.card-summary {
-  margin: 8px 0 0;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--ink-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid var(--line-soft);
-}
-
-.card-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  min-width: 0;
-}
-
-.card-index {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-}
-
-.card-dot {
-  font-size: 0.6875rem;
-  color: var(--line);
-}
-
-.card-en {
-  margin: 0;
-  overflow: hidden;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--ink-3);
-}
-
-.card-icon {
-  flex: 0 0 26px;
-  width: 26px;
-  height: 26px;
-  color: var(--ink-2);
-  background: var(--paper-2);
-  border: 0;
-  border-radius: 6px;
-}
-
-.card-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-.law-card:hover .card-icon {
-  color: var(--ink);
-  background: var(--paper);
-}
-
-.cast-role-link {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(179, 65, 44, 0.35);
-}
-
-.cast-role-link:hover {
-  border-bottom-color: var(--accent);
-}
-
-/* 单列时不必强行等高，卡片贴着内容收口 */
-@media (max-width: 640px) {
-  .law-card {
-    min-height: 0;
-  }
-}
-
-/* 单列时不必强行等高，卡片贴着内容收口 */
-@media (max-width: 640px) {
-  .law-card {
-    min-height: 0;
-  }
-}
-
-/* 图标：从页脚小标记改成压住右上角的"印记"，被卡片边缘裁掉一角 */
-.law-card {
-  position: relative;
-  overflow: hidden;
-  padding-top: 20px;
-}
-
-.law-card .card-icon {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: 0;
-  opacity: 0.92;
-  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
-}
-
-.law-card .card-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
-}
-
-.law-card:hover .card-icon {
-  opacity: 1;
-  transform: translate(-3px, 3px);
-}
-
-.card-foot {
-  padding-right: 0;
-}
-
-@media (max-width: 640px) {
-  .law-card {
-    padding-top: 18px;
-  }
-
-  .law-card .card-icon {
-    top: -7px;
-    right: -7px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .law-card .card-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-/* 被裁掉 8px 后，字形要往可见区域中心回推 4px 才不显得偏右下 */
-.law-card .card-icon svg {
-  transform: translate(-4px, -4px);
-}
-
-@media (max-width: 640px) {
-  .law-card .card-icon svg {
-    transform: translate(-3px, -3px);
-  }
-}
-
-/* 图标：从"被裁掉的黑色角块"改成完整的纸面印章 */
-.law-card {
-  overflow: visible;
-  padding-top: 18px;
-}
-
-.law-card .card-icon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
-  background: var(--paper-2);
-  color: var(--ink-2);
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-  opacity: 1;
-  transform: rotate(-3deg);
-  transition:
-    transform 0.2s var(--ease),
-    background 0.2s var(--ease),
-    border-color 0.2s var(--ease);
-}
-
-.law-card .card-icon svg {
-  width: 19px;
-  height: 19px;
-  transform: none;
-}
-
-.law-card:hover .card-icon {
-  transform: rotate(0deg);
-  background: var(--surface);
-  border-color: var(--line);
-}
-
-.card-title {
-  padding-right: 42px;
-}
-
-@media (max-width: 640px) {
-  .law-card .card-icon {
-    top: 12px;
-    right: 12px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .law-card .card-icon svg {
-    width: 17px;
-    height: 17px;
-    transform: none;
-  }
-
-  .card-title {
-    padding-right: 38px;
-  }
-}
-
-/* 边框再实一点，让印章有清楚的轮廓但仍是纸色 */
-.law-card .card-icon {
-  color: var(--ink);
-  border-color: var(--line);
-}
-
-.law-card:hover .card-icon {
-  border-color: var(--ink);
-}
-
-/* 按 ui-ux-pro-max：图标尺寸走 token，避免各处出现 19/20/17 这类散值 */
-:root {
-  --icon-badge: 34px;
-  --icon-glyph: 19px;
-}
-
-.law-card .card-icon {
-  width: var(--icon-badge);
-  height: var(--icon-badge);
-}
-
-.law-card .card-icon svg {
-  width: var(--icon-glyph);
-  height: var(--icon-glyph);
-}
-
-/* 元信息 11px → 12px，符合最小可读字号；对比度 4.96:1 已达 AA */
-.card-index,
-.card-dot {
-  font-size: 0.75rem;
-}
-
-.card-en {
-  font-size: 0.6875rem;
-}
-
-@media (max-width: 640px) {
-  :root {
-    --icon-badge: 30px;
-    --icon-glyph: 17px;
-  }
 }
