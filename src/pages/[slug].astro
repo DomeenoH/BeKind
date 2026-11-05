@@ -8,6 +8,7 @@ import ShareActions from '../components/ShareActions.astro';
 import { orderedLaws } from '../data/laws';
 import { relatedLaws } from '../data/related';
 import { lawReferences } from '../data/references';
+import { lawCaveats } from '../data/law-caveats';
 import { categories } from '../data/law-types';
 import { site } from '../data/site';
 import type { Law } from '../data/law-types';
@@ -31,6 +32,7 @@ const related = (relatedLaws[law.slug] ?? [])
   .map((slug) => orderedLaws.find((item) => item.slug === slug))
   .filter((item): item is Law => Boolean(item));
 const references = lawReferences[law.slug] ?? [];
+const caveat = lawCaveats[law.slug];
 const footerHtml = law.footerHtml.replaceAll('{{YEAR}}', String(site.year));
 
 // 副标题若只是英文名的另一种写法（惠顿定律那种），就不再重复显示一次。
@@ -135,6 +137,19 @@ const jsonLd = [
   )}
 
   <div class="shell">
+    {caveat && (
+      <section class="caveat" aria-label="代价与例外">
+        <div class="caveat-item">
+          <p class="caveat-label">代价</p>
+          <p class="caveat-text">{caveat.cost}</p>
+        </div>
+        <div class="caveat-item">
+          <p class="caveat-label">例外</p>
+          <p class="caveat-text">{caveat.exception}</p>
+        </div>
+      </section>
+    )}
+
     <nav class="pager" aria-label="上下条">
       {previous ? (
         <a class="pager-item prev" href={`/${previous.slug}/`}>

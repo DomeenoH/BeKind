@@ -1,6 +1,5 @@
 ---
 import { categories } from '../data/law-types';
-import { orderedLaws } from '../data/laws';
 import { site } from '../data/site';
 
 interface Props {
@@ -60,7 +59,6 @@ const { variant = 'full', showStats = false } = Astro.props;
               <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv"></span></span>
             </span>
           )}
-          <span>{orderedLaws.length} 条法则</span>
         </div>
       </>
     )}

@@ -8,7 +8,7 @@ export const extraLaws: Law[] = [
   {
     slug: 'media-richness',
     order: 67,
-    category: 'communication',
+    category: 'clarity',
     title: '选对介质',
     englishTitle: 'Media Richness',
     summary: '事情越说不清，越不该只发文字。',
@@ -42,7 +42,7 @@ export const extraLaws: Law[] = [
   {
     slug: 'curse-of-knowledge',
     order: 68,
-    category: 'communication',
+    category: 'clarity',
     title: '知识的诅咒',
     englishTitle: 'Curse of Knowledge',
     summary: '你一旦知道，就很难想象别人不知道。',
@@ -78,7 +78,7 @@ export const extraLaws: Law[] = [
   {
     slug: 'left-on-read',
     order: 69,
-    category: 'communication',
+    category: 'clarity',
     title: '已读不回',
     englishTitle: 'Left on Read',
     summary: '已读是状态，不是承诺。',
@@ -152,7 +152,7 @@ export const extraLaws: Law[] = [
   {
     slug: 'dont-doxx',
     order: 71,
-    category: 'communication',
+    category: 'relation',
     title: '别拿别人的隐私当武器',
     englishTitle: "Don't Doxx",
     summary: '把别人的真实身份、电话、住址甩到群里，不是「正义」，是违法。',

@@ -14,9 +14,9 @@ export const site = {
   repo: 'https://github.com/DomeenoH/BeKind',
   license: 'https://creativecommons.org/licenses/by/4.0/',
   year: 2026,
-  searchPlaceholder: '搜索法则、关键词或场景',
+  searchPlaceholder: '搜索法则、关键词，或直接输条号',
   searchEmptyTitle: '没有这条法则',
-  searchEmptyHint: '换个词试试：在吗、提问、群聊、已读不回。',
+  searchEmptyHint: '换个词试试：在吗、提问、群聊、已读不回，或者直接输 07 这样的条号。',
 } as const;
 
 export const cast = [

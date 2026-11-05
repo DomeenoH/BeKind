@@ -75,6 +75,14 @@ export const lawIconNames: Record<string, string> = {
   'left-on-read': 'MailOpen',
   sealioning: 'CircleHelp',
   'dont-doxx': 'ShieldAlert',
+  'heard-vs-verified': 'Ear',
+  'accept-the-compliment': 'Award',
+  'tentative-is-a-answer': 'Hourglass',
+  'dont-pick-a-side': 'Split',
+  'praise-the-detail': 'Focus',
+  'accepted-the-no': 'DoorClosed',
+  'ask-before-introducing': 'UserPlus',
+  'let-them-finish-the-good-news': 'PartyPopper',
 };
 
 export function getLawIconName(slug: string): string {

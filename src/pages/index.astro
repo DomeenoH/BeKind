@@ -4,7 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CategorySection from '../components/CategorySection.astro';
 import CharacterAvatar from '../components/CharacterAvatar.astro';
 import { orderedLaws } from '../data/laws';
-import { categories } from '../data/law-types';
+import { categories, situations } from '../data/law-types';
+import { buildSearchDocs } from '../lib/law-search';
 import type { CharacterId } from '../data/characters';
 import { cast, howToUse, site } from '../data/site';
 
@@ -12,6 +13,10 @@ const grouped = categories.map((category) => ({
   category,
   laws: orderedLaws.filter((law) => law.category === category.id),
 }));
+
+// 检索字段在建站时算好，页面里只留一份 JSON。
+// 别在每张卡片上再塞一份 data-search：同一段文本存两遍，首页体积翻倍。
+const searchIndexJson = JSON.stringify(buildSearchDocs(orderedLaws)).replace(/</g, '\\u003c');
 
 const jsonLd = [
   {
@@ -65,11 +70,22 @@ const jsonLd = [
             </button>
           </div>
 
-          <div class="search-status">
-            <span class="search-status-hint" data-search-hint>按 <kbd>/</kbd> 聚焦搜索，Esc 清空</span>
-            <span data-result-count></span>
-            <button class="search-reset" type="button" data-search-reset hidden>清除筛选</button>
-            <span class="sr-only" data-result-live aria-live="polite"></span>
+          <div class="filter-row">
+            <div class="situation-filter" role="group" aria-label="按场合筛选">
+              {
+                situations.map((situation) => (
+                  <button class="situation-chip" type="button" data-situation={situation.id} aria-pressed="false">
+                    {situation.label}
+                  </button>
+                ))
+              }
+            </div>
+
+            <div class="search-status">
+              <span data-result-count></span>
+              <button class="search-reset" type="button" data-search-reset hidden>清除筛选</button>
+              <span class="sr-only" data-result-live aria-live="polite"></span>
+            </div>
           </div>
         </div>
 
@@ -92,14 +108,11 @@ const jsonLd = [
         <div>
           <h2 class="about-title">这是什么</h2>
           <p class="about-text">
-            一份讲怎么在网上好好说话的手册。{orderedLaws.length} 条法则，一半来自 nohello.net、xyproblem.info
-            这类老帖，一半来自我们把自己天聊死之后的复盘。
+            这些法则一半来自 nohello.net、xyproblem.info 这类老帖，
+            一半来自我们把自己天聊死之后的复盘。
           </p>
           <p class="about-text">
             不要求你变得热情开朗。
-          </p>
-          <p class="about-note">
-            场景由多米诺、西打、尾巴和群友出演。头像是他们的 QQ 头像，实时拉取，不存本地。
           </p>
         </div>
 
@@ -135,41 +148,81 @@ const jsonLd = [
     </div>
   </section>
 
-  <script is:inline>
+  <script is:inline type="application/json" id="law-search-index" set:html={searchIndexJson} />
+
+  <script>
+    import { orderQuery, searchLawsRelaxed } from '../lib/law-search';
+
+    const indexEl = document.getElementById('law-search-index');
+    const docs = JSON.parse(indexEl?.textContent || '[]');
+
     const input = document.querySelector('[data-law-search]');
     const box = document.querySelector('[data-search-box]');
     const cards = [...document.querySelectorAll('[data-law-card]')];
     const sections = [...document.querySelectorAll('[data-law-section]')];
     const countEl = document.querySelector('[data-result-count]');
     const liveEl = document.querySelector('[data-result-live]');
-    const hintEl = document.querySelector('[data-search-hint]');
     const resetEl = document.querySelector('[data-search-reset]');
     const clearEl = document.querySelector('[data-search-clear]');
     const emptyEl = document.querySelector('[data-empty-results]');
     const statusEl = document.querySelector('.search-status');
+    const chips = [...document.querySelectorAll('[data-situation]')];
+    const lawsEl = document.getElementById('laws');
 
-    function applyFilters() {
+    // 最近一次结果，Enter 用它跳转
+    let latest = [];
+
+    // 场合是「往里收」的单选：点一个看这个场合，再点一次还原。
+    let activeSituation = null;
+
+    function writeUrl(query) {
+      const url = new URL(location.href);
+      if (query) url.searchParams.set('q', query);
+      else url.searchParams.delete('q');
+      if (activeSituation) url.searchParams.set('s', activeSituation);
+      else url.searchParams.delete('s');
+      // 换搜索要清掉旧锚点，否则刷新后锚点会把筛选条件顶回去
+      if (url.hash.startsWith('#law-')) url.hash = '';
+      history.replaceState(null, '', url);
+    }
+
+    function applyFilters(options = {}) {
       const raw = input.value;
-      const query = raw.trim().toLocaleLowerCase('zh-CN');
-      let visible = 0;
+      const query = raw.trim();
+      const filtering = Boolean(query || activeSituation);
+      latest = query ? searchLawsRelaxed(docs, query) : [];
+
+      const rank = new Map(latest.map((item, index) => [item.doc.slug, index]));
 
       cards.forEach((card) => {
-        const match = !query || (card.dataset.search || '').includes(query);
+        const position = rank.get(card.dataset.slug);
+        const matchQuery = !query || position !== undefined;
+        const matchSituation =
+          !activeSituation || (card.dataset.situations || '').split(' ').includes(activeSituation);
+        const match = matchQuery && matchSituation;
         card.hidden = !match;
-        if (match) visible += 1;
+        // 组内按相关度排；清空时把 order 交还给 DOM 顺序
+        card.style.order = query && position !== undefined ? String(position) : '';
       });
 
+      let visible = 0;
       sections.forEach((section) => {
         const own = [...section.querySelectorAll('[data-law-card]')];
         const shown = own.filter((card) => !card.hidden).length;
-        section.hidden = shown === 0;
+        visible += shown;
+        section.hidden = filtering ? shown === 0 : false;
         const counter = section.querySelector('[data-section-count]');
-        if (counter) counter.textContent = query ? shown + ' 条' : own.length + ' 条';
+        if (counter) counter.textContent = filtering ? shown + ' 条' : own.length + ' 条';
       });
 
-      if (query) {
-        countEl.textContent = '找到 ' + visible + ' 条';
-        if (liveEl) liveEl.textContent = '找到 ' + visible + ' 条法则';
+      if (filtering) {
+        const number = query ? orderQuery(query) : undefined;
+        const label =
+          visible === 1 && number !== undefined
+            ? `第 ${number} 条 · 按 Enter 打开`
+            : `找到 ${visible} 条`;
+        countEl.textContent = label;
+        if (liveEl) liveEl.textContent = `找到 ${visible} 条法则`;
         resetEl.hidden = false;
         emptyEl.hidden = visible !== 0;
       } else {
@@ -179,34 +232,77 @@ const jsonLd = [
         emptyEl.hidden = true;
       }
 
-      if (hintEl) hintEl.hidden = Boolean(query);
-      if (statusEl) statusEl.classList.toggle('is-active', Boolean(query));
+      chips.forEach((chip) => {
+        const on = chip.dataset.situation === activeSituation;
+        chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+        chip.classList.toggle('is-active', on);
+      });
+
+      if (statusEl) statusEl.classList.toggle('is-active', filtering);
       box.classList.toggle('has-value', raw.length > 0);
+
+      if (!options.silent) writeUrl(query);
     }
 
-    function clearSearch() {
+    function clearFilters() {
       input.value = '';
+      activeSituation = null;
       applyFilters();
       input.focus();
     }
 
-    input.addEventListener('input', applyFilters);
-    clearEl.addEventListener('click', clearSearch);
-    resetEl.addEventListener('click', clearSearch);
+    let typing = 0;
+    input.addEventListener('input', () => {
+      applyFilters({ silent: true });
+      window.clearTimeout(typing);
+      // 每敲一个字都改 URL 会把历史记录刷烂，也拖慢输入
+      typing = window.setTimeout(() => writeUrl(input.value.trim()), 200);
+    });
+
+    input.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const first = latest[0];
+      if (!first) return;
+      event.preventDefault();
+      location.href = `/${first.doc.slug}/`;
+    });
+
+    clearEl.addEventListener('click', clearFilters);
+    resetEl.addEventListener('click', clearFilters);
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const id = chip.dataset.situation;
+        activeSituation = activeSituation === id ? null : id;
+        applyFilters();
+        // 筛选起作用的地方在下面，人在顶部时看不到任何变化，滚过去
+        if (activeSituation && lawsEl && lawsEl.getBoundingClientRect().top > window.innerHeight * 0.6) {
+          lawsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
     document.addEventListener('keydown', (event) => {
-      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || '');
-      if (event.key === '/' && !typing) {
+      const inField = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || '');
+      if (event.key === '/' && !inField) {
         event.preventDefault();
         input.focus();
         return;
       }
       if (event.key === 'Escape' && document.activeElement === input) {
-        clearSearch();
+        clearFilters();
         input.blur();
       }
     });
 
-    applyFilters();
+    // 分享出去的 ?q= / ?s= 要能还原，刷新也不丢
+    const params = new URL(location.href).searchParams;
+    const initialQuery = params.get('q') || '';
+    const initialSituation = params.get('s') || '';
+    if (initialQuery) input.value = initialQuery;
+    if (chips.some((chip) => chip.dataset.situation === initialSituation)) {
+      activeSituation = initialSituation;
+    }
+    applyFilters({ silent: !initialQuery && !activeSituation });
   </script>
 </BaseLayout>

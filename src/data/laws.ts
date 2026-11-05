@@ -1,11 +1,12 @@
 import type { Law } from './law-types';
 import { extraLaws } from './laws-extra';
+import { expandLaws } from './laws-expand';
 
 const laws: Law[] = [
   {
     "slug": "no-hello",
     "order": 1,
-    "category": "communication",
+    "category": "clarity",
     "title": "别只说“你好”",
     "englishTitle": "No Hello",
     "summary": "有事儿直接说事儿，别问在吗。",
@@ -89,7 +90,7 @@ const laws: Law[] = [
   {
     "slug": "xy-problem",
     "order": 2,
-    "category": "communication",
+    "category": "clarity",
     "title": "XY 问题",
     "englishTitle": "The XY Problem",
     "summary": "别问怎么修路，先告诉我你想去哪。",
@@ -165,7 +166,7 @@ const laws: Law[] = [
   {
     "slug": "dont-ask-to-ask",
     "order": 3,
-    "category": "communication",
+    "category": "relation",
     "title": "拒绝谜语人",
     "englishTitle": "Don't Ask to Ask",
     "summary": "直接问问题，别问\"我能不能问问题\"。",
@@ -241,7 +242,7 @@ const laws: Law[] = [
   {
     "slug": "it-didnt-work",
     "order": 4,
-    "category": "communication",
+    "category": "clarity",
     "title": "它挂了",
     "englishTitle": "It Didn't Work",
     "summary": "“坏了”不是 Bug 报告，请提供细节。",
@@ -338,7 +339,7 @@ const laws: Law[] = [
   {
     "slug": "smart-questions",
     "order": 6,
-    "category": "communication",
+    "category": "clarity",
     "title": "提问的智慧",
     "englishTitle": "Smart Questions",
     "summary": "提问前先自己尝试解决，尊重他人的时间。",
@@ -393,7 +394,7 @@ const laws: Law[] = [
   {
     "slug": "no-pointless-politeness",
     "order": 7,
-    "category": "communication",
+    "category": "relation",
     "title": "拒绝过度客套",
     "englishTitle": "Signal vs Noise",
     "summary": "别让礼貌的废话淹没了真正的信息。",
@@ -485,7 +486,7 @@ const laws: Law[] = [
   {
     "slug": "cunninghams-law",
     "order": 8,
-    "category": "thinking",
+    "category": "systems",
     "title": "坎宁安定律",
     "englishTitle": "Cunningham's Law",
     "summary": "想得到正确答案？不如先发一个错误的。",
@@ -939,7 +940,7 @@ const laws: Law[] = [
   {
     "slug": "postels-law",
     "order": 13,
-    "category": "communication",
+    "category": "clarity",
     "title": "波斯特尔法则",
     "englishTitle": "Postel's Law",
     "summary": "发消息时谨慎，收消息时宽容。文字不带情绪。",
@@ -1029,7 +1030,7 @@ const laws: Law[] = [
   {
     "slug": "three-strikes",
     "order": 14,
-    "category": "communication",
+    "category": "relation",
     "title": "三振出局",
     "englishTitle": "Three Strikes",
     "summary": "来回超过3条消息还说不清？直接打电话。",
@@ -1154,7 +1155,7 @@ const laws: Law[] = [
   {
     "slug": "bluf",
     "order": 15,
-    "category": "communication",
+    "category": "clarity",
     "title": "BLUF 原则",
     "englishTitle": "Bottom Line Up Front",
     "summary": "先说结论，再说细节。别写悬疑小说。",
@@ -1795,7 +1796,7 @@ const laws: Law[] = [
   {
     "slug": "tldr",
     "order": 22,
-    "category": "communication",
+    "category": "clarity",
     "title": "太长不看",
     "englishTitle": "TL;DR",
     "summary": "先给个摘要，尊重读者时间。",
@@ -1878,7 +1879,7 @@ const laws: Law[] = [
   {
     "slug": "rtfm",
     "order": 23,
-    "category": "communication",
+    "category": "clarity",
     "title": "读该死的手册",
     "englishTitle": "RTFM",
     "summary": "提问之前，请先查阅文档。",
@@ -2250,7 +2251,7 @@ const laws: Law[] = [
   {
     "slug": "stfw",
     "order": 28,
-    "category": "communication",
+    "category": "clarity",
     "title": "善用搜索",
     "englishTitle": "STFW",
     "summary": "遇事不决，先问谷歌。必应也是你的好朋友。",
@@ -2312,7 +2313,7 @@ const laws: Law[] = [
   {
     "slug": "denver-coder-9",
     "order": 29,
-    "category": "communication",
+    "category": "relation",
     "title": "别做始乱终弃的人",
     "englishTitle": "Who is DenverCoder9?",
     "summary": "找到了答案？请把它写出来。别做那个只留下一句“已解决”的混蛋。",
@@ -2374,7 +2375,7 @@ const laws: Law[] = [
   {
     "slug": "no-urgent",
     "order": 30,
-    "category": "communication",
+    "category": "relation",
     "title": "拒绝“紧急”",
     "englishTitle": "No \"Urgent\"",
     "summary": "你的紧急情况不是我的紧急情况。标题写“救命”只会让你被忽略。",
@@ -2429,7 +2430,7 @@ const laws: Law[] = [
   {
     "slug": "principle-of-charity",
     "order": 31,
-    "category": "communication",
+    "category": "thinking",
     "title": "善意原则",
     "englishTitle": "Principle of Charity",
     "summary": "先按最讲得通的方式理解对方，再决定要不要反驳。",
@@ -2505,7 +2506,7 @@ const laws: Law[] = [
   {
     "slug": "grice-maxims",
     "order": 32,
-    "category": "communication",
+    "category": "clarity",
     "title": "格莱斯准则",
     "englishTitle": "Grice's Maxims",
     "summary": "说话四条：够量、真实、相关、清楚。",
@@ -2588,7 +2589,7 @@ const laws: Law[] = [
   {
     "slug": "context-collapse",
     "order": 33,
-    "category": "communication",
+    "category": "clarity",
     "title": "语境崩塌",
     "englishTitle": "Context Collapse",
     "summary": "私聊的话进了群，意思就变了。",
@@ -2664,7 +2665,7 @@ const laws: Law[] = [
   {
     "slug": "medium-is-the-message",
     "order": 34,
-    "category": "communication",
+    "category": "clarity",
     "title": "媒介即讯息",
     "englishTitle": "The Medium Is the Message",
     "summary": "用语音、文字还是电话，本身就在说话。",
@@ -2747,7 +2748,7 @@ const laws: Law[] = [
   {
     "slug": "no-is-a-complete-sentence",
     "order": 35,
-    "category": "communication",
+    "category": "relation",
     "title": "拒绝不需要理由",
     "englishTitle": "No Is a Complete Sentence",
     "summary": "「不」就是完整的回答。",
@@ -2823,7 +2824,7 @@ const laws: Law[] = [
   {
     "slug": "reply-all",
     "order": 36,
-    "category": "communication",
+    "category": "clarity",
     "title": "别回复全部",
     "englishTitle": "Reply All",
     "summary": "收件人列表不是观众席。",
@@ -2893,7 +2894,7 @@ const laws: Law[] = [
   {
     "slug": "one-message",
     "order": 37,
-    "category": "communication",
+    "category": "clarity",
     "title": "一条说完",
     "englishTitle": "One Message, Please",
     "summary": "把一句话拆成十条，是让别人等你连载。",
@@ -2984,7 +2985,7 @@ const laws: Law[] = [
   {
     "slug": "lurk-moar",
     "order": 38,
-    "category": "communication",
+    "category": "relation",
     "title": "先潜水，再发言",
     "englishTitle": "Lurk Moar",
     "summary": "进新群先看三天，比自我介绍有用。",
@@ -3976,7 +3977,7 @@ const laws: Law[] = [
   {
     "slug": "no-jargon",
     "order": 51,
-    "category": "communication",
+    "category": "clarity",
     "title": "说人话",
     "englishTitle": "No Jargon",
     "summary": "缩写和黑话，是把人挡在门外的门禁。",
@@ -4046,7 +4047,7 @@ const laws: Law[] = [
   {
     "slug": "correct-in-private",
     "order": 52,
-    "category": "communication",
+    "category": "relation",
     "title": "私下纠错",
     "englishTitle": "Correct in Private",
     "summary": "当众指出错误，赢了道理，输了人。",
@@ -4122,7 +4123,7 @@ const laws: Law[] = [
   {
     "slug": "observation-not-judgment",
     "order": 53,
-    "category": "communication",
+    "category": "relation",
     "title": "说事实，不说评价",
     "englishTitle": "Observation, Not Judgment",
     "summary": "「你总是拖」是判决，「晚了两天」是事实。",
@@ -4191,7 +4192,7 @@ const laws: Law[] = [
   {
     "slug": "ring-theory",
     "order": 54,
-    "category": "communication",
+    "category": "relation",
     "title": "先给耳朵，再给方案",
     "englishTitle": "Ring Theory",
     "summary": "诉苦的人要的是听众，不是项目经理。",
@@ -4274,7 +4275,7 @@ const laws: Law[] = [
   {
     "slug": "straight-talk-is-not-rudeness",
     "order": 55,
-    "category": "communication",
+    "category": "relation",
     "title": "说话直不是免死金牌",
     "englishTitle": "Straight Talk Is Not Rudeness",
     "summary": "直接是指内容，不是指态度。",
@@ -4350,7 +4351,7 @@ const laws: Law[] = [
   {
     "slug": "answer-then-explain",
     "order": 56,
-    "category": "communication",
+    "category": "clarity",
     "title": "先回答，再解释",
     "englishTitle": "Answer, Then Explain",
     "summary": "别人问能不能，先给能或不能。",
@@ -4426,7 +4427,7 @@ const laws: Law[] = [
   {
     "slug": "passive-aggressive-texting",
     "order": 57,
-    "category": "communication",
+    "category": "relation",
     "title": "别用标点甩脸色",
     "englishTitle": "Passive-Aggressive Texting",
     "summary": "「哦」「行吧」「。」都是关门的声音。",
@@ -4648,7 +4649,7 @@ const laws: Law[] = [
   {
     "slug": "respect-bandwidth",
     "order": 60,
-    "category": "systems",
+    "category": "clarity",
     "title": "别浪费别人的注意力",
     "englishTitle": "Respect Bandwidth",
     "summary": "转发、刷屏、连环 @，成本都由别人付。",
@@ -4724,7 +4725,7 @@ const laws: Law[] = [
   {
     "slug": "meaningful-title",
     "order": 61,
-    "category": "communication",
+    "category": "clarity",
     "title": "标题写症状",
     "englishTitle": "Meaningful Title",
     "summary": "「求助」两个字，等于没写标题。",
@@ -4793,7 +4794,7 @@ const laws: Law[] = [
   {
     "slug": "make-it-easy-to-reply",
     "order": 62,
-    "category": "communication",
+    "category": "clarity",
     "title": "让别人能直接回",
     "englishTitle": "Make It Easy to Reply",
     "summary": "截图、语音、只言片语，都是在给对方加活。",
@@ -4862,7 +4863,7 @@ const laws: Law[] = [
   {
     "slug": "follow-up-after-solved",
     "order": 63,
-    "category": "systems",
+    "category": "relation",
     "title": "解决后回来说一声",
     "englishTitle": "Follow Up After Solved",
     "summary": "别人花了时间，你至少欠一个结尾。",
@@ -5076,7 +5077,7 @@ const laws: Law[] = [
   {
     "slug": "dont-play-helpless",
     "order": 66,
-    "category": "communication",
+    "category": "clarity",
     "title": "别用「我是小白」抵功课",
     "englishTitle": "Don't Play Helpless",
     "summary": "谦虚不能代替你已经查过的东西。",
@@ -5144,4 +5145,4 @@ const laws: Law[] = [
   }
 ];
 
-export const orderedLaws = [...laws, ...extraLaws].sort((a, b) => a.order - b.order);
+export const orderedLaws = [...laws, ...extraLaws, ...expandLaws].sort((a, b) => a.order - b.order);

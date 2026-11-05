@@ -502,36 +502,55 @@ summary {
   display: none;
 }
 
+/* 场合筛选。和搜索框是一组，所以贴着放，中间不另加标签。
+   筛选结果和 chips 同一行，右侧对齐：状态行不占额外高度，
+   否则没筛选时会在 chips 和列表之间留一条空的 20px。 */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 14px;
+}
+
+.situation-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.situation-chip {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 0.8125rem;
+  line-height: 28px;
+  color: var(--ink-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.situation-chip:hover {
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.situation-chip.is-active {
+  color: var(--surface);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
 .search-status {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  min-height: 20px;
-  margin-top: 12px;
   font-size: 0.8125rem;
   color: var(--ink-3);
-}
-
-.search-status-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.search-status kbd {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--ink-2);
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
-  border-radius: 4px;
 }
 
 .search-status strong {
@@ -616,7 +635,8 @@ summary {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+  /* min(292px, 100%)：容器比 292 还窄时（320px 手机）不再硬撑出溢出。 */
+  grid-template-columns: repeat(auto-fill, minmax(min(292px, 100%), 1fr));
   gap: 14px;
 }
 
@@ -824,15 +844,6 @@ summary {
 
 .about-text + .about-text {
   margin-top: 12px;
-}
-
-.about-note {
-  margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line-soft);
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--ink-3);
 }
 
 .cast-list {
@@ -2079,6 +2090,39 @@ summary {
   color: var(--accent);
 }
 
+/* 16.3 代价与例外
+   ========================================================================== */
+
+.caveat {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.caveat-item {
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+}
+
+.caveat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.caveat-text {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+
 /* 16.5 示意图（按条目手绘，不是通用组件）
    ========================================================================== */
 
@@ -2482,17 +2526,8 @@ summary {
   min-width: 0;
 }
 
-.share-dialog-eyebrow {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
 .share-dialog-heading h2 {
   display: -webkit-box;
-  margin-top: 2px;
   overflow: hidden;
   font-size: 1rem;
   font-weight: 700;
@@ -2999,8 +3034,11 @@ html.share-open body {
     margin-left: auto;
   }
 
+  /* 这里必须写 minmax(0, 1fr)。单写 1fr 的隐式最小值是 auto，
+     reply-all 那条的 hero-echo 是一排 nowrap 的气泡，最小内容宽 700 多，
+     会把整列撑破、页面出横向滚动条。 */
   .law-hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
 
@@ -3071,10 +3109,6 @@ html.share-open body {
     display: none;
   }
 
-  .search-status-hint {
-    display: none;
-  }
-
   .law-section {
     padding-top: 40px;
   }
@@ -3088,7 +3122,7 @@ html.share-open body {
   }
 
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
   }
 
@@ -3152,6 +3186,15 @@ html.share-open body {
 
   .statement-card {
     padding: 20px 16px;
+  }
+
+  .caveat {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .caveat-item {
+    padding: 14px 16px;
   }
 
   .pager {

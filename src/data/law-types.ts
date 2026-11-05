@@ -1,6 +1,23 @@
 import type { CharacterId } from './characters';
 
-type CategoryId = 'communication' | 'thinking' | 'systems';
+type CategoryId = 'clarity' | 'relation' | 'thinking' | 'systems';
+
+// 场合：这条法则在哪种「话落地的地方」才用得上。
+// 和分类是两根轴——分类讲主题，场合讲场景。认知偏差类不标场合，它们不挑地方。
+export type SituationId = 'group' | 'dm' | 'mail' | 'public';
+
+export interface Situation {
+  id: SituationId;
+  label: string;
+}
+
+export const situations: Situation[] = [
+  { id: 'group', label: '群聊' },
+  { id: 'dm', label: '私聊' },
+  { id: 'mail', label: '邮件' },
+  { id: 'public', label: '公开平台' },
+];
+
 
 export interface Category {
   id: CategoryId;
@@ -77,20 +94,26 @@ export interface Law {
 
 export const categories: Category[] = [
   {
-    id: 'communication',
+    id: 'clarity',
     eyebrow: '01',
     title: '把话说清楚',
-    description: '提问、汇报、求助、异步沟通：把缺的那块补齐，别让人猜。',
+    description: '提问、汇报、标题、选介质：把缺的那块补齐，别让人猜。',
+  },
+  {
+    id: 'relation',
+    eyebrow: '02',
+    title: '别把关系弄僵',
+    description: '拒绝、纠错、夸人、被拒绝：话说出口之前，先想对方怎么接。',
   },
   {
     id: 'thinking',
-    eyebrow: '02',
+    eyebrow: '03',
     title: '别急着下结论',
     description: '证据、假设、认知偏差。语气再自信，也不能替你完成论证。',
   },
   {
     id: 'systems',
-    eyebrow: '03',
+    eyebrow: '04',
     title: '看见系统和人',
     description: '群聊、平台、团队都会放大坏习惯。看见机制，才不至于被推着走。',
   },

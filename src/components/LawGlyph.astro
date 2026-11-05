@@ -71,6 +71,14 @@ import {
   Users,
   VenetianMask,
   Vote,
+  Award,
+  DoorClosed,
+  Ear,
+  Focus,
+  Hourglass,
+  PartyPopper,
+  Split,
+  UserPlus,
 } from 'lucide-astro';
 
 interface Props {
@@ -153,6 +161,14 @@ const icons = {
   MessagesSquare,
   BugOff,
   BookX,
+  Award,
+  DoorClosed,
+  Ear,
+  Focus,
+  Hourglass,
+  PartyPopper,
+  Split,
+  UserPlus,
 } as const;
 
 const Icon = icons[name as keyof typeof icons] ?? Hand;

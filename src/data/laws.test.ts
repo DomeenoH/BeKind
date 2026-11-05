@@ -7,15 +7,15 @@ import { getLawIconName, lawIconNames } from './law-icons';
 import { getChatLinePresentations } from '../lib/chat-scene';
 
 describe('BeKind content registry', () => {
-  it('keeps all 71 routes unique and ordered', () => {
-    expect(orderedLaws).toHaveLength(71);
-    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(71);
-    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 71 }, (_, index) => index + 1));
+  it('keeps all 79 routes unique and ordered', () => {
+    expect(orderedLaws).toHaveLength(79);
+    expect(new Set(orderedLaws.map((law) => law.slug)).size).toBe(79);
+    expect(orderedLaws.map((law) => law.order)).toEqual(Array.from({ length: 79 }, (_, index) => index + 1));
   });
 
   it('preserves the original comparison structure', () => {
     const comparisonLaws = orderedLaws.filter((law) => law.layout === 'comparison');
-    expect(comparisonLaws).toHaveLength(70);
+    expect(comparisonLaws).toHaveLength(78);
 
     comparisonLaws.forEach((law) => {
       expect(law.hero.titleHtml.length).toBeGreaterThan(0);
