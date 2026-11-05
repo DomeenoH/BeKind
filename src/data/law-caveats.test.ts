@@ -36,6 +36,28 @@ describe('代价与例外', () => {
     expect(JSON.stringify(lawCaveats)).not.toMatch(/\p{Extended_Pictographic}/u);
   });
 
+  it('去 AI 腔：不立假靶子、不用冒号分号破折号、不说套话', () => {
+    const BANNED = [
+      '不等于', '意味着', '本质上', '说白了', '底层逻辑', '值得注意的是',
+      '综上所述', '总而言之', '某种程度上', '就是对的', '更划算',
+    ];
+    for (const [slug, caveat] of entries) {
+      for (const text of [caveat.cost, caveat.exception]) {
+        expect(text, `${slug} 用了「不是…是…」句式`).not.toMatch(/不是[^。！？，]{0,20}[，,]?(?:而)?是/);
+        expect(text, `${slug} 用了冒号/分号/破折号/双引号`).not.toMatch(/[：；“”]|——/);
+        for (const word of BANNED) expect(text, `${slug} 用了「${word}」`).not.toContain(word);
+      }
+    }
+  });
+
+  it('接头词全文限量，别每条都一个味', () => {
+    const all = entries.map(([, c]) => c.cost + c.exception).join('');
+    const count = (word: string) => all.split(word).length - 1;
+    expect(count('这时候'), '「这时候」太多').toBeLessThanOrEqual(3);
+    expect(count('那就'), '「那就」太多').toBeLessThanOrEqual(3);
+    expect(count('反而'), '「反而」太多').toBeLessThanOrEqual(3);
+  });
+
   it('没有两条共用一个模板', () => {
     const costs = new Set(entries.map(([, caveat]) => caveat.cost));
     const exceptions = new Set(entries.map(([, caveat]) => caveat.exception));

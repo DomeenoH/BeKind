@@ -12,7 +12,7 @@ import type { Law } from './law-types';
  * footerHtml 三段是固定结构，用 footer() 拼，别手写四份一样的 GitHub 尾巴。
  */
 const footer = (linkLine: string, origin: string): string =>
-  `<p>这不是非常严重的事情，所以请不要对送你来看这个网站的人<a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。</p><p>如果你看到这个链接，说明${linkLine}</p><p>${origin}</p><p><a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © {{YEAR}}</p>`;
+  `<p>这事不大，别跟发链接给你的人<a href="https://www.bilibili.com/video/BV1t4411V7m2/">生气</a>。</p><p>如果你看到这个链接，说明${linkLine}</p><p>${origin}</p><p><a href="https://github.com/DomeenoH/BeKind" target="_blank">GitHub</a> · 编排与译文采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> · © {{YEAR}}</p>`;
 
 export const expandLaws: Law[] = [
   {
@@ -286,7 +286,7 @@ export const expandLaws: Law[] = [
         { character: 'domino', name: '多米诺', time: '15:40', text: '我手机现在一直在响。', html: '我手机现在一直在响。' },
       ],
       explanationHtml:
-        '<div>\n<h3 style="margin-top:0">你替别人开了一扇门，风是他受</h3>\n<p>名片上有电话。推出去之后，接不接、什么时候接、说到哪一步停，这些决定权一起被推了出去。</p>\n<p>拉群也一样。群一建，他就在一个自己没同意进的房间里，走也不是，留也不是。你只点了两下，他要花一下午收拾。</p>\n</div>',
+        '<div><h3 style="margin-top:0">你点两下，他收拾一下午</h3><p>名片上有电话。推出去之后，接不接、什么时候接、说到哪一步停，这些决定权一起被推了出去。</p><p>拉群也一样。群一建，他就在一个自己没同意进的房间里，走也不是，留也不是。你只点了两下，他要花一下午收拾。</p></div>',
     },
     good: {
       titleHtml: '✅ 先问一句',
@@ -337,7 +337,7 @@ export const expandLaws: Law[] = [
         { character: 'domino', name: '多米诺', time: '21:11', text: '三轮都过了，厉害。你最想干哪块？', html: '三轮都过了，厉害。你最想干哪块？' },
       ],
       explanationHtml:
-        '<div>\n<h3 style="margin-top:0">先高兴，再问，顺序不能换</h3>\n<p>「恭喜」花不了几秒，它决定后面的话他还听不听得进去。先问薪资，后面说什么都像审问。</p>\n<p>想问就问他最想干哪块。这句话默认他会去，也不催他现在做决定。喜讯归他自己发，你替他转进群，等于替他决定了谁该知道。</p>\n</div>',
+        '<div><h3 style="margin-top:0">先恭喜，再提问</h3><p>「恭喜」花不了几秒，它决定后面的话他还听不听得进去。先问薪资，后面说什么都像审问。</p><p>想问就问他最想干哪块。这句话默认他会去，也不催他现在做决定。喜讯归他自己发，你替他转进群，等于替他决定了谁该知道。</p></div>',
     },
     footerHtml: footer(
       '有人希望你先跟着高兴三秒，再问他想干哪块。',

@@ -7,14 +7,14 @@ const laws: Law[] = [
     "slug": "no-hello",
     "order": 1,
     "category": "clarity",
-    "title": "别只说“你好”",
+    "title": "别只说「你好」",
     "englishTitle": "No Hello",
-    "summary": "有事儿直接说事儿，别问在吗。",
+    "summary": "有事直接说，别先问在吗。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "不要说<span id=\"strike\">hello</span>",
-      "subtitleHtml": "不要在聊天时问：「在吗？」",
-      "leadHtml": "想象一下别人接通你的电话时，你问<span class=\"nowrap\">「在吗？」</span>，然后等着对方回应…🤦",
+      "subtitleHtml": "别先发一句「在吗？」",
+      "leadHtml": "打电话给别人，对方接了，你问<span class=\"nowrap\">「在吗？」</span>，然后不出声，等他回话。",
       "effect": "greeting-strike",
     },
     "bad": {
@@ -49,7 +49,7 @@ const laws: Law[] = [
           "html": "哦，在 3 点 30 分。"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            请注意，这个场景中西打本可以提前几分钟得到答案，也不必让多米诺等待，而多米诺本来可以立刻开始思考这个问题。\n                        </p>\n                        <p>\n                            人们这样做通常是出于礼貌，避免像面对面或者打电话时候那样唐突地直接提出请求。但聊天和打电话是两回事，对绝大多数人来说，打字比说话慢得多。所以尽管你的初衷是好的，\n                            <strong>实际上你只是在让对方等待</strong>。你说出自己的问题，本来一句话就能解决，现在却要多花两个来回，这非常没有效率，某种意义上也有些烦人。\n                        </p>\n                        <p>类似的场景有：</p>\n                        <ul>\n                            <li>\"你好，在吗？\"</li>\n                            <li>\"在，有事直接问。\"</li>\n                            <li>\"你有时间吗？\"</li>\n                            <li>\"有\"</li>\n                            <li>\"忙吗？\"</li>\n                            <li>等等</li>\n                        </ul>\n                        <p>\n                            <strong style=\"font-weight: bold;\">请直接问问题！</strong> 😫\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<p>西打两点一刻发的消息，两点二十才问到正题。多米诺回了个「…？」，又干等了一分钟，才知道对方要问什么。</p>\n<p>先问在吗，多半是出于礼貌。当面说话或者打电话，上来就提要求确实有点冲。可聊天要打字，你打一句要好几秒，对方回一句也要好几秒。本来一句话能问完的事，现在多走两个来回，对方还得先放下手头的事陪你热身。</p>\n<p>同类的开场还有不少。</p>\n<ul>\n<li>「你好，在吗？」</li>\n<li>「在，有事直接问。」</li>\n<li>「你有时间吗？」</li>\n<li>「有。」</li>\n<li>「忙吗？」</li>\n</ul>\n<p><strong>有事就直接问。</strong></p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 试着这样做",
@@ -65,27 +65,27 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "2:15 下午",
-          "text": "您好，在 3 点 30 分。",
-          "html": "您好，在 3 点 30 分。"
+          "text": "三点半。",
+          "html": "三点半。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:15 下午",
-          "text": "回见！",
-          "html": "回见！"
+          "text": "好，谢啦。",
+          "html": "好，谢啦。"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "2:16 下午",
-          "text": "👌 没问题",
-          "html": "👌 没问题"
+          "text": "不客气。",
+          "html": "不客气。"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            如果你觉得很直接地说 \"嗨\"\n                            并问一个问题有些唐突，可以适当地在你的消息前面加上一些寒暄。\n                        </p>\n                        <p>例如：</p>\n                        <ul>\n                            <li>\"嗨老铁，你咋样了？还有你知道那个事儿什么时候截止吗？\"</li>\n                            <li>\"还可以，咱们可以抽空聊聊。: )\"</li>\n                            <li>\"行，如果你不忙，能帮忙更新一下 NFR 吗？\"</li>\n                            <li>等等</li>\n                        </ul>\n                        <p>\n                            这也许看起来很繁琐，但在你得到开头的寒暄的回复之前问你关心的问题，也能够做到\n                            <strong>延时沟通</strong>\n                            。如果对方不在，而你在他们回来之前就离开了，他们仍然可以回答你的问题，而不只是盯着\"在吗？\"感到不知所措。\n                        </p>\n                        <p>当你做到了这些，大家都会开心！🎉</p>\n                    </div>"
+      "explanationHtml": "<div>\n<p>觉得上来就问太冲，可以加一句寒暄，寒暄和问题放在同一条里发。</p>\n<ul>\n<li>「早，最近忙不忙？想问下那个事什么时候截止。」</li>\n<li>「还行，周五截止。」</li>\n<li>「好，你方便的话帮我把 NFR 也更新一下。」</li>\n</ul>\n<p>这样就算对方暂时不在，你又先下线了，他回来看到的也是一个能直接回答的问题，不用对着一句「在吗？」猜你想干什么。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明他们很想帮你（或者这只是个自动回复），但你的“在吗”让他们不知从何答起。\n            </p>\n            <p>\n                本页面魔改自 <a href=\"https://nohello.net/zh-cn/\">nohello.net</a> ，基于\n                <a href=\"https://web.archive.org/web/20131127020115/http://www.nohello.com/\">nohello.com</a>\n                制作。头像取自多米诺和他对象。 原项目于 <a href=\"https://github.com/nohello-net/site\">GitHub</a>开源。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方愿意帮你（也可能这是条自动回复），只是一句「在吗」让他不知道从哪儿回起。\n            </p>\n            <p>\n                本页面魔改自 <a href=\"https://nohello.net/zh-cn/\">nohello.net</a> ，基于\n                <a href=\"https://web.archive.org/web/20131127020115/http://www.nohello.com/\">nohello.com</a>\n                制作。头像取自多米诺和他对象。 原项目于 <a href=\"https://github.com/nohello-net/site\">GitHub</a>开源。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "xy-problem",
@@ -93,7 +93,7 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "XY 问题",
     "englishTitle": "The XY Problem",
-    "summary": "别问怎么修路，先告诉我你想去哪。",
+    "summary": "别问怎么修路，先说你要去哪。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "XY 问题",
@@ -101,7 +101,7 @@ const laws: Law[] = [
       "leadHtml": "医生不需要知道你是怎么查百度的，<br>\n                    他只想知道你<strong>哪里疼</strong>。"
     },
     "bad": {
-      "titleHtml": "❌ 陷入 \"Y\" 的泥沼",
+      "titleHtml": "❌ 在 Y 里打转",
       "lines": [
         {
           "character": "cider",
@@ -114,8 +114,8 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "10:01",
-          "text": "你需要 OCR 软件... 但你为什么要截图？",
-          "html": "你需要 OCR 软件... 但你为什么要截图？"
+          "text": "得用 OCR 软件。不过你为啥要截图？",
+          "html": "得用 OCR 软件。不过你为啥要截图？"
         },
         {
           "character": "cider",
@@ -128,40 +128,40 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "10:06",
-          "text": "🤦‍♂️ 客户发你的不是 PDF 吗？直接用鼠标选中文本复制不就行了！",
-          "html": "🤦‍♂️ 客户发你的不是 PDF 吗？直接用鼠标选中文本复制不就行了！"
+          "text": "客户发你的是 PDF 吧？直接选中复制就行了啊。",
+          "html": "客户发你的是 PDF 吧？直接选中复制就行了啊。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">由于 \"隧道视野\" 导致的迷路</h3>\n                        <p>\n                            你是否曾经为了解决一个问题，花了一整天研究一个极其复杂的歪门邪道，最后发现只要换个思路甚至什么都不用做就能搞定？\n                        </p>\n                        <p>\n                            这就是典型的 <strong>XY 问题迷宫</strong>。\n                        </p>\n                        <ul>\n                            <li><strong>X</strong> 是你真正想达到的目标（比如：复制合同文字）。</li>\n                            <li><strong>Y</strong> 是你自己想出的、可能并不靠谱的解决方案（比如：截图再识别）。</li>\n                        </ul>\n                        <p>\n                            当你问别人“哪款截图识别软件最好用”时，对方在给你推荐软件，却没人告诉其实<strong>直接复制粘贴就行了。</strong>\n                        </p>\n                        <p>\n                            我们往往陷入对自己初步方案 (Y) 的执着，而忘记了我们最初的目标 (X) 可能有更优解。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">盯着自己的办法，忘了要干什么</h3>\n<p>你可能有过这种经历。为了一件事折腾一整天，研究出一套很绕的办法，最后发现换个思路，甚至什么都不用做就行。</p>\n<p>这就是 XY 问题。</p>\n<ul>\n<li><strong>X</strong> 是你真正想做的事，比如把合同里的一段字弄出来。</li>\n<li><strong>Y</strong> 是你自己想出来的办法，不一定靠谱，比如截图再识别。</li>\n</ul>\n<p>你问别人「哪款截图识别软件好用」，大家就认真给你推荐软件，没人想起来告诉你<strong>直接复制粘贴就行</strong>。</p>\n<p>人一旦想出了 Y，就容易一路往下钻，忘了回头看看 X 有没有更省事的走法。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 露出原本的 \"X\"",
+      "titleHtml": "✅ 把 X 说出来",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00",
-          "text": "我想把客户合同里的一段话弄出来 (X)，但我刚才想截图再识别 (Y) 好像很麻烦，有没有更快的办法？",
-          "html": "我想把客户合同里的一段话弄出来 (X)，但我刚才想截图再识别 (Y) 好像很麻烦，有没有更快的办法？"
+          "text": "我想把客户合同里一段话弄出来（X），本来打算截图再识别（Y），好麻烦，有没有快点的办法？",
+          "html": "我想把客户合同里一段话弄出来（X），本来打算截图再识别（Y），好麻烦，有没有快点的办法？"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:01",
-          "text": "如果是 PDF，通常可以直接选中文本复制的。如果不行，发我看看。",
-          "html": "如果是 PDF，通常可以直接选中文本复制的。如果不行，发我看看。"
+          "text": "是 PDF 的话一般能直接选中复制。不行就发我看看。",
+          "html": "是 PDF 的话一般能直接选中复制。不行就发我看看。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:02",
-          "text": "试了一下，真的可以复制！我傻了。谢了！",
-          "html": "试了一下，真的可以复制！我傻了。谢了！"
+          "text": "试了，真能复制。我傻了，谢谢！",
+          "html": "试了，真能复制。我傻了，谢谢！"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">如何走出迷宫？</h3>\n                        <p>\n                            在提问时，永远包含 <strong>更宏大的图景 (The Bigger Picture)</strong>。\n                        </p>\n                        <p>\n                            你可以问 Y，因为那是你思考的成果，但在结尾务必加上一句：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n                            “我之所以想做 <strong>Y</strong>，是因为我想解决 <strong>X</strong> 问题。如果有更好的办法解决 X，请务必告诉我。”\n                        </blockquote>\n                        <p>\n                            把自己从“解决难题”的执念中释放出来，你会发现世界其实 <strong style=\"color: var(--primary);\">很开阔</strong>。🌍\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">怎么绕出来</h3>\n<p>提问的时候，把你最终想做成的事也带上。</p>\n<p>问 Y 没问题，那是你想过的结果。只是记得在后面补一句。</p>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n「我之所以想做 <strong>Y</strong>，是因为我想解决 <strong>X</strong>。如果 X 有更好的办法，麻烦告诉我。」\n</blockquote>\n<p>X 摆出来了，别人才有机会告诉你，旁边就有条近路。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到某人发了这个链接，说明他们很想帮你解决 <strong>X</strong>，而不是陪你在 <strong>Y</strong> 的迷宫里绕圈子。\n            </p>\n            <p>Inspired by <a href=\"https://xyproblem.info\">xyproblem.info</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方想帮你把 <strong>X</strong> 办成，不想陪你在 <strong>Y</strong> 里绕圈。\n            </p>\n            <p>Inspired by <a href=\"https://xyproblem.info\">xyproblem.info</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "dont-ask-to-ask",
@@ -169,7 +169,7 @@ const laws: Law[] = [
     "category": "relation",
     "title": "拒绝谜语人",
     "englishTitle": "Don't Ask to Ask",
-    "summary": "直接问问题，别问\"我能不能问问题\"。",
+    "summary": "直接问，别先问能不能问。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "拒绝谜语人",
@@ -208,7 +208,7 @@ const laws: Law[] = [
           "html": "……你第一句就说这句，我已经在路上了。"
         }
       ],
-      "explanationHtml": "<div>\n<p><strong>「有人懂 X 吗」把筛选成本丢给了别人：</strong>懂的人要先举手，你才肯说问题。多数人不会举手，因为他们不知道自己懂不懂你的问题。</p>\n<p>结果就是十分钟过去，你还在等一个「懂」的人出现。</p>\n</div>"
+      "explanationHtml": "<div>\n<p>「有人懂投影仪吗」等于先让别人举手。懂的人得先站出来，你才肯说是什么问题。可大多数人不会举手，他们不知道自己懂不懂你那个问题。</p>\n<p>十分钟过去，你还在等一个「懂」的人冒头。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 直接把问题问出来",
@@ -235,9 +235,9 @@ const laws: Law[] = [
           "html": "换了，好了。"
         }
       ],
-      "explanationHtml": "<div>\n<p>直接把问题完整问出来，懂的人一眼就知道该不该接。</p>\n<p>先问「有人懂吗」，等于让对方先做一道判断题：我算不算懂？判断题比选择题难，所以没人回答。</p>\n</div>"
+      "explanationHtml": "<div>\n<p>问题完整摆出来，懂的人扫一眼就知道自己能不能接。</p>\n<p>先问「有人懂吗」，对方得先想清楚自己算不算懂。这比回答一个具体问题难多了，所以大家都不吭声。</p>\n</div>"
     },
-    "footerHtml": "<p>这不是非常严重的事情，所以请不要对送你来看这个网站的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p><p>如果你看到这个链接，说明对方希望你把问题直接说出来，而不是先问有没有人懂。</p><p>Inspired by <a href=\"https://dontasktoask.com\">dontasktoask.com</a></p><p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p><p>如果你看到这个链接，说明对方希望你直接把问题说出来，别先问有没有人懂。</p><p>Inspired by <a href=\"https://dontasktoask.com\">dontasktoask.com</a></p><p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "it-didnt-work",
@@ -245,12 +245,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "它挂了",
     "englishTitle": "It Didn't Work",
-    "summary": "“坏了”不是 Bug 报告，请提供细节。",
+    "summary": "只说「坏了」，没人修得了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "它挂了",
       "subtitleHtml": "It Didn't Work",
-      "leadHtml": "“这东西坏了”<br>不是一个 Bug 报告"
+      "leadHtml": "「它坏了」三个字，<br>修的人什么也拿不到。"
     },
     "bad": {
       "titleHtml": "❌ 不要这样做",
@@ -291,7 +291,7 @@ const laws: Law[] = [
           "html": "没注意，反正就是没反应。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">医生治不好“我病了”</h3>\n                        <p>\n                            你可以告诉医生“我病了”，但如果只说这一句，医生也治不好你。<br>\n                            你需要说哪里疼、什么时候开始疼的、吃过什么东西。\n                        </p>\n                        <p>程序/设备也是一样。技术人员没有读心术。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">医生治不了「我病了」</h3>\n<p>你跟医生说「我病了」，就这一句，医生也没法治。他得知道哪里疼、什么时候开始的、吃过什么。</p>\n<p>设备和程序一样，修的人看不见你那边发生了什么。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 试着这样做",
@@ -316,9 +316,9 @@ const laws: Law[] = [
           "html": "哦，这是卡纸了，把后盖打开抽出来就行。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0; margin-bottom: 1.5rem;\">完美的 Bug 报告清单</h3>\n                        <ul style=\"list-style: none; padding-left: 0; margin: 0;\">\n                            <li class=\"li-good\" style=\"margin-bottom: 16px;\">\n                                <strong>你做了什么？</strong><br>\n                                <span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">操作步骤</span>\n                            </li>\n                            <li class=\"li-good\" style=\"margin-bottom: 16px;\">\n                                <strong>发生了什么？</strong><br>\n                                <span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">实际现象</span>\n                            </li>\n                            <li class=\"li-good\" style=\"margin-bottom: 16px;\">\n                                <strong>你期望发生什么？</strong><br>\n                                <span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">预期结果</span>\n                            </li>\n                            <li class=\"li-good\" style=\"margin-bottom: 0;\">\n                                <strong>环境信息</strong><br>\n                                <span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">型号, 版本, 报错信息</span>\n                            </li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0; margin-bottom: 1.5rem;\">报故障时带上这几样</h3>\n<ul style=\"list-style: none; padding-left: 0; margin: 0;\">\n<li class=\"li-good\" style=\"margin-bottom: 16px;\"><strong>你做了什么</strong><br><span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">按了哪个键，点了哪一步</span></li>\n<li class=\"li-good\" style=\"margin-bottom: 16px;\"><strong>结果怎样</strong><br><span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">亮了什么灯，弹了什么提示</span></li>\n<li class=\"li-good\" style=\"margin-bottom: 16px;\"><strong>本来应该怎样</strong><br><span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">你以为会发生什么</span></li>\n<li class=\"li-good\" style=\"margin-bottom: 0;\"><strong>用的什么</strong><br><span style=\"color: var(--muted-foreground); font-size: 0.875rem;\">型号、版本、报错原文</span></li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你的 Bug 报告可能有点... <strong>“抽象”</strong>。\n            </p>\n            <p>Inspired by <a href=\"https://itdidnt.work\">itdidnt.work</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你的报错描述有点太<strong>抽象</strong>了。\n            </p>\n            <p>Inspired by <a href=\"https://itdidnt.work\">itdidnt.work</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "wheatons-law",
@@ -326,15 +326,15 @@ const laws: Law[] = [
     "category": "systems",
     "title": "惠顿定律",
     "englishTitle": "Wheaton's Law",
-    "summary": "别当混蛋 (Don't be a dick)。",
+    "summary": "别当混蛋（Don't be a dick）。",
     "layout": "statement",
     "hero": {
       "titleHtml": "惠顿定律",
       "subtitleHtml": "Wheaton's Law",
       "leadHtml": "<h2 style=\"font-size: clamp(3rem, 15vw, 8rem); line-height: 1; font-weight: 900; letter-spacing: -0.02em; color: var(--destructive); margin: 0; text-transform: uppercase;\">\n                    Don't be a dick.\n                </h2>\n                <h2 style=\"font-size: clamp(2rem, 10vw, 5rem); line-height: 1.2; font-weight: 900; margin: 1rem 0 0 0; color: var(--foreground);\">\n                    别当混蛋。\n                </h2>\n\n                "
     },
-    "specialHtml": "<div>\n                <h3 style=\"margin-top:0\">互联网黄金法则</h3>\n                <p>\n                    这是威尔·惠顿（Wil Wheaton）2007 年在 PAX 主题演讲里提出的说法。原话只有一句：Don't be a dick。\n                </p>\n                <div class=\"callout\">\n                    <ul>\n                        <li class=\"li-bad\"><strong>不要</strong> 因为匿名就肆无忌惮地攻击他人。</li>\n                        <li class=\"li-bad\"><strong>不要</strong> 嘲笑新手，每个人都是从零开始的。</li>\n                        <li class=\"li-good\"><strong>要</strong> 保持基本的礼貌和尊重。</li>\n                    </ul>\n                </div>\n            </div>",
-    "footerHtml": "<p>\n            这不是非常严重的事情，所以请不要对送你来看这个网站的人\n            <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n        </p>\n        <p>\n            如果你看到这个链接，说明......其实也没什么，就只是希望大家能友善一点。\n        </p>\n        <p>Source: <a href=\"https://wilwheaton.net/?post_type=post&p=19\">Wil Wheaton, 2007 PAX 回顾</a>；<a href=\"https://knowyourmeme.com/memes/wheatons-law\">Know Your Meme</a></p>\n        <p>\n            <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n        </p>"
+    "specialHtml": "<div>\n<h3 style=\"margin-top:0\">互联网黄金法则</h3>\n<p>威尔·惠顿（Wil Wheaton）2007 年在 PAX 主题演讲里说的。原话就一句，Don't be a dick。</p>\n<div class=\"callout\">\n<ul>\n<li class=\"li-bad\"><strong>不要</strong> 因为匿名就肆无忌惮地攻击他人。</li>\n<li class=\"li-bad\"><strong>不要</strong> 嘲笑新手，谁都当过新手。</li>\n<li class=\"li-good\"><strong>要</strong> 保持基本的礼貌和尊重。</li>\n</ul>\n</div>\n</div>",
+    "footerHtml": "<p>\n            这事不大，别跟发链接给你的人\n            <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n        </p>\n        <p>\n            如果你看到这个链接，其实也没什么事，就是希望大家友善一点。\n        </p>\n        <p>Source: <a href=\"https://wilwheaton.net/?post_type=post&p=19\">Wil Wheaton, 2007 PAX 回顾</a> · <a href=\"https://knowyourmeme.com/memes/wheatons-law\">Know Your Meme</a></p>\n        <p>\n            <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n        </p>"
   },
   {
     "slug": "smart-questions",
@@ -342,15 +342,15 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "提问的智慧",
     "englishTitle": "Smart Questions",
-    "summary": "提问前先自己尝试解决，尊重他人的时间。",
+    "summary": "先自己试过，再带着结果来问。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "提问的智慧",
       "subtitleHtml": "How To Ask Questions The Smart Way",
-      "leadHtml": "问问题不是把难题丢出去，是把你自己走到的那一步说清楚。"
+      "leadHtml": "问之前，<br>先把你自己走到哪一步说清楚。"
     },
     "bad": {
-      "titleHtml": "❌ 愚蠢的提问",
+      "titleHtml": "❌ 只喊急",
       "lines": [
         {
           "character": "cider",
@@ -363,33 +363,33 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "10:05",
-          "text": "... (未读忽略)",
-          "html": "... (未读忽略)"
+          "text": "（看了一眼，没回）",
+          "html": "（看了一眼，没回）"
         }
       ],
-      "explanationHtml": "<div>\n                    <h3 style=\"margin-top:0\">提问之前</h3>\n                    <p>当你向他人求助时，请确保你已经尽了自己的努力：</p>\n                    <ul style=\"list-style: none; padding-left: 10px;\">\n                        <li> 搜过 Google / 百度了吗？</li>\n                        <li> 读过说明书了吗？</li>\n                        <li> 自己尝试过重启 / 复现了吗？</li>\n                    </ul>\n                </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">问之前</h3>\n<p>找人帮忙之前，自己先走几步。</p>\n<ul style=\"list-style: none; padding-left: 10px;\">\n<li>搜过 Google / 百度了吗？</li>\n<li>说明书翻过了吗？</li>\n<li>重启过、试着复现过吗？</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 聪明的提问",
+      "titleHtml": "✅ 带着信息问",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00",
-          "text": "我的笔记本（Win10, 8G内存）最近打开 Chrome 时非常卡。尝试过重启和清理垃圾，但只要开超过 10 个网页就卡死。请问是内存不够吗？需不需要加内存条？",
-          "html": "我的笔记本（Win10, 8G内存）最近打开 Chrome 时非常卡。尝试过重启和清理垃圾，但只要开超过 10\n                        个网页就卡死。请问是内存不够吗？需不需要加内存条？"
+          "text": "我的笔记本（Win10，8G 内存）最近开 Chrome 很卡，重启和清垃圾都试过，开到 10 个网页就卡死。是内存不够吗？要不要加条内存？",
+          "html": "我的笔记本（Win10，8G 内存）最近开 Chrome 很卡，重启和清垃圾都试过，开到 10 个网页就卡死。是内存不够吗？要不要加条内存？"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:05",
-          "text": "8G 确实有点勉强，建议加到 16G 或者关掉不用的插件。",
-          "html": "8G 确实有点勉强，建议加到 16G 或者关掉不用的插件。"
+          "text": "8G 确实紧。加到 16G，或者把不用的插件关掉。",
+          "html": "8G 确实紧。加到 16G，或者把不用的插件关掉。"
         }
       ],
-      "explanationHtml": "<div>\n                    <h3 style=\"margin-top:0\">好提问的三个要素</h3>\n                    <ul style=\"list-style: none; padding-left: 10px;\">\n                        <li>环境：系统、版本、硬件配置。</li>\n                        <li>现象：做了什么操作，出现什么结果。</li>\n                        <li>已尝试：试过哪些办法，分别是什么反应。</li>\n                    </ul>\n                </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">好问题里带着这些</h3>\n<ul style=\"list-style: none; padding-left: 10px;\">\n<li>用的什么，系统、版本、配置。</li>\n<li>出了什么事，做了哪一步，看到什么。</li>\n<li>试过什么，每样试完是什么反应。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n            这不是非常严重的事情，所以请不要对送你来看这个网站的人\n            <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n        </p>\n        <p>\n            如果你看到这个链接，说明你的提问方式可能会让解答者感到<strong>困惑</strong>，建议先读读这份指南，这能帮你更快得到答案。\n        </p>\n        <p>Based on <a href=\"https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way\">Eric S. Raymond's\n                Guide</a></p>\n        <p>\n            <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n        </p>"
+    "footerHtml": "<p>\n            这事不大，别跟发链接给你的人\n            <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n        </p>\n        <p>\n            如果你看到这个链接，说明你这样问，回答的人有点<strong>摸不着头脑</strong>。花几分钟读读这份指南，答案会来得快一些。\n        </p>\n        <p>Based on <a href=\"https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way\">Eric S. Raymond's\n                Guide</a></p>\n        <p>\n            <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n        </p>"
   },
   {
     "slug": "no-pointless-politeness",
@@ -397,15 +397,15 @@ const laws: Law[] = [
     "category": "relation",
     "title": "拒绝过度客套",
     "englishTitle": "Signal vs Noise",
-    "summary": "别让礼貌的废话淹没了真正的信息。",
+    "summary": "一百句「收到」，能把一条更正顶没。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "拒绝过度客套",
       "subtitleHtml": "Signal vs Noise",
-      "leadHtml": "你的“谢谢大佬”，<br>\n                    可能正在把有用的信息<strong>挤出屏幕</strong>。"
+      "leadHtml": "你那句「谢谢大佬」，<br>\n                    可能正把有用的消息<strong>顶出屏幕</strong>。"
     },
     "bad": {
-      "titleHtml": "❌ 制造噪音",
+      "titleHtml": "❌ 排队回收到",
       "lines": [
         {
           "character": "domino",
@@ -449,10 +449,10 @@ const laws: Law[] = [
           "html": "（被顶上去的更正消息）对了，集合地点改到南门了！！别去北门！"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">信号与噪声</h3>\n                        <p>\n                            在一个 500 人的群里，当管理员发布了一条重要通知后，连续有大约 100 个人回复“收到”、“好的”、“Thanks”。\n                        </p>\n                        <p>\n                            此时，真正重要的<strong>补充通知</strong>（比如地点变更），已经被顶到了屏幕最上方。这意味着后面进来的 400 个人，根本看不到那条更正，只会去错误的地点。\n                        </p>\n                        <p>\n                            在面对面的晚宴上，鞠躬和寒暄是必要的<strong>润滑剂</strong>。但在高密度的信息流（群聊、Issue、论坛）中，每一行像素都是昂贵的 <strong style=\"color: var(--bad);\">屏幕地产</strong>。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">一条更正被顶没了</h3>\n<p>500 人的群，管理员发了条通知，接着一百来个人回「收到」「好的」「Thanks」。</p>\n<p>后面那条<strong>更正</strong>，集合地点改了，早被顶到屏幕上头去了。之后才点开群的四百人根本翻不到，第二天照旧去北门。</p>\n<p>面对面吃饭，寒暄客套是该有的。群聊、Issue、论坛里消息挤得很，你每发一行，都占着几百个人的<strong style=\"color: var(--bad);\">屏幕</strong>。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 优雅的反馈",
+      "titleHtml": "✅ 点个表情就行",
       "lines": [
         {
           "character": "domino",
@@ -475,13 +475,13 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "10:05",
-          "text": "❗️ 紧急更正：集合地点改到南门了！",
-          "html": "❗️ 紧急更正：集合地点改到南门了！"
+          "text": "紧急更正，集合地点改到南门！",
+          "html": "紧急更正，集合地点改到南门！"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">静默的赞赏</h3>\n                        <p>\n                            高效的社区有着独特的<strong>“静默文化”</strong>：\n                        </p>\n                        <ul>\n                            <li><strong>点赞 / 表情回应</strong> 代表“收到”或“谢谢”。</li>\n                            <li><strong>引用回复</strong> 代表针对性讨论。</li>\n                        </ul>\n                        <p>\n                            沉默意味着沟通顺利结束，信道重新回归宁静，等待下一个有价值的信号（比如紧急变更）出现。\n                        </p>\n                        <p>\n                            把屏幕留给更有价值的信息，而不是你的队形。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">不出声也算回了</h3>\n<p>好用的群一般有个默契。</p>\n<ul>\n<li><strong>点赞或者表情</strong>，就是「收到」「谢谢」。</li>\n<li><strong>引用回复</strong>，用来接着讨论具体哪一句。</li>\n</ul>\n<p>没人说话，说明这件事办完了。群里安安静静，下一条要紧的变更发出来，所有人都看得见。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明群里的“队形”已经<strong>严重影响了信息的传递</strong>。\n            </p>\n            <p>Inspired by <a href=\"https://github.com/torvalds\">Linus Torvalds' Attitude</a> (Sort of...)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明群里排的队形已经把<strong>正经消息挡住了</strong>。\n            </p>\n            <p>Inspired by <a href=\"https://github.com/torvalds\">Linus Torvalds' Attitude</a> (Sort of...)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "cunninghams-law",
@@ -489,15 +489,15 @@ const laws: Law[] = [
     "category": "systems",
     "title": "坎宁安定律",
     "englishTitle": "Cunningham's Law",
-    "summary": "想得到正确答案？不如先发一个错误的。",
+    "summary": "想要正确答案，先发一个错的。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "坎宁安定律",
       "subtitleHtml": "Cunningham's Law",
-      "leadHtml": "在互联网上获得正确答案的最好方法，<br>\n                    不是提问，而是发布一个错误的答案。"
+      "leadHtml": "在网上想要正确答案，<br>\n                    最快的办法是先发一个错的。"
     },
     "bad": {
-      "titleHtml": "❌ 普通提问",
+      "titleHtml": "❌ 老实提问",
       "lines": [
         {
           "character": "cider",
@@ -508,18 +508,18 @@ const laws: Law[] = [
         },
         {
           "name": "",
-          "text": "（一个小时过去了...）",
-          "html": "（一个小时过去了...）",
+          "text": "（一个小时过去了）",
+          "html": "（一个小时过去了）",
           "tone": "meta"
         },
         {
           "name": "",
-          "text": "（没有人回复）",
-          "html": "（没有人回复）",
+          "text": "（没人回）",
+          "html": "（没人回）",
           "tone": "meta"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            这是一个完全合理的问题，但问题在于：<strong>它太开放了</strong>。\n                        </p>\n                        <p>\n                            人们在面对开放性问题时，往往会产生\"决策疲劳\"——需要在脑海中筛选太多选项，最后干脆放弃回答。而且，回答一个主观问题需要承担被反驳的风险，很多人不愿意冒这个险。\n                        </p>\n                        <p>\n                            结果就是：你的问题石沉大海，无人问津。😔\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<p>问题本身没毛病，就是<strong>太开放</strong>。</p>\n<p>北京的烤鸭店少说几十家，回答的人得先在脑子里过一遍，挑哪家、凭什么，想想就累，干脆不答。主观推荐还容易被人抬杠，没几个人愿意出这个头。</p>\n<p>于是这条消息就沉了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 坎宁安式提问",
@@ -553,9 +553,9 @@ const laws: Law[] = [
           "html": "你们都out了，现在流行京味斋，环境好价格也实惠。"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            <strong>五分钟内，你就收获了一份详尽的烤鸭推荐清单。</strong>\n                        </p>\n                        <p>\n                            人类天生有一种<strong>纠正错误的冲动</strong>。当我们看到一个尚未被回答的问题时，我们可能会冷漠地划过；但当我们看到一个<strong>显而易见的\"错误\"</strong>时，我们忍不住想要纠正它，以展示自己的博学。\n                        </p>\n                        <p>\n                            这个技巧在以下场景特别有效：\n                        </p>\n                        <ul>\n                            <li>想获得主观推荐（餐厅、电影、书籍）</li>\n                            <li>想了解某个领域的最佳实践</li>\n                            <li>想激发社群讨论</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>五分钟，一份烤鸭店清单就齐了。</strong></p>\n<p>没人回答的问题，大家很容易划过去。看到一句<strong>明显说错的话</strong>，手就痒，非得纠正一下，顺便显摆自己懂行。</p>\n<p>这招适合这些时候。</p>\n<ul>\n<li>要主观推荐，餐厅、电影、书。</li>\n<li>想知道某个圈子里大家实际怎么做。</li>\n<li>群里太冷清，想让人聊起来。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，可能是希望你能用一种<strong>\"特殊\"</strong>的方式来获得（或提供）正确答案。\n            </p>\n            <p>名字来自 Ward Cunningham（wiki 的发明者，不是维基百科）。这个说法由 Steven McGeady 在 1980 年代的一次交谈后命名；Cunningham 本人否认自己提倡过「发错误答案来提问」。</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方想提醒你，有个<strong>不太正经</strong>的办法能拿到（或者给出）正确答案。\n            </p>\n            <p>名字来自 Ward Cunningham（wiki 的发明者，和维基百科无关）。这个说法由 Steven McGeady 在 1980 年代的一次交谈后命名。Cunningham 本人否认自己提倡过「发错误答案来提问」。</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "rubber-duck",
@@ -563,15 +563,15 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "小黄鸭调试",
     "englishTitle": "Rubber Duck",
-    "summary": "向你的桌角（或鸭子）解释问题，答案往往就在嘴边。",
+    "summary": "先讲给鸭子听，常常讲着讲着就懂了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "小黄鸭调试法",
       "subtitleHtml": "Rubber Duck Debugging",
-      "leadHtml": "当你卡住的时候，<br>\n                    试着向一只鸭子解释你的问题。🦆"
+      "leadHtml": "卡住的时候，<br>\n                    先把问题讲给一只鸭子听。"
     },
     "bad": {
-      "titleHtml": "❌ 不要这样做",
+      "titleHtml": "❌ 喊人来看",
       "lines": [
         {
           "character": "cider",
@@ -598,53 +598,53 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "3:17 下午",
-          "text": "等等，我好像选错格式了，应该选\"可编辑的 PDF\"... 好了解决了🙏",
-          "html": "等等，我好像选错格式了，应该选\"可编辑的 PDF\"... 好了解决了🙏"
+          "text": "等下，我格式选错了，要选「可编辑的 PDF」…好了，解决了",
+          "html": "等下，我格式选错了，要选「可编辑的 PDF」…好了，解决了"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "3:18 下午",
-          "text": "...我还没说话呢",
-          "html": "...我还没说话呢"
+          "text": "…我一句话还没说",
+          "html": "…我一句话还没说"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            西打<strong>并不需要多米诺的帮助</strong>。他只是在向别人解释问题的过程中，自己发现了答案。\n                        </p>\n                        <p>\n                            这种情况非常常见：我们的大脑在独自思考时会\"跳跃\"，忽略一些看似显而易见的细节。但当我们试图向别人解释时，我们被迫<strong>放慢速度、理清逻辑</strong>，于是那些被忽略的细节就浮出水面了。\n                        </p>\n                        <p>\n                            问题在于：<strong>你打断了别人</strong>。多米诺的工作被中断了，而他其实什么也没做。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<p>西打其实<strong>用不着多米诺</strong>。他把问题讲出来的那几句里，自己就找到了答案。</p>\n<p>一个人闷头想的时候，脑子会跳步，几个看着理所当然的细节就这么滑过去了。讲给别人听，就得一步一步说，<strong>说到哪一步卡壳</strong>，毛病多半就在那儿。</p>\n<p>代价是多米诺手上的活被打断了，结果他什么也没做。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 试着这样做",
+      "titleHtml": "✅ 先讲给鸭子",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "3:15 下午",
-          "text": "（对着桌上的小黄鸭）好，让我跟你说一下这个问题...",
-          "html": "（对着桌上的小黄鸭）好，让我跟你说一下这个问题..."
+          "text": "（对着桌上的小黄鸭）好，我跟你说下这个问题…",
+          "html": "（对着桌上的小黄鸭）好，我跟你说下这个问题…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "3:15 下午",
-          "text": "我要导出 PPT 成 PDF，我点了导出按钮，然后选择格式...",
-          "html": "我要导出 PPT 成 PDF，我点了导出按钮，然后选择格式..."
+          "text": "我要把 PPT 导成 PDF，点了导出，然后选格式…",
+          "html": "我要把 PPT 导成 PDF，点了导出，然后选格式…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "3:16 下午",
-          "text": "等等，格式！我选的格式不对！",
-          "html": "等等，格式！我选的格式不对！"
+          "text": "等下，格式！我选错了！",
+          "html": "等下，格式！我选错了！"
         },
         {
           "name": "小黄鸭",
           "time": "永远在线",
-          "text": "嘎。（这不就结了）",
-          "html": "嘎。（这不就结了）"
+          "text": "嘎。",
+          "html": "嘎。"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            <strong>小黄鸭调试法</strong>的精髓在于：你不需要一个真正能给你答案的人，你只需要一个<strong>倾听者</strong>来迫使你理清自己的思路。\n                        </p>\n                        <p>这个\"倾听者\"可以是：</p>\n                        <ul>\n                            <li>一只橡皮小黄鸭（经典）</li>\n                            <li>你的桌角、咖啡杯、绿植</li>\n                            <li>一个空白的聊天窗口（写下问题但不发送）</li>\n                            <li>甚至是你自己（大声朗读问题）</li>\n                        </ul>\n                        <p>\n                            这样做的好处是：你<strong>不打扰任何人</strong>，同时还能高效地解决问题。这就是为什么很多程序员的桌上都放着一只小黄鸭。\n                        </p>\n                        <p><strong>下次卡住的时候，先问问你的鸭子吧！🦆</strong></p>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>小黄鸭调试</strong>用不着对方懂，只要有个听的，逼你把思路一句句讲完。</p>\n<p>听的可以是这些。</p>\n<ul>\n<li>一只橡皮小黄鸭</li>\n<li>桌角、咖啡杯、那盆绿萝</li>\n<li>一个空聊天窗口，问题打完先不发</li>\n<li>你自己，小声念一遍</li>\n</ul>\n<p>讲完还没懂，再去找人。那时候你问得也清楚多了。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你可能需要先跟你的桌角（或者小黄鸭）把问题<strong>大声朗读一遍</strong>，然后再来求助。\n            </p>\n            <p>Inspired by <a href=\"https://pragprog.com/\">The Pragmatic Programmer</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方想让你先把问题<strong>从头讲一遍</strong>，讲给桌角或者鸭子都行，还卡着再来找他。\n            </p>\n            <p>Inspired by <a href=\"https://pragprog.com/\">The Pragmatic Programmer</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "bike-shedding",
@@ -652,13 +652,13 @@ const laws: Law[] = [
     "category": "systems",
     "title": "自行车棚效应",
     "englishTitle": "Bike Shedding",
-    "summary": "别为了鸡毛蒜皮的小事浪费团队的宝贵时间。",
+    "summary": "五百万的预算一分钟过，袋子颜色吵两小时。",
     "layout": "comparison",
     "visual": "bikeshed-bars",
     "hero": {
       "titleHtml": "自行车棚效应",
       "subtitleHtml": "Parkinson's Law of Triviality",
-      "leadHtml": "人们花在琐事上的时间，<br>\n                    往往远超过重要的事情。"
+      "leadHtml": "看不懂的大事一句带过，<br>\n                    人人都懂的小事吵个没完。"
     },
     "bad": {
       "titleHtml": "❌ 典型症状",
@@ -667,8 +667,8 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "2:00 下午",
-          "text": "好，第一项议程：明年战略规划，预算500万。大家有什么意见？",
-          "html": "好，第一项议程：明年战略规划，预算500万。大家有什么意见？"
+          "text": "好，第一项，明年的战略规划，预算 500 万。大家有意见吗？",
+          "html": "好，第一项，明年的战略规划，预算 500 万。大家有意见吗？"
         },
         {
           "character": "domino",
@@ -679,8 +679,8 @@ const laws: Law[] = [
         },
         {
           "name": "",
-          "text": "（5分钟后，会议进入下一项）",
-          "html": "（5分钟后，会议进入下一项）",
+          "text": "（五分钟后，进入下一项）",
+          "html": "（五分钟后，进入下一项）",
           "tone": "meta"
         },
         {
@@ -701,24 +701,24 @@ const laws: Law[] = [
           "character": "tail",
           "name": "尾巴",
           "time": "2:07 下午",
-          "text": "不行，红色太俗了，金色更大气！",
-          "html": "不行，红色太俗了，金色更大气！"
+          "text": "不行，红色太土了，金色大气",
+          "html": "不行，红色太土了，金色大气"
         },
         {
           "character": "bot327",
           "name": "群友",
           "time": "2:08 下午",
-          "text": "我觉得深蓝色比较高端...",
-          "html": "我觉得深蓝色比较高端..."
+          "text": "我觉得深蓝显得高级…",
+          "html": "我觉得深蓝显得高级…"
         },
         {
           "name": "",
-          "text": "（2小时后，仍在讨论袋子颜色...）",
-          "html": "（2小时后，仍在讨论袋子颜色...）",
+          "text": "（两小时后，还在吵袋子颜色）",
+          "html": "（两小时后，还在吵袋子颜色）",
           "tone": "meta"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            <strong>经典案例：</strong>委员会审批核电站计划时，大家因为不懂而迅速通过；但审批员工自行车棚时，却争论不休——因为每个人都\"懂\"自行车棚。\n                        </p>\n                        <p>\n                            这就是<strong>帕金森琐碎定律</strong>：人们倾向于在自己能理解的小事上投入不成比例的时间和精力，而对真正重要（但复杂）的事情一笔带过。\n                        </p>\n                        <ul>\n                            <li> <strong>认知舒适区：</strong>小事容易理解，发言不会出错</li>\n                            <li> <strong>刷存在感：</strong>大事上不敢说话，小事上可以表现</li>\n                            <li> <strong>决策疲劳：</strong>大事太复杂，干脆放弃思考（补充解释，不是 Parkinson 原话）</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p>帕金森举过一个例子。委员会审核电站方案，没几个人看得懂，很快就过了。审员工的自行车棚，人人都懂自行车棚，于是吵了很久。</p>\n<p>这就是<strong>帕金森琐碎定律</strong>。越是谁都能插嘴的小事，花的时间越多。真正要紧又复杂的事，反倒一笔带过。</p>\n<ul>\n<li><strong>小事好懂</strong>，随便说两句都不会错。</li>\n<li><strong>想露个脸</strong>，大事上不敢开口，小事上能说。</li>\n<li><strong>大事太累</strong>，干脆不想了。这一条是后人补的，帕金森原文里没有。</li>\n</ul>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 如何避免",
@@ -727,27 +727,27 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "2:00 下午",
-          "text": "第一项议程：明年战略规划。这是核心议题，请各部门负责人在会前准备好意见。我们会花45分钟详细讨论。",
-          "html": "第一项议程：明年战略规划。这是核心议题，请各部门负责人在会前准备好意见。我们会花45分钟详细讨论。"
+          "text": "第一项，明年的战略规划。这是今天的重点，各部门负责人会前准备好意见，留 45 分钟细聊。",
+          "html": "第一项，明年的战略规划。这是今天的重点，各部门负责人会前准备好意见，留 45 分钟细聊。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:45 下午",
-          "text": "第二项：年会伴手礼。行政部已经初选了3个方案，请大家5分钟内投票选择。超时未投票视为弃权。",
-          "html": "第二项：年会伴手礼。行政部已经初选了3个方案，请大家5分钟内投票选择。超时未投票视为弃权。"
+          "text": "第二项，年会伴手礼。行政挑了 3 个方案，5 分钟内投票，没投算弃权。",
+          "html": "第二项，年会伴手礼。行政挑了 3 个方案，5 分钟内投票，没投算弃权。"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "2:48 下午",
-          "text": "投A方案，会议结束！",
-          "html": "投A方案，会议结束！"
+          "text": "投 A，散会！",
+          "html": "投 A，散会！"
         }
       ],
-      "explanationHtml": "<div>\n                        <ul>\n                            <li> <strong>设置时间限制：</strong>为每个议题分配固定时间，小事不超过5分钟</li>\n                            <li> <strong>区分议题权重：</strong>明确标注\"重要/一般\"，引导大家把精力放在对的地方</li>\n                            <li> <strong>提供有限选项：</strong>不要问\"选什么颜色\"，而是问\"A还是B\"</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<ul>\n<li><strong>给每项定时间</strong>。小事别超过 5 分钟。</li>\n<li><strong>标出轻重</strong>。哪项是重点、哪项走个过场，议程上写明白。</li>\n<li><strong>只给几个选项</strong>。别问「选什么颜色」，问「A 还是 B」。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明大家可能正在为了<strong>袋子的颜色</strong>而耽误了<strong>核电站的建设</strong>。\n            </p>\n            <p>概念提出者：C. Northcote Parkinson</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明大家可能正为了<strong>袋子的颜色</strong>，把<strong>核电站</strong>晾在了一边。\n            </p>\n            <p>概念提出者：C. Northcote Parkinson</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "yak-shaving",
@@ -755,13 +755,13 @@ const laws: Law[] = [
     "category": "systems",
     "title": "剪牦牛毛",
     "englishTitle": "Yak Shaving",
-    "summary": "别为了煮面条而跑去修车，时刻记得你的初心。",
+    "summary": "本来只想煮碗面，结果翻起了毕业相册。",
     "layout": "comparison",
     "visual": "yak-shaving-chain",
     "hero": {
       "titleHtml": "剪牦牛毛",
       "subtitleHtml": "Yak Shaving",
-      "leadHtml": "本来想去倒垃圾，<br>\n                    最后却在山上给牦牛剪毛。🐂"
+      "leadHtml": "本来想去倒个垃圾，<br>\n                    回过神来已经在山上给牦牛剪毛了。"
     },
     "bad": {
       "titleHtml": "❌ 典型症状",
@@ -784,22 +784,22 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "12:05",
-          "text": "车钥匙呢？翻翻抽屉...",
-          "html": "车钥匙呢？翻翻抽屉..."
+          "text": "车钥匙呢？翻下抽屉…",
+          "html": "车钥匙呢？翻下抽屉…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "12:10",
-          "text": "咦？我高中的毕业相册！看两眼...",
-          "html": "咦？我高中的毕业相册！看两眼..."
+          "text": "咦，我高中毕业相册！看两眼…",
+          "html": "咦，我高中毕业相册！看两眼…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:30 下午",
-          "text": "哈哈哈这张照片好搞笑...",
-          "html": "哈哈哈这张照片好搞笑..."
+          "text": "哈哈哈这张好丑…",
+          "html": "哈哈哈这张好丑…"
         },
         {
           "character": "domino",
@@ -812,11 +812,11 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "2:35 下午",
-          "text": "完了... 我到底要干嘛来着？对了，煮面。面呢？葱呢？钥匙呢？！",
-          "html": "完了... 我到底要干嘛来着？对了，煮面。面呢？葱呢？钥匙呢？！"
+          "text": "完了…我要干嘛来着？哦，煮面。面呢？葱呢？钥匙呢？",
+          "html": "完了…我要干嘛来着？哦，煮面。面呢？葱呢？钥匙呢？"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            <strong>\"剪牦牛毛\"</strong>的名字来源于这样一个场景：你想做A，但做A之前要先做B，做B之前要先做C...\n                            最后你发现自己在山上给一只牦牛剪毛——而你已经完全忘了最初想做什么。\n                        </p>\n                        <p>\n                            这是一种<strong>递归式任务陷阱</strong>：每一步看起来都是\"合理\"的前置任务，但无数\"合理\"的前置任务叠加起来，就变成了一条无限延伸的兔子洞。\n                        </p>\n                        <p>\n                            <strong>为什么会发生？</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>注意力转移：</strong>新事物总比手头的任务更有趣</li>\n                            <li> <strong>目标模糊：</strong>没有明确的终点，容易迷失</li>\n                            <li> <strong>低估时间：</strong>\"看两眼\"往往变成\"看两小时\"</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>剪牦牛毛</strong>说的是这么个过程。你想做 A，做 A 得先做 B，做 B 得先做 C，一路做下去，最后发现自己在山上给牦牛剪毛，早忘了 A 是什么。</p>\n<p>每一步单看都说得过去，确实得先有葱、得先找钥匙。可一步接一步，离开头那件事越来越远。</p>\n<p><strong>容易掉进去的时候</strong></p>\n<ul>\n<li><strong>岔路更好玩</strong>，相册比煮面有意思。</li>\n<li><strong>没想好终点</strong>，不知道做到哪算完。</li>\n<li><strong>低估时间</strong>，「看两眼」一看就是两小时。</li>\n</ul>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 如何避免",
@@ -825,27 +825,27 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "12:00",
-          "text": "肚子饿了，煮碗面吧。【终极目标：吃面】",
-          "html": "肚子饿了，煮碗面吧。【终极目标：吃面】"
+          "text": "饿了，煮碗面。（目标：吃上面）",
+          "html": "饿了，煮碗面。（目标：吃上面）"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "12:01",
-          "text": "没葱了。等等，我是要吃面，不是要做米其林三星料理。没葱也能吃。",
-          "html": "没葱了。等等，我是要吃面，不是要做米其林三星料理。没葱也能吃。"
+          "text": "没葱了。等下，我是要吃面，又不是做大餐，没葱也能吃。",
+          "html": "没葱了。等下，我是要吃面，又不是做大餐，没葱也能吃。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "12:10",
-          "text": "面煮好了！🍜 吃完再想别的事。",
-          "html": "面煮好了！🍜 吃完再想别的事。"
+          "text": "面好了，吃完再说别的。",
+          "html": "面好了，吃完再说别的。"
         }
       ],
-      "explanationHtml": "<div>\n                        \n                        <p>\n                            每当你发现自己偏离轨道时，问自己：\n                        </p>\n                        <ul>\n                            <li> 这件事真的是必须的吗？</li>\n                            <li> 我能不能先完成主线任务，再回来处理这个？</li>\n                            <li> 我现在做的事，跟我最初的目标有什么关系？</li>\n                        </ul>\n                        <p>\n                            <strong>实用技巧：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>写下目标：</strong>在便签上写下\"我现在要做X\"，贴在显眼的地方</li>\n                            <li> <strong>设置闹钟：</strong>每30分钟检查一次自己是否还在正轨</li>\n                            <li> <strong>学会说\"稍后\"：</strong>发现有趣的岔路？记下来，之后再探索</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<p>发现自己走岔了，问问自己。</p>\n<ul>\n<li>这件事非做不可吗？</li>\n<li>能不能先把主线做完，回头再弄它？</li>\n<li>我现在手上这件，跟一开始要做的有什么关系？</li>\n</ul>\n<p><strong>几个土办法</strong></p>\n<ul>\n<li><strong>写下来</strong>。便签上写「我现在要做 X」，贴在眼前。</li>\n<li><strong>定个闹钟</strong>。半小时响一次，看看自己还在不在正路上。</li>\n<li><strong>先记着</strong>。碰到好玩的岔路，记一笔，回头再去。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你虽然看起来很忙，但似乎已经离<strong>最初的目标</strong>十万八千里了。\n            </p>\n            <p>Source: <a href=\"http://catb.org/jargon/html/Y/yak-shaving.html\">Jargon File</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你看着挺忙，可离<strong>一开始要做的事</strong>已经很远了。\n            </p>\n            <p>Source: <a href=\"http://catb.org/jargon/html/Y/yak-shaving.html\">Jargon File</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "hanlons-razor",
@@ -853,89 +853,89 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "汉隆剃刀",
     "englishTitle": "Hanlon's Razor",
-    "summary": "能解释为愚蠢的，就不要解释为恶意。",
+    "summary": "能用糊涂解释的，别先往坏处想。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "汉隆剃刀",
       "subtitleHtml": "Hanlon's Razor",
-      "leadHtml": "能解释为愚蠢或忙碌的，<br>\n                    就不要解释为恶意。"
+      "leadHtml": "能用糊涂或者太忙解释的，<br>\n                    就别往恶意上想。"
     },
     "bad": {
-      "titleHtml": "❌ 阴谋论思维",
+      "titleHtml": "❌ 越想越坏",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "9:30 上午",
-          "text": "今天在电梯里跟多米诺打招呼，他居然没理我！",
-          "html": "今天在电梯里跟多米诺打招呼，他居然没理我！"
+          "text": "今天电梯里跟多米诺打招呼，他居然没理我！",
+          "html": "今天电梯里跟多米诺打招呼，他居然没理我！"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:35 上午",
-          "text": "他肯定是对我有意见，是不是因为上次开会我反驳了他？",
-          "html": "他肯定是对我有意见，是不是因为上次开会我反驳了他？"
+          "text": "他肯定对我有意见。是不是上次开会我顶了他一句？",
+          "html": "他肯定对我有意见。是不是上次开会我顶了他一句？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "他是不是在背后说我坏话？想给我穿小鞋？",
-          "html": "他是不是在背后说我坏话？想给我穿小鞋？"
+          "text": "他是不是在背后说我？要给我穿小鞋？",
+          "html": "他是不是在背后说我？要给我穿小鞋？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "11:00 上午",
-          "text": "我要不要先下手为强，在老板面前给他上点眼药？",
-          "html": "我要不要先下手为强，在老板面前给他上点眼药？"
+          "text": "要不我先下手，在老板面前提他两句？",
+          "html": "要不我先下手，在老板面前提他两句？"
         },
         {
           "name": "真相",
           "time": "其实是...",
-          "text": "多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。",
-          "html": "多米诺只是忘带眼镜了，根本没看清是谁。而且他在想晚上吃什么。",
+          "text": "多米诺那天忘戴眼镜，根本没看清是谁。他满脑子在想晚上吃什么。",
+          "html": "多米诺那天忘戴眼镜，根本没看清是谁。他满脑子在想晚上吃什么。",
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            我们的大脑天生有一种<strong>\"负面偏见\"</strong>：当事情出错时，我们倾向于假设最坏的情况。这是进化留给我们的生存本能——在原始社会，假设别人可能要伤害你是明智的。\n                        </p>\n                        <p>\n                            但在现代社会，这种思维模式会让我们：\n                        </p>\n                        <ul>\n                            <li> <strong>焦虑：</strong>无端揣测别人的意图</li>\n                            <li> <strong>愤怒：</strong>对莫须有的\"恶意\"生气</li>\n                            <li> <strong>冲突：</strong>基于误解做出过激反应</li>\n                        </ul>\n                        <p>\n                            最后往往发现：对方根本没想那么多，只是单纯的<strong>疏忽、忙碌、或者犯傻</strong>。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<p>出了岔子，人往往先往<strong>最坏的地方</strong>想。在野外，多疑一点能保命，这习惯就这么留了下来。</p>\n<p>搬到办公室和群聊里，它只会让人难受。</p>\n<ul>\n<li><strong>心里发慌</strong>，一遍遍猜别人想干嘛。</li>\n<li><strong>白生气</strong>，气的是自己编出来的恶意。</li>\n<li><strong>闹出事</strong>，照着误会去回击，真把关系弄僵了。</li>\n</ul>\n<p>回头一查，对方常常什么都没想，就是<strong>没注意、太忙，或者犯了迷糊</strong>。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 假设善意",
+      "titleHtml": "✅ 先往好处想",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "9:30 上午",
-          "text": "今天在电梯里跟多米诺打招呼，他没理我。有点奇怪。",
-          "html": "今天在电梯里跟多米诺打招呼，他没理我。有点奇怪。"
+          "text": "今天电梯里跟多米诺打招呼，他没理我，有点怪。",
+          "html": "今天电梯里跟多米诺打招呼，他没理我，有点怪。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:31 上午",
-          "text": "不过他可能没看到我？或者在想事情？算了，不纠结了。",
-          "html": "不过他可能没看到我？或者在想事情？算了，不纠结了。"
+          "text": "可能没看见？或者在想事？算了，不琢磨了。",
+          "html": "可能没看见？或者在想事？算了，不琢磨了。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:35 上午",
-          "text": "@多米诺 早啊！刚才电梯里是你吗？我还以为我认错人了 😂",
-          "html": "@多米诺 早啊！刚才电梯里是你吗？我还以为我认错人了 😂"
+          "text": "@多米诺 早，刚才电梯里是你吧？我还怕认错人了",
+          "html": "@多米诺 早，刚才电梯里是你吧？我还怕认错人了"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "9:36 上午",
-          "text": "哈哈是我！抱歉没看到你，我今天忘带眼镜了，眼前一片模糊 😅",
-          "html": "哈哈是我！抱歉没看到你，我今天忘带眼镜了，眼前一片模糊 😅"
+          "text": "是我是我！不好意思，今天忘戴眼镜了，看谁都是一团",
+          "html": "是我是我！不好意思，今天忘戴眼镜了，看谁都是一团"
         }
       ],
-      "explanationHtml": "<div>\n                        <p>\n                            <strong>\"假设善意\"(Assume Good Intent)</strong> 是汉隆剃刀的日常用法，不是它的全部：\n                        </p>\n                        <p>\n                            当别人的行为让你不舒服时，先假设他们<strong>不是故意的</strong>。大多数情况下，你会发现真相是：\n                        </p>\n                        <ul>\n                            <li> 他们太忙/太累了</li>\n                            <li> 他们没注意到</li>\n                            <li> 他们单纯地犯傻了</li>\n                            <li> 他们在玩手机没听到</li>\n                        </ul>\n                        <p>\n                            <strong>当然，如果同样的事情反复发生，那就需要认真谈谈了。但第一次？先假设善意。</strong>\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>假设善意（Assume Good Intent）</strong>是汉隆剃刀最常见的用法。</p>\n<p>别人哪儿让你不舒服了，先当他<strong>不是故意的</strong>。多数时候真相是这几种。</p>\n<ul>\n<li>太忙，或者太累</li>\n<li>没注意到</li>\n<li>犯迷糊了</li>\n<li>在看手机，没听见</li>\n</ul>\n<p><strong>同样的事一次次发生，就该找他聊聊了。头一回，先往好处想。</strong></p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方可能并没有恶意，只是<strong>太忙、太累、或者单纯的犯傻了</strong>。\n            </p>\n            <p>概念提出者：Robert J. Hanlon</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方大概没有恶意，只是<strong>太忙、太累，或者犯了迷糊</strong>。\n            </p>\n            <p>概念提出者：Robert J. Hanlon</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "postels-law",
@@ -943,15 +943,15 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "波斯特尔法则",
     "englishTitle": "Postel's Law",
-    "summary": "发消息时谨慎，收消息时宽容。文字不带情绪。",
+    "summary": "自己发的写清楚，别人发的往宽里读。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "波斯特尔法则",
       "subtitleHtml": "Postel's Law / 文字不带情绪",
-      "leadHtml": "发消息时要谨慎清晰，<br>\n                    收消息时要宽容理解。"
+      "leadHtml": "自己发的消息写清楚，<br>\n                    别人发的消息往宽里读。"
     },
     "bad": {
-      "titleHtml": "❌ 脑补过度",
+      "titleHtml": "❌ 一个「哦」脑补一出戏",
       "lines": [
         {
           "character": "cider",
@@ -971,61 +971,61 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "10:31 上午",
-          "text": "\"哦\"？就一个\"哦\"？他是不是不满意？还是在敷衍我？",
-          "html": "\"哦\"？就一个\"哦\"？他是不是不满意？还是在敷衍我？"
+          "text": "「哦」？就一个「哦」？是不满意吗？还是在敷衍我？",
+          "html": "「哦」？就一个「哦」？是不满意吗？还是在敷衍我？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:35 上午",
-          "text": "完了，他肯定觉得方案很烂。我要不要重做？",
-          "html": "完了，他肯定觉得方案很烂。我要不要重做？"
+          "text": "完了，他肯定觉得方案很烂。要不要重做？",
+          "html": "完了，他肯定觉得方案很烂。要不要重做？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "11:00 上午",
-          "text": "我是不是哪里得罪他了？最近他是不是对我有意见？",
-          "html": "我是不是哪里得罪他了？最近他是不是对我有意见？"
+          "text": "我哪儿得罪他了？他最近是不是对我有意见？",
+          "html": "我哪儿得罪他了？他最近是不是对我有意见？"
         },
         {
           "name": "真相",
           "time": "其实是...",
-          "text": "多米诺只是在开会，随手回了个\"哦\"表示\"收到了一会儿看\"。",
-          "html": "多米诺只是在开会，随手回了个\"哦\"表示\"收到了一会儿看\"。",
+          "text": "多米诺在开会，随手回了个「哦」，意思是收到了，回头看。",
+          "html": "多米诺在开会，随手回了个「哦」，意思是收到了，回头看。",
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">文字缺了语气和表情</h3>\n                        <p>\n                            面对面时，语调、表情和停顿会一起参与表达；文字把这些线索全切掉了。具体比例常被引用成 7-38-55，但那只是 Mehrabian 在特定情绪实验里的结果，不能当通用公式。\n                        </p>\n                        <p>\n                            同一句话，不同的人会读出完全不同的情绪：\n                        </p>\n                        <ul>\n                            <li> \"好的\" → 你觉得是冷漠，对方可能只是在忙</li>\n                            <li> \"行吧\" → 你觉得是敷衍，对方可能真的觉得\"行\"</li>\n                            <li> \"...\" → 你觉得是无语，对方可能只是在思考</li>\n                            <li> \"😊\" → 你觉得是嘲讽，对方可能真的在笑</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">打出来的字没有语气</h3>\n<p>当面说话，语调、表情、停顿都在帮忙。换成文字，这些全没了。常听人引用的 7-38-55 比例，来自 Mehrabian 一组专门测情绪表达的实验，拿来当通用公式不对。</p>\n<p>同一句话，换个人读，情绪就不一样了。</p>\n<ul>\n<li>「好的」，你读出冷淡，对方可能只是忙。</li>\n<li>「行吧」，你读出敷衍，对方可能真觉得行。</li>\n<li>「…」，你读出无语，对方可能在想。</li>\n<li>一个笑脸，你读出嘲讽，对方可能真在笑。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 双向校验",
+      "titleHtml": "✅ 两头都留余地",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "多米诺，下午那个方案你看了吗？不急，有空回复就行～",
-          "html": "多米诺，下午那个方案你看了吗？不急，有空回复就行～"
+          "text": "多米诺，下午那个方案你看了吗？不急，有空再回～",
+          "html": "多米诺，下午那个方案你看了吗？不急，有空再回～"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:30 上午",
-          "text": "看到了！正在开会，晚点细看后给你反馈 👍",
-          "html": "看到了！正在开会，晚点细看后给你反馈 👍"
+          "text": "看到了，在开会，晚点细看再跟你说",
+          "html": "看到了，在开会，晚点细看再跟你说"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:31 上午",
-          "text": "好的，辛苦！🙏",
-          "html": "好的，辛苦！🙏"
+          "text": "好，辛苦了",
+          "html": "好，辛苦了"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">波斯特尔法则</h3>\n                        <p>\n                            互联网先驱 Jon Postel 提出的协议设计原则（这里借用到人际沟通）：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"Be conservative in what you send, be liberal in what you accept.\"<br>\n                            <strong>发送时保守谨慎，接收时宽容大度。</strong>\n                        </blockquote>\n                        <p><strong>发消息时：</strong></p>\n                        <ul>\n                            <li> 表达清晰，避免歧义</li>\n                            <li> 使用表情符号传递情绪</li>\n                            <li> 加上语气词（\"好的～\"而不是\"好的\"）</li>\n                        </ul>\n                        <p><strong>收消息时：</strong></p>\n                        <ul>\n                            <li> 假设对方是善意的</li>\n                            <li> 不确定时直接问清楚</li>\n                            <li> 别脑补太多剧情</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">波斯特尔法则</h3>\n<p>这是网络先驱 Jon Postel 给协议定的规矩，这里借来用在人身上。</p>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">Be conservative in what you send, be liberal in what you accept.<br><strong>发的时候严一点，收的时候宽一点。</strong></blockquote>\n<p><strong>自己发消息</strong></p>\n<ul>\n<li>写清楚，别让人猜。</li>\n<li>不急就说一声不急。</li>\n<li>怕显得冷，加个语气词，「好的～」读起来就软一些。</li>\n</ul>\n<p><strong>读别人的消息</strong></p>\n<ul>\n<li>先当对方是好意。</li>\n<li>拿不准就直接问。</li>\n<li>别自己往下编剧情。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方可能只是在忙，那个<strong>\"哦\"</strong>真的只是\"收到\"的意思。\n            </p>\n            <p>Named after: Jon Postel (RFC 793)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方可能只是在忙，那个<strong>「哦」</strong>就是收到的意思。\n            </p>\n            <p>Named after: Jon Postel (RFC 793)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "three-strikes",
@@ -1033,16 +1033,16 @@ const laws: Law[] = [
     "category": "relation",
     "title": "三振出局",
     "englishTitle": "Three Strikes",
-    "summary": "来回超过3条消息还说不清？直接打电话。",
+    "summary": "来回三条还没说清，就打个电话。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "三振出局",
       "subtitleHtml": "Three Strikes and You Call",
-      "leadHtml": "来回超过三条消息还说不清？<br>\n                    直接打电话。📞",
+      "leadHtml": "来回三条还没说清，<br>\n                    就打个电话吧。",
       "effect": "three-strikes-count"
     },
     "bad": {
-      "titleHtml": "❌ 无限循环",
+      "titleHtml": "❌ 绕个没完",
       "lines": [
         {
           "character": "cider",
@@ -1069,41 +1069,41 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "2:15 下午",
-          "text": "上次哪个？我们上次讨论了好几个事",
-          "html": "上次哪个？我们上次讨论了好几个事"
+          "text": "上次哪个？上次聊了好几件事",
+          "html": "上次哪个？上次聊了好几件事"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:20 下午",
-          "text": "就是周三开会说的那个啊",
-          "html": "就是周三开会说的那个啊"
+          "text": "就周三开会说的那个",
+          "html": "就周三开会说的那个"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "2:25 下午",
-          "text": "周三开会说的哪个？合同还是报价单？",
-          "html": "周三开会说的哪个？合同还是报价单？"
+          "text": "周三说的哪个？合同还是报价单？",
+          "html": "周三说的哪个？合同还是报价单？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "2:30 下午",
-          "text": "不是那个，是另一个",
-          "html": "不是那个，是另一个"
+          "text": "都不是，另一个",
+          "html": "都不是，另一个"
         },
         {
           "name": "",
-          "text": "（30分钟过去了，问题还没搞清楚...）",
-          "html": "（30分钟过去了，问题还没搞清楚...）",
+          "text": "（半小时过去了，还没对上是哪件事）",
+          "html": "（半小时过去了，还没对上是哪件事）",
           "tone": "meta"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">文字沟通的局限</h3>\n                        <p>\n                            文字聊天非常适合<strong>简单、明确的信息传递</strong>，但当问题变得复杂或模糊时，它会变成效率杀手。\n                        </p>\n                        <p>\n                            <strong>问题所在：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>延迟：</strong>每条消息都要等回复，耗时成倍增加</li>\n                            <li> <strong>碎片化：</strong>上下文不断丢失，需要反复确认</li>\n                            <li> <strong>误解积累：</strong>每次文字交换都可能引入新的歧义</li>\n                        </ul>\n                        <p>\n                            一个3分钟的电话能解决的问题，用文字可能要折腾30分钟。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">打字有打字的短处</h3>\n<p>打字适合传<strong>简单、明确</strong>的事。事情一复杂、一模糊，打字就慢了。</p>\n<ul>\n<li><strong>每句都要等</strong>。一来一回，时间翻着倍往上加。</li>\n<li><strong>前面的话被冲散</strong>。说着说着就得往回翻，再确认一遍。</li>\n<li><strong>越说越歪</strong>。每多一轮，就多一个能读岔的地方。</li>\n</ul>\n<p>电话里三分钟的事，打字能磨半小时。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 三振出局",
+      "titleHtml": "✅ 第三条就打电话",
       "lines": [
         {
           "character": "cider",
@@ -1137,20 +1137,20 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "15:15",
-          "text": "算了，我直接打给你说清楚，2 分钟就行。",
-          "html": "算了，我直接打给你说清楚，2 分钟就行。"
+          "text": "算了，我打给你吧，两分钟说完。",
+          "html": "算了，我打给你吧，两分钟说完。"
         },
         {
           "name": "语音通话",
           "time": "15:15",
-          "text": "通话时长 3 分钟，问题已解决",
-          "html": "通话时长 3 分钟，问题已解决",
+          "text": "通话 3 分钟，事情说清了",
+          "html": "通话 3 分钟，事情说清了",
           "tone": "meta"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">三振出局法则</h3>\n                        <p>\n                            <strong>规则很简单：</strong>如果一个问题来回<strong>超过3条消息</strong>还说不清楚，就应该切换到实时沟通。\n                        </p>\n                        <p><strong>实时沟通的优势：</strong></p>\n                        <ul>\n                            <li> <strong>即时反馈：</strong>可以立刻澄清误解</li>\n                            <li> <strong>语调信息：</strong>听到对方的语气，减少误读</li>\n                            <li> <strong>效率提升：</strong>复杂问题几分钟搞定</li>\n                        </ul>\n                        <p>\n                            <strong>别让键盘成为效率的敌人。该打电话时就打电话。📱</strong>\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">三振出局</h3>\n<p>规矩就一条。一件事来回<strong>超过 3 条</strong>还没说清，就换成打电话或者当面说。</p>\n<ul>\n<li><strong>马上能问</strong>。哪里听岔了，当场就能纠正。</li>\n<li><strong>听得见语气</strong>。对方急不急、烦不烦，一听就知道。</li>\n<li><strong>快</strong>。绕了半天的事，几分钟就说完了。</li>\n</ul>\n<p>打电话之前，先问一句对方方便不方便。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明来回打字已经说不清楚了，<strong>不如直接打个电话</strong>。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明打字已经说不清了，<strong>打个电话会快一些</strong>。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "bluf",
@@ -1158,15 +1158,15 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "BLUF 原则",
     "englishTitle": "Bottom Line Up Front",
-    "summary": "先说结论，再说细节。别写悬疑小说。",
+    "summary": "结论放第一句，细节往后放。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "BLUF 原则",
       "subtitleHtml": "Bottom Line Up Front",
-      "leadHtml": "先说结论，再说细节。<br>\n                    别让人猜你的重点。"
+      "leadHtml": "第一句先说结论，<br>\n                    细节放后面。"
     },
     "bad": {
-      "titleHtml": "❌ 铺垫大师",
+      "titleHtml": "❌ 铺垫半天",
       "lines": [
         {
           "character": "cider",
@@ -1179,22 +1179,22 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "9:01 上午",
-          "text": "本来想坐地铁的，但是那条线在维修",
-          "html": "本来想坐地铁的，但是那条线在维修"
+          "text": "本来想坐地铁，结果那条线在检修",
+          "html": "本来想坐地铁，结果那条线在检修"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:02 上午",
-          "text": "所以我打了个车，但是路上堵了好久",
-          "html": "所以我打了个车，但是路上堵了好久"
+          "text": "只好打车，路上又堵了好久",
+          "html": "只好打车，路上又堵了好久"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:03 上午",
-          "text": "然后我到那边发现门关着",
-          "html": "然后我到那边发现门关着"
+          "text": "到了发现门关着",
+          "html": "到了发现门关着"
         },
         {
           "character": "cider",
@@ -1207,8 +1207,8 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "9:05 上午",
-          "text": "兄弟，你到底想说什么？😅",
-          "html": "兄弟，你到底想说什么？😅"
+          "text": "兄弟，你到底想说啥？",
+          "html": "兄弟，你到底想说啥？"
         },
         {
           "character": "cider",
@@ -1218,36 +1218,36 @@ const laws: Law[] = [
           "html": "哦对，明天开会改到下午3点。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">时间是宝贵的</h3>\n                        <p>\n                            人们在阅读时，注意力是<strong>逐渐衰减</strong>的。如果重点藏在最后，很多人根本看不到那里。\n                        </p>\n                        <p>\n                            <strong>常见问题：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>流水账叙事：</strong>按时间顺序讲完所有细节</li>\n                            <li> <strong>悬念铺垫：</strong>像写小说一样吊人胃口</li>\n                            <li> <strong>怕太直接：</strong>觉得先说结论不礼貌</li>\n                        </ul>\n                        <p>\n                            结果是：你说了5分钟，对方还不知道你在说啥。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">读的人看不到最后</h3>\n<p>人读消息，注意力是<strong>越往后越少</strong>的。重点放在最后，很多人压根读不到。</p>\n<ul>\n<li><strong>记流水账</strong>，按时间顺序从早上讲起。</li>\n<li><strong>卖关子</strong>，像讲故事一样吊着人。</li>\n<li><strong>怕太直</strong>，觉得上来就说结论没礼貌。</li>\n</ul>\n<p>结果说了五分钟，对方还不知道你要说什么。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ BLUF 原则",
+      "titleHtml": "✅ 先说结论",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "9:00 上午",
-          "text": "明天开会改到下午3点。",
-          "html": "明天开会改到下午3点。"
+          "text": "明天的会改到下午 3 点。",
+          "html": "明天的会改到下午 3 点。"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "9:00 上午",
-          "text": "原因：会议室被临时占用了。我今天去现场确认过了。",
-          "html": "原因：会议室被临时占用了。我今天去现场确认过了。"
+          "text": "会议室被临时借走了，我今天去现场确认过。",
+          "html": "会议室被临时借走了，我今天去现场确认过。"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "9:01 上午",
-          "text": "收到，已更新日程 👍",
-          "html": "收到，已更新日程 👍"
+          "text": "收到，日程改了",
+          "html": "收到，日程改了"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">军事级沟通效率</h3>\n                        <p>\n                            <strong>BLUF</strong> (Bottom Line Up Front) 是军事和商业沟通中的黄金法则：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n                            <strong>先说结论 → 再说原因 → 最后补充细节</strong>\n                        </blockquote>\n                        <p><strong>消息结构模板：</strong></p>\n                        <ol>\n                            <li> <strong>结论/请求：</strong>你要告诉对方的核心信息</li>\n                            <li> <strong>原因/背景：</strong>为什么会这样（简要）</li>\n                            <li> <strong>细节/附件：</strong>需要的话再补充（可选）</li>\n                        </ol>\n                        <p>\n                            <strong>别写悬疑小说，写结论。</strong>\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">BLUF</h3>\n<p><strong>BLUF</strong>（Bottom Line Up Front）是军队公文里的写法，后来很多公司也这么写。</p>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\"><strong>先结论，再原因，最后细节</strong></blockquote>\n<p><strong>一条消息可以这样排</strong></p>\n<ol>\n<li><strong>结论或请求</strong>。你要对方知道或者去做的那件事。</li>\n<li><strong>原因</strong>。为什么，一两句就够。</li>\n<li><strong>细节</strong>。需要的话再补，附件也放这里。</li>\n</ol>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方可能正在等你<strong>直接说重点</strong>。\n            </p>\n            <p>Source: U.S. Army Regulation 25-50（AR 25-50）</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方在等你<strong>先把重点说出来</strong>。\n            </p>\n            <p>Source: U.S. Army Regulation 25-50（AR 25-50）</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "sturgeons-law",
@@ -1255,89 +1255,89 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "斯特金定律",
     "englishTitle": "Sturgeon's Law",
-    "summary": "90%的东西都是垃圾，学会筛选。",
+    "summary": "九成的东西都是垃圾，挑着看。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "斯特金定律",
       "subtitleHtml": "Sturgeon's Law",
-      "leadHtml": "90% 的东西都是垃圾。<br>\n                    这不是悲观，这是现实。"
+      "leadHtml": "90% 的东西都是垃圾。<br>\n                    挑着看就行。"
     },
     "bad": {
-      "titleHtml": "❌ 信息焦虑",
+      "titleHtml": "❌ 每条都当真",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "这篇文章说咖啡对身体好，要多喝",
-          "html": "这篇文章说咖啡对身体好，要多喝"
+          "text": "这篇说咖啡对身体好，要多喝",
+          "html": "这篇说咖啡对身体好，要多喝"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:30 上午",
-          "text": "这篇文章说咖啡对心脏不好，要少喝",
-          "html": "这篇文章说咖啡对心脏不好，要少喝"
+          "text": "这篇说咖啡伤心脏，要少喝",
+          "html": "这篇说咖啡伤心脏，要少喝"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "11:00 上午",
-          "text": "这个评论说第一篇是对的，有100个赞",
-          "html": "这个评论说第一篇是对的，有100个赞"
+          "text": "这条评论说第一篇对，100 个赞",
+          "html": "这条评论说第一篇对，100 个赞"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "11:30 上午",
-          "text": "那个评论说第二篇是对的，有200个赞",
-          "html": "那个评论说第二篇是对的，有200个赞"
+          "text": "那条评论说第二篇对，200 个赞",
+          "html": "那条评论说第二篇对，200 个赞"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "12:00 中午",
-          "text": "我到底还能不能喝咖啡了？！😵",
-          "html": "我到底还能不能喝咖啡了？！😵"
+          "text": "所以我到底还能不能喝咖啡？",
+          "html": "所以我到底还能不能喝咖啡？"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">信息爆炸时代的陷阱</h3>\n                        <p>\n                            互联网让每个人都能发声，但这也意味着<strong>噪音远远超过信号</strong>。\n                        </p>\n                        <p>\n                            <strong>问题所在：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>人人都能发言：</strong>专家和键盘侠享有同等曝光</li>\n                            <li> <strong>情绪驱动传播：</strong>极端观点比理性观点更容易传播</li>\n                            <li> <strong>流量为王：</strong>为了点击量，标题党横行</li>\n                        </ul>\n                        <p>\n                            如果你认真对待每一条信息，你会被淹没在垃圾海洋里。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">谁都能发，就什么都有</h3>\n<p>网上谁都能说话，<strong>没用的远比有用的多</strong>。</p>\n<ul>\n<li><strong>谁都能发</strong>。懂行的和瞎说的，摆在同一个页面上。</li>\n<li><strong>越极端越火</strong>。吓人的说法比平实的说法传得快。</li>\n<li><strong>为了点击</strong>。标题能写多夸张就写多夸张。</li>\n</ul>\n<p>每一条都认真看，人会被淹掉。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 学会筛选",
+      "titleHtml": "✅ 挑着看",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "又看到一篇\"震惊！XXX竟然...\"的文章",
-          "html": "又看到一篇\"震惊！XXX竟然...\"的文章"
+          "text": "又一篇「震惊！XXX 竟然…」",
+          "html": "又一篇「震惊！XXX 竟然…」"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:01 上午",
-          "text": "等等，先检查一下：来源是谁？有没有引用原始研究？",
-          "html": "等等，先检查一下：来源是谁？有没有引用原始研究？"
+          "text": "等下，谁写的？引了原始研究没有？",
+          "html": "等下，谁写的？引了原始研究没有？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:02 上午",
-          "text": "没有可信来源，直接划走。我的时间比这更值钱。",
-          "html": "没有可信来源，直接划走。我的时间比这更值钱。"
+          "text": "没来源，划走。",
+          "html": "没来源，划走。"
         },
         {
           "name": "心态",
           "time": "平和",
-          "text": "节省了30分钟，内心毫无波动",
-          "html": "节省了30分钟，内心毫无波动",
+          "text": "省了半小时，心情没变",
+          "html": "省了半小时，心情没变",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">斯特金定律</h3>\n                        <p>\n                            科幻作家西奥多·斯特金在1957年提出：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"Ninety percent of everything is crud.\"<br>\n                            <strong>90% 的东西都是垃圾。</strong>\n                        </blockquote>\n                        <p><strong>如何应对：</strong></p>\n                        <ul>\n                            <li> <strong>质疑来源：</strong>谁说的？有什么资质？</li>\n                            <li> <strong>查找原始数据：</strong>有没有引用可验证的研究？</li>\n                            <li> <strong>等待共识：</strong>一条信息被多个独立来源确认了吗？</li>\n                            <li> <strong>敢于忽略：</strong>大部分内容不值得你的时间</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">斯特金定律</h3>\n<p>科幻作家西奥多·斯特金 1957 年说的。</p>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">Ninety percent of everything is crud.<br><strong>什么东西都有九成是垃圾。</strong></blockquote>\n<p><strong>怎么挑</strong></p>\n<ul>\n<li><strong>看是谁说的</strong>。他懂这个吗？</li>\n<li><strong>找原始出处</strong>。有没有能查到的研究或数据？</li>\n<li><strong>等等再信</strong>。好几个互不相干的来源都这么说了吗？</li>\n<li><strong>敢不看</strong>。大部分东西不值得你花时间。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>不要把每条网上的评论都当回事</strong>。\n            </p>\n            <p>提出者：Theodore Sturgeon (1957)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>别把网上每条评论都当回事</strong>。\n            </p>\n            <p>提出者：Theodore Sturgeon (1957)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "greshams-law",
@@ -1345,15 +1345,15 @@ const laws: Law[] = [
     "category": "systems",
     "title": "格雷舍姆法则",
     "englishTitle": "Gresham's Law",
-    "summary": "劣质内容驱逐优质内容，别喂养标题党。",
+    "summary": "标题党挤走好文章，别再给它送点击。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "格雷舍姆法则",
-      "subtitleHtml": "Gresham's Law (网络版)",
-      "leadHtml": "劣质内容驱逐优质内容。<br>\n                    标题党永远比深度文章更火。🔥"
+      "subtitleHtml": "Gresham's Law（网络版）",
+      "leadHtml": "烂内容会把好内容挤走。<br>\n                    标题党总比认真写的文章火。"
     },
     "bad": {
-      "titleHtml": "❌ 流量至上",
+      "titleHtml": "❌ 谁点得多谁赢",
       "lines": [
         {
           "character": "cider",
@@ -1384,15 +1384,15 @@ const laws: Law[] = [
         {
           "name": "结果",
           "time": "悲剧",
-          "text": "深度作者心灰意冷，转行写标题党了...",
-          "html": "深度作者心灰意冷，转行写标题党了...",
+          "text": "写长文的作者心灰意冷，也改写标题党了…",
+          "html": "写长文的作者心灰意冷，也改写标题党了…",
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">劣币驱逐良币</h3>\n                        <p>\n                            1558 年，Thomas Gresham 在给伊丽莎白一世的信里记录了这个现象：两种货币并存时，人们会把足值的钱藏起来，把不足值的花出去。1858 年，Macleod 用他的名字把这条规律命名为「格雷舍姆法则」。\n                        </p>\n                        <p>\n                            <strong>在互联网上，同样的逻辑在运作：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>算法偏好：</strong>点击率高的内容获得更多曝光</li>\n                            <li> <strong>情绪优先：</strong>愤怒、恐惧比理性更容易传播</li>\n                            <li> <strong>注意力稀缺：</strong>标题党3秒抓住眼球，深度文章需要30分钟</li>\n                        </ul>\n                        <p>\n                            最终，创作者被迫向流量妥协，<strong>优质内容逐渐消失</strong>。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">劣币驱逐良币</h3>\n<p>1558 年，Thomas Gresham 写信给伊丽莎白一世，提到一个现象。两种钱一起流通，大家会把成色足的藏起来，先花掉成色差的。1858 年，Macleod 用他的名字给这条规律起了名，叫格雷舍姆法则。</p>\n<p><strong>网上也是这样</strong></p>\n<ul>\n<li><strong>推荐看点击</strong>。点的人多，就推给更多人。</li>\n<li><strong>情绪跑得快</strong>。让人生气、害怕的东西，比讲道理的传得远。</li>\n<li><strong>没人有耐心</strong>。标题党三秒抓住人，一篇长文要读半小时。</li>\n</ul>\n<p>写的人只好跟着流量走，<strong>好文章越来越少</strong>。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 主动寻找优质内容",
+      "titleHtml": "✅ 自己去找好内容",
       "lines": [
         {
           "character": "cider",
@@ -1405,27 +1405,27 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "行动",
-          "text": "订阅了几个专业领域的newsletter",
-          "html": "订阅了几个专业领域的newsletter"
+          "text": "订了几个行业里的 newsletter",
+          "html": "订了几个行业里的 newsletter"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "行动",
-          "text": "给写深度内容的创作者点赞、打赏、转发",
-          "html": "给写深度内容的创作者点赞、打赏、转发"
+          "text": "看到认真写的作者，点赞、打赏、转发",
+          "html": "看到认真写的作者，点赞、打赏、转发"
         },
         {
           "name": "结果",
           "time": "改变",
-          "text": "信息质量提升，焦虑减少，思考深度增加",
-          "html": "信息质量提升，焦虑减少，思考深度增加",
+          "text": "刷到的东西靠谱多了，也没那么焦虑了",
+          "html": "刷到的东西靠谱多了，也没那么焦虑了",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">用行动投票</h3>\n                        <p>\n                            算法是根据你的行为来推荐内容的。<strong>你点击什么，就会看到更多什么。</strong>\n                        </p>\n                        <p><strong>你可以做的事：</strong></p>\n                        <ul>\n                            <li> <strong>不点击标题党：</strong>即使好奇也忍住</li>\n                            <li> <strong>主动寻找优质来源：</strong>订阅、收藏、书签</li>\n                            <li> <strong>支持好内容：</strong>点赞、评论、付费</li>\n                            <li> <strong>减少刷信息流：</strong>主动搜索取代被动接收</li>\n                        </ul>\n                        <p>每一次点击都是一次投票。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">用点击投票</h3>\n<p>推荐系统看你点了什么。<strong>你点什么，它就多给你什么。</strong></p>\n<ul>\n<li><strong>标题党别点</strong>，好奇也忍一下。</li>\n<li><strong>自己找来源</strong>，订阅、收藏、存书签。</li>\n<li><strong>给好内容撑腰</strong>，点赞、评论、付费。</li>\n<li><strong>少刷信息流</strong>，想看什么自己去搜。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你能<strong>支持优质内容，远离标题党</strong>。\n            </p>\n            <p>原始记录：Thomas Gresham (1558)；命名：Henry Dunning Macleod (1858)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>多给好内容一点点击，少喂标题党</strong>。\n            </p>\n            <p>原始记录：Thomas Gresham (1558)。命名：Henry Dunning Macleod (1858)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "assume-public",
@@ -1433,52 +1433,52 @@ const laws: Law[] = [
     "category": "systems",
     "title": "假设公开原则",
     "englishTitle": "Assume Public",
-    "summary": "假设你发的一切都会被永久保存、被所有人看到。",
+    "summary": "发出去的东西，当它会被所有人看到。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "假设公开原则",
       "subtitleHtml": "Assume Everything is Public",
-      "leadHtml": "在网上发的任何东西，<br>\n                    都要假设它会被永久保存、被所有人看到。"
+      "leadHtml": "在网上发的任何东西，<br>\n                    都当它会被永久存着、被所有人看到。"
     },
     "bad": {
-      "titleHtml": "❌ 侥幸心理",
+      "titleHtml": "❌ 以为没人看见",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "私聊",
-          "text": "老板真是个傻X，今天又在会上说那些蠢话",
-          "html": "老板真是个傻X，今天又在会上说那些蠢话"
+          "text": "老板今天开会又在说胡话，真受不了",
+          "html": "老板今天开会又在说胡话，真受不了"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "私聊",
-          "text": "哈哈哈确实 😂",
-          "html": "哈哈哈确实 😂"
+          "text": "哈哈哈确实",
+          "html": "哈哈哈确实"
         },
         {
           "name": "",
-          "text": "（三个月后...）",
-          "html": "（三个月后...）",
+          "text": "（三个月后）",
+          "html": "（三个月后）",
           "tone": "meta"
         },
         {
           "character": "tail",
           "name": "尾巴",
           "time": "正式邮件",
-          "text": "西打，请到我办公室来一趟。有人举报你在内部沟通中使用不当言论...",
-          "html": "西打，请到我办公室来一趟。有人举报你在内部沟通中使用不当言论..."
+          "text": "西打，来我办公室一趟。有人反映你在内部群里说了些不合适的话…",
+          "html": "西打，来我办公室一趟。有人反映你在内部群里说了些不合适的话…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "崩溃",
-          "text": "完了... 那条消息被截图了...",
-          "html": "完了... 那条消息被截图了..."
+          "text": "完了…那条被截图了…",
+          "html": "完了…那条被截图了…"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">互联网没有橡皮擦</h3>\n                        <p>\n                            很多人以为：\n                        </p>\n                        <ul>\n                            <li> \"私聊没关系，只有我们俩看得到\"</li>\n                            <li> \"删掉就好了，谁会记得\"</li>\n                            <li> \"匿名账号，查不到是我\"</li>\n                            <li> \"仅好友可见，安全的\"</li>\n                        </ul>\n                        <p>\n                            <strong>现实是：</strong>\n                        </p>\n                        <ul>\n                            <li> 私聊可以被截图</li>\n                            <li> 删除的内容可能早被人保存</li>\n                            <li> 匿名账号可能被关联分析</li>\n                            <li> 好友可能会转发</li>\n                        </ul>\n                        <p>\n                            <strong>互联网有记忆，而且记忆力惊人。</strong>\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">网上没有橡皮擦</h3>\n<p>很多人心里是这么想的。</p>\n<ul>\n<li>私聊就我们俩，没事。</li>\n<li>删了就行，谁记得。</li>\n<li>小号，查不到我。</li>\n<li>仅好友可见，安全。</li>\n</ul>\n<p><strong>实际上</strong></p>\n<ul>\n<li>私聊能被截图。</li>\n<li>你删之前，可能已经有人存了。</li>\n<li>小号能被对上号。</li>\n<li>好友会转发。</li>\n</ul>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 公告栏测试",
@@ -1487,34 +1487,34 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "发送前",
-          "text": "我想吐槽老板...",
-          "html": "我想吐槽老板..."
+          "text": "想吐槽下老板…",
+          "html": "想吐槽下老板…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "暂停",
-          "text": "等等，如果这条消息被贴到公司公告栏上，我会怎样？",
-          "html": "等等，如果这条消息被贴到公司公告栏上，我会怎样？"
+          "text": "等下，这条要是被贴到公司公告栏上，我会怎样？",
+          "html": "等下，这条要是被贴到公司公告栏上，我会怎样？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "决定",
-          "text": "还是算了吧。有意见当面说，或者私下喝咖啡聊。",
-          "html": "还是算了吧。有意见当面说，或者私下喝咖啡聊。"
+          "text": "算了。有意见当面说，或者约他喝杯咖啡聊。",
+          "html": "算了。有意见当面说，或者约他喝杯咖啡聊。"
         },
         {
           "name": "结果",
           "time": "安全",
-          "text": "避免了一场潜在的职业危机",
-          "html": "避免了一场潜在的职业危机",
+          "text": "一场麻烦没发生",
+          "html": "一场麻烦没发生",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">发送前的终极检验</h3>\n                        <p>\n                            在点击发送之前，问自己：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"如果这条消息被贴到公司公告栏 / 发到我妈的微信群 / 上了热搜...<br>\n                            <strong>我会后悔吗？</strong>\"\n                        </blockquote>\n                        <ul>\n                            <li> <strong>情绪激动时：</strong>写完存草稿，第二天再决定</li>\n                            <li> <strong>敏感话题：</strong>线下说，别留痕迹</li>\n                            <li> <strong>私密信息：</strong>不该通过不受控的渠道传输</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">发之前问一句</h3>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">这条要是被贴到公司公告栏、转进家族群、上了热搜，<br><strong>我会后悔吗？</strong></blockquote>\n<ul>\n<li><strong>正在气头上</strong>，写完存草稿，第二天再决定发不发。</li>\n<li><strong>敏感的话题</strong>，当面说，别留字。</li>\n<li><strong>私密的信息</strong>，别走你管不住的渠道。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>在发送之前再想一想</strong>。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>发之前再想一下</strong>。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "echo-chamber",
@@ -1522,89 +1522,89 @@ const laws: Law[] = [
     "category": "systems",
     "title": "回声室效应",
     "englishTitle": "Echo Chamber",
-    "summary": "你只看自己想看的，算法再把它放大。",
+    "summary": "你只看想看的，推荐再给你多喂一点。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "回声室效应",
       "subtitleHtml": "Echo Chamber / 信息茧房",
-      "leadHtml": "你只看自己想看的，<br>\n                    让你误以为全世界都这么想。🫧"
+      "leadHtml": "你只看自己想看的，<br>\n                    看久了就以为全世界都这么想。"
     },
     "bad": {
-      "titleHtml": "❌ 困在茧房里",
+      "titleHtml": "❌ 困在茧里",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "刷手机",
-          "text": "又刷到一个支持X观点的视频，说得太对了！",
-          "html": "又刷到一个支持X观点的视频，说得太对了！"
+          "text": "又刷到一个支持 X 的视频，说得太对了！",
+          "html": "又刷到一个支持 X 的视频，说得太对了！"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "继续刷",
-          "text": "评论区也都是支持X的，看来大家都这么想",
-          "html": "评论区也都是支持X的，看来大家都这么想"
+          "text": "评论区也全是支持 X 的，看来大家都这么想",
+          "html": "评论区也全是支持 X 的，看来大家都这么想"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "自信满满",
-          "text": "X观点是社会共识，反对的人都是少数极端分子",
-          "html": "X观点是社会共识，反对的人都是少数极端分子"
+          "text": "X 就是共识，反对的都是少数极端分子",
+          "html": "X 就是共识，反对的都是少数极端分子"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "现实世界",
-          "text": "其实很多人持相反观点，只是算法没推给你...",
-          "html": "其实很多人持相反观点，只是算法没推给你..."
+          "text": "其实不少人想法跟你相反，只是没推给你…",
+          "html": "其实不少人想法跟你相反，只是没推给你…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "震惊",
-          "text": "啊？不可能吧？我每天看的明明都是...",
-          "html": "啊？不可能吧？我每天看的明明都是..."
+          "text": "啊？不会吧？我每天刷到的明明都是…",
+          "html": "啊？不会吧？我每天刷到的明明都是…"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">同温层是怎么合上的</h3>\n                        <p>\n                            回声室不是算法发明的。Sunstein 2001 年说的是：人主动选择只听见自己的声音，讨论越多，立场越极端。推荐系统后来加速了这件事——它发现你停留得久，就给你更多同类内容。\n                        </p>\n                        <p>\n                            <strong>结果是：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>自我强化：</strong>你看什么，就会看到更多类似的</li>\n                            <li> <strong>异见消失：</strong>反对观点要么看不到，要么被当成敌对</li>\n                            <li> <strong>极化加剧：</strong>你以为的\"主流\"只是你的圈子</li>\n                        </ul>\n                        <p>\n                            你和持不同观点的人，可能在同一个平台上，却看着<strong>完全不同的\"现实\"</strong>。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">同温层怎么合上的</h3>\n<p>回声室早在推荐算法之前就有了。Sunstein 2001 年写的是，人会主动挑只说自己想听的地方待着，在里面越讨论，立场越极端。推荐系统后来又推了一把，它发现你在哪类内容上停得久，就多给你哪类。</p>\n<ul>\n<li><strong>越看越多</strong>。你看什么，就刷到更多一样的。</li>\n<li><strong>反对的声音没了</strong>。要么看不到，要么一看到就当成敌人。</li>\n<li><strong>越来越偏</strong>。你眼里的主流，其实只是你那个圈子。</li>\n</ul>\n<p>你和想法相反的人用着同一个 App，刷到的却是<strong>两个世界</strong>。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 主动戳破泡泡",
+      "titleHtml": "✅ 自己戳破泡泡",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "意识到",
-          "text": "等等，我最近只看到一种声音，会不会是算法在作怪？",
-          "html": "等等，我最近只看到一种声音，会不会是算法在作怪？"
+          "text": "等下，我最近只刷到一种说法，是不是推荐在搞我？",
+          "html": "等下，我最近只刷到一种说法，是不是推荐在搞我？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "行动",
-          "text": "主动搜索相反观点，看看他们怎么想的",
-          "html": "主动搜索相反观点，看看他们怎么想的"
+          "text": "去搜搜反方怎么说",
+          "html": "去搜搜反方怎么说"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "发现",
-          "text": "原来对方也有道理，只是角度不同",
-          "html": "原来对方也有道理，只是角度不同"
+          "text": "人家也有道理，只是看的角度不一样",
+          "html": "人家也有道理，只是看的角度不一样"
         },
         {
           "name": "结果",
           "time": "成长",
-          "text": "世界观更加立体，讨论问题时更加理性",
-          "html": "世界观更加立体，讨论问题时更加理性",
+          "text": "再聊这个话题，心平气和多了",
+          "html": "再聊这个话题，心平气和多了",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">突破信息茧房</h3>\n                        <p>\n                            <strong>警惕信号：</strong>\n                        </p>\n                        <ul>\n                            <li> 你很久没看到反对观点了</li>\n                            <li> 你觉得\"所有人\"都这么想</li>\n                            <li> 持不同观点的人在你眼里都是\"蠢货\"</li>\n                        </ul>\n                        <ul>\n                            <li> <strong>主动搜索反面观点：</strong>别等算法喂给你</li>\n                            <li> <strong>接触不同圈子的人：</strong>线下比线上更容易</li>\n                            <li> <strong>关注多元信息源：</strong>不同立场的媒体都看看</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">怎么出来</h3>\n<p><strong>先看看自己有没有这些迹象</strong></p>\n<ul>\n<li>很久没看到反对意见了。</li>\n<li>觉得所有人都这么想。</li>\n<li>想法不同的人，在你眼里全是蠢货。</li>\n</ul>\n<p><strong>然后</strong></p>\n<ul>\n<li><strong>自己去搜反方</strong>，别等推荐喂给你。</li>\n<li><strong>跟别的圈子的人聊</strong>，当面比网上容易。</li>\n<li><strong>多看几个来源</strong>，立场不同的媒体都翻翻。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>跳出自己的信息泡泡</strong>，听听不同的声音。\n            </p>\n            <p>概念：Cass Sunstein《Republic.com》(2001)；算法部分见 Eli Pariser《The Filter Bubble》(2011)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>从自己的泡泡里出来一下</strong>，听听别的声音。\n            </p>\n            <p>概念：Cass Sunstein《Republic.com》(2001)。算法部分见 Eli Pariser《The Filter Bubble》(2011)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "online-disinhibition",
@@ -1612,95 +1612,95 @@ const laws: Law[] = [
     "category": "systems",
     "title": "在线解除抑制",
     "englishTitle": "Online Disinhibition",
-    "summary": "如果当面说会怎样？别做键盘侠。",
+    "summary": "想想当着面你还会不会这么说。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "在线解除抑制效应",
       "subtitleHtml": "Online Disinhibition Effect",
-      "leadHtml": "人们在网上比现实中<br>\n                    更容易表达攻击性或过度亲密的言论。🎭"
+      "leadHtml": "人在网上，<br>\n                    比当面更容易口出恶言，也更容易掏心掏肺。"
     },
     "bad": {
-      "titleHtml": "❌ 键盘侠现象",
+      "titleHtml": "❌ 隔着屏幕就敢说",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "评论区",
-          "text": "你这种人就不配活着！滚出互联网！",
-          "html": "你这种人就不配活着！滚出互联网！"
+          "text": "你这种人就别上网了，滚！",
+          "html": "你这种人就别上网了，滚！"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "继续喷",
-          "text": "脑残！智障！废物！",
-          "html": "脑残！智障！废物！"
+          "text": "脑子有病吧！废物！",
+          "html": "脑子有病吧！废物！"
         },
         {
           "name": "",
-          "text": "（线下偶遇...）",
-          "html": "（线下偶遇...）",
+          "text": "（后来线下碰到了）",
+          "html": "（后来线下碰到了）",
           "tone": "meta"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "现实中",
-          "text": "你好，请问你就是网上那位吗？",
-          "html": "你好，请问你就是网上那位吗？"
+          "text": "你好，你就是网上那位吧？",
+          "html": "你好，你就是网上那位吧？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "现实中",
-          "text": "啊... 那个... 我开玩笑的... 不好意思...",
-          "html": "啊... 那个... 我开玩笑的... 不好意思..."
+          "text": "啊…那个…我开玩笑的…不好意思…",
+          "html": "啊…那个…我开玩笑的…不好意思…"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">屏幕背后的\"勇气\"</h3>\n                        <p>\n                            心理学家 John Suler 发现，人们在网上会做出现实中绝不会做的事。这被称为<strong>\"在线解除抑制效应\"</strong>。\n                        </p>\n                        <p>\n                            <strong>六大原因：</strong>\n                        </p>\n                        <ul>\n                            <li> <strong>匿名性：</strong>\"他们不知道我是谁\"</li>\n                            <li> <strong>隐身性：</strong>看不到对方的表情</li>\n                            <li> <strong>异步性：</strong>不用立刻面对反应</li>\n                            <li> <strong>脑内补全：</strong>看不见对方，你会自动补出他的语气和形象，越聊越像在跟自己说话</li>\n                            <li> <strong>游戏感：</strong>觉得网络不是\"真实\"的</li>\n                            <li> <strong>平等感：</strong>在网上谁都可以挑战权威</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">隔着屏幕胆子就大了</h3>\n<p>心理学家 John Suler 注意到，人在网上会做出平时绝不会做的事，他把这叫作<strong>在线去抑制效应</strong>。</p>\n<p><strong>他列了六个原因</strong></p>\n<ul>\n<li><strong>匿名</strong>。他们不知道我是谁。</li>\n<li><strong>看不见</strong>。对方的脸色看不到。</li>\n<li><strong>不同步</strong>。说完不用马上面对对方的反应。</li>\n<li><strong>脑内补全</strong>。看不见人，你会自己补出他的语气和样子，聊着聊着像在跟自己吵。</li>\n<li><strong>像在玩游戏</strong>。觉得网上的事不算数。</li>\n<li><strong>没大没小</strong>。网上谁都能去挑战权威。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 当面检验法",
+      "titleHtml": "✅ 想象他就在对面",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "准备回复",
-          "text": "这人说的也太蠢了，我要骂他...",
-          "html": "这人说的也太蠢了，我要骂他..."
+          "text": "这人说的也太蠢了，我要骂他…",
+          "html": "这人说的也太蠢了，我要骂他…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "暂停",
-          "text": "等等，如果这个人就站在我面前，我会这么说吗？",
-          "html": "等等，如果这个人就站在我面前，我会这么说吗？"
+          "text": "等下，他要是站在我面前，我会这么说吗？",
+          "html": "等下，他要是站在我面前，我会这么说吗？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "反思",
-          "text": "不会... 当面说这种话太过分了",
-          "html": "不会... 当面说这种话太过分了"
+          "text": "不会…当面说太过了",
+          "html": "不会…当面说太过了"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "理性回复",
-          "text": "我不同意你的观点，理由是...（平和地表达不同意见）",
-          "html": "我不同意你的观点，理由是...（平和地表达不同意见）"
+          "text": "我不同意，理由有两点…",
+          "html": "我不同意，理由有两点…"
         },
         {
           "name": "结果",
           "time": "文明",
-          "text": "讨论继续，双方都学到了新东西",
-          "html": "讨论继续，双方都学到了新东西",
+          "text": "吵不起来了，两边还各自学到点东西",
+          "html": "吵不起来了，两边还各自学到点东西",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">发送前的自检</h3>\n                        <p>\n                            在点击发送之前，问自己：\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"如果这个人就站在我面前，<br>\n                            <strong>我会当面这么说吗？</strong>\"\n                        </blockquote>\n                        <ul>\n                            <li> <strong>想象对方是真人：</strong>有家人、有感受、有故事</li>\n                            <li> <strong>等待冷却：</strong>生气时写完先存着，10分钟后再发</li>\n                            <li> <strong>对事不对人：</strong>批评观点可以，攻击人格不行</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">发之前问自己</h3>\n<blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">这个人要是就站在我面前，<br><strong>我会当面这么说吗？</strong></blockquote>\n<ul>\n<li><strong>把对方当个人</strong>。他有家人，会难受，有自己的事。</li>\n<li><strong>冷一冷</strong>。生气时写完先放着，十分钟后再发。</li>\n<li><strong>说事别骂人</strong>。观点可以批，人格别碰。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>在发言之前想象一下当面说会怎样</strong>。\n            </p>\n            <p>提出者：John Suler (《The Psychology of Cyberspace》)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>先想想当着面会不会这么说</strong>。\n            </p>\n            <p>提出者：John Suler (《The Psychology of Cyberspace》)</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "dunning-kruger",
@@ -1708,90 +1708,90 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "邓宁-克鲁格效应",
     "englishTitle": "Dunning-Kruger",
-    "summary": "懂得越少，越容易高估自己。别被自信的语气唬住。",
+    "summary": "懂得越少越敢下结论，别被嗓门唬住。",
     "layout": "comparison",
     "visual": "dunning-kruger-curve",
     "hero": {
       "titleHtml": "邓宁-克鲁格效应",
       "subtitleHtml": "Dunning-Kruger Effect",
-      "leadHtml": "懂得越少的人，<br>\n                    越容易高估自己。"
+      "leadHtml": "懂得越少，<br>\n                    越容易高估自己。"
     },
     "bad": {
-      "titleHtml": "❌ 愚昧山峰",
+      "titleHtml": "❌ 刚学会就出来教人",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "技术群",
-          "text": "这代码写得太垃圾了，让我来教你们什么叫真正的架构！",
-          "html": "这代码写得太垃圾了，让我来教你们什么叫真正的架构！"
+          "text": "这代码写得太烂了，我来教你们什么叫架构！",
+          "html": "这代码写得太烂了，我来教你们什么叫架构！"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "技术群",
-          "text": "请问你有多少年开发经验？",
-          "html": "请问你有多少年开发经验？"
+          "text": "你写了几年代码？",
+          "html": "你写了几年代码？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "技术群",
-          "text": "我上周刚学完一个网课，但我已经懂了，你们这些老程序员思维太陈旧了！",
-          "html": "我上周刚学完一个网课，但我已经懂了，你们这些老程序员思维太陈旧了！"
+          "text": "上周刚学完一门网课，但我已经懂了。你们老程序员思路太旧了！",
+          "html": "上周刚学完一门网课，但我已经懂了。你们老程序员思路太旧了！"
         },
         {
           "character": "tail",
           "name": "尾巴",
           "time": "技术群",
-          "text": "（沉默，懒得回应）",
-          "html": "（沉默，懒得回应）"
+          "text": "（不吭声，懒得接）",
+          "html": "（不吭声，懒得接）"
         },
         {
           "name": "真相",
           "time": "研究表明",
-          "text": "能力最低的一组最容易高估自己；最高的一组会略微低估自己。",
-          "html": "能力最低的一组最容易高估自己；最高的一组会略微低估自己。",
+          "text": "能力最低的那组最容易高估自己，最高的那组反而会稍稍低估自己。",
+          "html": "能力最低的那组最容易高估自己，最高的那组反而会稍稍低估自己。",
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">为什么网上杠精那么多</h3>\n                        <p>邓宁和克鲁格 1999 年的研究比较了四个能力组的自评和实际得分：最低的一组最容易高估自己，最高的一组会略微低估自己。差别在两端最大，中间最小。网上流传的「愚昧之巅 / 绝望之谷」四阶段曲线，是后来的拼接版本，不是论文原图。</p>\n                        <p>所以最响的声音常常最不靠谱——不懂的人不知道自己不懂，懂的人知道这件事有多复杂。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">网上为什么杠精多</h3>\n<p>邓宁和克鲁格 1999 年把人按能力分成四组，比较每组的自我评价和实际得分。最低的一组最容易高估自己，最高的一组会稍稍低估自己。两头差得最多，中间差得少。网上流传的那条「愚昧之巅、绝望之谷」曲线，是后来的人拼出来的，论文里没有这张图。</p>\n<p>所以嗓门最大的那个，常常最不靠谱。不懂的人不知道自己不懂，懂的人知道这事有多复杂。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 保持谦逊",
+      "titleHtml": "✅ 给自己留个口子",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "学习中",
-          "text": "我觉得这个方案是对的，但我可能遗漏了什么...",
-          "html": "我觉得这个方案是对的，但我可能遗漏了什么..."
+          "text": "我觉得这个方案没问题，不过可能漏了什么…",
+          "html": "我觉得这个方案没问题，不过可能漏了什么…"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "讨论区",
-          "text": "我的理解是这样，但我是新手，请大家指正～",
-          "html": "我的理解是这样，但我是新手，请大家指正～"
+          "text": "我是这么理解的。我刚上手，有不对的大家指出来～",
+          "html": "我是这么理解的。我刚上手，有不对的大家指出来～"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "讨论区",
-          "text": "思路不错！补充一点：在生产环境中还需要考虑XXX...",
-          "html": "思路不错！补充一点：在生产环境中还需要考虑XXX..."
+          "text": "思路挺好！补一点，上生产还得考虑 XXX…",
+          "html": "思路挺好！补一点，上生产还得考虑 XXX…"
         },
         {
           "name": "结果",
           "time": "成长",
-          "text": "谦虚的态度让西打获得了真正有价值的反馈",
-          "html": "谦虚的态度让西打获得了真正有价值的反馈",
+          "text": "西打这么一问，拿到了真正有用的意见",
+          "html": "西打这么一问，拿到了真正有用的意见",
           "tone": "good"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">如何应对</h3>\n                        <p><strong>对自己：</strong></p>\n                        <ul>\n                            <li> <strong>警惕过度自信：</strong>越觉得自己懂，越要警惕</li>\n                            <li> <strong>承认无知：</strong>\"我不知道\"是最有智慧的话之一</li>\n                        </ul>\n                        <p><strong>对他人：</strong></p>\n                        <ul>\n                            <li> <strong>少和杠精争论：</strong>他们不知道自己不知道</li>\n                            <li> <strong>关注沉默的专家：</strong>最懂的人往往话最少</li>\n                            <li> <strong>验证来源：</strong>别被自信的语气忽悠了</li>\n                        </ul>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground); font-style: italic;\">\n                            \"The more you know, the more you realize you don't know.\"<br>\n                            <strong>— 亚里士多德（据传）</strong>\n                        </blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">怎么办</h3>\n<p><strong>对自己</strong></p>\n<ul>\n<li><strong>越觉得懂，越要多查一遍</strong>。</li>\n<li><strong>敢说不知道</strong>。说一句「我不知道」，比硬撑着强。</li>\n</ul>\n<p><strong>对别人</strong></p>\n<ul>\n<li><strong>少跟杠精吵</strong>。他不知道自己不知道。</li>\n<li><strong>留意不怎么说话的行家</strong>。最懂的人常常话最少。</li>\n<li><strong>查出处</strong>。别被笃定的语气唬住。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>在发表强烈观点之前，先确认自己真的懂</strong>。\n            </p>\n            <p>原始研究：Kruger &amp; Dunning (1999)。这条的流行曲线是后来的四阶段示意，不是论文原图；统计上的争议可参考 Gignac &amp; Zajenkowski (2020)。</p><p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明对方希望你<strong>下狠结论之前，先确认自己真懂</strong>。\n            </p>\n            <p>原始研究：Kruger &amp; Dunning (1999)。这条的流行曲线是后来的四阶段示意，论文里没有这张图。统计上的争议可参考 Gignac &amp; Zajenkowski (2020)。</p><p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "tldr",
@@ -1799,15 +1799,15 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "太长不看",
     "englishTitle": "TL;DR",
-    "summary": "先给个摘要，尊重读者时间。",
+    "summary": "太长了，先给一句摘要。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "TL;DR",
       "subtitleHtml": "Too Long; Didn't Read",
-      "leadHtml": "太长不看。<br>\n                    请先给个摘要。"
+      "leadHtml": "太长不看。<br>\n                    先给一句摘要吧。"
     },
     "bad": {
-      "titleHtml": "❌ 信息轰炸",
+      "titleHtml": "❌ 一口气倒出来",
       "lines": [
         {
           "character": "cider",
@@ -1820,35 +1820,35 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "2:31 下午",
-          "text": "[发送了一条 2000 字的消息，包含项目背景、历史演变、技术细节、个人感想、未来展望...]",
-          "html": "[发送了一条 2000 字的消息，包含项目背景、历史演变、技术细节、个人感想、未来展望...]"
+          "text": "[发了一条 2000 字的消息，从项目背景讲到技术细节，再到个人感想和未来展望]",
+          "html": "[发了一条 2000 字的消息，从项目背景讲到技术细节，再到个人感想和未来展望]"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "2:45 下午",
-          "text": "所以...你到底想说什么？🤔",
-          "html": "所以...你到底想说什么？🤔"
+          "text": "所以…你到底想说啥？",
+          "html": "所以…你到底想说啥？"
         },
         {
           "character": "tail",
           "name": "尾巴",
           "time": "3:00 下午",
-          "text": "太长了，等我有空再看吧...",
-          "html": "太长了，等我有空再看吧..."
+          "text": "太长了，等我有空再看吧…",
+          "html": "太长了，等我有空再看吧…"
         },
         {
           "name": "结果",
           "time": "没人看完",
-          "text": "重要信息被埋没在文字海洋里，无人响应。",
-          "html": "重要信息被埋没在文字海洋里，无人响应。",
+          "text": "要紧的那句埋在中间，没人回。",
+          "html": "要紧的那句埋在中间，没人回。",
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <ul>\n                            <li> <strong>读者疲劳：</strong>大多数人根本不会读完</li>\n                            <li> <strong>重点丢失：</strong>关键信息被淹没</li>\n                            <li> <strong>无人响应：</strong>最终被忽略</li>\n                        </ul>\n                        <p><strong>TL;DR</strong> 原本是读者的抱怨，现在已成为写作者的责任。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<ul>\n<li><strong>读不完</strong>。多数人看几行就划走了。</li>\n<li><strong>找不到重点</strong>。要紧的那句埋在中间。</li>\n<li><strong>没人回</strong>。最后整条被晾着。</li>\n</ul>\n<p><strong>TL;DR</strong> 原来是读的人在抱怨，现在成了写的人该先做的事。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 先说结论",
+      "titleHtml": "✅ 先放摘要",
       "lines": [
         {
           "character": "cider",
@@ -1861,20 +1861,20 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "2:31 下午",
-          "text": "详情：[展开查看完整背景和技术细节...]",
-          "html": "详情：[展开查看完整背景和技术细节...]"
+          "text": "详情：[点开看完整背景和技术细节]",
+          "html": "详情：[点开看完整背景和技术细节]"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "2:32 下午",
-          "text": "收到！周一前搞定 👍",
-          "html": "收到！周一前搞定 👍"
+          "text": "收到，周一前搞定",
+          "html": "收到，周一前搞定"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>TL;DR 写作法则：</strong></p>\n                        <ul>\n                            <li> <strong>开头给摘要：</strong>一两句话概括核心要点</li>\n                            <li> <strong>明确行动项：</strong>读者需要做什么？什么时候？</li>\n                            <li> <strong>详情可折叠：</strong>让感兴趣的人自行展开</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>怎么写 TL;DR</strong></p>\n<ul>\n<li><strong>摘要放开头</strong>，一两句话说完要点。</li>\n<li><strong>写清要做什么</strong>，谁做、什么时候做完。</li>\n<li><strong>细节折起来</strong>，想看的人自己点开。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方希望<strong>你能尊重大家的时间，先给个摘要</strong>。</p>\n            <p>概念来源：互联网俚语，约2000年代初</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方希望你<strong>先给一句摘要，大家的时间都不多</strong>。</p>\n            <p>概念来源：互联网俚语，约2000年代初</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "rtfm",
@@ -1882,82 +1882,82 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "读该死的手册",
     "englishTitle": "RTFM",
-    "summary": "提问之前，请先查阅文档。",
+    "summary": "问之前，先翻翻文档。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "RTFM",
       "subtitleHtml": "Read The F***ing Manual",
-      "leadHtml": "在提问之前，<br>\n                    请先查阅文档。"
+      "leadHtml": "问之前，<br>\n                    先翻翻文档。"
     },
     "bad": {
-      "titleHtml": "❌ 伸手党",
+      "titleHtml": "❌ 张口就要",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "这个软件怎么安装啊？",
-          "html": "这个软件怎么安装啊？"
+          "text": "这软件怎么装啊？",
+          "html": "这软件怎么装啊？"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:05 上午",
-          "text": "官网有安装教程，你看过吗？",
-          "html": "官网有安装教程，你看过吗？"
+          "text": "官网有安装教程，你看了吗？",
+          "html": "官网有安装教程，你看了吗？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:06 上午",
-          "text": "没有，太长了不想看。你直接告诉我怎么弄呗？",
-          "html": "没有，太长了不想看。你直接告诉我怎么弄呗？"
+          "text": "没，太长了不想看。你直接告诉我呗？",
+          "html": "没，太长了不想看。你直接告诉我呗？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:30 上午",
-          "text": "怎么配置环境变量？为什么运行报错？",
-          "html": "怎么配置环境变量？为什么运行报错？"
+          "text": "环境变量怎么配？为啥一运行就报错？",
+          "html": "环境变量怎么配？为啥一运行就报错？"
         },
         {
           "name": "多米诺",
           "time": "11:00 上午",
-          "text": "RTFM! 文档里写得清清楚楚！",
-          "html": "RTFM! 文档里写得清清楚楚！",
+          "text": "RTFM！文档里写得清清楚楚！",
+          "html": "RTFM！文档里写得清清楚楚！",
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>RTFM</strong> = \"Read The F***ing Manual\"，读那该死的手册。</p>\n                        <p>手册里没写的，就轮到 <a href=\"/stfw/\">STFW</a> 了：先去搜。</p>\n                        <ul>\n                            <li> <strong>文档存在的意义：</strong>作者花时间写文档，就是为了回答常见问题</li>\n                            <li> <strong>尊重他人时间：</strong>别人不是你的私人助教</li>\n                            <li> <strong>重复问题：</strong>这些问题已被问过无数次</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>RTFM</strong> 是 Read The F***ing Manual 的缩写，意思是去读那该死的手册。</p>\n<p>手册里没写的，就轮到 <a href=\"/stfw/\">STFW</a> 了，先去搜。</p>\n<ul>\n<li><strong>文档就是答案</strong>。作者花时间写，就是为了回答这些常见问题。</li>\n<li><strong>别人有自己的事</strong>。他不是你的私人助教。</li>\n<li><strong>早被问过了</strong>。你这个问题，可能已经有一百个人问过。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 先读后问",
+      "titleHtml": "✅ 读完再问",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "10:00 上午",
-          "text": "我按照官方文档第3步操作，但出现了这个错误：[截图]",
-          "html": "我按照官方文档第3步操作，但出现了这个错误：[截图]"
+          "text": "我照官方文档第 3 步做，出了这个错：[截图]",
+          "html": "我照官方文档第 3 步做，出了这个错：[截图]"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "10:01 上午",
-          "text": "我Google了这个错误，试了Stack Overflow上的方案但没解决。环境是 macOS 14 + Node 20。",
-          "html": "我Google了这个错误，试了Stack Overflow上的方案但没解决。环境是 macOS 14 + Node 20。"
+          "text": "这个报错我搜过，Stack Overflow 上的办法试了没用。环境是 macOS 14 + Node 20。",
+          "html": "这个报错我搜过，Stack Overflow 上的办法试了没用。环境是 macOS 14 + Node 20。"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:10 上午",
-          "text": "这是个已知问题！文档没更新，你需要加个参数 --legacy-peer-deps 👍",
-          "html": "这是个已知问题！文档没更新，你需要加个参数 --legacy-peer-deps 👍"
+          "text": "这是已知问题，文档还没更新，加个 --legacy-peer-deps 就行",
+          "html": "这是已知问题，文档还没更新，加个 --legacy-peer-deps 就行"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>提问前的自检清单：</strong></p>\n                        <ul>\n                            <li> 读过官方文档了吗？</li>\n                            <li> Google/搜索引擎查过了吗？</li>\n                            <li> 看过 FAQ 了吗？</li>\n                        </ul>\n                        <p><strong>这样提问，你会得到更快、更好的帮助。</strong></p>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>问之前过一遍</strong></p>\n<ul>\n<li>官方文档读了吗？</li>\n<li>搜过了吗？</li>\n<li>FAQ 看了吗？</li>\n</ul>\n<p>这三样都做过，再把做过的写进问题里，回你的人会快很多。</p>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方希望<strong>你能先尝试自己找答案</strong>。</p>\n            <p>概念来源：黑客文化，1979年</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方希望你<strong>先自己找找答案</strong>。</p>\n            <p>概念来源：黑客文化，1979年</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "occams-razor",
@@ -1965,15 +1965,15 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "奥卡姆剃刀",
     "englishTitle": "Occam's Razor",
-    "summary": "如无必要，勿增假设。解释力相同时，先选假设更少的。",
+    "summary": "能用简单的原因解释，就先查简单的。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "奥卡姆剃刀",
       "subtitleHtml": "Occam's Razor",
-      "leadHtml": "如无必要，勿增假设。<br>\n                    解释力相同的时候，先选假设更少的那个。"
+      "leadHtml": "如无必要，勿增假设。<br>\n                    两种解释都说得通，先信假设少的那个。"
     },
     "bad": {
-      "titleHtml": "❌ 过度复杂化",
+      "titleHtml": "❌ 越想越复杂",
       "lines": [
         {
           "character": "cider",
@@ -1986,28 +1986,28 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "下午 3:05",
-          "text": "是不是竞争对手搞的？还是内部有人泄露了服务器密码？",
-          "html": "是不是竞争对手搞的？还是内部有人泄露了服务器密码？"
+          "text": "是竞争对手干的？还是有内鬼把服务器密码泄露了？",
+          "html": "是竞争对手干的？还是有内鬼把服务器密码泄露了？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "下午 3:10",
-          "text": "我要报警！！！",
-          "html": "我要报警！！！"
+          "text": "我要报警！",
+          "html": "我要报警！"
         },
         {
           "name": "多米诺",
           "time": "下午 3:15",
-          "text": "兄弟，你SSL证书过期了。",
-          "html": "兄弟，你SSL证书过期了。",
+          "text": "兄弟，你 SSL 证书过期了。",
+          "html": "兄弟，你 SSL 证书过期了。",
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>奥卡姆剃刀</strong>是最古老、最强大的思维工具之一。先说明一句：下面这句常被归到他名下的拉丁文，不是他本人写的，是 John Punch 1639 年的表述；奥卡姆自己的说法更接近「如无必要，勿假定繁多」。</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            如无必要，勿增实体。\n                        </blockquote>\n                        <ul>\n                            <li> 不要假设阴谋论，先检查简单错误</li>\n                            <li> 不要引入不必要的变量</li>\n                            <li> 从最可能的原因开始排查</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>奥卡姆剃刀</strong>是很老的一个想问题的办法。下面这句拉丁文常被算到奥卡姆头上，其实是 John Punch 1639 年的说法。奥卡姆自己说的更接近「如无必要，勿假定繁多」。</p>\n<blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">如无必要，勿增实体。</blockquote>\n<ul>\n<li>先查简单的错，别上来就想阴谋。</li>\n<li>能少一个变量，就少一个。</li>\n<li>从最可能的原因开始排查。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 从简单开始",
+      "titleHtml": "✅ 先查最简单的",
       "lines": [
         {
           "character": "cider",
@@ -2020,20 +2020,20 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "下午 2:01",
-          "text": "先检查一下：静音开关是不是按了？",
-          "html": "先检查一下：静音开关是不是按了？"
+          "text": "先看下，静音键是不是按了？",
+          "html": "先看下，静音键是不是按了？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "下午 2:03",
-          "text": "好了，谢谢 😅",
-          "html": "好了，谢谢 😅"
+          "text": "好了，谢谢…",
+          "html": "好了，谢谢…"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>奥卡姆剃刀的实践应用：</strong></p>\n                        <ul>\n                            <li> <strong>Debug：</strong>先检查最常见的错误（typo、配置、重启）</li>\n                            <li> <strong>沟通：</strong>对方没回复？可能只是忙</li>\n                            <li> <strong>医学：</strong>\"听到蹄声先想马，不要想斑马\"</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>平时怎么用</strong></p>\n<ul>\n<li><strong>查 bug</strong>，先看最常见的，拼写、配置、重启。</li>\n<li><strong>等回复</strong>，对方没回，多半只是在忙。</li>\n<li><strong>看病</strong>，医学院有句老话，听到马蹄声先想马，别想斑马。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方希望<strong>你能从最简单的可能性开始考虑</strong>。</p>\n            <p>概念提出者：William of Ockham，约1287–1347</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方希望你<strong>先从最简单的可能查起</strong>。</p>\n            <p>概念提出者：William of Ockham，约1287–1347</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "hitchens-razor",
@@ -2041,15 +2041,15 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "希钦斯剃刀",
     "englishTitle": "Hitchens's Razor",
-    "summary": "无证据提出的主张，可以无证据驳回。",
+    "summary": "没证据的说法，不用证据就能驳回。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "希钦斯剃刀",
       "subtitleHtml": "Hitchens's Razor",
-      "leadHtml": "无证据提出的主张，<br>\n                    可以无证据驳回。"
+      "leadHtml": "拿不出证据的说法，<br>\n                    不用证据就能驳回。"
     },
     "bad": {
-      "titleHtml": "❌ 无端指控",
+      "titleHtml": "❌ 张口就指控",
       "lines": [
         {
           "character": "cider",
@@ -2069,28 +2069,28 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "晚上 8:06",
-          "text": "你要证据干嘛？你去证明他没抄袭啊！",
-          "html": "你要证据干嘛？你去证明他没抄袭啊！"
+          "text": "要什么证据？你去证明他没抄啊！",
+          "html": "要什么证据？你去证明他没抄啊！"
         },
         {
           "name": "问题",
           "time": "举证责任倒置",
-          "text": "提出主张的人有责任提供证据，而不是要求别人证明其不存在。",
-          "html": "提出主张的人有责任提供证据，而不是要求别人证明其不存在。",
+          "text": "谁说的谁拿证据。让别人证明一件事没发生，这要求没道理。",
+          "html": "谁说的谁拿证据。让别人证明一件事没发生，这要求没道理。",
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>希钦斯剃刀</strong>由克里斯托弗·希钦斯提出：</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            无证据提出的主张，可以无证据驳回。\n                        </blockquote>\n                        <ul>\n                            <li> <strong>举证责任：</strong>谁主张，谁举证</li>\n                            <li> <strong>保护自己：</strong>你没有义务反驳空洞的指控</li>\n                            <li> <strong>清除噪音：</strong>无证据的言论不值得认真对待</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>希钦斯剃刀</strong>出自克里斯托弗·希钦斯。</p>\n<blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">无证据提出的主张，可以无证据驳回。</blockquote>\n<ul>\n<li><strong>谁主张，谁举证</strong>。</li>\n<li><strong>你不欠解释</strong>。空口的指控，你没义务一条条去驳。</li>\n<li><strong>省点力气</strong>。没证据的话，不值得认真对待。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 有理有据",
+      "titleHtml": "✅ 拿证据说话",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "晚上 8:00",
-          "text": "我发现这两个产品有相似之处，以下是对比截图：",
-          "html": "我发现这两个产品有相似之处，以下是对比截图："
+          "text": "我发现这两个产品有几处很像，对比截图在下面：",
+          "html": "我发现这两个产品有几处很像，对比截图在下面："
         },
         {
           "character": "cider",
@@ -2103,13 +2103,13 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "晚上 8:10",
-          "text": "感谢提供证据！这样我们可以理性讨论了。",
-          "html": "感谢提供证据！这样我们可以理性讨论了。"
+          "text": "谢谢你贴出来，这样就能好好聊了。",
+          "html": "谢谢你贴出来，这样就能好好聊了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>如何运用希钦斯剃刀：</strong></p>\n                        <ul>\n                            <li> <strong>提出主张时：</strong>附上证据</li>\n                            <li> <strong>面对指控时：</strong>礼貌地要求对方提供证据</li>\n                            <li> <strong>无证据时：</strong>直接无视，不必浪费精力反驳</li>\n                        </ul>\n                        \n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>怎么用</strong></p>\n<ul>\n<li><strong>自己下结论时</strong>，把证据一起贴上。</li>\n<li><strong>被人指控时</strong>，客气地请他拿出证据。</li>\n<li><strong>对方拿不出来</strong>，就不用费劲去驳了。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方希望<strong>你能提供证据支持观点</strong>。</p>\n            <p>概念提出者：Christopher Hitchens，1949–2011</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方希望你<strong>拿出证据来</strong>。</p>\n            <p>概念提出者：Christopher Hitchens，1949–2011</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "poes-law",
@@ -2117,68 +2117,68 @@ const laws: Law[] = [
     "category": "systems",
     "title": "坡定律",
     "englishTitle": "Poe's Law",
-    "summary": "没有表情符号，讽刺与真话难以区分。",
+    "summary": "不加标记，反讽和真心话分不清。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "坡定律",
       "subtitleHtml": "Poe's Law",
-      "leadHtml": "没有明显的表情符号，<br>\n                    讽刺与真话难以区分。"
+      "leadHtml": "不加个表情或者标记，<br>\n                    反讽和真心话分不清。"
     },
     "bad": {
-      "titleHtml": "❌ 误解发生",
+      "titleHtml": "❌ 被当真了",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "下午 3:00",
-          "text": "地球当然是平的，你们这些人就是被洗脑了",
-          "html": "地球当然是平的，你们这些人就是被洗脑了"
+          "text": "地球当然是平的，你们都被洗脑了",
+          "html": "地球当然是平的，你们都被洗脑了"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "下午 3:05",
-          "text": "什么？？你是认真的吗？？",
-          "html": "什么？？你是认真的吗？？"
+          "text": "啥？？你认真的？？",
+          "html": "啥？？你认真的？？"
         },
         {
           "character": "cider",
           "name": "西打",
           "time": "下午 3:07",
-          "text": "......我在玩梗啊，你不会真以为我是地平论者吧？",
-          "html": "......我在玩梗啊，你不会真以为我是地平论者吧？"
+          "text": "……我玩梗呢，你不会真以为我信地平说吧？",
+          "html": "……我玩梗呢，你不会真以为我信地平说吧？"
         },
         {
           "name": "坡定律",
           "time": "生效了",
-          "text": "没有表情或 /s 标记，讽刺和极端观点完全无法区分。",
-          "html": "没有表情或 /s 标记，讽刺和极端观点完全无法区分。",
+          "text": "不加表情或者 /s，反讽和极端观点看起来一模一样。",
+          "html": "不加表情或者 /s，反讽和极端观点看起来一模一样。",
           "tone": "aside"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>坡定律</strong>由 Nathan Poe 于 2005 年提出：</p>\n                        <p>在文字交流中，<strong>讽刺与真话难以区分</strong>。</p>\n                        <ul>\n                            <li> 没有语气、表情，读者无法判断意图</li>\n                            <li> 互联网上真的有各种极端观点</li>\n                            <li> 你以为的玩笑，别人可能当真</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>坡定律</strong>是 Nathan Poe 2005 年在一个论坛里提出来的。</p>\n<p>打字聊天时，<strong>反讽和真心话很难分清</strong>。</p>\n<ul>\n<li>没有语气和表情，读的人看不出你的意思。</li>\n<li>网上真有人信那些离谱说法。</li>\n<li>你当玩笑说的，别人可能当真。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 清晰表达",
+      "titleHtml": "✅ 标出来",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "下午 3:00",
-          "text": "地球当然是平的 😂 /s",
-          "html": "地球当然是平的 😂 /s"
+          "text": "地球当然是平的 /s",
+          "html": "地球当然是平的 /s"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "下午 3:01",
-          "text": "哈哈哈，差点被你骗到 🤣",
-          "html": "哈哈哈，差点被你骗到 🤣"
+          "text": "哈哈哈，差点被你骗了",
+          "html": "哈哈哈，差点被你骗了"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>如何避免坡定律：</strong></p>\n                        <ul>\n                            <li> 使用表情符号表明语气</li>\n                            <li> 使用 <code>/s</code> 标记讽刺</li>\n                            <li> 加个狗头保命</li>\n                            <li> 不确定时先问清楚</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>怎么避免</strong></p>\n<ul>\n<li>加个表情，让人看出语气。</li>\n<li>反讽结尾加个 <code>/s</code>。</li>\n<li>加个狗头。</li>\n<li>拿不准别人什么意思，就先问。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方希望<strong>提醒你：你的话可能被误解了</strong>。</p>\n            <p>概念提出者：Nathan Poe，2005</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方想提醒你，<strong>你那句话可能被读反了</strong>。</p>\n            <p>概念提出者：Nathan Poe，2005</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "brandolinis-law",
@@ -2186,55 +2186,55 @@ const laws: Law[] = [
     "category": "systems",
     "title": "布兰多里尼定律",
     "englishTitle": "Brandolini's Law",
-    "summary": "反驳胡说八道的能量是制造它的十倍。",
+    "summary": "造谣一张嘴，辟谣跑断腿。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "布兰多里尼定律",
       "subtitleHtml": "Brandolini's Law",
-      "leadHtml": "反驳胡说八道所需的能量，<br>\n                    是制造它的十倍。"
+      "leadHtml": "驳倒一句胡说要花的力气，<br>\n                    是编出它的十倍。"
     },
     "bad": {
-      "titleHtml": "❌ 辟谣的悲剧",
+      "titleHtml": "❌ 辟谣的人累死",
       "lines": [
         {
           "character": "cider",
           "name": "西打",
           "time": "上午 10:00",
-          "text": "震惊！科学家证实喝水致癌！快转发给家人！",
-          "html": "震惊！科学家证实喝水致癌！快转发给家人！"
+          "text": "震惊！科学家证实喝水致癌！快转给家里人！",
+          "html": "震惊！科学家证实喝水致癌！快转给家里人！"
         },
         {
           "character": "tail",
           "name": "尾巴",
           "time": "上午 10:01",
-          "text": "天啊！已转发！！",
-          "html": "天啊！已转发！！"
+          "text": "天哪！已转！",
+          "html": "天哪！已转！"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "下午 3:00",
-          "text": "[花了5小时写了一篇3000字的辟谣文章，引用12篇论文]",
-          "html": "[花了5小时写了一篇3000字的辟谣文章，引用12篇论文]"
+          "text": "[花 5 小时写了 3000 字辟谣，引了 12 篇论文]",
+          "html": "[花 5 小时写了 3000 字辟谣，引了 12 篇论文]"
         },
         {
           "name": "结果",
-          "text": "谣言10万+，辟谣文阅读量：203",
-          "html": "谣言10万+，辟谣文阅读量：203",
+          "text": "谣言 10 万+，辟谣那篇阅读 203",
+          "html": "谣言 10 万+，辟谣那篇阅读 203",
           "tone": "bad"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>布兰多里尼定律</strong>（又称\"胡说八道不对称原则\"）：</p>\n                        <blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">\n                            反驳胡说八道所需的能量，是制造它的十倍。\n                        </blockquote>\n                        <ul>\n                            <li> 制造谣言：5秒</li>\n                            <li> 反驳谣言：5小时</li>\n                            <li> 谣言传播：10万+</li>\n                            <li> 辟谣传播：203</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>布兰多里尼定律</strong>又叫胡扯不对称原理。</p>\n<blockquote style=\"border-left: 3px solid #666; padding-left: 1rem; margin: 1rem 0; font-style: italic;\">反驳胡说八道所需的能量，是制造它的十倍。</blockquote>\n<ul>\n<li>编一条谣言，5 秒。</li>\n<li>驳倒它，5 小时。</li>\n<li>谣言传了 10 万+。</li>\n<li>辟谣传了 203。</li>\n</ul>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 聪明应对",
+      "titleHtml": "✅ 让他先拿出处",
       "lines": [
         {
           "character": "domino",
           "name": "多米诺",
           "time": "上午 10:05",
-          "text": "请问有原始论文链接吗？哪位科学家？发表在哪里？",
-          "html": "请问有原始论文链接吗？哪位科学家？发表在哪里？"
+          "text": "原论文有链接吗？哪位科学家？发在哪？",
+          "html": "原论文有链接吗？哪位科学家？发在哪？"
         },
         {
           "character": "cider",
@@ -2244,9 +2244,9 @@ const laws: Law[] = [
           "html": "......（沉默）"
         }
       ],
-      "explanationHtml": "<div>\n                        <p><strong>面对胡说八道的策略：</strong></p>\n                        <ul>\n                            <li> <strong>要求来源：</strong>让对方先自证</li>\n                            <li> <strong>不喂流量：</strong>别帮谣言传播</li>\n                            <li> <strong>挑选战场：</strong>不是每个都值得反驳</li>\n                            <li> <strong>复用资源：</strong>引用已有的辟谣</li>\n                        </ul>\n                    </div>"
+      "explanationHtml": "<div>\n<p><strong>碰到胡说怎么办</strong></p>\n<ul>\n<li><strong>先要出处</strong>。让说的人自己证明。</li>\n<li><strong>别帮着传</strong>。转发去骂也是在帮它传。</li>\n<li><strong>挑着驳</strong>。每一条都去驳，你会累死。</li>\n<li><strong>用现成的</strong>。已经有人辟过的，直接贴链接。</li>\n</ul>\n</div>"
     },
-    "footerHtml": "<p>如果你看到这个链接，说明对方在提醒你<strong>不要浪费精力反驳低质量言论</strong>。</p>\n            <p>概念提出者：Alberto Brandolini，2013</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
+    "footerHtml": "<p>这事不大，别跟发链接给你的人<a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。</p>\n            <p>如果你看到这个链接，说明对方在提醒你，<strong>别在烂论调上耗太多力气</strong>。</p>\n            <p>概念提出者：Alberto Brandolini，2013</p>\n            <p><a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}</p>"
   },
   {
     "slug": "stfw",
@@ -2254,12 +2254,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "善用搜索",
     "englishTitle": "STFW",
-    "summary": "遇事不决，先问谷歌。必应也是你的好朋友。",
+    "summary": "先自己搜一下，必应和谷歌都很耐心。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "善用搜索",
       "subtitleHtml": "Search The F***ing Web",
-      "leadHtml": "遇事不决，先问谷歌。<br>\n                    必应也是你的好朋友。"
+      "leadHtml": "先拿问题去搜一下。<br>\n                    大部分基础问题，第一页就有答案。"
     },
     "bad": {
       "titleHtml": "❌ 伸手党的一天",
@@ -2275,21 +2275,21 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "10:01",
-          "text": "...",
-          "html": "..."
+          "text": "……",
+          "html": "……"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:02",
-          "text": "这种问题谷歌搜一下第一条就是答案。",
-          "html": "这种问题谷歌搜一下第一条就是答案。"
+          "text": "这个搜一下，第一条就是答案。",
+          "html": "这个搜一下，第一条就是答案。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">搜索引擎比人更耐心</h3>\n                        <p>\n                            互联网上 90% 的基础问题都已经有了现成的答案。当你问一个直接能搜到的问题时，你在浪费两个人的时间：你的（等待回复）和对方的（打字回复）。\n                        </p>\n                        <p>\n                            <strong>STFW</strong> 是 <a href=\"/rtfm/\"><strong>RTFM</strong></a>（Read The F***ing Manual）的年轻亲戚：一个查网页，一个翻手册，都是让你先自己动手。这不仅是礼貌，更是效率。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">搜索引擎比人有耐心</h3>\n<p>基础问题大多早就有人问过、答过。你去问一个能直接搜到的问题，要搭进两个人的时间。你在这头干等，对方在那头打字。</p>\n<p><strong>STFW</strong> 和 <a href=\"/rtfm/\"><strong>RTFM</strong></a>（Read The F***ing Manual）是一家人。一个让你搜网页，一个让你翻手册，意思都是先自己动手。这样问得也快。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 站在巨人的肩膀上",
+      "titleHtml": "✅ 带着搜过的结果来问",
       "lines": [
         {
           "character": "cider",
@@ -2306,25 +2306,25 @@ const laws: Law[] = [
           "html": "不是编码，是大小写折叠。用 <code>.casefold()</code>：<code>'Straße'.casefold()</code> 会变成 <code>'strasse'</code>，<code>.lower()</code> 不会。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">展示你的尝试</h3>\n                        <p>\n                            当你说 \"我搜过 XXX 但没找到答案\" 时，你赢得了尊重。这表明你不是来\"白嫖\"知识的，而是遇到了真正的困难。\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n                            “授人以鱼不如授人以渔，但前提是你得自己带鱼竿。”\n                        </blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">把你试过的写出来</h3>\n<p>说一句「我搜过 XXX，试了 .lower()，结果还是不对」，对方马上知道你卡在哪，也愿意多花点时间帮你。</p>\n<p>上面这个问题，搜一次拿到 .lower()，比一比发现不对劲，再来问。答的人一句话就能说到点上。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到某人发了这个链接，说明你的问题其实 <strong>你自己能解决</strong>，只要你愿意动动手指。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你这个问题<strong>搜一下就有答案</strong>。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "denver-coder-9",
     "order": 29,
     "category": "relation",
-    "title": "别做始乱终弃的人",
+    "title": "解决了就把办法写出来",
     "englishTitle": "Who is DenverCoder9?",
-    "summary": "找到了答案？请把它写出来。别做那个只留下一句“已解决”的混蛋。",
+    "summary": "问题解决了，把怎么解决的也写上。",
     "layout": "comparison",
     "hero": {
-      "titleHtml": "别做始乱终弃的人",
+      "titleHtml": "解决了就把办法写出来",
       "subtitleHtml": "Who is DenverCoder9?",
-      "leadHtml": "找到了答案？请把它写出来。<br>\n                    别做那个只留下一句“已解决”的混蛋。"
+      "leadHtml": "问题解决了，顺手把办法写上。<br>\n                    别只留一句「已解决」。"
     },
     "bad": {
-      "titleHtml": "❌ 为后来者挖的坑",
+      "titleHtml": "❌ 留下一个死胡同",
       "lines": [
         {
           "character": "cider",
@@ -2344,14 +2344,14 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "2025年",
-          "text": "怎么搞定的？！楼主你说啊！我现在的报错跟你一模一样！🤬",
-          "html": "怎么搞定的？！楼主你说啊！我现在的报错跟你一模一样！🤬"
+          "text": "怎么搞定的？？楼主你说啊！我现在的报错跟你一模一样！",
+          "html": "怎么搞定的？？楼主你说啊！我现在的报错跟你一模一样！"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">互联网上的幽灵</h3>\n                        <p>\n                            这种行为被称为 <strong>DenverCoder9</strong>（源自 <a href=\"https://xkcd.com/979/\" target=\"_blank\">xkcd 979</a>）。\n                        </p>\n                        <p>\n                            你是那个在黑暗中摸索出路的人，请不要把梯子撤走。当你留下一句\"已解决\"却不给方案时，你就在互联网上创造了一个死胡同。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">DenverCoder9</h3>\n<p>这个名字出自 <a href=\"https://xkcd.com/979/\" target=\"_blank\">xkcd 979</a>。漫画里有人搜了一晚上，终于找到一个一模一样的问题，帖子停在 2003 年，提问人 DenverCoder9 只回了一句「搞定了」。</p>\n<p>你只回一句「已解决」，这个帖子就会一直挂在搜索结果里。后面搜到它的人点进来，什么也拿不到。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 留下希望的火种",
+      "titleHtml": "✅ 两句话写清楚",
       "lines": [
         {
           "character": "cider",
@@ -2364,26 +2364,26 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "10:30",
-          "text": "更新：解决了。需要在 BIOS 里把 Fast Boot 关掉，并降级驱动到 v4.2。希望这对后来人有用。",
-          "html": "更新：解决了。需要在 BIOS 里把 Fast Boot 关掉，并降级驱动到 v4.2。希望这对后来人有用。"
+          "text": "更新，解决了。要在 BIOS 里关掉 Fast Boot，驱动降到 v4.2。后面遇到的可以试试。",
+          "html": "更新，解决了。要在 BIOS 里关掉 Fast Boot，驱动降到 v4.2。后面遇到的可以试试。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">完美的闭环</h3>\n                        <p>\n                            分享你的解决方案。即使只是简单的几句话，也可能拯救几年后另一个在深夜崩溃的灵魂。\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n                            “今天你踩过的坑，填上它，明天就是别人的路。”\n                        </blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">写两句就够</h3>\n<p>改了哪个设置、换了哪个版本，写两句就行。几年后有人半夜搜到这个帖子，能少熬一晚上。</p>\n<p>办法后来证明是错的也没关系，回来补一句「这个办法后来又出问题了」，照样有用。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，可能是因为你刚刚解决了问题，但忘记了<strong>告诉世界你是怎么做到的</strong>。\n            </p>\n            <p>Inspired by <a href=\"https://xkcd.com/979/\" target=\"_blank\">xkcd</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，可能是因为你问题解决了，却<strong>没写怎么解决的</strong>。\n            </p>\n            <p>Inspired by <a href=\"https://xkcd.com/979/\" target=\"_blank\">xkcd</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "no-urgent",
     "order": 30,
     "category": "relation",
-    "title": "拒绝“紧急”",
+    "title": "别喊「紧急」",
     "englishTitle": "No \"Urgent\"",
-    "summary": "你的紧急情况不是我的紧急情况。标题写“救命”只会让你被忽略。",
+    "summary": "标题写「救命」，没人会更快来救你。",
     "layout": "comparison",
     "hero": {
-      "titleHtml": "拒绝“紧急”",
+      "titleHtml": "别喊「紧急」",
       "subtitleHtml": "Your Emergency ≠ My Emergency",
-      "leadHtml": "你的计划不周不是我的紧急危机。<br>\n                    标题写“救命”只会让你更快被忽略。"
+      "leadHtml": "你那边着急，别人这边不一定。<br>\n                    标题喊「救命」，大家反而先划过去。"
     },
     "bad": {
       "titleHtml": "❌ 狼来了",
@@ -2392,21 +2392,21 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "10:00",
-          "text": "救命啊！！！大佬救我！！！服务器炸了！急急急在线等！！！😭😭😭",
-          "html": "救命啊！！！大佬救我！！！服务器炸了！急急急在线等！！！😭😭😭"
+          "text": "救命啊！！！大佬救我！！！服务器炸了！急急急在线等！！！",
+          "html": "救命啊！！！大佬救我！！！服务器炸了！急急急在线等！！！"
         },
         {
           "character": "domino",
           "name": "多米诺",
           "time": "10:05",
-          "text": "(已读不回)",
-          "html": "(已读不回)"
+          "text": "（已读不回）",
+          "html": "（已读不回）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">廉价的求救</h3>\n                        <p>\n                            \"紧急\"、\"跪求\"、\"救命\" 这些词在技术社区里是噪音。当你在标题里大喊大叫时，你传达的信息是：<strong>我认为我的时间比你的时间更值钱</strong>。\n                        </p>\n                        <p>\n                            描述清楚的问题，更容易被回答。\n                        </p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">喊得越响，越没人理</h3>\n<p>紧急、跪求、救命，这些词在技术群里天天有人喊，大家早就看麻了。标题里全是感叹号，正文里一行报错都没有，看的人只能读出一个意思，<strong>你觉得自己的时间更值钱</strong>。</p>\n<p>把问题写清楚，比喊十遍救命管用。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 冷静的专业素养",
+      "titleHtml": "✅ 标题就是摘要",
       "lines": [
         {
           "character": "cider",
@@ -2423,9 +2423,9 @@ const laws: Law[] = [
           "html": "看日志像是死锁了，检查一下事务隔离级别。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">标题即摘要</h3>\n                        <p>\n                            好标题遵循 <strong>\"目标 - 差异\"</strong> 模式。告诉大家坏了什么（显卡），以及哪里不对劲（冒烟了），而不是你有多焦虑。\n                        </p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--foreground);\">\n                            “如果你真的很急，付费咨询是表达诚意的最好方式。”\n                        </blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">标题写清哪里坏了</h3>\n<p>好标题写两件事，<strong>哪里坏了，坏成什么样</strong>。上面这条写了生产环境、连接池耗尽、502，还附了日志，懂的人扫一眼就知道该不该点进去。</p>\n<p>真的急，就付费找人，或者打电话给值班的同事。群里喊得再响，也没人欠你一个马上回复。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你的 <strong>“紧急”</strong> 只是因为你 <strong>计划不周</strong>，或者你试图用情绪绑架他人。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>\n                如果你看到这个链接，说明你的<strong>急</strong>多半来自<strong>计划没做好</strong>，或者你想用情绪催别人。\n            </p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "principle-of-charity",
@@ -2438,7 +2438,7 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "善意原则",
       "subtitleHtml": "Principle of Charity",
-      "leadHtml": "读到一句让你上火的话时，先假设对方不是傻子。<br>\n                    大多数时候，这个假设是对的。"
+      "leadHtml": "读到一句让你上火的话，先往讲得通的方向想。<br>\n                    多数时候，对方确实就是那个意思。"
     },
     "bad": {
       "titleHtml": "❌ 先假定对方蠢",
@@ -2468,11 +2468,11 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "14:05",
-          "text": "「还能再优化」也可能是指方向对、细节还能改。你先按最坏的意思理解了。",
-          "html": "「还能再优化」也可能是指方向对、细节还能改。你先按最坏的意思理解了。"
+          "text": "「还能再优化」也可能是说方向对、细节还能改。你直接挑了最坏的那个意思。",
+          "html": "「还能再优化」也可能是说方向对、细节还能改。你直接挑了最坏的那个意思。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">默认解释权</h3>\n                        <p>同一句话可以有很多种读法。屏幕后面看不见表情、听不见语气，人天然会往最坏的方向补全。</p>\n                        <p>善意原则不是让你当老好人，是让你在反驳之前，先把对方的话还原成一个「正常人会说的话」。还原不了，再问一句。</p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem;\">“在把对方判成傻子之前，先试着让他的话成立一次。”</blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">谁来决定怎么读</h3>\n<p>同一句话能读出好几种意思。屏幕上看不见表情，也听不见语气，人很容易往最坏的方向去补。</p>\n<p>善意原则也没让你当老好人。反驳之前，先把对方的话还原成一个正常人会说的话。还原不出来，就问一句。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先补全，再回应",
@@ -2488,8 +2488,8 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "14:03",
-          "text": "直接问呗：你指的是结构还是措辞？",
-          "html": "直接问呗：你指的是结构还是措辞？"
+          "text": "直接问呗，你指的是结构还是措辞？",
+          "html": "直接问呗，你指的是结构还是措辞？"
         },
         {
           "character": "cider",
@@ -2499,9 +2499,9 @@ const laws: Law[] = [
           "html": "问了，他说是措辞。我白气一场。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">一句话的成本</h3>\n                        <p>把「他什么意思」换成「你指的是哪一块」，成本是一句话，收益是不用在心里演三集电视剧。</p>\n                        <p>善意原则真正省下的，是你自己的情绪开销。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">问一句就清楚了</h3>\n<p>把心里那句「他什么意思」换成问对方「你指的是哪一块」，花一句话，就不用在心里演三集电视剧。</p>\n<p>生闷气的是你自己，这一句话最先省下的也是你的力气。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你先别急着把话往坏处读。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Principle_of_charity\">Wikipedia · Principle of charity</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你先别急着把话往坏处读。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Principle_of_charity\">Wikipedia · Principle of charity</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "grice-maxims",
@@ -2509,12 +2509,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "格莱斯准则",
     "englishTitle": "Grice's Maxims",
-    "summary": "说话四条：够量、真实、相关、清楚。",
+    "summary": "说够、说真、说相关的、说清楚。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "格莱斯准则",
       "subtitleHtml": "Grice's Maxims",
-      "leadHtml": "沟通不是文学创作。<br>\n                    对方需要的是信息，不是你的修辞。"
+      "leadHtml": "对方要的是信息。<br>\n                    修辞写得再好，也顶不了报价单。"
     },
     "bad": {
       "titleHtml": "❌ 四条全踩",
@@ -2555,7 +2555,7 @@ const laws: Law[] = [
           "html": "哦，我还没算。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">四条准则</h3>\n                        <ul>\n                            <li>量：该说的说完，别挤牙膏。</li>\n                            <li>质：不确定的标出来，别混着说。</li>\n                            <li>关系：别答非所问。</li>\n                            <li>方式：别绕，别用三个从句说一个词。</li>\n                        </ul>\n                        <p>格莱斯（H. P. Grice）把「合作对话」拆成这四条。它们不是礼貌规范，是让对话能继续下去的最低条件。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">四条准则</h3>\n<ul>\n<li><strong>量</strong>。该说的一次说完，别挤牙膏。</li>\n<li><strong>质</strong>。没把握的标出来，别混在确定的里面。</li>\n<li><strong>关系</strong>。问什么答什么。</li>\n<li><strong>方式</strong>。别绕，一个词能说完的事别用三个从句。</li>\n</ul>\n<p>哲学家格莱斯（H. P. Grice）把合作对话拆成了这四条。上面那段对话四条全踩了，聊了五句，报价还是没有。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 三句话说完",
@@ -2582,9 +2582,9 @@ const laws: Law[] = [
           "html": "那就齐了，谢谢。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">省下的是对方的理解成本</h3>\n                        <p>「不太成熟的想法」「随便说说」这类前缀，看起来是谦虚，实际是把不确定性转嫁给对方。</p>\n                        <p>真有不确定，就说不确定在哪一段。对方要的是坐标，不是氛围。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">少让对方猜</h3>\n<p>「不太成熟的想法」「随便说说」这种开头，听着谦虚，可哪里没把握，对方还得自己去猜。</p>\n<p>哪一段没把握，就直接说哪一段。上面这条写了缺什么、什么时候给，对方回一句就能接上。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的消息里信息太少、修辞太多。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Cooperative_principle\">Wikipedia · Cooperative principle</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的消息铺垫太多，正事太少。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Cooperative_principle\">Wikipedia · Cooperative principle</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "context-collapse",
@@ -2592,12 +2592,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "语境崩塌",
     "englishTitle": "Context Collapse",
-    "summary": "私聊的话进了群，意思就变了。",
+    "summary": "私聊的话发进群，意思就变了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "语境崩塌",
       "subtitleHtml": "Context Collapse",
-      "leadHtml": "同一句话，在两个人的对话框里和在五百人的群里，<br>\n                    是两句不同的话。"
+      "leadHtml": "同一句话，两个人私聊时说，和发到五百人的群里，<br>\n                    听起来完全是两回事。"
     },
     "bad": {
       "titleHtml": "❌ 一键转发",
@@ -2631,7 +2631,7 @@ const laws: Law[] = [
           "html": "我就发个乐子。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">受众变了，话就变了</h3>\n                        <p>语境崩塌（context collapse）说的是：原本只对一小群人说的话，被放到另一群人面前，听话的人变了，含义也跟着变。</p>\n                        <p>截图尤其危险。它连语气、前后文、你当时的状态一起切掉，只留下最容易被误读的那一段。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">听的人换了，意思也跟着换</h3>\n<p>语境崩塌（context collapse）说的是一句话原本只说给几个人听，后来被放到一大群人面前，听的人换了，意思也跟着变。</p>\n<p>截图最容易出事。前后文、语气、你当时为什么这么说，全被截掉了，只剩下最容易被误读的那几行。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 发之前问一句",
@@ -2658,9 +2658,9 @@ const laws: Law[] = [
           "html": "行，那我改一下。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">转发前的三秒</h3>\n                        <p>问一句、去掉名字、去掉能定位到人的细节——三步做完再发，基本不会出事。</p>\n                        <p>私聊的默认设置是私密，不是素材库。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">转发前问一句</h3>\n<p>先问对方能不能发，再去掉名字和能认出是谁的细节。这几步做完再发，基本不会出事。</p>\n<p>私聊里说的话，默认就只给你一个人听。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人提醒你：这段话的听众变了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Context_collapse\">Wikipedia · Context collapse</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人提醒你，<strong>这段话的听众变了</strong>。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Context_collapse\">Wikipedia · Context collapse</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "medium-is-the-message",
@@ -2668,12 +2668,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "媒介即讯息",
     "englishTitle": "The Medium Is the Message",
-    "summary": "用语音、文字还是电话，本身就在说话。",
+    "summary": "发语音、打字还是打电话，对方都看在眼里。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "媒介即讯息",
       "subtitleHtml": "The Medium Is the Message",
-      "leadHtml": "你选择怎么发，<br>\n                    和你发了什么一样重要。"
+      "leadHtml": "用什么方式发，<br>\n                    和发了什么一样重要。"
     },
     "bad": {
       "titleHtml": "❌ 用最省事的方式",
@@ -2714,7 +2714,7 @@ const laws: Law[] = [
           "html": "打字太慢了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">方便留给了谁</h3>\n                        <p>麦克卢汉的原意更硬：媒介不是装内容的管子，它本身会改变人的感知比例和社会组织方式。缩到群聊里，可以借它说一句：你选的那个介质，也在替你说一部分话。这是推论，不是他的原话。</p>\n                        <p>发语音，是把整理信息的成本留给自己、把收听的负担丢给对方。公放不方便、听不清要重听、没法搜索——这些都不是发送者承担。</p>\n                        <blockquote style=\"border-left: 4px solid var(--primary); padding-left: 1rem;\">“语音不是更快，只是对你更快。”</blockquote>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">省事的是谁</h3>\n<p>麦克卢汉的原意要重得多。他说媒介本身会改变人怎么感知、社会怎么组织，内容只是装在里面的东西。放到群聊里，可以借他的话推一步，你挑的发送方式，也在替你说话。这一步是推论，他没这么说过。</p>\n<p>发语音，省的是你整理的工夫，费的是对方听的工夫。不方便外放，没听清要重听，过后想找还搜不到，这些都落在对方头上。</p>\n<p>三条语音你录得很快，对方得花三分钟听完。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 按对方的场景选",
@@ -2741,9 +2741,9 @@ const laws: Law[] = [
           "html": "行，我列成三条发你。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先问一句介质</h3>\n                        <p>紧急的事打电话，复杂的事发文字，需要反复确认的事发文档。选错介质，内容再好也传不到。</p>\n                        <p>如果必须发语音，先问一句「方便听吗」，成本两秒。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">先问一句方便吗</h3>\n<p>急事打电话，复杂的事打字，要反复对的事写成文档。方式选错了，内容再好也送不到对方手里。</p>\n<p>非发语音不可，先问一句「方便听吗」，两秒钟的事。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你选的那个发送方式，给对方添了活。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/The_medium_is_the_message\">Wikipedia · The medium is the message</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你挑的发送方式，给对方添了活。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/The_medium_is_the_message\">Wikipedia · The medium is the message</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "no-is-a-complete-sentence",
@@ -2751,12 +2751,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "拒绝不需要理由",
     "englishTitle": "No Is a Complete Sentence",
-    "summary": "「不」就是完整的回答。",
+    "summary": "一个「不」字，就是完整的回答。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "拒绝不需要理由",
       "subtitleHtml": "No Is a Complete Sentence",
-      "leadHtml": "不想去、不想帮、不想借，<br>\n                    都可以直接说不。"
+      "leadHtml": "不想去、不想帮、不想借，<br>\n                    直接说不就行。"
     },
     "bad": {
       "titleHtml": "❌ 编一个理由",
@@ -2790,7 +2790,7 @@ const laws: Law[] = [
           "html": "……"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">模糊的拒绝会被当成同意</h3>\n                        <p>「看情况」「再说吧」在对方听来常常等于「有机会」。你以为留了余地，对方收到的是希望。</p>\n                        <p>编理由还有个副作用：对方会帮你解决那个理由。「忙？那我换个时间。」于是你还得再编一个。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">含糊的拒绝会被当成答应</h3>\n<p>「看情况」「再说吧」，对方听到的常常是「有戏」。你觉得自己留了余地，对方已经开始等你了。</p>\n<p>编理由还有个麻烦，对方会帮你把理由解决掉。「忙？那换个时间。」你只好再编一个。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 直接说不",
@@ -2817,9 +2817,9 @@ const laws: Law[] = [
           "html": "行，那下次。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">不解释，也不亏欠</h3>\n                        <p>拒绝不需要罪行陈述。给出一个明确的「不」，比给一个随时会被推翻的理由更尊重对方。</p>\n                        <p>如果关系够近，可以补一句你能做什么：「这周不行，下周三可以帮你拉一趟。」做不到就别补。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">说完就完了</h3>\n<p>拒绝用不着交代原因。一个明确的「不」，对方马上就能去找别人，比一个随时会被推翻的理由省事。</p>\n<p>关系近的话，可以补一句你能帮上的，比如「这周不行，下周三可以帮你拉一趟」。帮不上就别补。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你别再用「再看吧」拖着。</p>\n            <p>出处不明：1958 年已见于报纸；Gavin de Becker 与 Anne Lamott 都用过这个说法。</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你别再用「再看吧」拖着。</p>\n            <p>出处不明：1958 年已见于报纸。Gavin de Becker 与 Anne Lamott 都用过这个说法。</p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "reply-all",
@@ -2827,7 +2827,7 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "别回复全部",
     "englishTitle": "Reply All",
-    "summary": "收件人列表不是观众席。",
+    "summary": "三十个人在收件人里，没必要人人都看你说收到。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "别回复全部",
@@ -2867,7 +2867,7 @@ const laws: Law[] = [
           "html": "（回复全部）我也收到了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">每个人都在替所有人付成本</h3>\n                        <p>一次「回复全部」，是给列表里每个人多一条通知。三十人的列表，一轮寒暄就是三十条。</p>\n                        <p>更糟的是，真正需要看到的信息会被淹掉。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">一句收到，三十条通知</h3>\n<p>点一次「回复全部」，列表里每个人都会多一条通知。三十个人的列表，大家轮流说一遍收到，就是三十条。</p>\n<p>真正要紧的那封回复，就埋在这一堆收到里了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 只回该回的人",
@@ -2887,9 +2887,9 @@ const laws: Law[] = [
           "html": "（只在原邮件里补充）工时我更新在附件第三页了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">两个按钮的区别</h3>\n                        <p>「回复」是给发件人的，「回复全部」是给所有人的。发之前看一眼收件人栏，多花一秒。</p>\n                        <p>需要让所有人知道的进展，改原文档或发一条汇总，而不是让三十个人各自回一句。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">两个按钮</h3>\n<p>「回复」只发给发件人，「回复全部」会发给所有人。点之前看一眼收件人那栏，一秒钟。</p>\n<p>有进展要让所有人知道，就改原文档，或者发一封汇总，别让三十个人各回一句。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明那封邮件里已经有太多「收到」了。</p>\n            <p>Source: <a href=\"https://www.rfc-editor.org/rfc/rfc1855\">RFC 1855 · Netiquette Guidelines</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明那封邮件里已经有太多「收到」了。</p>\n            <p>Source: <a href=\"https://www.rfc-editor.org/rfc/rfc1855\">RFC 1855 · Netiquette Guidelines</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "one-message",
@@ -2897,12 +2897,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "一条说完",
     "englishTitle": "One Message, Please",
-    "summary": "把一句话拆成十条，是让别人等你连载。",
+    "summary": "一句话拆成十条发，对方只能等你连载完。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "一条说完",
       "subtitleHtml": "One Message, Please",
-      "leadHtml": "聊天框不是弹幕。<br>\n                    一句话能说完的，别发七条。",
+      "leadHtml": "聊天框又不是弹幕。<br>\n                    一句话能说完的，别发七条。",
       "effect": "one-message-split",
     },
     "bad": {
@@ -2951,7 +2951,7 @@ const laws: Law[] = [
           "html": "……你一次说完。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">通知也是打扰</h3>\n                        <p>每条消息都是一次提醒。七条消息，就是七次打断对方正在做的事。</p>\n                        <p>而且连载式发言会把一句话的意思拆散，对方要等你发完才能判断这事急不急。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">每条都会响一下</h3>\n<p>每发一条，对方的手机就响一次。七条消息，就是把人打断七次。</p>\n<p>一句话拆成七段，对方得等你全发完，才知道这事急不急。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 一条打包",
@@ -2960,8 +2960,8 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "11:02",
-          "text": "有个事想确认：周五的场地我们几点到？我这边要订车，今天得定。",
-          "html": "有个事想确认：周五的场地我们几点到？我这边要订车，今天得定。"
+          "text": "有个事想确认一下，周五的场地我们几点到？我这边要订车，今天得定下来。",
+          "html": "有个事想确认一下，周五的场地我们几点到？我这边要订车，今天得定下来。"
         },
         {
           "character": "domino",
@@ -2978,9 +2978,9 @@ const laws: Law[] = [
           "html": "好，那我订一点半的。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先想完，再发</h3>\n                        <p>发之前在心里过一遍：对方要回什么、需要哪些信息、急不急。三样齐了，一条发完。</p>\n                        <p>真需要分开发的长内容，用序号标出来，让对方知道还有几条。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">想好了再发</h3>\n<p>发之前想一下，对方要回什么，需要知道哪些事，这事急不急。想清楚了，一条发完。</p>\n<p>内容真的长到要分开发，就标上序号，让对方知道后面还有几条。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你刚才发了六条只有标点没有信息的话。</p>\n            <p>Source: <a href=\"https://www.rfc-editor.org/rfc/rfc1855\">RFC 1855 · Netiquette Guidelines</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你刚才连发了六条，没一条说到正事。</p>\n            <p>Source: <a href=\"https://www.rfc-editor.org/rfc/rfc1855\">RFC 1855 · Netiquette Guidelines</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "lurk-moar",
@@ -2988,12 +2988,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "先潜水，再发言",
     "englishTitle": "Lurk Moar",
-    "summary": "进新群先看三天，比自我介绍有用。",
+    "summary": "进新群先看三天，比发自我介绍管用。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "先潜水，再发言",
       "subtitleHtml": "Lurk Moar",
-      "leadHtml": "每个群都有自己的规矩，<br>\n                    而规矩从来不写在群公告里。"
+      "leadHtml": "每个群都有自己的规矩，<br>\n                    群公告里一般不写。"
     },
     "bad": {
       "titleHtml": "❌ 进来就开麦",
@@ -3026,7 +3026,7 @@ const laws: Law[] = [
           "html": "「群友」已被移出群聊"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先读空气，再说话</h3>\n                        <p>「Lurk moar」是早期论坛的黑话：先潜水，多看，别急着发言。它不是歧视新人，是让新人先拿到这个群的上下文。</p>\n                        <p>群的规模、关系、话题边界、玩笑尺度，都藏在历史消息里。跳过这一步，你说的每句话都可能踩在别人脚上。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">先看看大家怎么聊</h3>\n<p>Lurk moar 是早年论坛的黑话，意思是先潜水，多看几天，别急着发言。老成员这么说，是想让新人先摸清这个群在聊什么。</p>\n<p>群里多少人、彼此什么关系、哪些话题不碰、玩笑开到什么程度，都在聊天记录里。不看就开口，很容易一句话踩到别人。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先看，再开口",
@@ -3053,9 +3053,9 @@ const laws: Law[] = [
           "html": "欢迎，正好缺个喝深烘的。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">潜水不是消失</h3>\n                        <p>看三天，找到这个群在聊什么、谁在说话、什么话有人接。然后用一个具体的话题进场，比十行自我介绍有用。</p>\n                        <p>这条对老成员也成立：换了个群，就重新潜一次。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">潜水也算在场</h3>\n<p>看上三天，大概就知道这个群在聊什么、谁常说话、什么话有人接。然后挑一个具体的话题开口，比十行自我介绍管用。</p>\n<p>老成员也一样，换了个群，就重新潜一次。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人建议你先看看别人怎么说话。</p>\n            <p>Source: <a href=\"https://knowyourmeme.com/memes/lurk-moar\">Know Your Meme · Lurk Moar</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人建议你先看看大家怎么说话。</p>\n            <p>Source: <a href=\"https://knowyourmeme.com/memes/lurk-moar\">Know Your Meme · Lurk Moar</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "chestertons-fence",
@@ -3068,7 +3068,7 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "切斯特顿栅栏",
       "subtitleHtml": "Chesterton's Fence",
-      "leadHtml": "遇到一条莫名其妙的规矩时，<br>\n                    先假设它是为某个你没看见的问题存在的。"
+      "leadHtml": "碰到一条看不懂的规矩，<br>\n                    先当它是在防一件你没见过的事。"
     },
     "bad": {
       "titleHtml": "❌ 先删了再说",
@@ -3102,7 +3102,7 @@ const laws: Law[] = [
           "html": "第三步是财务复核。上个月刚有人跳过，多付了八千。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先理解，再改革</h3>\n                        <p>切斯特顿的原话大意是：看到路上有一道栅栏，如果你不知道为什么有它，就别急着拆。等你弄明白它拦的是什么，再决定拆不拆。</p>\n                        <p>很多「冗余」的规则，是用一次事故换来的。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">先弄明白，再动手</h3>\n<p>切斯特顿讲过一个比方。路上有道栅栏，你不知道它为什么在那儿，就先别拆。等你弄清楚它拦的是什么，再决定拆不拆。</p>\n<p>很多看着多余的规矩，是出过一次事才定下来的。上面那个财务复核，就是拿八千块换来的。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先问它拦什么",
@@ -3129,9 +3129,9 @@ const laws: Law[] = [
           "html": "那留着，我把第一步和第三步合并。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">改革的前提是解释得清</h3>\n                        <p>能说清「它防的是什么、现在还需不需要」，才有资格动它。</p>\n                        <p>说不清就别拆。这不是保守，是不拿别人的事故当自己的学费。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">说得清才能改</h3>\n<p>你能说清它在防什么、现在还用不用得着，再去动它。</p>\n<p>说不清就先留着。别人交过的学费，你没必要再交一遍。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你想拆的东西，别人还靠它挡着事。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence\">Wikipedia · Chesterton's fence</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你想拆的东西，别人还靠它挡着事。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence\">Wikipedia · Chesterton's fence</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "fundamental-attribution-error",
@@ -3145,7 +3145,7 @@ const laws: Law[] = [
     "hero": {
       "titleHtml": "基本归因错误",
       "subtitleHtml": "Fundamental Attribution Error",
-      "leadHtml": "别人出错，你怪他这个人；<br>\n                    自己出错，你怪当时的情况。"
+      "leadHtml": "别人出错，你怪他这个人。<br>\n                    自己出错，你怪当时的情况。"
     },
     "bad": {
       "titleHtml": "❌ 直接判人品",
@@ -3186,7 +3186,7 @@ const laws: Law[] = [
           "html": "那不一样。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">两套解释系统</h3>\n                        <p>解释别人的行为，我们倾向归因于人品；解释自己的，倾向归因于环境。这就是基本归因错误。</p>\n                        <p>它有个副作用：一旦把人判成「不靠谱」，后面他做什么你都会往这个方向看。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">两套标准</h3>\n<p>看别人出错，人习惯怪他的性格。看自己出错，就怪路上堵、事情多。心理学管这个叫基本归因错误。</p>\n<p>麻烦在于，一旦你认定一个人不靠谱，他后面做什么，你都会往这上面套。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先问情况",
@@ -3213,9 +3213,9 @@ const laws: Law[] = [
           "html": "那没事，我把开始时间往后挪十分钟。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">换成环境解释，一次就好</h3>\n                        <p>不需要你变得宽容，只需要在判人品之前，先问一句「他遇到什么了」。</p>\n                        <p>大多数时候，答案是堵车、孩子、身体不舒服——和你自己迟到时的理由差不多。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">先问一句发生了什么</h3>\n<p>用不着你多宽容。下结论之前，先问一句「他遇到什么事了」。</p>\n<p>多数时候答案是堵车、孩子有事、身体不舒服，和你自己迟到时的理由差不多。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人觉得你把人看得太坏了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Fundamental_attribution_error\">Wikipedia · Fundamental attribution error</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人觉得你把人想得太坏了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Fundamental_attribution_error\">Wikipedia · Fundamental attribution error</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "confirmation-bias",
@@ -3223,12 +3223,12 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "确认偏误",
     "englishTitle": "Confirmation Bias",
-    "summary": "你搜的不是答案，是证据。",
+    "summary": "你去搜，多半是想找能证明自己对的东西。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "确认偏误",
       "subtitleHtml": "Confirmation Bias",
-      "leadHtml": "一旦有了结论，<br>\n                    你就会只找支持它的东西。"
+      "leadHtml": "心里有了结论，<br>\n                    就只找得到支持它的东西。"
     },
     "bad": {
       "titleHtml": "❌ 只搜支持自己的",
@@ -3262,7 +3262,7 @@ const laws: Law[] = [
           "html": "……你搜「某某店 好评」试试。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">搜索词就是结论</h3>\n                        <p>搜索框里加上「差评」两个字，你就已经排除了另一半世界。这不是查证，是找队友。</p>\n                        <p>确认偏误最难察觉的地方在于：你确实查了，也确实看到了证据，只是你只看了想要的那一半。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">搜什么，就看到什么</h3>\n<p>搜索框里加上「差评」两个字，好评就全被筛掉了。这样查到的，只会是你想要的那些。</p>\n<p>确认偏误难就难在你确实查了，也确实看到了证据，只是另一半你没去看。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 两边都搜",
@@ -3289,9 +3289,9 @@ const laws: Law[] = [
           "html": "能，那我订了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">主动找反例</h3>\n                        <p>一个简单的自检：如果搜出来的全是支持你的，那说明你搜错了。</p>\n                        <p>更好的做法是先写结论，再去找能推翻它的证据。找不到，才算站得住。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">专门去找反例</h3>\n<p>有个简单的办法自查。搜出来的东西全都支持你，多半是搜的方式有问题。</p>\n<p>更稳的做法是先把结论写下来，再去找能推翻它的证据。找了一圈没找到，这个结论才站得住。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的证据只有一半。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Confirmation_bias\">Wikipedia · Confirmation bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的证据只看了一半。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Confirmation_bias\">Wikipedia · Confirmation bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "survivorship-bias",
@@ -3299,13 +3299,13 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "幸存者偏差",
     "englishTitle": "Survivorship Bias",
-    "summary": "你只看见活下来的那些。",
+    "summary": "你看到的，全是活下来的那些。",
     "layout": "comparison",
     "visual": "survivorship-funnel",
     "hero": {
       "titleHtml": "幸存者偏差",
       "subtitleHtml": "Survivorship Bias",
-      "leadHtml": "成功者写的经验，<br>\n                    失败者没机会反驳。"
+      "leadHtml": "经验都是成功的人写的，<br>\n                    失败的人没机会出来说话。"
     },
     "bad": {
       "titleHtml": "❌ 只看成功的",
@@ -3332,10 +3332,10 @@ const laws: Law[] = [
           "html": "……没看，也搜不到。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">看不见的样本</h3>\n                        <p>二战时统计飞机弹孔，一度建议加固弹孔最密的地方——直到有人指出，那些是飞回来的飞机，被打中要害的根本没回来。</p>\n                        <p>互联网上的成功学，几乎全是飞回来的飞机。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">没回来的那些</h3>\n<p>二战时有人统计返航飞机上的弹孔，一开始打算加固弹孔最密的地方。后来统计学家 Abraham Wald 提醒，这些都是飞回来的飞机，打中要害的那些根本没回来。</p>\n<p>网上的成功经验也一样，你读到的几乎都出自飞回来的那批。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 先找分母",
+      "titleHtml": "✅ 先找没成的人",
       "lines": [
         {
           "character": "cider",
@@ -3352,9 +3352,9 @@ const laws: Law[] = [
           "html": "那结论就清楚了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先问分母</h3>\n                        <p>看到「他们都是这么做的」，先问一句：这么做的人里，有多少没成？</p>\n                        <p>找不到分母，这条经验就只能当故事听。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">问一句分母</h3>\n<p>听到「他们都是这么做的」，先问一句，这么做了没成的有多少。</p>\n<p>找不到这个数，那条经验就只能当故事听。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人提醒你：失败者不在你的样本里。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Survivorship_bias\">Wikipedia · Survivorship bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人提醒你，<strong>失败的人不在你的样本里</strong>。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Survivorship_bias\">Wikipedia · Survivorship bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "sunk-cost",
@@ -3362,13 +3362,13 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "沉没成本",
     "englishTitle": "Sunk Cost Fallacy",
-    "summary": "已经投入这么多，不代表要接着投入。",
+    "summary": "已经投了很多，也不用接着投。",
     "layout": "comparison",
     "visual": "sunk-cost-bars",
     "hero": {
       "titleHtml": "沉没成本",
       "subtitleHtml": "Sunk Cost Fallacy",
-      "leadHtml": "决定要不要继续，<br>\n                    只看接下来值不值。"
+      "leadHtml": "要不要接着做，<br>\n                    只看接下来值不值。"
     },
     "bad": {
       "titleHtml": "❌ 因为已经投入",
@@ -3402,7 +3402,7 @@ const laws: Law[] = [
           "html": "那四个月已经花掉了，接着做只会再花四个月。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">过去的投入收不回来</h3>\n                        <p>沉没成本的意思是：已经付出、无法收回的成本。它不该影响你接下来的决定。</p>\n                        <p>但人厌恶「浪费」，于是用继续投入来证明之前没白费——结果浪费得更多。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">花掉的拿不回来</h3>\n<p>沉没成本指已经花出去、怎么也收不回来的时间和钱。决定接下来做什么的时候，它不该算进去。</p>\n<p>可人最怕白忙一场，于是接着往里投，想证明之前没白费，结果亏得更多。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 只看未来",
@@ -3425,13 +3425,13 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "15:12",
-          "text": "换来了一个结论：这条路不通。比再花四个月便宜。",
-          "html": "换来了一个结论：这条路不通。比再花四个月便宜。"
+          "text": "换来一个结论，这条路走不通。比再花四个月便宜。",
+          "html": "换来一个结论，这条路走不通。比再花四个月便宜。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">换个问法</h3>\n                        <p>「如果今天从零开始，我还会选它吗？」——这个问题能把沉没成本从决策里摘出去。</p>\n                        <p>答案是不会，就停。已经花掉的时间和钱，不会因为你继续而回来。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">换个问法</h3>\n<p>问自己一句，今天从零开始，我还会选它吗。这么一问，已经花掉的那部分就不会掺进来了。</p>\n<p>答案是不会，就停下。花掉的时间和钱，你接着做也回不来。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你别再为过去买单。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Sunk_cost\">Wikipedia · Sunk cost</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你别再为过去买单。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Sunk_cost\">Wikipedia · Sunk cost</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "correlation-is-not-causation",
@@ -3439,16 +3439,16 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "相关不是因果",
     "englishTitle": "Correlation ≠ Causation",
-    "summary": "两件事一起发生，不代表一件导致另一件。",
+    "summary": "两件事一起出现，未必有一件导致另一件。",
     "layout": "comparison",
     "visual": "correlation-panels",
     "hero": {
       "titleHtml": "相关不是因果",
       "subtitleHtml": "Correlation ≠ Causation",
-      "leadHtml": "冰淇淋卖得多的时候溺水也多，<br>\n                    但冰淇淋不杀人。"
+      "leadHtml": "冰淇淋卖得多的月份，溺水的人也多，<br>\n                    可冰淇淋没淹死过人。"
     },
     "bad": {
-      "titleHtml": "❌ 看见一起发生就下结论",
+      "titleHtml": "❌ 一起发生就下结论",
       "lines": [
         {
           "character": "cider",
@@ -3479,7 +3479,7 @@ const laws: Law[] = [
           "html": "有。一个是插件让人留下，一个是留下的人才装插件。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">第三种可能</h3>\n                        <p>两件事相关，至少有四种解释：A 导致 B、B 导致 A、C 同时导致 A 和 B、纯属巧合。</p>\n                        <p>只看见相关就下因果结论，是把最省事的解释当成了唯一解释。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">至少四种解释</h3>\n<p>两件事总是一起出现，可能是 A 导致 B，可能是 B 导致 A，可能是另一件事 C 同时带出了 A 和 B，也可能纯属巧合。</p>\n<p>上面的插件留存就是第二种的样子。看到一起出现就认定是因果，等于挑了最省事的那个解释，另外三个都没去排除。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先排除反向",
@@ -3499,9 +3499,9 @@ const laws: Law[] = [
           "html": "对，先看同活跃度的人里，装和不装有没有差别。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">怎么验证</h3>\n                        <p>能做对照就做对照；不能，至少问三句：会不会是反过来？有没有第三个因素？样本是不是自己挑的？</p>\n                        <p>相关性是线索，不是结论。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">怎么验证</h3>\n<p>能做对照实验就做。做不了，至少问自己三句。会不会反过来？有没有第三个因素？样本是不是用户自己挑出来的？</p>\n<p>相关只能告诉你往哪儿查，结论还得查完才有。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人要你先把「同时发生」和「因为所以」分开。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation\">Wikipedia · Correlation does not imply causation</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人要你先把<strong>一起发生</strong>和<strong>因为所以</strong>分开。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation\">Wikipedia · Correlation does not imply causation</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "steelmanning",
@@ -3509,12 +3509,12 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "先搭最强版本",
     "englishTitle": "Steelmanning",
-    "summary": "反驳之前，先把对方的话说到他自己点头。",
+    "summary": "反驳之前，先把对方的话复述到他点头。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "先搭最强版本",
       "subtitleHtml": "Steelmanning",
-      "leadHtml": "打倒一个稻草人很容易，<br>\n                    但那不叫赢。"
+      "leadHtml": "把对方的话改得弱一点再驳倒，很容易，<br>\n                    可那场争论你其实没赢。"
     },
     "bad": {
       "titleHtml": "❌ 先曲解再打倒",
@@ -3544,11 +3544,11 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "11:32",
-          "text": "差很多。他说的是带新人，不是所有人。",
-          "html": "差很多。他说的是带新人，不是所有人。"
+          "text": "差很多。他说的是带新人，没说所有人。",
+          "html": "差很多。他说的是带新人，没说所有人。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">稻草人最好打</h3>\n                        <p>把对方的观点换成一个人人都会反对的版本，再狠狠驳倒——这叫稻草人谬误。赢的是嘴，输的是讨论。</p>\n                        <p>更常见的是无意的：你记得的是自己愤怒时理解的那版。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">稻草人最好打</h3>\n<p>先把对方的观点换成一个谁都会反对的说法，再把它驳得体无完肤，这叫稻草人谬误。嘴上赢了，事情没谈成。</p>\n<p>很多时候人也不是故意的。你记住的，常常是自己生气时理解的那个版本。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 复述到对方点头",
@@ -3582,9 +3582,9 @@ const laws: Law[] = [
           "html": "这个我能接受。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">一句话自检</h3>\n                        <p>反驳前先说：「你的意思是……对吗？」对方点头了，你才有资格反驳。</p>\n                        <p>复述不准，说明你还没听懂，而不是对方没道理。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">先复述一遍</h3>\n<p>反驳之前先说一句「你的意思是……对吗？」。对方点头了，再开始反驳。</p>\n<p>复述的时候对方老摇头，多半是你还没听懂他在说什么。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你打的可能是一个自己扎的稻草人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Straw_man\">Wikipedia · Straw man（steelman 是相反的做法，但两者不对等）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你驳倒的，可能是你自己扎的稻草人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Straw_man\">Wikipedia · Straw man（steelman 是反过来的做法，两者并不完全对称）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "bystander-effect",
@@ -3592,13 +3592,13 @@ const laws: Law[] = [
     "category": "systems",
     "title": "旁观者效应",
     "englishTitle": "Bystander Effect",
-    "summary": "群里没人回，不是没人看见。",
+    "summary": "群里没人回，大家多半都看见了。",
     "layout": "comparison",
     "visual": "bystander-curve",
     "hero": {
       "titleHtml": "旁观者效应",
       "subtitleHtml": "Bystander Effect",
-      "leadHtml": "在场的人越多，<br>\n                    出手的人越少。"
+      "leadHtml": "在场的人越多，<br>\n                    站出来的人越少。"
     },
     "bad": {
       "titleHtml": "❌ 对一群人喊救命",
@@ -3632,7 +3632,7 @@ const laws: Law[] = [
           "html": "……我刚看到。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">责任被稀释</h3>\n                        <p>在场的人越多，每个人越觉得「别人会管」。这不是冷漠，是责任被分摊后的自然结果。</p>\n                        <p>群里的「有人能帮忙吗」，把选择权交给了所有人，也就等于没交给任何人。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">人人都觉得别人会管</h3>\n<p>在场的人越多，每个人越觉得会有别人出手。群友也没那么冷漠，只是一件事分给了一百个人，落到每个人头上就只剩一点点。</p>\n<p>在群里问「有人能帮忙吗」，问的是所有人，结果就没有哪个人觉得这是在问自己。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 指名，给期限",
@@ -3659,9 +3659,9 @@ const laws: Law[] = [
           "html": "在这，第 42 行。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">把「有人」换成名字</h3>\n                        <p>指名、说清要什么、给一个时间范围。三件事做完，帮忙的人就从「所有人」变成了「一个人」。</p>\n                        <p>被指名的人可以拒绝，但至少他知道这事在等他。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">把「有人」换成名字</h3>\n<p>点名，说清要什么，给个时间。这样一来，要回的就从所有人变成了一个人。</p>\n<p>被点名的人可以拒绝，但他至少知道这件事在等他。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你喊的那句「有人吗」，没人觉得自己是该回的那个。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Bystander_effect\">Wikipedia · Bystander effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你那句「有人吗」，没人觉得是在问自己。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Bystander_effect\">Wikipedia · Bystander effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "streisand-effect",
@@ -3669,12 +3669,12 @@ const laws: Law[] = [
     "category": "systems",
     "title": "斯特赖桑德效应",
     "englishTitle": "The Streisand Effect",
-    "summary": "越删，越有人存。",
+    "summary": "越想删掉，看的人越多。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "斯特赖桑德效应",
       "subtitleHtml": "The Streisand Effect",
-      "leadHtml": "想让一件事消失，<br>\n                    最好的办法通常不是删它。"
+      "leadHtml": "想让一件事没人知道，<br>\n                    删它往往最不管用。"
     },
     "bad": {
       "titleHtml": "❌ 一删了之",
@@ -3715,7 +3715,7 @@ const laws: Law[] = [
           "html": "……涨到两万了，都在传「被删的那张图」。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">删除本身是新闻</h3>\n                        <p>芭芭拉·斯特赖桑德当年起诉摄影师，想让自己的豪宅照片消失，结果照片被下载了几十万次。</p>\n                        <p>删除动作会告诉所有人：这里有东西值得看。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">删了也是新闻</h3>\n<p>2003 年，芭芭拉·斯特赖桑德起诉一位摄影师，想让一张拍到她海边豪宅的航拍照消失。起诉之前，这张照片只被下载过六次，消息传开后，一个月里有四十多万人看过它。</p>\n<p>你一删，大家就知道这里有东西可看了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先算传播账",
@@ -3724,8 +3724,8 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "18:20",
-          "text": "那张图现在几十个人看到，删了可能反而扩散。我先联系发帖人改掉关键信息。",
-          "html": "那张图现在几十个人看到，删了可能反而扩散。我先联系发帖人改掉关键信息。"
+          "text": "那张图现在就几十个人看到，删了可能传得更开。我先联系发帖人，把关键信息改掉。",
+          "html": "那张图现在就几十个人看到，删了可能传得更开。我先联系发帖人，把关键信息改掉。"
         },
         {
           "character": "domino",
@@ -3735,9 +3735,9 @@ const laws: Law[] = [
           "html": "对，能私下解决就别公开处理。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">先问三个数</h3>\n                        <p>现在多少人看到？删了会不会被当成新闻？有没有更小的处理方式——改信息、下沉、私下沟通？</p>\n                        <p>三个数算完再决定动不动手。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">动手前先问三件事</h3>\n<p>现在有多少人看到了？删了会不会自己变成新闻？有没有动静更小的办法，比如改掉信息、让帖子沉下去、私下找发帖人谈？</p>\n<p>这三件想清楚了，再决定要不要动手。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明「删掉」这个动作本身，正在帮它传播。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Streisand_effect\">Wikipedia · Streisand effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你这一删，正在帮它传得更开。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Streisand_effect\">Wikipedia · Streisand effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "eternal-september",
@@ -3745,15 +3745,15 @@ const laws: Law[] = [
     "category": "systems",
     "title": "永恒九月",
     "englishTitle": "Eternal September",
-    "summary": "人一多，规矩就自动稀释。",
+    "summary": "新人来得太多，老规矩就慢慢没人守了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "永恒九月",
       "subtitleHtml": "Eternal September",
-      "leadHtml": "一个社区的文化，<br>\n                    经不起每天都是新人。"
+      "leadHtml": "新人天天来，<br>\n                    一个社区的老规矩就教不过来了。"
     },
     "bad": {
-      "titleHtml": "❌ 只抱怨「以前不是这样」",
+      "titleHtml": "❌ 只会说以前不这样",
       "lines": [
         {
           "character": "tail",
@@ -3784,7 +3784,7 @@ const laws: Law[] = [
           "html": "那没办法，两百个新人进来，规矩就要重学两百遍。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">九月不会结束</h3>\n                        <p>1993 年 9 月，AOL 开始向用户开放 Usenet；涌入是持续的，不是每月一批。老用户原本每年只需应付一次「九月新人潮」，从那以后，每天都是九月。</p>\n                        <p>社区不是被某个人搞坏的，是被规模搞坏的。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">九月没再结束</h3>\n<p>早年 Usenet 每年九月都会来一批大学新生，老用户教上一两个月，规矩也就教会了。1993 年 9 月，AOL 给自家用户开了 Usenet 入口，新人从此天天来，老用户说，那以后每天都是九月。</p>\n<p>一个群变得乱糟糟的，多半怪不到哪一个人头上，是人一下子来得太多了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 把规矩做成机制",
@@ -3811,9 +3811,9 @@ const laws: Law[] = [
           "html": "行，这周弄。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">靠机制，不靠记性</h3>\n                        <p>规模上来之后，靠老成员一个个提醒是撑不住的。把规矩变成入群流程、自动回复、可见的置顶。</p>\n                        <p>文化要靠机制维护，不能靠怀旧。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">别靠老成员挨个提醒</h3>\n<p>人一多，靠老成员一个个提醒是撑不住的。把规矩写进入群流程、自动回复和置顶，新人一进来就能看到。</p>\n<p>天天怀念以前的群，群也回不到以前。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明这个群正在经历它的第九月。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Eternal_September\">Wikipedia · Eternal September</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明这个群正在过它的九月。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Eternal_September\">Wikipedia · Eternal September</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "goodharts-law",
@@ -3821,13 +3821,13 @@ const laws: Law[] = [
     "category": "systems",
     "title": "古德哈特定律",
     "englishTitle": "Goodhart's Law",
-    "summary": "指标变成目标，就不再是好指标。",
+    "summary": "一个数字拿来考核，它就不准了。",
     "layout": "comparison",
     "visual": "goodhart-divergence",
     "hero": {
       "titleHtml": "古德哈特定律",
       "subtitleHtml": "Goodhart's Law",
-      "leadHtml": "一旦用数字考核，<br>\n                    数字就会开始骗人。"
+      "leadHtml": "数字一旦拿来考核，<br>\n                    大家就会想办法把数字做好看。"
     },
     "bad": {
       "titleHtml": "❌ 拿指标当目标",
@@ -3857,14 +3857,14 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "17:32",
-          "text": "意料之中。",
-          "html": "意料之中。"
+          "text": "我猜到了。",
+          "html": "我猜到了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">被测量的事物会变形</h3>\n                        <p>古德哈特 1975 年的说法是：一个统计规律一旦被拿来当控制指标，就会开始失效。后来 Strathern 把它压缩成一句更好记的：当一个指标变成目标，它就不再是好指标。</p>\n                        <p>因为人会优化指标本身，而不是指标想衡量的那件事。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">考什么，就凑什么</h3>\n<p>经济学家古德哈特 1975 年说过，一个统计规律被拿来当管理手段，它就会开始失灵。后来人类学家 Marilyn Strathern 把这话说得更好记，一项指标变成了目标，就不再是好指标。</p>\n<p>原因很简单，大家会去凑那个数，它本来要量的那件事就没人管了。上面的客服发「您好」「稍等」凑条数，就是这么来的。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 指标成对",
+      "titleHtml": "✅ 两个指标一起看",
       "lines": [
         {
           "character": "cider",
@@ -3888,9 +3888,9 @@ const laws: Law[] = [
           "html": "行，先跑一个月。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">别让一个数说了算</h3>\n                        <p>至少配一个反向指标：速度快了看质量，量大了看投诉。指标成对，才有刹车。</p>\n                        <p>别忘了：数字是代理，不是目的。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">别让一个数说了算</h3>\n<p>至少配一个往反方向拉的指标。看速度，也看质量。看量，也看投诉。两个一起看，谁也凑不了数。</p>\n<p>数字只是替你去量那件事的工具，事情本身才是你要的。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人发现你们的数字在骗人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Goodhart%27s_law\">Wikipedia · Goodhart's law</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人发现你们的数字在骗人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Goodhart%27s_law\">Wikipedia · Goodhart's law</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "dont-feed-the-trolls",
@@ -3898,12 +3898,12 @@ const laws: Law[] = [
     "category": "systems",
     "title": "别喂 troll",
     "englishTitle": "Don't Feed the Trolls",
-    "summary": "回应就是奖励。",
+    "summary": "你回他一句，他就赢一次。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "别喂 troll",
       "subtitleHtml": "Don't Feed the Trolls",
-      "leadHtml": "有些人不是来讨论的，<br>\n                    是来看你上钩的。"
+      "leadHtml": "有些人来这儿就是想看你急，<br>\n                    根本没打算讨论。"
     },
     "bad": {
       "titleHtml": "❌ 认真对线",
@@ -3944,7 +3944,7 @@ const laws: Law[] = [
           "html": "你回他一句，他就多一条素材。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">他要的是反应</h3>\n                        <p>Troll 的目标不是说服你，是让你花时间、动情绪，然后截图。</p>\n                        <p>你的愤怒是这场对话唯一的产出，而它归属于对方。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">他就等你急</h3>\n<p>Troll 没打算说服你。他想让你花时间、上火，然后把你的回复截图拿去乐。</p>\n<p>你越认真解释，他手里的素材越多。这场对话里你唯一产出的就是火气，最后还归了他。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 不接",
@@ -3970,9 +3970,9 @@ const laws: Law[] = [
           "html": "处理得对。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">三个动作</h3>\n                        <p>不回复、不转发、必要时拉黑或交给管理员。对方拿不到反应，这场戏就演不下去。</p>\n                        <p>如果必须回应，只回应给旁观者看，一句话说完就走，别进入第二轮。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">不回，不转，不留</h3>\n<p>别回复，别转发，该拉黑就拉黑，该交给管理员就交。他等不到你的反应，这出戏就唱不下去。</p>\n<p>非回不可的话，就当回给旁边看热闹的人，一句话说完就走，别跟他来第二轮。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人建议你别再回了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Don%27t_feed_the_troll\">Wikipedia · Don't feed the troll</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人建议你别再回了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Don%27t_feed_the_troll\">Wikipedia · Don't feed the troll</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "no-jargon",
@@ -3980,12 +3980,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "说人话",
     "englishTitle": "No Jargon",
-    "summary": "缩写和黑话，是把人挡在门外的门禁。",
+    "summary": "缩写和黑话一多，新人就插不上话了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "说人话",
       "subtitleHtml": "No Jargon",
-      "leadHtml": "你省下的几个字，<br>\n                    是对方花半小时查的资料。",
+      "leadHtml": "你少打的几个字，<br>\n                    对方可能要查半小时。",
       "effect": "jargon-swap",
     },
     "bad": {
@@ -4020,7 +4020,7 @@ const laws: Law[] = [
           "html": "（不再回复）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">黑话的两个功能</h3>\n                        <p>黑话的第一个功能是识别同类，第二个功能是把不是同类的人挡在外面。在团队里用它，等于给新人加了一道门禁。</p>\n                        <p>更麻烦的是，看不懂的人往往不会问——问一次被嘲笑，就会一直沉默。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">黑话能认人，也能挡人</h3>\n<p>黑话能让自己人一听就认出彼此，同时也让外人一句都听不懂。在团队里满嘴黑话，新人每句话都得先猜一遍。</p>\n<p>更麻烦的是，听不懂的人多半不会问。问一次被笑话，以后就不吭声了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 第一次出现给全称",
@@ -4040,9 +4040,9 @@ const laws: Law[] = [
           "html": "懂了，那先把进度发我。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">一句话的成本</h3>\n                        <p>第一次出现时给全称或一句解释，后面再缩写。成本是几个字，收益是整个群里没人需要猜。</p>\n                        <p>如果这个词连你自己都要想一下，那就别用。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">第一次写全，后面随便</h3>\n<p>一个词第一次出现，写全称或者跟一句解释，后面再用缩写。多打几个字，群里就没人需要猜。</p>\n<p>要是这个词你自己都得想一下才说得清，就换个说法。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人被你的缩写卡住了，又不好意思问。</p>\n            <p>Source: <a href=\"https://github.com/itorr/nbnhhsh\">itorr/nbnhhsh ·「能不能好好说话？」</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人被你的缩写卡住了，又不好意思问。</p>\n            <p>Source: <a href=\"https://github.com/itorr/nbnhhsh\">itorr/nbnhhsh ·「能不能好好说话？」</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "correct-in-private",
@@ -4050,12 +4050,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "私下纠错",
     "englishTitle": "Correct in Private",
-    "summary": "当众指出错误，赢了道理，输了人。",
+    "summary": "当众挑错，道理赢了，人得罪了。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "私下纠错",
       "subtitleHtml": "Correct in Private",
-      "leadHtml": "纠正的目的是让对方改，<br>\n                    不是让所有人看见他错。"
+      "leadHtml": "纠错是为了让对方改过来，<br>\n                    没必要让全群都看见他错了。"
     },
     "bad": {
       "titleHtml": "❌ 群里当场点名",
@@ -4089,7 +4089,7 @@ const laws: Law[] = [
           "html": "（之后在群里再没发过言）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">公开纠错的两笔账</h3>\n                        <p>第一笔是对方的：被当众指出错误，人会先处理面子，再处理问题。</p>\n                        <p>第二笔是你自己的：群里其他人看到的是一个随时会点名的人，以后发言都会先掂量。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">当众挑错的两笔账</h3>\n<p>先是对方那笔。当着一群人被挑错，人会先顾面子，问题放到后面再说。</p>\n<p>还有你自己那笔。群里其他人看在眼里，知道你随时会点名，以后说话都会先掂量一下。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 私下说，公开只补结论",
@@ -4116,9 +4116,9 @@ const laws: Law[] = [
           "html": "（群里）数据更新了一版，以这个为准。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">表扬公开，批评私下</h3>\n                        <p>这条原则没有单一出处，但一直有效：公开的赞美会扩散，公开的批评只会留下伤口。</p>\n                        <p>如果错误影响到了所有人，公开只补「结论变了」，不补「谁错了」。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">夸在群里，错私下说</h3>\n<p>这条说不清最早是谁讲的，一直都管用。当众夸人，大家都高兴。当众挑错，对方会记很久。</p>\n<p>错误影响到了所有人，就在群里补一句数据更新了，以这一版为准，不用提是谁弄错的。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人宁愿私聊跟你说，也不想在群里让你下不来台。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Netiquette\">Wikipedia · Netiquette（Virginia Shea）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人宁愿私聊跟你说，也不想在群里让你下不来台。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Netiquette\">Wikipedia · Netiquette（Virginia Shea）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "observation-not-judgment",
@@ -4126,12 +4126,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "说事实，不说评价",
     "englishTitle": "Observation, Not Judgment",
-    "summary": "「你总是拖」是判决，「晚了两天」是事实。",
+    "summary": "「你总是拖」是下定义，「晚了两天」是说事。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "说事实，不说评价",
       "subtitleHtml": "Observation, Not Judgment",
-      "leadHtml": "评价让人防御，<br>\n                    事实才让人能改。"
+      "leadHtml": "一下定义，对方就开始辩。<br>\n                    说清发生了什么，他才好改。"
     },
     "bad": {
       "titleHtml": "❌ 先给人下定义",
@@ -4161,11 +4161,11 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "11:12",
-          "text": "那你直接说这次晚了就行，别说我总是。",
-          "html": "那你直接说这次晚了就行，别说我总是。"
+          "text": "那你直接说这次晚了就行，别说我总是这样。",
+          "html": "那你直接说这次晚了就行，别说我总是这样。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">「总是」是个好靶子</h3>\n                        <p>一旦用「总是」「从来不」下定义，对方就有了一个完美的反驳靶子：只要找出一个反例，你的整句话就作废了。</p>\n                        <p>而真正想讨论的那个问题，反而没人再提。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">「总是」一找就破</h3>\n<p>你一说「总是」「从来不」，对方只要找出一次例外，整句话就站不住了。</p>\n<p>接下来两个人就在争到底是不是总是，这次为什么晚了，没人再提。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 说清楚发生了什么",
@@ -4185,9 +4185,9 @@ const laws: Law[] = [
           "html": "可以，这次是我没同步。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">观察、感受、需要、请求</h3>\n                        <p>非暴力沟通把这四步拆得很清楚：先说观察到的事实，再说你的感受，然后说需要，最后提一个具体请求。</p>\n                        <p>第一步最容易跳过，也最值钱——把评价换成事实，对方就没得反驳，只能谈事。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">观察、感受、需要、请求</h3>\n<p>非暴力沟通把这件事拆成四步。先说看到了什么，再说你的感受和需要，最后提一个具体的请求。</p>\n<p>第一步最容易跳过，也最管用。上面那句只说了晚了两天、排期被顶掉，对方没什么可辩的，只能接着谈事。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你把「你总是」换成「这一次」。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Nonviolent_Communication\">Wikipedia · Nonviolent Communication</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你把「你总是」换成「这一次」。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Nonviolent_Communication\">Wikipedia · Nonviolent Communication</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "ring-theory",
@@ -4195,12 +4195,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "先给耳朵，再给方案",
     "englishTitle": "Ring Theory",
-    "summary": "诉苦的人要的是听众，不是项目经理。",
+    "summary": "吐苦水的人想找人听，没想找人出方案。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "先给耳朵，再给方案",
       "subtitleHtml": "Ring Theory",
-      "leadHtml": "安慰的方向是从外向内，<br>\n                    抱怨的方向是从内向外。"
+      "leadHtml": "安慰往圈里给，<br>\n                    抱怨往圈外倒。"
     },
     "bad": {
       "titleHtml": "❌ 上来就解决问题",
@@ -4234,7 +4234,7 @@ const laws: Law[] = [
           "html": "那你早说啊。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">他要的不是清单</h3>\n                        <p>倾诉的人通常知道该怎么办，只是需要有人听见。你一上来给方案，等于告诉他「你的情绪不重要，问题才重要」。</p>\n                        <p>更糟的是那句「那你早说啊」——把没听懂的责任推回给对方。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">他没要清单</h3>\n<p>吐苦水的人多半知道该怎么办，他只是想有人听着。你一上来就列方案，他听到的是，你的累不重要，先解决问题。</p>\n<p>后面那句「那你早说啊」更伤人，没听懂还怪到了对方头上。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 先问要哪一种",
@@ -4268,9 +4268,9 @@ const laws: Law[] = [
           "html": "那你先说，今天谁惹你了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">comfort in, dump out</h3>\n                        <p>苏珊·西尔克的环形理论：把当事人放在圆心，安慰只能向内给，情绪只能向外倒。</p>\n                        <p>放到日常也一样——先确认对方要的是耳朵还是方案，一句话就能省掉一场误会。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">comfort in, dump out</h3>\n<p>心理学家苏珊·西尔克提过一个环形理论。出事的人站在最里面一圈，越亲近的人离他越近。安慰只往里面那圈给，抱怨只往外面那圈倒。</p>\n<p>平时聊天也用得上。先问一句对方要你听着还是要你出主意，就少一场误会。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人现在只想被听见，不想被指导。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Ring_theory_(psychology)\">Wikipedia · Ring theory（Susan Silk）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人现在只想有人听着，不想听你出主意。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Ring_theory_(psychology)\">Wikipedia · Ring theory（Susan Silk）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "straight-talk-is-not-rudeness",
@@ -4278,12 +4278,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "说话直不是免死金牌",
     "englishTitle": "Straight Talk Is Not Rudeness",
-    "summary": "直接是指内容，不是指态度。",
+    "summary": "直接说的是内容，态度用不着跟着冲。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "说话直不是免死金牌",
       "subtitleHtml": "Straight Talk Is Not Rudeness",
-      "leadHtml": "「我说话直，你别介意」<br>\n                    通常是「我准备冒犯你，你负责消化」。"
+      "leadHtml": "「我说话直，你别介意」，<br>\n                    很多时候意思是我要冒犯你了，你自己消化。"
     },
     "bad": {
       "titleHtml": "❌ 用坦率包装失礼",
@@ -4313,11 +4313,11 @@ const laws: Law[] = [
           "character": "domino",
           "name": "多米诺",
           "time": "16:42",
-          "text": "那你这不是直，是没想清楚。",
-          "html": "那你这不是直，是没想清楚。"
+          "text": "说不上来就算不上直，你是还没想清楚。",
+          "html": "说不上来就算不上直，你是还没想清楚。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">直接不等于粗鲁</h3>\n                        <p>「我说话直」这句话的作用，是提前给对方派一个任务：接住你的情绪，还不许生气。</p>\n                        <p>真正的直接，是内容不含糊，态度不伤人。说不上哪里不行，那只是感觉，不是意见。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">直和冲是两回事</h3>\n<p>「我说话直」这句一出口，就先给对方派了个活，接住你的情绪，还不许生气。</p>\n<p>直说的人，内容说得明白，态度也不伤人。上面那句说不出哪里不行，只能算一个感觉，对方拿着也没法改。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 具体，且给出方向",
@@ -4326,8 +4326,8 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "16:40",
-          "text": "这版我觉得不行，问题在第二部分的论证：结论有了，但没有数据支撑。",
-          "html": "这版我觉得不行，问题在第二部分的论证：结论有了，但没有数据支撑。"
+          "text": "这版我觉得不行，问题在第二部分的论证。结论有了，没有数据撑着。",
+          "html": "这版我觉得不行，问题在第二部分的论证。结论有了，没有数据撑着。"
         },
         {
           "character": "domino",
@@ -4344,9 +4344,9 @@ const laws: Law[] = [
           "html": "补完发我，我再看一遍。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">关心个人，直接挑战</h3>\n                        <p>Radical Candor 把反馈分成四格：既关心又直接，才是坦诚；只直接不关心，只是让人难受的攻击。</p>\n                        <p>判断标准很简单：这句话是为了让对方变好，还是为了让你自己说爽。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">在乎人，也敢直说</h3>\n<p>Radical Candor 这本书把反馈分成四格。既在乎对方，又敢直说，才叫坦诚。只直说不在乎，对方只觉得被扎了一下。</p>\n<p>说之前问问自己，这句话是想让他改好，还是只想自己说个痛快。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的「直」让别人只收到了刺。</p>\n            <p>Source: <a href=\"https://www.radicalcandor.com/\">Radical Candor · Kim Scott</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的「直」让别人只收到了刺。</p>\n            <p>Source: <a href=\"https://www.radicalcandor.com/\">Radical Candor · Kim Scott</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "answer-then-explain",
@@ -4354,12 +4354,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "先回答，再解释",
     "englishTitle": "Answer, Then Explain",
-    "summary": "别人问能不能，先给能或不能。",
+    "summary": "别人问能不能，先说能还是不能。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "先回答，再解释",
       "subtitleHtml": "Answer, Then Explain",
-      "leadHtml": "对方问的是结论，<br>\n                    你给的是背景。"
+      "leadHtml": "对方问的是结论，<br>\n                    你先说了一大段背景。"
     },
     "bad": {
       "titleHtml": "❌ 先说三分钟背景",
@@ -4393,7 +4393,7 @@ const laws: Law[] = [
           "html": "不能。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">结论被埋掉了</h3>\n                        <p>你说了很多真话，但对方要的只有一个字。他得听完整段才能拿到答案，中间还得自己判断哪句是结论。</p>\n                        <p>更常见的结果是：他没听完，就按「应该能」去安排了。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">答案埋在最后</h3>\n<p>你说的都是实话，可对方只想要一个字。他得听完一整段才拿到答案，中间还得自己分辨哪句才是结论。</p>\n<p>更常见的情况是他没耐心听完，就当成「应该能」去排了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 结论先行",
@@ -4420,9 +4420,9 @@ const laws: Law[] = [
           "html": "行，我按周三排。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">倒金字塔</h3>\n                        <p>新闻写作的倒金字塔：最重要的结论放最前，细节按重要性递减。读者随时可以停，停在哪一层都不影响他知道结论。</p>\n                        <p>聊天比读报更容易中断，所以这条更适用。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">倒金字塔</h3>\n<p>新闻写作讲倒金字塔，最要紧的放第一句，细节按重要程度往后排。读者读到哪里停下，都已经知道结论了。</p>\n<p>聊天比看报更容易被打断，第一句就该是答案。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明对方听了半天，还没听到你的答案。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)\">Wikipedia · Inverted pyramid</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明对方听了半天，还没听到你的答案。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)\">Wikipedia · Inverted pyramid</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "passive-aggressive-texting",
@@ -4430,12 +4430,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "别用标点甩脸色",
     "englishTitle": "Passive-Aggressive Texting",
-    "summary": "「哦」「行吧」「。」都是关门的声音。",
+    "summary": "回个「哦」「行吧」「。」，对方只能去猜你的脸色。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "别用标点甩脸色",
       "subtitleHtml": "Passive-Aggressive Texting",
-      "leadHtml": "文字没有语气，<br>\n                    标点就成了语气。"
+      "leadHtml": "文字里听不出语气，<br>\n                    标点就替你甩了脸色。"
     },
     "bad": {
       "titleHtml": "❌ 让人猜你的情绪",
@@ -4476,7 +4476,7 @@ const laws: Law[] = [
           "html": "……"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">被动攻击的性价比</h3>\n                        <p>不直说不满，用姿态让对方不舒服——这招很有效，因为对方只能猜，而猜错的责任在他。</p>\n                        <p>代价是：问题一次也没被说出口，但情绪已经发过一轮了。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">让对方去猜</h3>\n<p>不满不直说，回个「行吧」让对方自己难受。这招挺好使，对方只能猜，猜错了还算他的。</p>\n<p>可问题一次都没说出口，火已经先发过一轮了。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 把不满说成句子",
@@ -4503,9 +4503,9 @@ const laws: Law[] = [
           "html": "行，那周末。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">一句话换一场猜谜</h3>\n                        <p>「行吧」「哦」「随便」不是回答，是让对方做阅读理解。</p>\n                        <p>真不想去就说不想去，真不高兴就说不高兴在哪。文字已经够冷了，别再让对方猜你的温度。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">说一句，省一场猜谜</h3>\n<p>回个「行吧」「哦」「随便」，对方得像做阅读理解一样琢磨你到底什么意思。</p>\n<p>不想去就说不想去，不高兴就说哪里不高兴。文字本来就够冷了，别再让对方猜你心情。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人没读懂你的「哦」。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Passive-aggressive_behavior\">Wikipedia · Passive-aggressive behavior</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人没读懂你回的那个「哦」。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Passive-aggressive_behavior\">Wikipedia · Passive-aggressive behavior</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "hindsight-bias",
@@ -4513,15 +4513,15 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "我早说过",
     "englishTitle": "Hindsight Bias",
-    "summary": "事情发生后，一切看起来都显而易见。",
+    "summary": "事后回头看，什么都像是早就该知道的。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "我早说过",
       "subtitleHtml": "Hindsight Bias",
-      "leadHtml": "「早就告诉过你」<br>\n                    除了证明你聪明，不解决任何问题。"
+      "leadHtml": "说一句「早就告诉过你」，<br>\n                    显得你聪明，事情还是没解决。"
     },
     "bad": {
-      "titleHtml": "❌ 用结果审判过程",
+      "titleHtml": "❌ 拿结果倒推当初",
       "lines": [
         {
           "character": "cider",
@@ -4552,7 +4552,7 @@ const laws: Law[] = [
           "html": "那我也是这个意思。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">记忆会帮你改答案</h3>\n                        <p>知道结果之后，人会高估自己当初预测到的可能性。你没说过的话，回忆里会变成「我当时就觉得」。</p>\n                        <p>复盘如果建立在改过的记忆上，只会得出一个结论：我果然是对的。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">记忆会偷偷改答案</h3>\n<p>知道结果以后，人会觉得自己当初早就料到了。你当时只说了「再看看」，回想起来就成了「我当时就觉得不对」。</p>\n<p>拿改过的记忆去复盘，最后只会得出一个结论，我果然是对的。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 回到当时的信息",
@@ -4572,9 +4572,9 @@ const laws: Law[] = [
           "html": "同意，那会儿我们只看了留存。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">复盘看过程，不看结果</h3>\n                        <p>好复盘只问两件事：当时掌握了什么信息？在那些信息下，这个决定合理吗？</p>\n                        <p>决定合理但结果不好，是运气；决定不合理但结果好，是隐患。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">复盘只看当时</h3>\n<p>复盘问两件事就够了。当时手上有哪些信息？按那些信息，这个决定说得过去吗？</p>\n<p>决定没问题、结果不好，多半是运气差。决定有问题、结果还不错，下次就未必这么走运了。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人在提醒你：别用结果改写记忆。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Hindsight_bias\">Wikipedia · Hindsight bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人提醒你，<strong>别拿结果去改写记忆</strong>。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Hindsight_bias\">Wikipedia · Hindsight bias</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "false-consensus",
@@ -4582,13 +4582,13 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "大家都这么觉得",
     "englishTitle": "False Consensus Effect",
-    "summary": "「大家」通常只是「我和我旁边的两个人」。",
+    "summary": "你说的大家，多半是你和身边两个人。",
     "layout": "comparison",
     "visual": "false-consensus-dots",
     "hero": {
       "titleHtml": "大家都这么觉得",
       "subtitleHtml": "False Consensus Effect",
-      "leadHtml": "把自己的判断当成共识，<br>\n                    是最省事的说服方式。"
+      "leadHtml": "把自己的看法说成大家的看法，<br>\n                    说服人最省事，也最容易露馅。"
     },
     "bad": {
       "titleHtml": "❌ 用「大家」压人",
@@ -4622,7 +4622,7 @@ const laws: Law[] = [
           "html": "我问了五个人，三个说没看过方案。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">「大家」是个虚数</h3>\n                        <p>虚假共识效应：人倾向于高估别人跟自己观点一致的程度，因为身边最常接触的就是跟自己像的人。</p>\n                        <p>说「大家」的时候，你通常只数了自己和两个同事。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">大家到底是几个人</h3>\n<p>心理学管这个叫虚假共识效应。人总觉得别人跟自己想的差不多，因为平时打交道最多的，就是跟自己像的人。</p>\n<p>你说「大家都觉得」的时候，往往只数了自己和两个同事。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 数人头，说来源",
@@ -4642,9 +4642,9 @@ const laws: Law[] = [
           "html": "那入口得改。另外三个是谁，我一起问问。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">把「大家」换成数字</h3>\n                        <p>几个人、什么范围、怎么问的——三样说清楚，「大家」才有分量。</p>\n                        <p>说不清就别用这个词。它听起来像共识，实际只是音量。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">把大家换成数字</h3>\n<p>问了几个人，在什么范围里问的，怎么问的，说清楚了，这句话才有分量。</p>\n<p>说不清就别用「大家」。听着像所有人都同意，其实只是你声音大一点。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你把「大家」换成具体的人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/False_consensus_effect\">Wikipedia · False consensus effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你把「大家」换成具体的人。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/False_consensus_effect\">Wikipedia · False consensus effect</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "respect-bandwidth",
@@ -4652,12 +4652,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "别浪费别人的注意力",
     "englishTitle": "Respect Bandwidth",
-    "summary": "转发、刷屏、连环 @，成本都由别人付。",
+    "summary": "刷屏、连环 @、九张长图，看的人都得陪你耗时间。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "别浪费别人的注意力",
       "subtitleHtml": "Respect Bandwidth",
-      "leadHtml": "网络礼仪里最容易被忽略的一条不是礼貌，<br>\n                    是别占用别人的时间。"
+      "leadHtml": "网上的规矩里，最常被忘掉的一条，<br>\n                    是别占用别人的时间。"
     },
     "bad": {
       "titleHtml": "❌ 把群当网盘",
@@ -4691,10 +4691,10 @@ const laws: Law[] = [
           "html": "看到第九张才找到重点。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">带宽是别人的</h3>\n                        <p>你发出去的每一张图、每一条语音，占用的都是收的人的时间、流量和注意力。</p>\n                        <p>「很重要」这三个字不产生信息，只产生压力。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">花的是别人的时间</h3>\n<p>你发的每张图、每条语音，都要占收的人的时间、流量和注意力。九张长图翻到最后才看到重点，一群人都陪着翻了一遍。</p>\n<p>「很重要」三个字说明不了是什么事，只会让人更紧张。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 摘要 + 链接 + 要什么",
+      "titleHtml": "✅ 说清事、给链接、讲要求",
       "lines": [
         {
           "character": "cider",
@@ -4718,9 +4718,9 @@ const laws: Law[] = [
           "html": "收到，我们组没问题。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">三段式</h3>\n                        <p>说了什么、去哪看、要对方做什么——三句话把一件事交代完，剩下的人可以选择什么时候看。</p>\n                        <p>Virginia Shea 的 Netiquette 十条里，有一条就是「尊重他人的时间和带宽」。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">一件事两三句交代完</h3>\n<p>说清是什么事，在哪儿能看到，要对方做什么。几句话交代完，其他人自己挑时间去看细节。</p>\n<p>Virginia Shea 写的网络礼仪十条里，有一条就是尊重别人的时间和带宽。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你刚占用了别人一分钟，而对方只需要十秒。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Netiquette\">Wikipedia · Netiquette（Virginia Shea）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你刚花掉了别人一分钟，其实十秒就够了。</p>\n            <p>延伸阅读：<a href=\"https://en.wikipedia.org/wiki/Netiquette\">Wikipedia · Netiquette（Virginia Shea）</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "meaningful-title",
@@ -4728,12 +4728,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "标题写症状",
     "englishTitle": "Meaningful Title",
-    "summary": "「求助」两个字，等于没写标题。",
+    "summary": "标题只写「求助」，跟没写差不多。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "标题写症状",
       "subtitleHtml": "Meaningful Title",
-      "leadHtml": "别人是靠标题决定要不要点开的，<br>\n                    不是靠你的诚意。"
+      "leadHtml": "别人看标题决定点不点开，<br>\n                    你急不急，标题上看不出来。"
     },
     "bad": {
       "titleHtml": "❌ 标题只有情绪",
@@ -4767,10 +4767,10 @@ const laws: Law[] = [
           "html": "（没有点开）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">标题是检索入口</h3>\n                        <p>群里、论坛里、工单系统里，别人都是先扫标题再决定要不要花时间。「救命」只说明你急，不说明你遇到了什么。</p>\n                        <p>而且事后想搜答案的人也搜不到它。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">大家先看标题</h3>\n<p>在群里、论坛里、工单系统里，大家都是先扫一眼标题，再决定要不要花时间。「救命」只能看出你很急，看不出你遇到了什么事。</p>\n<p>后来有人遇到同样的问题想搜，也搜不到这一条。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 环境 + 动作 + 结果",
+      "titleHtml": "✅ 写清环境、操作和结果",
       "lines": [
         {
           "character": "cider",
@@ -4787,9 +4787,9 @@ const laws: Law[] = [
           "html": "这个我遇到过，看下 npm 缓存目录的属主。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">三段式标题</h3>\n                        <p>环境（Vite 5）、动作（构建）、结果（EACCES 报错）——三段写全，懂的人一眼就知道自己会不会。</p>\n                        <p>标题里不要写「紧急」「在线等」，那些是情绪，不是信息。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">标题写全三样</h3>\n<p>环境是 Vite 5，操作是构建，结果是 EACCES 报错。三样都写上，懂的人看一眼就知道自己能不能帮。</p>\n<p>「紧急」「在线等」就别往标题里放了，看的人从里面读不出任何信息。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明你的标题让别人没法判断该不该点开。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 使用有意义且描述明确的标题</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明别人看了你的标题，判断不了要不要点开。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 使用有意义且描述明确的标题</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "make-it-easy-to-reply",
@@ -4797,12 +4797,12 @@ const laws: Law[] = [
     "category": "clarity",
     "title": "让别人能直接回",
     "englishTitle": "Make It Easy to Reply",
-    "summary": "截图、语音、只言片语，都是在给对方加活。",
+    "summary": "只发截图、语音、半句话，对方回你之前得先干一堆活。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "让别人能直接回",
       "subtitleHtml": "Make It Easy to Reply",
-      "leadHtml": "你想被回答，<br>\n                    就得先让回答这件事变便宜。"
+      "leadHtml": "想让别人回你，<br>\n                    就先让他回起来省事。"
     },
     "bad": {
       "titleHtml": "❌ 只给一张糊图",
@@ -4836,7 +4836,7 @@ const laws: Law[] = [
           "html": "（没回）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">回答的成本由谁付</h3>\n                        <p>翻拍的照片没法复制、没法搜索、没法引用，对方要先把你的图翻译成文字，才能开始思考。</p>\n                        <p>你把整理的成本省了，它就转移到了回答的人身上。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">谁来整理</h3>\n<p>翻拍的照片复制不了，搜不到，也没法引用。对方得先把图里的字一个个敲出来，才能开始想问题。</p>\n<p>你省掉的整理工夫，全落到了回答的人身上。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 给能复制的原文",
@@ -4856,9 +4856,9 @@ const laws: Law[] = [
           "html": "第 3 步的 order 是空的，加个判空。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">可复制、可搜索、可复现</h3>\n                        <p>文字优先，代码块更好；截图只用来展示界面，不用来展示文字。</p>\n                        <p>再补一句「怎么复现」，对方就能在自己的环境里跑一遍，而不是靠猜。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">能复制，能搜，能复现</h3>\n<p>能贴文字就贴文字，贴成代码块更好。截图留给界面长什么样，报错和日志直接贴原文。</p>\n<p>再写上怎么复现，对方就能在自己电脑上跑一遍，用不着猜。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明对方想帮你，但被你的信息格式卡住了。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 使问题容易回复</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明对方想帮你，可你发来的东西他没法直接用。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 使问题容易回复</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "follow-up-after-solved",
@@ -4866,12 +4866,12 @@ const laws: Law[] = [
     "category": "relation",
     "title": "解决后回来说一声",
     "englishTitle": "Follow Up After Solved",
-    "summary": "别人花了时间，你至少欠一个结尾。",
+    "summary": "别人花了时间帮你，解决了至少回来说一声。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "解决后回来说一声",
       "subtitleHtml": "Follow Up After Solved",
-      "leadHtml": "提问有开头，<br>\n                    也该有结尾。"
+      "leadHtml": "问题问出去了，<br>\n                    解决了也回来说一声。"
     },
     "bad": {
       "titleHtml": "❌ 拿到答案就走",
@@ -4905,7 +4905,7 @@ const laws: Law[] = [
           "html": "（三个月后）有人知道这个报错怎么解吗？"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">答案停在了私聊里</h3>\n                        <p>帮你的人不知道自己的判断对不对，下一个遇到同样问题的人搜不到任何结论。</p>\n                        <p>一次没有结尾的提问，等于让所有人重新踩一遍。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">答案没留下来</h3>\n<p>帮你的人不知道自己猜得对不对。下一个遇到同样问题的人来搜，只能看到一句「解决了」。</p>\n<p>一个问题没收尾，后面的人就得从头再踩一遍。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 补一句原因",
@@ -4925,9 +4925,9 @@ const laws: Law[] = [
           "html": "好，我把它补进文档。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">你的结尾是别人的开头</h3>\n                        <p>一句「原因是 X，做法是 Y」就够。不需要写感谢信，只需要让答案留得下来。</p>\n                        <p>公开提问的价值，一半在答案，一半在可检索。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">你一句话，后面的人少找半天</h3>\n<p>写一句「原因是 X，我是这么改的」就够了，用不着写感谢信，把答案留下来就行。</p>\n<p>在公开的地方提问，一半的用处在答案，另一半在后来的人能搜到它。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明那个帖子还悬着，没有结尾。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 问题解决后，加个简短的补充说明</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明那个帖子还悬着，没人知道后来怎么样了。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 问题解决后，加个简短的补充说明</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "ask-in-public",
@@ -4935,12 +4935,12 @@ const laws: Law[] = [
     "category": "systems",
     "title": "公开提问，公开回答",
     "englishTitle": "Ask in Public",
-    "summary": "私聊问完就走，等于把答案埋了。",
+    "summary": "私聊问完就走，答案就只有你一个人知道。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "公开提问，公开回答",
       "subtitleHtml": "Ask in Public",
-      "leadHtml": "你得到的答案，<br>\n                    本来可以留给下一个人。"
+      "leadHtml": "你问到的答案，<br>\n                    本来可以留给下一个人。"
     },
     "bad": {
       "titleHtml": "❌ 私聊问完就消失",
@@ -4974,7 +4974,7 @@ const laws: Law[] = [
           "html": "（一周后，在群里问同一个问题）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">被埋掉的答案</h3>\n                        <p>私聊不是错，很多问题确实不适合公开。但问完把结论贴回公开的地方，成本只有一句话。</p>\n                        <p>否则同一个问题会被不同的人问十遍，而每次都要重新回答一遍。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">答案锁在私聊里</h3>\n<p>私聊没有错，有些问题确实不适合公开。问完以后，把结论贴回群里或者论坛，也就一句话的事。</p>\n<p>不贴的话，同一个问题会被十个人轮流问，每次都得有人再答一遍。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 问在明处，答在明处",
@@ -5001,9 +5001,9 @@ const laws: Law[] = [
           "html": "已解决，按上面的改法改完正常了。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">让答案可被检索</h3>\n                        <p>公开提问有三个附加好处：别人能补充、后来人能搜到、回答的人不必重复劳动。</p>\n                        <p>如果必须私聊，至少把脱敏后的结论补回公开渠道。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">问在大家看得见的地方</h3>\n<p>在公开的地方问，别人能补充，后来的人能搜到，回答的人也不用一遍遍重复。</p>\n<p>非私聊不可，问完至少把去掉敏感信息的结论贴回公开的地方。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明这个问题值得问在大家都能看见的地方。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 别要求使用私人电邮回复</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明这个问题值得问在大家都能看见的地方。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 别要求使用私人电邮回复</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "dont-cry-bug",
@@ -5011,15 +5011,15 @@ const laws: Law[] = [
     "category": "thinking",
     "title": "别急着说是 bug",
     "englishTitle": "Don't Cry Bug",
-    "summary": "先排除自己，再怀疑别人。",
+    "summary": "先查自己那一半，再怀疑别人的。",
     "layout": "comparison",
     "hero": {
       "titleHtml": "别急着说是 bug",
       "subtitleHtml": "Don't Cry Bug",
-      "leadHtml": "「这是 bug」是结论，<br>\n                    不是开场白。"
+      "leadHtml": "「这是 bug」应该是查完以后的结论，<br>\n                    一开口就说，对方只会先防着你。"
     },
     "bad": {
-      "titleHtml": "❌ 先定罪再取证",
+      "titleHtml": "❌ 没查就先下结论",
       "lines": [
         {
           "character": "cider",
@@ -5050,10 +5050,10 @@ const laws: Law[] = [
           "html": "……你传的 id 是字符串，后端按数字解析。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">很多「bug」不是 bug</h3>\n                        <p>环境、参数、版本、缓存、配置——先按顺序排除这五样，再下结论。</p>\n                        <p>「肯定是你们的问题」这句话最大的坏处，是让你跳过检查自己那一半。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">很多 bug 最后都不是 bug</h3>\n<p>环境、参数、版本、缓存、配置，按顺序一样样排除，再下结论。</p>\n<p>一句「肯定是你们的问题」说出口，你自己那一半就不会再去查了。上面那个字符串 id，就是这么漏掉的。</p>\n</div>"
     },
     "good": {
-      "titleHtml": "✅ 先给证据，再给判断",
+      "titleHtml": "✅ 先给证据，再说判断",
       "lines": [
         {
           "character": "cider",
@@ -5070,25 +5070,25 @@ const laws: Law[] = [
           "html": "对，我们补一下校验。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">把判断写成假设</h3>\n                        <p>「是类型没做兼容吗」比「你们有 bug」有用得多：前者给了对方一个可以验证的方向，后者只给了压力。</p>\n                        <p>确认是 bug 之后再说是 bug，也不迟。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">把判断说成猜测</h3>\n<p>问一句「是类型没做兼容吗」，对方能顺着去查。说「你们有 bug」，对方只会先替自己辩护。</p>\n<p>等确认真是 bug 了，再说它是 bug 也来得及。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你先排除自己那一半。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 别动辄声称找到 Bug</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人想让你先查查自己那一半。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 别动辄声称找到 Bug</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   },
   {
     "slug": "dont-play-helpless",
     "order": 66,
     "category": "clarity",
-    "title": "别用「我是小白」抵功课",
+    "title": "别拿「我是小白」当借口",
     "englishTitle": "Don't Play Helpless",
-    "summary": "谦虚不能代替你已经查过的东西。",
+    "summary": "说自己是新手，也得先自己查一查。",
     "layout": "comparison",
     "hero": {
-      "titleHtml": "别用「我是小白」抵功课",
+      "titleHtml": "别拿「我是小白」当借口",
       "subtitleHtml": "Don't Play Helpless",
-      "leadHtml": "「我是新手」<br>\n                    不是免做功课的通行证。"
+      "leadHtml": "「我是新手」能说明你为什么不懂，<br>\n                    说明不了你为什么没查。"
     },
     "bad": {
-      "titleHtml": "❌ 用姿态换劳动",
+      "titleHtml": "❌ 什么都没试就让人教",
       "lines": [
         {
           "character": "cider",
@@ -5119,7 +5119,7 @@ const laws: Law[] = [
           "html": "（发了一篇入门文档）"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">低调也是一种索取</h3>\n                        <p>「我什么都不懂」听起来谦虚，实际是把整件事的劳动交给对方：从判断你缺什么，到从头讲一遍。</p>\n                        <p>新手身份可以解释你为什么不懂，不能解释你为什么没查。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">把活全推给了对方</h3>\n<p>「我什么都不懂」听着谦虚，可后面的活全落到了对方身上。他得先猜你缺什么，再从头给你讲一遍。</p>\n<p>上面那段，多米诺最后只能甩一篇入门文档，因为他连你卡在哪都不知道。</p>\n</div>"
     },
     "good": {
       "titleHtml": "✅ 说我试到哪一步",
@@ -5128,8 +5128,8 @@ const laws: Law[] = [
           "character": "cider",
           "name": "西打",
           "time": "15:00",
-          "text": "我按文档装了一遍，卡在第二步的权限报错；试过 sudo 也不行，日志在这。",
-          "html": "我按文档装了一遍，卡在第二步的权限报错；试过 sudo 也不行，日志在这。"
+          "text": "我按文档装了一遍，卡在第二步的权限报错。试过 sudo 也不行，日志在这。",
+          "html": "我按文档装了一遍，卡在第二步的权限报错。试过 sudo 也不行，日志在这。"
         },
         {
           "character": "domino",
@@ -5139,9 +5139,9 @@ const laws: Law[] = [
           "html": "路径里有空格，加引号就行。"
         }
       ],
-      "explanationHtml": "<div>\n                        <h3 style=\"margin-top:0\">把「我不会」换成「我卡在这」</h3>\n                        <p>说出你试过什么、卡在哪一步，对方只需要补最后一环，而不是从头带你走一遍。</p>\n                        <p>这不是要求你什么都会，是要求你先走两步。</p>\n                    </div>"
+      "explanationHtml": "<div>\n<h3 style=\"margin-top:0\">说你卡在哪</h3>\n<p>说清你试了什么、卡在第几步，对方补上最后那一下就行，用不着从头带你走。</p>\n<p>没人要求新手什么都会，先自己走两步就够了。</p>\n</div>"
     },
-    "footerHtml": "<p>\n                这不是非常严重的事情，所以请不要对送你来看这个网站的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你先走到第二步。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 低声下气不能代替你的功课</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
+    "footerHtml": "<p>\n                这事不大，别跟发链接给你的人\n                <a href=\"https://www.bilibili.com/video/BV1t4411V7m2/\">生气</a>。\n            </p>\n            <p>如果你看到这个链接，说明有人希望你先自己走到第二步。</p>\n            <p>Source: <a href=\"https://github.com/DomeenoH/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md\">提问的智慧 · 低声下气不能代替你的功课</a></p>\n            <p>\n                <a href=\"https://github.com/DomeenoH/BeKind\" target=\"_blank\">GitHub</a> · 编排与译文采用 <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC BY 4.0</a> · © {{YEAR}}\n            </p>"
   }
 ];
 

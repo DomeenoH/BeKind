@@ -41,7 +41,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'it-didnt-work',
     phrases: ['它挂了', '报错了怎么办', '报错怎么提问', '只说不work', 'it didnt work', '报错不提细节', '程序不工作怎么说'],
-    terms: ['Bug 报告'],
+    terms: ['坏了'],
   },
   // 05 惠顿定律
   {
@@ -53,19 +53,19 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'smart-questions',
     phrases: ['怎么提问', '提问的智慧', '问题没人回', '问了没人理', '怎么才能有人回答', '发贴没人理'],
-    terms: ['提问前', '自己尝试'],
+    terms: ['自己试过', '带着结果'],
   },
   // 07 拒绝过度客套
   {
     slug: 'no-pointless-politeness',
     phrases: ['过度客套', '一堆客套话', '绕圈子不说事', '客套话太多', '寒暄半天'],
-    terms: ['礼貌的废话', '客套'],
+    terms: ['收到', '客套'],
   },
   // 08 坎宁安定律
   {
     slug: 'cunninghams-law',
     phrases: ['坎宁安定律', '怎么才能得到正确答案', '故意说错让人纠正'],
-    terms: ['先发一个错误'],
+    terms: ['先发一个错的'],
   },
   // 09 小黄鸭调试
   {
@@ -77,31 +77,31 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'bike-shedding',
     phrases: ['自行车棚效应', '会上纠结小事', '为配色吵半天', '会议跑题', '讨论不重要细节'],
-    terms: ['鸡毛蒜皮', '自行车棚'],
+    terms: ['小事', '自行车棚'],
   },
   // 11 剪牦牛毛
   {
     slug: 'yak-shaving',
     phrases: ['剪牦牛毛', '任务越做越多', '一开始只想改个按钮', '偏离目标', '顺手做了一堆事'],
-    terms: ['煮面条', '牦牛'],
+    terms: ['煮碗面', '牦牛'],
   },
   // 12 汉隆剃刀
   {
     slug: 'hanlons-razor',
     phrases: ['汉隆剃刀', '觉得对方针对我', '是不是故意害我', '恶意揣测', '往坏处想对方'],
-    terms: ['愚蠢', '恶意'],
+    terms: ['糊涂', '恶意'],
   },
   // 13 波斯特尔法则
   {
     slug: 'postels-law',
     phrases: ['波斯特尔法则', '文字被误解', '对方语气很冲', '隔着屏幕吵架', '消息被读错意思'],
-    terms: ['宽容', '谨慎'],
+    terms: ['往宽里读', '写清楚'],
   },
   // 14 三振出局
   {
     slug: 'three-strikes',
     phrases: ['来回好几条说不清', '打字打不清', '要不要打电话', '三振出局', '聊了三页还没懂'],
-    terms: ['说不清', '打电话'],
+    terms: ['说清', '打个电话'],
   },
   // 15 BLUF 原则
   {
@@ -119,25 +119,25 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'greshams-law',
     phrases: ['格雷舍姆法则', '标题党横行', '好内容没人看', '平台越来越差'],
-    terms: ['劣质内容', '标题党'],
+    terms: ['烂内容', '标题党'],
   },
   // 18 假设公开原则
   {
     slug: 'assume-public',
     phrases: ['假设公开', '截图被传出去', '发出去就被保存', '群里说的话被转发', '会不会被截图'],
-    terms: ['永久保存', '公开'],
+    terms: ['永久存着', '公开'],
   },
   // 19 回声室效应
   {
     slug: 'echo-chamber',
     phrases: ['回声室效应', '信息茧房', '只看得到同类观点', '推荐越推越偏', '算法只给我推这些'],
-    terms: ['回声室', '算法'],
+    terms: ['回声室', '推荐'],
   },
   // 20 在线解除抑制
   {
     slug: 'online-disinhibition',
     phrases: ['在线解除抑制', '网上骂人', '键盘侠', '网上说话很冲', '现实里不会这么说话'],
-    terms: ['当面', '键盘侠'],
+    terms: ['当面', '口出恶言'],
   },
   // 21 邓宁-克鲁格效应
   {
@@ -173,13 +173,13 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'poes-law',
     phrases: ['坡定律', '分不清是不是反讽', '文字没有语气', '被人当成认真的', '玩笑被当真'],
-    terms: ['讽刺', '表情'],
+    terms: ['反讽', '表情'],
   },
   // 27 布兰多里尼定律
   {
     slug: 'brandolinis-law',
     phrases: ['布兰多里尼定律', '辟谣跑断腿', '跟人争论很累', '越解释越乱', '造谣一张嘴'],
-    terms: ['反驳', '十倍'],
+    terms: ['辟谣', '十倍'],
   },
   // 28 善用搜索
   {
@@ -191,7 +191,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'denver-coder-9',
     phrases: ['已解决就跑了', '只留一句已解决', '解决了不说怎么解决', 'denvercoder9', '帖子烂尾'],
-    terms: ['已解决', '答案'],
+    terms: ['已解决', '办法'],
   },
   // 30 拒绝「紧急」
   {
@@ -209,7 +209,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'grice-maxims',
     phrases: ['格莱斯准则', '说话没有重点', '答非所问', '信息给太多', '一句话说清楚'],
-    terms: ['四条', '相关'],
+    terms: ['说清楚', '相关'],
   },
   // 33 语境崩塌
   {
@@ -288,7 +288,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'sunk-cost',
     phrases: ['沉没成本', '已经花这么多不甘心', '要不要放弃', '再投一点就回本', '都做到这了'],
-    terms: ['沉没成本', '投入'],
+    terms: ['沉没成本', '投了'],
   },
   // 44 相关不是因果
   {
@@ -321,25 +321,25 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'streisand-effect',
     phrases: ['斯特赖桑德效应', '越删越火', '删帖反而传播', '别公开回应', '辟谣被删'],
-    terms: ['越删', '扩散'],
+    terms: ['删掉', '传得更开'],
   },
   // 48 永恒九月
   {
     slug: 'eternal-september',
     phrases: ['永恒九月', '新人太多', '群变味了', '社区质量下降', '人一多就乱'],
-    terms: ['规矩', '稀释'],
+    terms: ['规矩', '新人'],
   },
   // 49 古德哈特定律
   {
     slug: 'goodharts-law',
     phrases: ['古德哈特定律', 'kpi造假', '为了数据做事', '指标被刷', '考核指标不合理'],
-    terms: ['指标', '目标'],
+    terms: ['考核', '数字'],
   },
   // 50 别喂 troll
   {
     slug: 'dont-feed-the-trolls',
     phrases: ['别喂troll', '喷子怎么处理', '有人骂我', '要不要回怼', '遇到杠精'],
-    terms: ['回应', '奖励'],
+    terms: ['troll', '回他'],
   },
   // 51 说人话
   {
@@ -363,7 +363,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'ring-theory',
     phrases: ['朋友诉苦怎么回', '只要听不要建议', 'ring theory', '别急着给方案', '安慰人'],
-    terms: ['听众', '诉苦'],
+    terms: ['吐苦水', '出方案'],
   },
   // 55 说话直不是免死金牌
   {
@@ -387,13 +387,13 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'hindsight-bias',
     phrases: ['我早说过', '事后诸葛亮', '早就知道会这样', 'hindsight', '事后看都简单'],
-    terms: ['显而易见', '早就'],
+    terms: ['事后', '早就'],
   },
   // 59 大家都这么觉得
   {
     slug: 'false-consensus',
     phrases: ['大家都这么觉得', '大家都这么说', '所有人都这么想', '以为所有人都这样', '身边人都这样', '少数人代表全部'],
-    terms: ['大家', '共识'],
+    terms: ['大家', '身边两个人'],
   },
   // 60 别浪费别人的注意力
   {
@@ -417,7 +417,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'follow-up-after-solved',
     phrases: ['解决了要说一声', '问题解决后回一句', '别人帮完就没动静', '用完就消失'],
-    terms: ['结尾', '花了时间'],
+    terms: ['回来说一声', '花了时间'],
   },
   // 64 公开提问，公开回答
   {
@@ -429,19 +429,19 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'dont-cry-bug',
     phrases: ['一上来就说是bug', '怪框架', '先检查自己', '别急着甩锅', '肯定是别人的问题'],
-    terms: ['先排除', 'bug'],
+    terms: ['先查自己', 'bug'],
   },
   // 66 别用「我是小白」抵功课
   {
     slug: 'dont-play-helpless',
     phrases: ['我是小白', '我什么都不懂', '伸手党', '不会就等别人做', '用新手当借口'],
-    terms: ['小白', '查过'],
+    terms: ['小白', '新手'],
   },
-  // 67 选对介质
+  // 67 挑对说话的方式
   {
     slug: 'media-richness',
     phrases: ['该打电话还是发消息', '说不清就开会', '文字说不明白', '选错沟通方式', '该用什么方式沟通'],
-    terms: ['介质', '文字'],
+    terms: ['说话的方式', '打字'],
   },
   // 68 知识的诅咒
   {
@@ -464,7 +464,7 @@ export const lawAliases: LawAlias[] = [
   {
     slug: 'left-on-read',
     phrases: ['已读不回', '对方看了不回', '被晾着', '消息不回', '发出去没人理'],
-    terms: ['已读', '承诺'],
+    terms: ['已读', '马上回'],
   },
   // 70 海狮式纠缠
   {
@@ -479,7 +479,7 @@ export const lawAliases: LawAlias[] = [
       '被耗到发火',
       '对方一直问为什么',
     ],
-    terms: ['追问', '礼貌'],
+    terms: ['追问', '客客气气'],
   },
   // 71 别拿别人的隐私当武器
   {

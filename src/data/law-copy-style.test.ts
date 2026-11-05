@@ -3,21 +3,23 @@ import { orderedLaws } from './laws';
 import { lawCaveats } from './law-caveats';
 
 /**
- * 2026-11 增补的 8 条，按更严的口径写。
+ * 79 条正文的文风守卫。
  *
- * 老条目里还留着「而是」三处、破折号二十几处，改动它们属于另一件事，
- * 所以这里只圈新增条目。以后新增的条目加进这个数组，规则自动套上。
+ * 2026-11 第一版只圈了新增的 8 条，后来把老条目也按同一口径重写了一遍，
+ * 规则就扩到全部条目。
+ *
+ * 豁免的是原站译文和测试里锁住的原句（代码、报错、表情回应），
+ * 它们按原样保留，不参与长度和 emoji 检查。
  */
-const STRICT_SLUGS = [
-  'heard-vs-verified',
-  'dont-pick-a-side',
-  'accept-the-compliment',
-  'praise-the-detail',
-  'let-them-finish-the-good-news',
-  'tentative-is-a-answer',
-  'accepted-the-no',
-  'ask-before-introducing',
-];
+const LOCKED_LINES = new Set([
+  // stfw：带代码的提问和回答
+  '我想把 Python 字符串转小写，搜了说是用 .lower()，但我拿 "STRASSE" 和 "Straße" 比较，.lower() 之后还是不相等，是编码问题吗？',
+  "不是编码，是大小写折叠。用 .casefold()：'Straße'.casefold() 会变成 'strasse'，.lower() 不会。",
+  // make-it-easy-to-reply：三行报错原文，海报测试锁着
+  "报错原文：TypeError: Cannot read properties of undefined (reading 'id')\n触发步骤：打开订单页 → 点导出\n环境：Chrome 131 / macOS 15",
+  // no-pointless-politeness：表情回应，海报测试锁着
+  '👍 86 ❤️ 12',
+]);
 
 const BANNED = [
   '赋能',
@@ -35,15 +37,13 @@ const BANNED = [
   '在当今',
 ];
 
-const strict = STRICT_SLUGS.map((slug) => {
-  const law = orderedLaws.find((entry) => entry.slug === slug);
-  if (!law) throw new Error(`条目不在了：${slug}`);
-  return law;
-});
+const strict = orderedLaws;
 
 /** 把一条法则的所有可见文字拼起来，用来扫词。 */
 function visibleText(law: (typeof strict)[number]): string {
-  const lines = [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])].map((line) => line.text);
+  const lines = [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])]
+    .map((line) => line.text)
+    .filter((text) => !LOCKED_LINES.has(text));
   return [
     law.title,
     law.summary,
@@ -57,7 +57,7 @@ function visibleText(law: (typeof strict)[number]): string {
   ].join('\n');
 }
 
-describe('新增条目的文风', () => {
+describe('正文文风', () => {
   it('不写「不是 A 而是 B」', () => {
     const hits = strict.filter((law) => /不是[^。！？]{0,20}而是/u.test(visibleText(law)));
     expect(hits.map((law) => law.slug)).toEqual([]);
@@ -74,12 +74,13 @@ describe('新增条目的文风', () => {
     expect(hits, hits.join('\n')).toEqual([]);
   });
 
-  it('不用破折号，中文引号只用「」', () => {
+  it('不用破折号和分号，中文引号只用「」', () => {
     const hits: string[] = [];
     for (const law of strict) {
       const text = visibleText(law);
       if (text.includes('——')) hits.push(`${law.slug} 用了破折号`);
       if (/[“”]/u.test(text)) hits.push(`${law.slug} 用了“”`);
+      if (text.includes('；')) hits.push(`${law.slug} 用了分号`);
     }
     expect(hits, hits.join('\n')).toEqual([]);
   });
@@ -95,6 +96,7 @@ describe('新增条目的文风', () => {
     for (const law of strict) {
       const lines = [...(law.bad?.lines ?? []), ...(law.good?.lines ?? [])];
       lines.forEach((line) => {
+        if (LOCKED_LINES.has(line.text)) return;
         expect(line.text.length, `${law.slug} 这句太长：${line.text}`).toBeLessThanOrEqual(70);
         expect(line.text.trim(), law.slug).not.toBe('');
       });

@@ -97,24 +97,24 @@ export const categories: Category[] = [
     id: 'clarity',
     eyebrow: '01',
     title: '把话说清楚',
-    description: '提问、汇报、标题、选介质：把缺的那块补齐，别让人猜。',
+    description: '提问、汇报、写标题、挑说话方式。把缺的那块补上，别让人猜。',
   },
   {
     id: 'relation',
     eyebrow: '02',
     title: '别把关系弄僵',
-    description: '拒绝、纠错、夸人、被拒绝：话说出口之前，先想对方怎么接。',
+    description: '拒绝、纠错、夸人、被拒绝。话说出口之前，先想想对方怎么接。',
   },
   {
     id: 'thinking',
     eyebrow: '03',
     title: '别急着下结论',
-    description: '证据、假设、认知偏差。语气再自信，也不能替你完成论证。',
+    description: '证据、假设、认知偏差。话说得再笃定，也得拿出东西来。',
   },
   {
     id: 'systems',
     eyebrow: '04',
     title: '看见系统和人',
-    description: '群聊、平台、团队都会放大坏习惯。看见机制，才不至于被推着走。',
+    description: '群聊、平台、团队，都会把坏习惯放大。看清它怎么运转，才不会被推着走。',
   },
 ];
